@@ -1,0 +1,34 @@
+[09:54:09] Using gulpfile D:\Nothing\Lanthanum\gulpfile.js
+[09:54:09] Starting 'test'...
+Building specs...
+
+  Build\CesiumUnminified\index.js      10.9mb
+  Build\CesiumUnminified\index.js.map  21.7mb
+
+Done in 213ms
+
+  Build\CesiumUnminified\Cesium.js      15.3mb
+  Build\CesiumUnminified\Cesium.js.map  25.5mb
+
+Done in 243ms
+
+  Build\CesiumUnminified\index.cjs      11.0mb
+  Build\CesiumUnminified\index.cjs.map  21.7mb
+
+Done in 174ms
+0.095 secs: Scene/QuadtreePrimitive selectTilesForRendering continues rendering more detailed tiles when camera zooms out and an appropriate ancestor is not yet renderable
+0.059 secs: Scene/QuadtreePrimitive selectTilesForRendering skips loading levels when tiles are known to be available
+0.049 secs: Scene/QuadtreePrimitive selectTilesForRendering loads and renders intermediate tiles according to loadingDescendantLimit
+0.049 secs: Scene/QuadtreePrimitive selectTilesForRendering selects root tiles once they are ready
+0.045 secs: Scene/QuadtreePrimitive selectTilesForRendering does not skip loading levels if availability is unknown
+0.042 secs: Scene/QuadtreePrimitive selectTilesForRendering renders a fill for a newly-visible tile
+0.03 secs: Scene/QuadtreePrimitive selectTilesForRendering selects deeper tiles once they are renderable
+0.017 secs: Scene/QuadtreePrimitive with mock tile provider gives correct priority to tile loads
+0.006 secs: Scene/QuadtreePrimitive with mock tile provider renders tiles in approximate near-to-far order
+0.002 secs: Scene/QuadtreeTile can get tiles around a root tile
+
+Chrome Headless 157.0.0.0 (Windows 10): Executed 43 of 16101 (skipped 16058)[32m SUCCESS[39m (0.829 secs / 0.405 secs)
+[32mTOTAL: 43 SUCCESS[39m
+
+TOTAL: 43 SUCCESS
+[09:54:14] Finished 'test' after 4.44 s

@@ -11,6 +11,7 @@ import {
   Rectangle,
   Visibility,
   defined,
+  destroyObject,
   getTimestamp,
 } from "@cesium/core";
 import QuadtreeOccluders from "./QuadtreeOccluders.js";
@@ -232,7 +233,9 @@ function invalidateAllTiles(primitive) {
 
   primitive._levelZeroTiles = undefined;
 
-  primitive._tileProvider.cancelReprojections();
+  if (defined(primitive._tileProvider.cancelReprojections)) {
+    primitive._tileProvider.cancelReprojections();
+  }
 }
 
 /**
@@ -484,7 +487,14 @@ QuadtreePrimitive.prototype.isDestroyed = function () {
  * @see QuadtreePrimitive#isDestroyed
  */
 QuadtreePrimitive.prototype.destroy = function () {
+  invalidateAllTiles(this);
+  this._tilesToRender.length = 0;
+  this._tilesRenderedThisFrame.clear();
+  this._tileToUpdateHeights.length = 0;
+  this._addHeightCallbacks.length = 0;
+  this._removeHeightCallbacks.length = 0;
   this._tileProvider = this._tileProvider && this._tileProvider.destroy();
+  return destroyObject(this);
 };
 
 let comparisonPoint;

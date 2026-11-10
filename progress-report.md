@@ -1,59 +1,38 @@
-# 本轮进度报告：S00—S01 首批基线
+# 进度报告：S01 第二轮
 
-- 范围依据：实施计划第9节；本轮没有实现S02—S24，也没有WebGPU原生功能。
-- 上游基线commit：`2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87`；最终采集实现commit：`d84d8a39ce6079e4837ced59d9486a5fd9a3c0b6`。
-- 当前步骤：S00的固定基线、范围与复用决策已落地；S01首批13个子例可运行，完整S01待验收。
-- 版本、工具链、清洁安装与命令：`baseline.md`。
-- 支持范围/责任角色/测试族：`compatibility-matrix.md`。
-- 资产hash、许可证、参数：`fixtures/manifest.json`。
-- 图像/数值/资源/性能方法与缺口：`acceptance-contract.md`。
-- 后端路线、API差异、候选fork实际构建：`adr/0001-migration-scope.md`。
+范围仍为实施计划第9节的S00—S01；当前是WebGL2修复分支，没有WebGPU原生实现。首轮报告归档于 `docs/reports/s00-s01-round1.md`，旧证据未覆写。完整S01尚未验收。
 
-## 当前证据及未通过项
+## 实现与验证
 
-首批场景覆盖几何颜色和对象ID、地理/WebMercator编号影像、quantized-mesh、glTF、四种旧Tiles容器、GIS基本图元、异步对象拾取及解析深度、20轮双Scene生命周期、122.88万三角形合成城市。
+- 修复 `QuadtreePrimitive.destroy()` 未释放已加载瓦片树的问题；清空渲染/高度回调引用、销毁provider并正确标记对象已销毁。不改变LOD选择和请求调度。
+- 新增真实WebGL2资源回归，渲染并确认地球可拾取后销毁，要求全部GL对象和Buffer字节归零；另测首帧之前销毁，以及没有影像重投影能力的通用provider。
+- 原manifest下先复现T01/T02资源失败，再对比修复后的T01/T01-mercator/T02：图像通过原门槛，资源归零。证据为 `benchmarks/baseline/round2-release-red/` 和 `round2-release-green/`。
+- 新增7个子例，共20个。图层顺序、透明度、移除恢复和±179°日期变更线LOD；动态点Entity位置/颜色/显隐；GeoJSON点线面、CZML盒体和KML绝对高度面均通过实际显示、拾取和显隐开发验证。
+- `T05-entity-box` 保留动态盒体的异步拾取失败：画面有红色盒体，但持续更新时pickAsync返回空。测试没有冻结Visualizer来规避失败。每帧Primitive重建与异步读回间的pick ID生命周期是后续调查重点，当前不宣称已修复。
+- 失败路径也保存断言、诊断和销毁账本，默认回归仍包含失败子例并返回非零。
 
-最终证据目录：`benchmarks/baseline/chrome-final/`；主索引 `summary.json`，每次运行有JSON、PNG、RGBA gzip和差异图。实现/manifest/依赖锁/构建hash、实际OS/CPU/GPU/浏览器一并留存。Node24.15.0、Chrome157.0.8103.40、RTX5080/D3D11、1920×1080/DPR1。资产manifest SHA-256为 `542eb7fa3533241d778b9018ee1354ab652905f5a0e989324acf61123dae002e`。
+第二轮manifest：`12be48cec9f16f1367d8acdbb2f158cc1e543cc9b9de515ec0b8112646973cd3`，168项。契约v2登记了新增用例，图像/数值门槛没有放宽；不跨manifest强行对比旧图像。
 
-| 检查 | 实际结果 | 证据 |
-| --- | --- | --- |
-| 清洁npm ci、gulp prepare/build | 通过 | `benchmarks/baseline/audit/clean-install.log`、`build.log` |
-| 干净git archive导出后重建资产 | 162项hash全部一致 | `benchmarks/baseline/audit/clean-export.json` |
-| 工具逻辑测试 | 6/6通过 | `audit/tool-tests.log` |
-| 新增JS的ESLint、格式、原有根tsc | 通过；不声称浏览器JS获得完整类型检查 | `audit/eslint.log`、`format.log`、`typecheck.log` |
-| 13子例×3次实测 | 30次通过，9次资源释放失败；退出码1 | `chrome-final/summary.json` |
-| 图像重复性 | 全39次通过；最小SSIM=0.9999999972，显著差异像素比例=0 | 各子例JSON与diff PNG |
-| JS异常/console.error/外部请求 | 均为0 | 各子例JSON；上游Karma结果另列 |
-| T06解析深度 | 三轮误差约0.000383m，小于0.1m | `chrome-final/T06-1.json`等；只代表合成盒面 |
-| T07生命周期 | 每轮20次双Scene并存/resize/销毁通过，共60次 | `chrome-final/T07-*.json` |
-| T08工作集 | 每轮16瓦片/1,228,800三角形；几何73,728,000字节、纹理0字节；20 draw/帧（含辅助pass） | `chrome-final/T08-*.json` |
-| T08就绪耗时 | 741/735/736ms；非严格冷启动 | 同上，驱动缓存未清理 |
-| 上游默认完整Jasmine | 执行16,031/16,098，17失败、67跳过，退出1 | `audit/upstream-default.log` |
-| 上游WebGL validation | 执行至7,514，52失败、中断，退出1 | `audit/upstream-validation.log` |
+## 当前检查
 
-城市轨迹实测：`benchmarks/baseline/performance/summary.json`。每轮30秒预热、120秒采样，三轮rAF样本数28,802/28,800/28,799；三轮rAF p50/p95/p99均约4.2/4.3/4.3ms，CPU Scene更新+提交p50/p95/p99均约0.3/0.4/0.5ms。三轮均无JS/网络错误，最终选中16瓦片、1,228,800三角形，销毁后账本归零。GPU时间未测。这是240Hz headless、无纹理合成几何场景的测量，不能推广为60Hz真实城市业务或生产v1性能认证。
+日志位于 `benchmarks/baseline/round2-audit/`：
 
-`--compare`实际重放T00/T05/T08，各1次，通过图像、断言和资源检查；输出 `benchmarks/baseline/replay/`，未覆写原参考目录。
+| 检查 | 实际结果 |
+| --- | --- |
+| Globe及Surface相关Jasmine | 125项通过（含新增真实GPU释放与首帧前销毁） |
+| Quadtree最终专项 | 43项通过（含通用provider销毁） |
+| 完整默认Jasmine | 执行16,033/16,100，16,016通过、17失败、67跳过；退出1 |
+| 全套失败身份对比 | 与未修改上游的17项完全一致，无新增/消失，见failure-comparison.json |
+| 完整套件之后的改动 | 仅补充可选cancelReprojections守卫及通用provider回归；43项专项已复测 |
+| Node工具测试 | 6/6通过 |
+| 根tsc、新改JS ESLint、Prettier | 通过 |
 
-资源失败三轮稳定重现：T01剩余3 Buffer/2 Texture/2 VA（Buffer 21,340字节）；T01-mercator剩余3/8/2（21,340字节）；T02剩余4/2/2（20,032字节）。其他子例账本归零。没有将已知失败降级为通过。
+全套仍保留Billboard像素容差、射线拾取、Polyline等既有失败；早期WebGL validation的中断也未改写成通过。未重复宣称类型检查覆盖所有浏览器JS。
 
-已人工检查最终T01/T02/T05画面，确认编号影像、地形绘制、固定字体与四色Billboard存在。初次采集 `benchmarks/baseline/chrome/` 保留了T08仅12瓦片便提前判定就绪的失败；已修复为等待完整16瓦片并重新采集，不覆写初次证据。审阅发现的输出覆盖、Buffer重载计数、字体和Billboard就绪问题全部解决，详见 `docs/reviews/s00-s01.md`。
+正式20×3采集、独立双轴审查和最终证据提交正在进行；完成后在本报告补充准确结果与实现commit。第二轮不把1.5秒smoke误称为新的性能认证；首轮T08长采样仅适用于原无纹理合成工作集。
 
-已确认的上游问题：地球场景destroy后仍有瓦片资源残留；全量WebGL validation运行在Buffer/CubeMap处发生INVALID_ENUM。所有失败保留原始日志及非零退出码。无引擎改动，无隐藏WebGL/WebGPU混合绘制。
+## 未完成与下一步
 
-完整S01缺少T00布局/实例化、T01多层/日期变更线、T02真实地形接缝与缺瓦片、T03动画/skin/morph/压缩扩展、T04隐式/外部/metadata、T05动态Entity/数据源可视化等专项基线；CPU/解码/上传预算也尚未冻结。详情逐项列在验收契约，不能以首批13子例替代完整T00—T08。
+动态盒体异步拾取问题及原17项上游失败待处理；完整S01仍缺T00布局/实例化、T02接缝/缺瓦片、T03动画/skin/morph/压缩、T04外部/隐式/metadata、T05贴地/裁剪/分类及更多数据源选项。连续LOD轨迹、CPU/解码/上传预算与long-task归因仍需补齐。
 
-## 进度及下一步
-
-生产v1、扩展兼容、平台认证与API兼容分别记录。当前WebGPU原生已验收为0；S00/S01未整体通过G0，生产v1已验收权重暂为0%，不将文档或代码量计作功能完成度。
-
-下一轮优先完成S01缺口和上游已知失败的最小复现/处置记录。S02可以准备实现，但依赖S01正式gate，不能提前宣布验收。
-
-S02细化任务：
-
-1. 定义异步bootstrap状态机：idle/requesting-adapter/requesting-device/configuring/ready/failed/destroyed；统一取消和销毁结果。
-2. 冻结必需feature/limit、可选增强及真实device能力快照；能力不足给出具体差异。
-3. 实现context创建前的auto/webgpu/webgl2选择；强制webgpu不隐式降级，重复使用已有canvas给明确错误。
-4. 在独立T00清屏用例上验证连续呈现、resize、标签、destroy；监听device.lost/uncapturederror后停止提交。
-5. 实测无navigator.gpu、空adapter、requestDevice失败、limit不足、HTTP不安全源和localhost/HTTPS；记录真实GPU与软件adapter区别。
-6. 保持WebGL2回归；涉及GPU绘制时在真实设备留证。完整运行期恢复属于S20。
+生产v1原生WebGPU验收仍为0，G0未整体通过，不按代码量计算完成度。S02准备任务保持首轮报告中的异步启动状态机、feature/limit分级、context创建前后端选择、真实GPU清屏/resize/destroy、错误注入；其正式验收仍依赖S01。

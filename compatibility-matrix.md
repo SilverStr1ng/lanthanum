@@ -50,8 +50,8 @@
 | D09 | SSE、调度、缓存、取消、并发上传预算 | CPU复用+适配 | S12/S19 | T04/T08 | 流式数据 | 固定内容/画质后比较性能 |
 | P01 | Primitive/GeometryInstance/点线面 | 需适配 | S15 | T05 | GIS图元 | 每图元及关键选项列子用例 |
 | P02 | Billboard/Label/纹理图集 | 需适配 | S15 | T05 | GIS图元 | 文字字体、alpha边缘、拾取单独验收 |
-| P03 | Entity/Visualizer、动态属性、选中/跟踪 | 需适配 | S15 | T05 | Entity/Widget | 解析数据不算可视化完成 |
-| P04 | GeoJSON | 需适配 | S15 | T05 | 数据源 | 本轮仅解析；生产需显示/更新/释放 |
+| P03 | Entity/Visualizer、动态属性、选中/跟踪 | 需适配 | S15 | T05 | Entity/Widget | 动态点移动/颜色/显隐已测；动态盒体异步拾取失败，跟踪待补 |
+| P04 | GeoJSON | 需适配 | S15 | T05 | 数据源 | 第二轮点线面可视化/显隐/拾取/释放；其他选项待补 |
 | P05 | CZML | 需适配 | S15 | T05 | 数据源 | 固定时钟动态Entity |
 | P06 | KML/KMZ基础路径 | 需适配 | S15 | T05 | 数据源 | 外部NetworkLink等逐项条件认证 |
 | P07 | GroundPrimitive/GroundPolyline/clampToGround | 需适配 | S16 | T02/T05 | GIS图元 | 贴地不能只采一个高度后浮空绘制 |

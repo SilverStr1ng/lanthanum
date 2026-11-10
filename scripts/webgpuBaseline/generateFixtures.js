@@ -298,6 +298,89 @@ for (const scheme of ["geographic", "mercator"]) {
     }
   }
 }
+for (const [name, color] of [
+  ["red", [255, 0, 0, 255]],
+  ["green", [0, 255, 0, 255]],
+]) {
+  const pixels = Buffer.alloc(16 * 16 * 4);
+  for (let i = 0; i < pixels.length; i += 4) {
+    pixels.set(color, i);
+  }
+  await write(`${name}.png`, png(16, 16, pixels));
+}
+const ring = (longitude) => [
+  [longitude - 0.0003, 39.9997, 40],
+  [longitude + 0.0003, 39.9997, 40],
+  [longitude + 0.0003, 40.0003, 40],
+  [longitude - 0.0003, 40.0003, 40],
+  [longitude - 0.0003, 39.9997, 40],
+];
+await write(
+  "business.geojson",
+  JSON.stringify(
+    {
+      type: "FeatureCollection",
+      features: [
+        {
+          type: "Feature",
+          id: "area",
+          properties: {},
+          geometry: { type: "Polygon", coordinates: [ring(-75.001)] },
+        },
+        {
+          type: "Feature",
+          id: "route",
+          properties: {},
+          geometry: {
+            type: "LineString",
+            coordinates: [
+              [-75, 39.9995, 60],
+              [-75, 40.0005, 60],
+            ],
+          },
+        },
+        {
+          type: "Feature",
+          id: "point",
+          properties: {},
+          geometry: { type: "Point", coordinates: [-74.999, 40, 60] },
+        },
+      ],
+    },
+    null,
+    2,
+  ),
+);
+await write(
+  "business.czml",
+  JSON.stringify(
+    [
+      { id: "document", version: "1.0" },
+      {
+        id: "area",
+        position: { cartographicDegrees: [-75, 40, 40] },
+        box: {
+          dimensions: { cartesian: [80, 80, 80] },
+          material: { solidColor: { color: { rgba: [255, 255, 0, 255] } } },
+        },
+      },
+    ],
+    null,
+    2,
+  ),
+);
+await write(
+  "business.kml",
+  `<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Placemark id="area">
+<Style><LineStyle><width>0</width></LineStyle><PolyStyle><color>ffff00ff</color><outline>0</outline></PolyStyle></Style>
+<Polygon><altitudeMode>absolute</altitudeMode><outerBoundaryIs><LinearRing>
+<coordinates>${ring(-75)
+    .map((point) => point.join(","))
+    .join(" ")}</coordinates>
+</LinearRing></outerBoundaryIs></Polygon></Placemark></kml>
+`,
+);
 console.log(
   "Generated local imagery, model and 1,228,800-triangle city fixtures.",
 );

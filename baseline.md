@@ -1,6 +1,6 @@
 # Cesium WebGPU 迁移基线
 
-本仓库执行 `docs/Cesium-WebGPU-Implementation-Plan.md` 第 9 节的首轮任务：S00—S01。当前实现仍为原版 **WebGL2**；没有新增 WebGPU 渲染功能。阶段状态与证据见 `progress-report.md`。
+本仓库执行 `docs/Cesium-WebGPU-Implementation-Plan.md` 第 9 节的任务：S00—S01。当前实现为 Cesium 1.147 **WebGL2**，第二轮包含地球销毁的窄范围修复；没有新增 WebGPU 渲染功能。阶段状态与证据见 `progress-report.md`。
 
 ## 版本与工具链
 
@@ -16,7 +16,7 @@
 | 依赖 | 提交 `package-lock.json`，使用 `npm ci`；禁止验收时重新解析浮动版本 |
 | 授权 | 上游及自制测试资产 Apache-2.0，保留 `LICENSE.md`、`ThirdParty.json` 与原有署名 |
 
-开始时 `D:/Nothing/Lanthanum` 是空目录，没有 Git 仓库或用户修改。通过 `git ls-remote` 核验 tag 解引用与计划一致，再检出该版本建立分支。没有修改 `packages/` 引擎或 Widget 代码。上游 `.gitignore` 原先忽略 lockfile，本分支取消这一忽略以使安装可重现。
+开始时 `D:/Nothing/Lanthanum` 是空目录，没有 Git 仓库或用户修改。通过 `git ls-remote` 核验 tag 解引用与计划一致，再检出该版本建立分支。首轮未修改引擎；第二轮在 `QuadtreePrimitive.destroy()` 释放瓦片树及引用，新增真实WebGL资源回归。上游 `.gitignore` 原先忽略 lockfile，本分支取消这一忽略以使安装可重现。
 
 宿主最初是 Node 24.11.0；第一次依赖解析出现部分 lint 依赖要求 >=24.15.0 的警告，因此固定支持的 24.15.0 并重新清洁安装。浏览器使用系统 Chrome/Edge，不下载一个不同版本的 Playwright Chromium。测试结果记录具体版本，不将 `channel=chrome` 当作永久固定浏览器版本。
 
@@ -42,7 +42,7 @@ npm run baseline:serve
 # 独立输出目录，重复三次；失败时仍写 JSON/PNG 并返回非零
 npm run baseline:run -- --output=benchmarks/runs/recheck
 # 与保存的像素基线比较
-npm run baseline:run -- --compare=benchmarks/baseline/chrome-final --output=benchmarks/runs/compare
+npm run baseline:run -- --compare=benchmarks/baseline/round2-final --output=benchmarks/runs/compare
 # 固定城市轨迹，30 秒预热、120 秒采样、三轮
 npm run baseline:run -- --scenes=T08 --performance --output=benchmarks/runs/performance
 # Edge 是同一 Chromium 引擎的补充，不算第二浏览器引擎
@@ -57,7 +57,9 @@ npm run baseline:run -- --channel=msedge --output=benchmarks/runs/edge
 
 支持的Node版本下再执行默认完整套件：16,031项执行、17项失败、67项跳过，日志为 `benchmarks/baseline/audit/upstream-default.log`。失败包括Billboard像素容差、Picking和Polyline绘制，不能计为已通过。上游Karma入口未采集每个context的renderer，因此这些套件日志仅作为已知失败登记，不单独充当硬件认证；本轮专用回归才强制记录实际适配器。
 
-原版地球销毁后，T01/T01-mercator/T02 的账本仍有瓦片 Buffer/Texture/VertexArray。源码 `QuadtreePrimitive.destroy()` 仅销毁 tileProvider，未释放 level-zero tiles；本轮保留这一失败作为后续生命周期回归基线，不替上游悄悄修正后再称原版基线通过。
+原版地球销毁后，T01/T01-mercator/T02 的账本仍有瓦片 Buffer/Texture/VertexArray。源码 `QuadtreePrimitive.destroy()` 仅销毁 tileProvider，未释放 level-zero tiles；首轮失败保留在 `chrome-final/`。第二轮修复了此问题，在原manifest身份下复测图像不变、资源归零；后续结果明确标为修复分支，不冒充未修改的上游。
+
+第二轮默认入口含20个子例；T05-entity-box保留动态盒体的异步拾取已知失败，命令因此返回1。不要删除该场景或把失败改为PASS。T05-entity使用动态点，另外三种数据源均实际渲染并测试显隐/拾取。新manifest与首轮不同，直接对比 `chrome-final` 会按设计被拒绝；旧结果应在旧提交上复现。第二轮详细结果和限制见进度报告。
 
 ## 源码审计入口
 

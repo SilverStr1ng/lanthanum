@@ -4,8 +4,15 @@
   "assets": [
     {
       "path": "Specs/Baseline/baseline.js",
-      "sha256": "fe218c8ee13998529dd41478521e27dc644ad0ca4610cacb6e8b75b08a78068c",
-      "bytes": 18243,
+      "sha256": "a902a7e69a563e9b8c59ba11469159a8f348792e64901e32adaaf1dd036b52be",
+      "bytes": 18743,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "Specs/Baseline/extendedScenarios.js",
+      "sha256": "4e1b3076226095edc2b0f7fc55e56fd42283f2915060caf782cd576fbc8480f7",
+      "bytes": 9705,
       "license": "Apache-2.0",
       "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
     },
@@ -118,6 +125,27 @@
       "path": "fixtures/generated/box.glb",
       "sha256": "4a49882ad2d9a9751f9f300850a0de2a042f0ce43886e035c9e766d90449bff3",
       "bytes": 1560,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/business.czml",
+      "sha256": "5242307792bc40bc2bf55ecfa22110d110d0c6c3ee0b8ac15aa4ee63a927504a",
+      "bytes": 509,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/business.geojson",
+      "sha256": "14beae0c63b8686a34130ec2b38c0598051ad95f446946832967580d2ced80d8",
+      "bytes": 1281,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/business.kml",
+      "sha256": "6f8e4879894855f9734fcc5a0d4a81aad416f3024b42d612f5b3565e337a02b8",
+      "bytes": 489,
       "license": "Apache-2.0",
       "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
     },
@@ -836,6 +864,13 @@
       "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
     },
     {
+      "path": "fixtures/generated/green.png",
+      "sha256": "7a2e58c73f3834ab24270d403bfe62d65c0b82a60236cb0e9a6b1869a28a805d",
+      "bytes": 79,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
       "path": "fixtures/generated/mercator-0-0-0.png",
       "sha256": "6e8c98229b15d815f86cdd4be2265b7e33f080640d1972d05137f2c014986243",
       "bytes": 1803,
@@ -1130,9 +1165,16 @@
       "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
     },
     {
+      "path": "fixtures/generated/red.png",
+      "sha256": "8916d83980b35e2ad89032559c473bff5bfe7ee5f1bba3c7e5264975b5ec9520",
+      "bytes": 82,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
       "path": "scripts/webgpuBaseline/generateFixtures.js",
-      "sha256": "04dba009eea4714c1cb34ef2c97efe2536d9d02782b00622b6f97a031718841c",
-      "bytes": 8367,
+      "sha256": "f18be4c02351c78a45186ed93bf0f9fbff3deaa8827aebb815e11bf1b2398979",
+      "bytes": 10487,
       "license": "Apache-2.0",
       "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
     }
@@ -1172,6 +1214,20 @@
       "id": "T01-mercator",
       "status": "baseline-subcase",
       "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T01-layers",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/extendedScenarios.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T01-dateline",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/extendedScenarios.js",
       "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
       "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
     },
@@ -1221,6 +1277,41 @@
       "id": "T05",
       "status": "baseline-subcase",
       "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T05-entity",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/extendedScenarios.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T05-entity-box",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/extendedScenarios.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T05-geojson",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/extendedScenarios.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T05-czml",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/extendedScenarios.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T05-kml",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/extendedScenarios.js",
       "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
       "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
     },

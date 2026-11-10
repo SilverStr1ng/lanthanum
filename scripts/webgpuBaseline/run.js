@@ -249,14 +249,21 @@ try {
           external,
           requests,
         };
+        // Keep assertions and the resource ledger even when initialization fails.
+        result.diagnostic = await page
+          .evaluate(() => window.baseline?.report())
+          .catch((error) => ({ error: String(error) }));
+        await page
+          .screenshot({ path: path.join(output, `${name}-failure.png`) })
+          .catch(() => {});
+        result.destroyed = await page
+          .evaluate(() => window.baseline?.destroy())
+          .catch((error) => ({ error: String(error) }));
         summary.runs.push(result);
         await writeFile(
           path.join(output, `${name}.json`),
           `${JSON.stringify(result, null, 2)}\n`,
         );
-        await page
-          .screenshot({ path: path.join(output, `${name}-failure.png`) })
-          .catch(() => {});
         console.error(`${name}: ${error.message}`);
       } finally {
         await context.close();

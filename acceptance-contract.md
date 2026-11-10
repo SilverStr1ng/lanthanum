@@ -1,6 +1,10 @@
-# 验收契约 v1
+# 验收契约 v2
 
 冻结日期：2026-11-10。更改门槛、资产、画质或采集方法必须先修改本文件及 manifest，再产生新结果；不得事后放宽门槛。S00/S01 的首轮结果不构成 WebGPU 功能或生产性能认证。
+
+第二轮扩充（采集前登记）：保留既有图像/数值/资源门槛和13个子例，新增6个子例：T01-layers（两个本地纯色图层的顺序、0/0.5/1 alpha及移除的像素断言）；T01-dateline（±179°、20°纬度、2000km高度，双半球瓦片与LOD细化）；T05-entity（两个时间样本的移动、材质更新、隐藏/恢复及拾取）；T05-geojson（点线面可视化）；T05-czml（盒体）；T05-kml（绝对高度多边形）。数据源用例均连接DataSourceDisplay，检查显示/隐藏、实际像素、对象ID和销毁。最终相机参数和断言在已hash的extendedScenarios.js中；动态Entity最终时间为12:00:10Z，其他场景仍为12:00:00Z。新增文件及测试源导致manifest身份变更，第二轮保存新目录，不与旧身份混比；引擎释放修复已在旧manifest下单独对比过T01/T01-mercator/T02。新子例仍不能替代完整测试族。
+
+正式采集前追加第7个新子例T05-entity-box，总计20个：保留开发运行发现的动态盒体pickAsync失败，断言不会放宽或排除出默认入口。T05-entity明确使用PointGraphics（60px，SampledPositionProperty）；T05-entity-box使用BoxGraphics（60×60×80m），并有同步pick及红色像素控制。盒体动态Visualizer每帧销毁并重建Primitive，异步读回期间pick ID可能已被释放；保留实际失败，待独立处理拾取生命周期。失败路径也采集断言、诊断和销毁账本。
 
 ## 主验收环境
 
@@ -19,17 +23,17 @@
 | 族 | 本轮可运行子例 | 尚待补齐的专项基线 |
 | --- | --- | --- |
 | T00 | 非对称盒体、颜色读回、三个对象 ID；真实 Cesium Primitive；T05另有四象限纹理读回 | 解析三角形边界、单独实例化网格、布局矩阵 |
-| T01 | WGS84 椭球、地理/Web Mercator 本地编号 PNG；可见瓦片纹理必须 READY | 多层叠加、日期变更线和 LOD 连续轨迹的专项差异图 |
+| T01 | WGS84 椭球、地理/Web Mercator 本地编号 PNG；可见瓦片纹理必须 READY；新增图层顺序/alpha/移除像素断言及±179° LOD细化 | 连续飞行轨迹及多投影组合的专项差异图 |
 | T02 | 上游 quantized-mesh 本地 decode/render | 真实相邻 LOD、缺瓦片、海岸/山地剖面；当前上游 tile 是重复映射的测试瓦片，不是全球真实地形 |
 | T03 | 自制 glTF 2.0 PBR 盒体，加载/绘制/释放 | alpha MASK/BLEND、skin、morph、动画、压缩、扩展逐项图像 |
 | T04 | 上游 b3dm/i3dm/pnts/cmpt；T08 直接 glTF content | ADD/REPLACE 转换、外部/隐式切片、metadata/style 专项用例 |
-| T05 | Primitive、点、线、固定OpenSans字体Label、Billboard就绪/ID/四色读回；GeoJSON解析断言 | 动态 Entity、GeoJSON 可视化、CZML/KML、贴地/裁剪/分类 |
+| T05 | Primitive、点、线、固定OpenSans字体Label、Billboard；新增动态点Entity及GeoJSON点线面、CZML盒体、KML绝对高度多边形的像素/拾取/显隐 | 动态盒体异步拾取失败；更多数据源选项、CZML动态时钟、KMZ/NetworkLink及贴地/裁剪/分类 |
 | T06 | 遮挡对象 pickAsync、pickPosition 对解析盒顶面的误差 <=0.1m | 透明/地形重叠、多请求取消和异步位置拾取（未来 API） |
 | T07 | 主场景与临时场景并存、20 次创建/resize/销毁、逐次资源计数 | WebGPU/WebGL 混用、device lost/error 注入、长时泄漏 |
 | T08 | 16 个固定本地 glTF 瓦片，102,400 盒体，1,228,800 三角形，3.2km×3.2km 合成建筑网格 | 真实业务城市影像/地形/材质工作集与流式 LOD，不能将纯几何合成负载推广为所有城市业务 |
 | T09 | 登记延期 S22 | 2D/Columbus/morph |
 
-以上缺口是可见的 S01 后续子任务，**完整 S01 未验收**。本轮完成的是可复现基础环境及各测试族的首批子例，不用“13 个场景”代替完整矩阵覆盖。
+以上缺口是可见的 S01 后续子任务，**完整 S01 未验收**。本轮完成的是可复现基础环境及各测试族的增量子例，不用场景数量代替完整矩阵覆盖。
 
 ## 正确性、资源与退出码
 

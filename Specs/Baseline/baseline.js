@@ -1,5 +1,6 @@
 /*global Cesium*/
 import instrumentWebGL from "./instrumentWebGL.js";
+import { extendedScenarios } from "./extendedScenarios.js";
 
 const C = Cesium;
 const params = new URLSearchParams(location.search);
@@ -60,6 +61,8 @@ const origin = C.Cartesian3.fromDegrees(-75, 40, 0);
 const transform = C.Transforms.eastNorthUpToFixedFrame(origin);
 const objects = [];
 const checks = [];
+const updates = [];
+const cleanup = [];
 const counters = { renderCpu: [], raf: [] };
 let ready = false,
   stopped = false,
@@ -77,6 +80,9 @@ const record = (name, passed, detail) => {
 };
 
 function render() {
+  for (const update of updates) {
+    update(time);
+  }
   scene.initializeFrame();
   scene.render(time);
 }
@@ -233,7 +239,25 @@ function pixels() {
 }
 
 async function initialize() {
-  if (id === "T00") {
+  if (extendedScenarios[id]) {
+    await extendedScenarios[id]({
+      C,
+      scene,
+      gl,
+      width,
+      height,
+      time,
+      transform,
+      record,
+      until,
+      render,
+      view,
+      globe,
+      imageryReady,
+      updates,
+      cleanup,
+    });
+  } else if (id === "T00") {
     view(500);
     box("left-red", -100, 0, 45, C.Color.RED);
     box("right-green", 100, 0, 45, C.Color.LIME, 100);
@@ -593,6 +617,9 @@ window.baseline = {
   },
   destroy() {
     stopped = true;
+    for (const dispose of cleanup) {
+      dispose();
+    }
     scene.destroy();
     return {
       destroyed: scene.isDestroyed(),

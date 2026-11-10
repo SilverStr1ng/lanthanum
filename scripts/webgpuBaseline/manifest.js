@@ -7,6 +7,8 @@ export const sceneIds = [
   "T00",
   "T01",
   "T01-mercator",
+  "T01-layers",
+  "T01-dateline",
   "T02",
   "T03",
   "T04",
@@ -14,6 +16,11 @@ export const sceneIds = [
   "T04-pnts",
   "T04-cmpt",
   "T05",
+  "T05-entity",
+  "T05-entity-box",
+  "T05-geojson",
+  "T05-czml",
+  "T05-kml",
   "T06",
   "T07",
   "T08",
@@ -106,7 +113,17 @@ if (process.argv.includes("--freeze")) {
     scenes: sceneIds.map((id) => ({
       id,
       status: "baseline-subcase",
-      implementation: "Specs/Baseline/baseline.js",
+      implementation: [
+        "T01-layers",
+        "T01-dateline",
+        "T05-entity",
+        "T05-entity-box",
+        "T05-geojson",
+        "T05-czml",
+        "T05-kml",
+      ].includes(id)
+        ? "Specs/Baseline/extendedScenarios.js"
+        : "Specs/Baseline/baseline.js",
       expected:
         "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
       coverage:

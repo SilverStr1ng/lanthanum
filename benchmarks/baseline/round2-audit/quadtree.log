@@ -1,0 +1,34 @@
+[09:50:46] Using gulpfile D:\Nothing\Lanthanum\gulpfile.js
+[09:50:46] Starting 'test'...
+Building specs...
+
+  Build\CesiumUnminified\index.js      10.9mb
+  Build\CesiumUnminified\index.js.map  21.7mb
+
+Done in 218ms
+
+  Build\CesiumUnminified\Cesium.js      15.3mb
+  Build\CesiumUnminified\Cesium.js.map  25.5mb
+
+Done in 269ms
+
+  Build\CesiumUnminified\index.cjs      11.0mb
+  Build\CesiumUnminified\index.cjs.map  21.7mb
+
+Done in 168ms
+0.09 secs: Scene/QuadtreePrimitive selectTilesForRendering continues rendering more detailed tiles when camera zooms out and an appropriate ancestor is not yet renderable
+0.061 secs: Scene/QuadtreePrimitive selectTilesForRendering skips loading levels when tiles are known to be available
+0.059 secs: Scene/QuadtreePrimitive selectTilesForRendering does not skip loading levels if availability is unknown
+0.049 secs: Scene/QuadtreePrimitive selectTilesForRendering loads and renders intermediate tiles according to loadingDescendantLimit
+0.049 secs: Scene/QuadtreePrimitive selectTilesForRendering selects root tiles once they are ready
+0.04 secs: Scene/QuadtreePrimitive selectTilesForRendering renders a fill for a newly-visible tile
+0.027 secs: Scene/QuadtreePrimitive selectTilesForRendering selects deeper tiles once they are renderable
+0.017 secs: Scene/QuadtreePrimitive with mock tile provider gives correct priority to tile loads
+0.004 secs: Scene/QuadtreePrimitive with mock tile provider renders tiles in approximate near-to-far order
+0.003 secs: Scene/QuadtreePrimitive with mock tile provider calls initialize, beginUpdate, loadTile, and endUpdate
+
+Chrome Headless 157.0.0.0 (Windows 10): Executed 42 of 16100 (skipped 16058)[32m SUCCESS[39m (0.85 secs / 0.412 secs)
+[32mTOTAL: 42 SUCCESS[39m
+
+TOTAL: 42 SUCCESS
+[09:50:50] Finished 'test' after 4.45 s

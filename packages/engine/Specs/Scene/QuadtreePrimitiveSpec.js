@@ -666,6 +666,14 @@ describe("Scene/QuadtreePrimitive", function () {
         return result;
       }
 
+      it("destroys a provider without imagery reprojection support", function () {
+        const tileProvider = createSpyTileProvider();
+        const primitive = new QuadtreePrimitive({ tileProvider: tileProvider });
+        expect(primitive.destroy()).toBeUndefined();
+        expect(tileProvider.destroy).toHaveBeenCalledTimes(1);
+        expect(primitive.isDestroyed()).toBe(true);
+      });
+
       it("calls initialize, beginUpdate, loadTile, and endUpdate", function () {
         const tileProvider = createSpyTileProvider();
         tileProvider.getReady.and.returnValue(true);
