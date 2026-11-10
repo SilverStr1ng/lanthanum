@@ -50,13 +50,13 @@ export default function instrumentWebGL(gl) {
   };
   gl.bufferData = (...args) => {
     const [target, data, , sourceOffset = 0, length] = args;
+    const elementBytes = data?.BYTES_PER_ELEMENT ?? 1;
     const bytes =
       typeof data === "number"
         ? data
-        : length !== undefined
-          ? length * data.BYTES_PER_ELEMENT
-          : (data?.byteLength ?? 0) -
-            sourceOffset * (data?.BYTES_PER_ELEMENT ?? 1);
+        : length !== undefined && length !== 0
+          ? length * elementBytes
+          : (data?.byteLength ?? 0) - sourceOffset * elementBytes;
     buffers.set(bindings.get(target), bytes);
     return allocate(...args);
   };

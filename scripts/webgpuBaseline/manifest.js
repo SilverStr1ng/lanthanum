@@ -27,6 +27,7 @@ const sources = [
   "Specs/Data/Cesium3DTiles/PointCloud/PointCloudRGB",
   "Specs/Data/Cesium3DTiles/Composite/CompositeOfInstanced",
   "Specs/Data/test.geojson",
+  "Specs/Data/Fonts/OpenSansNormal400.woff",
   "scripts/webgpuBaseline/generateFixtures.js",
 ];
 const hash = (data) => createHash("sha256").update(data).digest("hex");

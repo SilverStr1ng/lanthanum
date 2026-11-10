@@ -1,6 +1,6 @@
 /*global window*/
 import { chromium } from "@playwright/test";
-import { mkdir, writeFile, readFile } from "node:fs/promises";
+import { writeFile, readFile } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
 import os from "node:os";
@@ -9,6 +9,7 @@ import { createHash } from "node:crypto";
 import { serve, root } from "./server.js";
 import { sceneIds, verifyManifest } from "./manifest.js";
 import { compareImages, percentiles, png } from "./imageMetrics.js";
+import { prepareOutputDirectory } from "./evidence.js";
 
 const value = (flag, fallback) =>
   process.argv
@@ -31,7 +32,7 @@ const output = path.resolve(
   ),
 );
 const comparisonPath = value("--compare", undefined);
-await mkdir(output, { recursive: true });
+await prepareOutputDirectory(output, comparisonPath);
 const fixture = await verifyManifest();
 if (comparisonPath) {
   const previous = JSON.parse(

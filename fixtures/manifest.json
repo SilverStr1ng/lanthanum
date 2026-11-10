@@ -4,22 +4,22 @@
   "assets": [
     {
       "path": "Specs/Baseline/baseline.js",
-      "sha256": "66a792794b1036adf8b25d5b58fa20ba44e1e038f691c286be3e608fc0570759",
-      "bytes": 16524,
+      "sha256": "191db0b40a469e50c27e0e0777fd78537d60339c623b8177a65b3b7df7b03a65",
+      "bytes": 17767,
       "license": "Apache-2.0",
       "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
     },
     {
       "path": "Specs/Baseline/index.html",
-      "sha256": "63caefd5f3b860874eaf2929f941330e6feb0e290a201c1a83c32734314fd1bf",
-      "bytes": 704,
+      "sha256": "df02f6653a7c09750359d10717bfe5fcdf8b6f4cedc650f424bc11988f9e2752",
+      "bytes": 873,
       "license": "Apache-2.0",
       "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
     },
     {
       "path": "Specs/Baseline/instrumentWebGL.js",
-      "sha256": "08889f0c83e0e594f4937576ead825224f41f2386e1acbaebea376675e137596",
-      "bytes": 2991,
+      "sha256": "dadca7451340f43474583a830779284ed297e33749924153539265d11b952986",
+      "bytes": 3022,
       "license": "Apache-2.0",
       "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
     },
@@ -97,6 +97,13 @@
       "path": "Specs/Data/CesiumTerrainTileJson/QuantizedMesh/tile.terrain",
       "sha256": "8dc69d9e132d059ad77080c51daf844e255295c35a3c2654d243349b81a565b2",
       "bytes": 3914,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/Fonts/OpenSansNormal400.woff",
+      "sha256": "90556675373ea9ed1d0e9b5678426d69296b6801c906ca378bb426aa3d6acdc3",
+      "bytes": 21956,
       "license": "Apache-2.0",
       "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
     },
@@ -235,8 +242,8 @@
     },
     {
       "path": "fixtures/generated/four-colors.png",
-      "sha256": "97e0abf9bf56fcd5a69cc4a3ac7fd7a9c757f3d337ac6b4f0ca64689bcb4ec82",
-      "bytes": 79,
+      "sha256": "f8e4b53d42b310d07db402722768997d5d05c34ee9e318b78252c0b5a6f4255c",
+      "bytes": 110,
       "license": "Apache-2.0",
       "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
     },
@@ -1124,8 +1131,8 @@
     },
     {
       "path": "scripts/webgpuBaseline/generateFixtures.js",
-      "sha256": "9711c5811cff1d8a9a51554a29d052ef2f8f2f11415b25fd72e8d6186b812ad5",
-      "bytes": 8146,
+      "sha256": "04dba009eea4714c1cb34ef2c97efe2536d9d02782b00622b6f97a031718841c",
+      "bytes": 8367,
       "license": "Apache-2.0",
       "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
     }

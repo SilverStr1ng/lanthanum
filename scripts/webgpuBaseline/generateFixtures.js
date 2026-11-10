@@ -233,16 +233,22 @@ function boxes(count, columns, spacing, startX = 0, startY = 0) {
 }
 
 await write("box.glb", boxes(1, 1, 2));
-await write(
-  "four-colors.png",
-  png(
-    2,
-    2,
-    Buffer.from([
-      255, 0, 0, 255, 0, 255, 0, 255, 0, 0, 255, 255, 255, 255, 0, 255,
-    ]),
-  ),
-);
+const colorPixels = Buffer.alloc(32 * 32 * 4);
+const colors = [
+  [255, 0, 0, 255],
+  [0, 255, 0, 255],
+  [0, 0, 255, 255],
+  [255, 255, 0, 255],
+];
+for (let y = 0; y < 32; y++) {
+  for (let x = 0; x < 32; x++) {
+    colorPixels.set(
+      colors[Number(x >= 16) + Number(y >= 16) * 2],
+      (y * 32 + x) * 4,
+    );
+  }
+}
+await write("four-colors.png", png(32, 32, colorPixels));
 const children = [];
 for (let tile = 0; tile < 16; tile++) {
   const x = (tile % 4) * 800 - 1600,

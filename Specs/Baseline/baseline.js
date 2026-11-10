@@ -316,6 +316,8 @@ async function initialize() {
     };
     await tiles(`/Specs/Data/Cesium3DTiles/${paths[id]}/tileset.json`);
   } else if (id === "T05") {
+    await document.fonts.load("24px BaselineOpenSans");
+    record("fixed font loaded", document.fonts.check("24px BaselineOpenSans"));
     view(600);
     box("primitive", -110, 0, 40, C.Color.CYAN);
     const points = scene.primitives.add(new C.PointPrimitiveCollection());
@@ -347,11 +349,11 @@ async function initialize() {
         new C.Cartesian3(),
       ),
       text: "T05 Local GIS",
-      font: "24px monospace",
+      font: "24px BaselineOpenSans",
       fillColor: C.Color.WHITE,
     });
     const billboards = scene.primitives.add(new C.BillboardCollection());
-    billboards.add({
+    const billboard = billboards.add({
       position: C.Matrix4.multiplyByPoint(
         transform,
         new C.Cartesian3(120, 0, 120),
@@ -360,7 +362,48 @@ async function initialize() {
       image: "/fixtures/generated/four-colors.png",
       width: 48,
       height: 48,
+      id: "billboard",
     });
+    await until(
+      () => billboard.ready && labels.ready,
+      "billboard and label atlas ready",
+    );
+    render();
+    const screen = C.SceneTransforms.worldToWindowCoordinates(
+      scene,
+      billboard.position,
+    );
+    const pickedBillboard = await scene.pickAsync(screen);
+    record(
+      "textured billboard rendered and pickable",
+      pickedBillboard?.id === "billboard",
+      { id: pickedBillboard?.id },
+    );
+    render();
+    for (const [dx, dy, expected] of [
+      [-12, -12, [255, 0, 0]],
+      [12, -12, [0, 255, 0]],
+      [-12, 12, [0, 0, 255]],
+      [12, 12, [255, 255, 0]],
+    ]) {
+      const pixel = new Uint8Array(4);
+      gl.readPixels(
+        Math.floor(screen.x + dx),
+        height - 1 - Math.floor(screen.y + dy),
+        1,
+        1,
+        gl.RGBA,
+        gl.UNSIGNED_BYTE,
+        pixel,
+      );
+      record(
+        `texture quadrant ${dx}/${dy}`,
+        expected.every(
+          (value, channel) => Math.abs(pixel[channel] - value) <= 3,
+        ),
+        { pixel: [...pixel] },
+      );
+    }
     const data = await C.GeoJsonDataSource.load("/Specs/Data/test.geojson");
     record("GeoJSON parsed", data.entities.values.length > 0, {
       entities: data.entities.values.length,
