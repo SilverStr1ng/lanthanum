@@ -8,6 +8,8 @@ import { serve } from "../webgpuBaseline/server.js";
 import { png } from "../webgpuBaseline/imageMetrics.js";
 import { verifyManifest } from "../webgpuBaseline/manifest.js";
 import { checkDemo } from "./demo.js";
+import { checkModelDemo } from "./modelDemo.js";
+import { verifyModelManifest } from "./modelManifest.js";
 import { createOutputDirectory } from "./outputDirectory.js";
 
 const output = path.resolve(
@@ -51,7 +53,9 @@ try {
   const suite =
     process.argv.find((value) => value.startsWith("--suite="))?.slice(8) ??
     "index";
-  if (!["index", "streaming", "conformance", "terrain"].includes(suite)) {
+  if (
+    !["index", "streaming", "conformance", "terrain", "models"].includes(suite)
+  ) {
     throw new Error("Unknown native test suite");
   }
   await page.goto(`${url}/Specs/WebGPU/${suite}.html`);
@@ -95,6 +99,7 @@ try {
     );
   }
   result.conformanceFixtureSha256 = conformanceHash.digest("hex");
+  result.modelFixtures = await verifyModelManifest();
   result.buildSha256 = createHash("sha256")
     .update(await readFile("Build/CesiumUnminified/Cesium.js"))
     .digest("hex");
@@ -115,6 +120,9 @@ try {
   if (result.passed) {
     try {
       result.demoChecks = await checkDemo(page, url, output);
+      if (suite === "models") {
+        result.modelDemoChecks = await checkModelDemo(page, url, output);
+      }
     } catch (error) {
       result.passed = false;
       result.demoError = String(error.stack);

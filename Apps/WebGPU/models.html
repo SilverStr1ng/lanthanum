@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lanthanum · 山地模型</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./model-style.css" />
+  </head>
+  <body>
+    <canvas id="globe" aria-label="山地与静态纹理模型" tabindex="0"></canvas>
+    <header>
+      <span class="brand">La<span>57</span></span>
+      <div>
+        <h1>Lanthanum</h1>
+        <p>地表之上，看见空间。</p>
+      </div>
+    </header>
+    <aside>
+      <span class="eyebrow">静态模型 · WebGPU</span>
+      <h2>山脊上的纹理模型</h2>
+      <p>
+        同一地球中的影像、山地、纹理模型和黄色图元。拖拽旋转，滚轮缩放，点击模型选择对象。
+      </p>
+      <div class="actions">
+        <button id="near">近地视角</button><button id="top">俯视模型</button>
+      </div>
+      <div class="actions">
+        <button id="high">高空视角</button><button id="orbit">轨道视角</button>
+      </div>
+      <label
+        ><input id="models-visible" type="checkbox" checked />显示模型</label
+      >
+      <label
+        ><input id="terrain-visible" type="checkbox" checked />显示地球</label
+      >
+      <label
+        ><input id="front-visible" type="checkbox" />显示模型上方图元</label
+      >
+      <div class="actions">
+        <button id="reload-models">重新加载模型</button
+        ><button id="remove-models">移除模型</button>
+      </div>
+      <button id="cancel-models" disabled>取消加载</button>
+      <output id="model-status" role="status">正在准备模型…</output>
+      <output id="selection" aria-live="polite"
+        >点击彩色盒体或砖纹平面选择模型</output
+      >
+      <p>
+        地形下方还有一个盒体，隐藏地球即可看见。支持静态 unlit glTF / GLB、PNG /
+        JPEG；采用合成山地与本地影像。
+      </p>
+      <a href="./index.html">返回地球演示</a>
+    </aside>
+    <footer>
+      <span id="status">正在连接图形设备…</span
+      ><span>影像：Natural Earth · 模型：自制测试资产</span>
+    </footer>
+    <div id="error" role="alert" hidden></div>
+    <script src="/Build/CesiumUnminified/Cesium.js"></script>
+    <script type="module" src="./modelApp.js"></script>
+  </body>
+</html>

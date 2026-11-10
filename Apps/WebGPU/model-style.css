@@ -1,0 +1,35 @@
+aside {
+  top: 110px;
+  width: 300px;
+  padding: 18px;
+  max-height: calc(100vh - 170px);
+}
+aside p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+.actions {
+  margin: 12px 0;
+}
+label {
+  margin: 12px 0;
+}
+output {
+  margin-top: 12px;
+  padding-top: 10px;
+  min-height: 0;
+}
+a {
+  color: #7fd4ca;
+  font-size: 13px;
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+@media (max-width: 700px) {
+  aside {
+    top: auto;
+    width: 240px;
+  }
+}

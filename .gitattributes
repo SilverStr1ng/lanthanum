@@ -9,3 +9,5 @@ Specs/Data/CesiumTerrainTileJson/QuantizedMesh/*.json text eol=lf
 Specs/Data/test.geojson text eol=lf
 fixtures/manifest.json text eol=lf
 Specs/WebGPU/*.js text eol=lf
+Specs/WebGPU/fixtures/models/*.gltf text eol=lf
+Specs/WebGPU/fixtures/models/*.json text eol=lf
