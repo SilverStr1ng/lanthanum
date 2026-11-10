@@ -1,6 +1,6 @@
 import { Matrix4, BoundingSphere } from "@cesium/core";
 import {
-  affineDeterminant,
+  affineHandedness,
   transformModelBounds,
 } from "../Renderer/WebGPUTransforms.js";
 
@@ -34,7 +34,7 @@ class WebGPUModel {
     this.sceneIndex = options.sceneIndex;
     this.id = options.id;
     this.modelMatrix = Matrix4.clone(options.modelMatrix ?? Matrix4.IDENTITY);
-    affineDeterminant(this.modelMatrix);
+    affineHandedness(this.modelMatrix);
     if (scene._nextObjectId > 0xffffffff) {
       throw new Error("Native object ID capacity exceeded");
     }

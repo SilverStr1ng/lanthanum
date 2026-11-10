@@ -9,10 +9,13 @@ export function reverseProjection(camera, result = new Matrix4()) {
   }
   return result;
 }
-export function affineDeterminant(matrix) {
+export function affineHandedness(matrix) {
+  for (let i = 0; i < 16; i++) {
+    if (!Number.isFinite(matrix?.[i])) {
+      throw new Error("Model matrix must be finite and affine");
+    }
+  }
   if (
-    !matrix ||
-    !Array.from({ length: 16 }, (_, i) => matrix[i]).every(Number.isFinite) ||
     matrix[3] !== 0 ||
     matrix[7] !== 0 ||
     matrix[11] !== 0 ||
@@ -20,13 +23,37 @@ export function affineDeterminant(matrix) {
   ) {
     throw new Error("Model matrix must be finite and affine");
   }
-  const determinant = Matrix3.determinant(
-    Matrix4.getMatrix3(matrix, new Matrix3()),
-  );
-  if (Math.abs(determinant) < 1e-15) {
+  // Normalize each column before testing orientation. An absolute determinant
+  // threshold rejects valid small units and can underflow for nested scales.
+  const x = Math.max(
+      Math.abs(matrix[0]),
+      Math.abs(matrix[1]),
+      Math.abs(matrix[2]),
+    ),
+    y = Math.max(Math.abs(matrix[4]), Math.abs(matrix[5]), Math.abs(matrix[6])),
+    z = Math.max(
+      Math.abs(matrix[8]),
+      Math.abs(matrix[9]),
+      Math.abs(matrix[10]),
+    );
+  if (x === 0 || y === 0 || z === 0) {
     throw new Error("Model matrix must be nonsingular");
   }
-  return determinant;
+  const a = matrix[0] / x,
+    b = matrix[1] / x,
+    c = matrix[2] / x,
+    d = matrix[4] / y,
+    e = matrix[5] / y,
+    f = matrix[6] / y,
+    g = matrix[8] / z,
+    h = matrix[9] / z,
+    i = matrix[10] / z;
+  const determinant =
+    a * (e * i - h * f) - d * (b * i - h * c) + g * (b * f - e * c);
+  if (determinant === 0) {
+    throw new Error("Model matrix must be nonsingular");
+  }
+  return Math.sign(determinant);
 }
 // A rotated child of a nonuniformly scaled parent may contain shear. The largest
 // singular value bounds every direction; maximum column length does not.
@@ -49,4 +76,4 @@ export function transformModelBounds(
     (1 + 1e-14);
   return result;
 }
-export default { reverseProjection, affineDeterminant, transformModelBounds };
+export default { reverseProjection, affineHandedness, transformModelBounds };

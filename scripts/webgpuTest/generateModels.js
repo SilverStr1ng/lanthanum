@@ -201,6 +201,14 @@ const baseData = geometry(positions, uvs, { indices: [0, 1, 2, 1, 3, 2] });
 await save("plane.bin", baseData.bytes);
 const base = asset(baseData, "plane");
 await save("plane.gltf", base);
+for (const [name, indexType, indices] of [
+  ["collision16", 16, [0, 0, 1, 0, 2, 0]],
+  ["collision32", 32, [0, 1, 2]],
+]) {
+  const data = geometry(positions, uvs, { indexType, indices });
+  await save(`${name}.bin`, data.bytes);
+  await save(`${name}.gltf`, asset(data, name));
+}
 for (const [name, options] of [
   ["u8", { indexType: 8 }],
   ["u32", { indexType: 32 }],
@@ -247,6 +255,21 @@ for (const [name, edit] of [
     "rotation",
     (g) => {
       g.nodes[0].rotation = [0, Math.SQRT1_2, 0, Math.SQRT1_2];
+    },
+  ],
+  [
+    "small-scale",
+    (g) => {
+      g.nodes[0].scale = [1e-6, 1e-6, 1e-6];
+    },
+  ],
+  [
+    "small-compensated",
+    (g) => {
+      g.nodes = [
+        { scale: [1e-6, 1e-6, 1e-6], children: [1] },
+        { scale: [1e6, 1e6, 1e6], mesh: 0 },
+      ];
     },
   ],
   [
@@ -325,6 +348,20 @@ for (const [name, edit] of [
         { translation: [1, 0, 0], children: [1, 2] },
         { mesh: 0, translation: [-3, 0, 0], scale: [1, 2, 0.5] },
         { mesh: 0, matrix: [-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2, 0, 0, 1] },
+      ];
+    },
+  ],
+  [
+    "multi-mesh",
+    (g) => {
+      g.meshes.push(structuredClone(g.meshes[0]));
+      g.materials.push(structuredClone(g.materials[0]));
+      g.materials[1].pbrMetallicRoughness.baseColorFactor = [0.5, 0.5, 0.5, 1];
+      g.meshes[1].primitives[0].material = 1;
+      g.nodes = [
+        { children: [1, 2] },
+        { mesh: 0, translation: [-2, 0, 0] },
+        { mesh: 1, translation: [2, 0, 0] },
       ];
     },
   ],

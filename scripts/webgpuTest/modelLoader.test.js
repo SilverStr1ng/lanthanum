@@ -4,7 +4,10 @@ import { readFile } from "node:fs/promises";
 import loadWebGPUModel from "../../packages/engine/Source/Scene/WebGPUModelLoader.js";
 import WebGPUAsyncCache from "../../packages/engine/Source/Renderer/WebGPUAsyncCache.js";
 import { BoundingSphere, Cartesian3, Matrix4 } from "@cesium/core";
-import { transformModelBounds } from "../../packages/engine/Source/Renderer/WebGPUTransforms.js";
+import {
+  transformModelBounds,
+  affineHandedness,
+} from "../../packages/engine/Source/Renderer/WebGPUTransforms.js";
 import { modelPipelineKey } from "../../packages/engine/Source/Renderer/WebGPUModelRenderer.js";
 import { verifyModelManifest } from "./modelManifest.js";
 
@@ -27,6 +30,8 @@ for (const name of [
   "vertex-tint",
   "rotation",
   "selected-scene",
+  "small-scale",
+  "small-compensated",
 ]) {
   test(`CPU model ${name} has validated geometry and encoded image without GPU`, async () => {
     const result = await loadWebGPUModel(
@@ -46,6 +51,20 @@ test("GLB and external glTF produce identical geometry and image content", async
   );
   assert.equal(a.nodes[0].primitives[0].hash, b.nodes[0].primitives[0].hash);
   assert.equal(a.images[0].hash, b.images[0].hash);
+});
+test("identical index bytes interpreted as u16 and u32 never share draw metadata", async () => {
+  const [a, b] = await Promise.all(
+    ["collision16", "collision32"].map(
+      async (name) =>
+        (await loadWebGPUModel(new URL(`${name}.gltf`, root).href, read))
+          .nodes[0].primitives[0],
+    ),
+  );
+  assert.deepEqual(
+    new Uint8Array(a.indices.buffer),
+    new Uint8Array(b.indices.buffer),
+  );
+  assert.notEqual(a.hash, b.hash);
 });
 for (const name of [
   "required",
@@ -203,6 +222,14 @@ test("pipeline identity distinguishes actual layouts targets culling and handedn
     ["bgra8unorm", 20, false, true],
   ].map((args) => modelPipelineKey(...args));
   assert.equal(new Set(keys).size, keys.length);
+});
+test("affine orientation accepts tiny scales and rejects actual singular matrices", () => {
+  const tiny = Matrix4.fromScale(new Cartesian3(1e-200, 2e-200, -3e-200));
+  assert.equal(affineHandedness(tiny), -1);
+  assert.throws(
+    () => affineHandedness(Matrix4.fromScale(new Cartesian3(0, 1, 1))),
+    /nonsingular/,
+  );
 });
 test("bounded queue rejects excess work and releases queued cancellations", async () => {
   const cache = new WebGPUAsyncCache({

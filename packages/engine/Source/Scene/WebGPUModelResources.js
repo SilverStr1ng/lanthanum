@@ -31,7 +31,13 @@ class WebGPUModelResources {
       label: "CPU model assets",
       concurrency: 4,
       maximumEntries: 32,
+      destroyValue: (asset) => {
+        for (const lease of asset.leases) {
+          lease.release();
+        }
+      },
     });
+    this.payloads = new WebGPUAsyncCache({ label: "CPU content payloads" });
     this.decoding = new WebGPUAsyncCache({
       label: "model image decoding",
       concurrency: 4,
@@ -62,6 +68,7 @@ class WebGPUModelResources {
       ready: [...this.instances].filter((m) => m.ready).length,
       network: this.network.statistics,
       cpu: this.cpu.statistics,
+      payloads: this.payloads.statistics,
       decoding: this.decoding.statistics,
       geometry: this.geometry.statistics,
       textures: this.textures.statistics,
@@ -157,18 +164,38 @@ class WebGPUModelResources {
       model._leases.push(lease);
       return lease.promise;
     };
-    const descriptor = await take(
+    const asset = await take(
       this.cpu.acquire(
         `${model.url}#scene=${model.sceneIndex ?? "default"}`,
-        (physicalSignal) =>
-          loadWebGPUModel(
-            model.url,
-            (url) => this.read(url, physicalSignal),
-            model.sceneIndex,
-          ),
+        async (physicalSignal) => {
+          const leases = [];
+          try {
+            const descriptor = await loadWebGPUModel(
+              model.url,
+              (url) => this.read(url, physicalSignal),
+              model.sceneIndex,
+              async (key, value) => {
+                const lease = this.payloads.acquire(
+                  key,
+                  () => value,
+                  physicalSignal,
+                );
+                leases.push(lease);
+                return lease.promise;
+              },
+            );
+            return { descriptor, leases };
+          } catch (error) {
+            for (const lease of leases) {
+              lease.release();
+            }
+            throw error;
+          }
+        },
         signal,
       ),
     );
+    const descriptor = asset.descriptor;
     model._assertLive();
     model._state = "loaded";
     model.loadStatistics.cpuReadyMilliseconds =
@@ -296,6 +323,7 @@ class WebGPUModelResources {
     }
     for (const cache of [
       this.cpu,
+      this.payloads,
       this.network,
       this.decoding,
       this.geometry,

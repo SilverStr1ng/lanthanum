@@ -182,6 +182,57 @@ async function run() {
         ...options,
       }),
     );
+  const degenerate = await spawn("collision16");
+  check(
+    "u16 collision control has no visible triangles",
+    (await scene.pickAsync(new C.Cartesian2(212, 240))) === undefined,
+  );
+  const triangle = await spawn("collision32");
+  check(
+    "same index bytes with u32 format preserve its triangle and object ID",
+    (await scene.pickAsync(new C.Cartesian2(212, 240)))?.primitive === triangle,
+  );
+  scene.models.remove(degenerate);
+  scene.models.remove(triangle);
+  const multiMesh = await spawn("multi-mesh", {
+    modelMatrix: placement(30, 20, 0, 500),
+  });
+  scene.render();
+  const meshFrame = await capture(scene, "multiple-meshes");
+  check(
+    "two meshes retain distinct material factors and placement",
+    near(pixel(meshFrame, 150, 235), [255, 0, 0]) &&
+      near(pixel(meshFrame, 330, 235), [188, 0, 0]) &&
+      (await scene.pickAsync(new C.Cartesian2(150, 235)))?.primitive ===
+        multiMesh &&
+      (await scene.pickAsync(new C.Cartesian2(330, 235)))?.primitive ===
+        multiMesh,
+    { left: pixel(meshFrame, 150, 235), right: pixel(meshFrame, 330, 235) },
+  );
+  scene.models.remove(multiMesh);
+  for (const [name, scale] of [
+    ["small-scale", 1e9],
+    ["small-compensated", 1000],
+  ]) {
+    const small = await spawn(name, {
+      modelMatrix: placement(30, 20, 0, scale),
+    });
+    scene.render();
+    const bytes = await capture(scene, name);
+    check(
+      `${name} preserves compensated world size color and ID`,
+      near(pixel(bytes, 212, 212), [255, 0, 0]) &&
+        (await scene.pickAsync(new C.Cartesian2(212, 212)))?.primitive ===
+          small,
+    );
+    small.modelMatrix = placement(30, 20, 0, 1e-6);
+    scene.render();
+    check(
+      `${name} allows a tiny nonsingular modelMatrix`,
+      small.ready && small.boundingSphere.radius > 0,
+    );
+    scene.models.remove(small);
+  }
   for (const [name, expected] of [
     [
       "repeat",
@@ -312,6 +363,13 @@ async function run() {
     left._packets[0].geometry.vertex === right._packets[0].geometry.vertex &&
       scene.statistics.modelWork.textures.entries === 2,
     scene.statistics.modelWork,
+  );
+  check(
+    "different asset URLs share CPU geometry and encoded image content",
+    left._descriptor.nodes[0].primitives[0].vertices ===
+      right._descriptor.nodes[0].primitives[0].vertices &&
+      left._descriptor.images[0] === right._descriptor.images[0],
+    scene.statistics.modelWork.payloads,
   );
   scene.models.remove(left);
   check(

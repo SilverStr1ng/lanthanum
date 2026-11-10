@@ -1,6 +1,6 @@
 import { Matrix4 } from "@cesium/core";
 import WebGPUAsyncCache from "./WebGPUAsyncCache.js";
-import { reverseProjection, affineDeterminant } from "./WebGPUTransforms.js";
+import { reverseProjection, affineHandedness } from "./WebGPUTransforms.js";
 
 const source = (color) => `
 struct Parameters { transform:mat4x4<f32>, factor:vec4<f32>, object:vec4<u32> }
@@ -62,6 +62,10 @@ export function modelPipelineKey(format, stride, doubleSided, mirrored) {
 class WebGPUModelRenderer {
   constructor(context) {
     this.context = context;
+    this.world = new Matrix4();
+    this.view = new Matrix4();
+    this.projection = new Matrix4();
+    this.transform = new Matrix4();
     const device = context.device;
     this.bindLayout = device.createBindGroupLayout({
       entries: [
@@ -200,14 +204,14 @@ class WebGPUModelRenderer {
     }
   }
   draw(pass, packet, camera, modelMatrix) {
-    const world = Matrix4.multiply(
-        modelMatrix,
-        packet.transform,
-        new Matrix4(),
-      ),
-      mirrored = affineDeterminant(world) < 0;
-    const view = Matrix4.multiply(camera.viewMatrix, world, new Matrix4()),
-      matrix = Matrix4.multiply(reverseProjection(camera), view, new Matrix4());
+    const world = Matrix4.multiply(modelMatrix, packet.transform, this.world),
+      mirrored = affineHandedness(world) < 0;
+    const view = Matrix4.multiply(camera.viewMatrix, world, this.view),
+      matrix = Matrix4.multiply(
+        reverseProjection(camera, this.projection),
+        view,
+        this.transform,
+      );
     Matrix4.toArray(matrix, packet.parameters);
     packet.parameters.set(packet.material.factor, 16);
     new Uint32Array(packet.parameters.buffer)[20] = packet.objectId;

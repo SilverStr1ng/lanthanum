@@ -1,11 +1,6 @@
-import {
-  BoundingSphere,
-  Cartesian3,
-  Matrix3,
-  Matrix4,
-  Quaternion,
-} from "@cesium/core";
+import { BoundingSphere, Cartesian3, Matrix4, Quaternion } from "@cesium/core";
 import { parseGlb, readAccessorPacked, getNodeTransform } from "@cesium/gltf";
+import { affineHandedness } from "../Renderer/WebGPUTransforms.js";
 
 const components = { SCALAR: 1, VEC2: 2, VEC3: 3, VEC4: 4 };
 const sizes = { 5121: 1, 5123: 2, 5125: 4, 5126: 4 };
@@ -233,7 +228,12 @@ function material(gltf, id) {
   };
 }
 /** Parse/validate using existing CPU glTF helpers; never imports WebGL Buffer or Texture. @private */
-async function loadWebGPUModel(url, read, sceneIndex) {
+async function loadWebGPUModel(
+  url,
+  read,
+  sceneIndex,
+  intern = async (key, value) => value,
+) {
   try {
     const gltf = parse(await read(url), url);
     requireValue(
@@ -389,10 +389,17 @@ async function loadWebGPUModel(url, read, sceneIndex) {
           location,
           "triangle count must be a multiple of three",
         );
-        const hash = `${await modelContentHash(vertices)}:${indices ? await modelContentHash(indices) : "none"}:${stride}`;
+        const indexFormat =
+          indices instanceof Uint32Array
+            ? "uint32"
+            : indices
+              ? "uint16"
+              : "none";
+        const hash = `${await modelContentHash(vertices)}:${indices ? await modelContentHash(indices) : "none"}:${stride}:${indexFormat}:${count}`;
+        const payload = await intern(`geometry/${hash}`, { vertices, indices });
         primitives.push({
-          vertices,
-          indices,
+          vertices: payload.vertices,
+          indices: payload.indices,
           count,
           stride: stride * 4,
           origin,
@@ -450,17 +457,11 @@ async function loadWebGPUModel(url, read, sceneIndex) {
       const matrix = Matrix4.fromArray(
         getNodeTransform(node) ?? Matrix4.toArray(Matrix4.IDENTITY),
       );
-      requireValue(
-        matrix[3] === 0 &&
-          matrix[7] === 0 &&
-          matrix[11] === 0 &&
-          matrix[15] === 1 &&
-          Math.abs(
-            Matrix3.determinant(Matrix4.getMatrix3(matrix, new Matrix3())),
-          ) > 1e-15,
-        `node ${id}`,
-        "non-affine or singular transform",
-      );
+      try {
+        affineHandedness(matrix);
+      } catch (error) {
+        throw new Error(`node ${id}: ${error.message}`, { cause: error });
+      }
       const transform = Matrix4.multiply(parent, matrix, new Matrix4());
       if (node.mesh !== undefined) {
         requireValue(meshes[node.mesh], `node ${id}`, "invalid mesh");
@@ -504,7 +505,8 @@ async function loadWebGPUModel(url, read, sceneIndex) {
         `image ${id}`,
         "invalid PNG/JPEG image or MIME",
       );
-      images[id] = { bytes, mime, hash: await modelContentHash(bytes) };
+      const hash = await modelContentHash(bytes);
+      images[id] = await intern(`image/${mime}/${hash}`, { bytes, mime, hash });
     }
     return { nodes, images, url };
   } catch (error) {

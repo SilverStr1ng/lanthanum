@@ -1,5 +1,4 @@
 import WebGPUModel from "./WebGPUModel.js";
-import { affineDeterminant } from "../Renderer/WebGPUTransforms.js";
 
 /** Scene-owned model membership. Removal always destroys the instance. @private */
 class WebGPUModelCollection {
@@ -49,7 +48,6 @@ class WebGPUModelCollection {
       if (!model.show || !model.ready) {
         continue;
       }
-      affineDeterminant(model.modelMatrix);
       for (const packet of model._packets) {
         model._resources.renderer.draw(pass, packet, camera, model.modelMatrix);
       }
