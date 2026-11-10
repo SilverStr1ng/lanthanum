@@ -19,7 +19,7 @@ N01逻辑红绿11项、runner文件系统与跨平台锁文件2项、旧工具6�
 
 ## 未执行与限制
 
-全工作区检查仍有旧失败：Sandcastle gallery在TypeScript6中Debug Failure；原实施计划末尾空行触发Markdownlint；全仓Prettier扫描2966个文件提示（本轮改动文件格式另行检查）。未跳过或删除这些检查，日志保留。旧dev工作流在build前lint导致workspace导出缺失的问题另由cfe30afe6f修复，未禁用检查；修复后真实CI的JavaScript lint通过，后续仍因原计划文档空行而失败，未称整个dev为绿色。通用CI没有执行硬件WebGPU。
+全工作区检查仍有旧失败：Sandcastle gallery在TypeScript6中Debug Failure；原实施计划末尾空行触发Markdownlint；全仓Prettier扫描2966个文件提示（本轮改动文件格式另行检查）。未跳过或删除这些检查，日志保留。旧dev工作流在build前lint导致workspace导出缺失的问题另由cfe30afe6f修复，未禁用检查；修复后真实CI的JavaScript lint通过，该次Markdown检查发现验收契约与原计划文档两处尾部空行；本轮引入的验收契约空行已在归档提交中修复，原计划空行保留登记，未称整个dev为绿色。通用CI没有执行硬件WebGPU。
 
 完整S07精度、N08正式性能、跨GPU/浏览器认证、自动设备恢复、完整Viewer/Entity、glTF/PBR/3D Tiles未执行或未实现。GPU对象ID遮挡和CPU网格高程是两类证据，不能互换。上采样继续细化与影像LOD受terrain level约束仍开放，见[阻塞工单](docs/issues/terrain-imagery-lod.md)。N05只有[最小模型契约建议](adr/0005-model-render-contract-proposal.md)，无模型运行时代码。
 

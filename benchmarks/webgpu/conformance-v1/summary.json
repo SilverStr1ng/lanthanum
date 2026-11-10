@@ -168,6 +168,6 @@
     "commit": "cfe30afe6fd9509b530bbcc9a577dddeb5fbd124",
     "job": "https://github.com/SilverStr1ng/lanthanum/actions/runs/42768926344/job/129671902339",
     "javascriptLint": "success",
-    "markdownLint": "failure: preexisting trailing blank in original implementation plan"
+    "markdownLint": "failure: acceptance-contract trailing blank introduced during this round (fixed in 970948e281) and preexisting original implementation-plan trailing blank"
   }
 }
