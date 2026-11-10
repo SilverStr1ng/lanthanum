@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lanthanum · 地球</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <canvas
+      id="globe"
+      aria-label="可拖拽、缩放的三维地球"
+      tabindex="0"
+    ></canvas>
+    <header>
+      <span class="brand">La<span>57</span></span>
+      <div>
+        <h1>Lanthanum</h1>
+        <p>探索地球，从这里开始。</p>
+      </div>
+    </header>
+    <aside>
+      <span class="eyebrow">地球演示 · WebGPU</span>
+      <h2>一个可以探索的世界</h2>
+      <p>拖动旋转，滚轮缩放。点击地球查看经纬度，点击红色标记选中示例对象。</p>
+      <div class="actions">
+        <button id="reset">全球视角</button
+        ><button id="singapore">前往新加坡</button>
+      </div>
+      <label><input id="imagery" type="checkbox" checked />显示地表影像</label>
+      <label><input id="marker" type="checkbox" checked />显示示例标记</label>
+      <label><input id="rotate" type="checkbox" />自动旋转</label>
+      <output id="selection" aria-live="polite">点击地球选择位置</output>
+    </aside>
+    <footer>
+      <span id="status" role="status">正在连接图形设备…</span
+      ><span>影像：Natural Earth · 本地数据</span>
+    </footer>
+    <div id="error" role="alert" hidden></div>
+    <script src="/Build/CesiumUnminified/Cesium.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

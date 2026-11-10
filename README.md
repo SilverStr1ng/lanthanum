@@ -1,7 +1,21 @@
-# CesiumJS
+# Lanthanum · Cesium 原生 WebGPU 地球
 
-本分支用于 Cesium WebGPU 迁移的 S00—S01 基线工作，目前渲染后端仍是 WebGL2。
-安装、回归命令与阶段状态见 [baseline.md](baseline.md)、[兼容矩阵](compatibility-matrix.md) 和 [进度报告](progress-report.md)。
+基于 CesiumJS 1.147，增加实验性的原生 WebGPU 三维入口，保留原 WebGL2 路径。当前交付范围为可交互的 WGS84 椭球、单层地理影像、LOD、简单不透明几何体和异步拾取；完整地形、glTF、3D Tiles、Entity 和渲染效果仍在后续计划中。
+
+使用 Node.js ≥22.17、支持硬件 WebGPU 的桌面 Chrome 或 Edge：
+
+```sh
+npm ci
+npm run webgpu:start
+```
+
+打开终端输出的本地地址，即可拖拽、缩放、点击地球，并切换影像和标记。地球影像来自仓库自带的 Natural Earth，不需要 token。安装依赖需要联网，示例运行不请求外部地图服务。
+
+执行原生 GPU 与页面交互回归：`npm run webgpu:test`。详细 API、支持边界与验证说明见 [WebGPU 使用说明](Apps/WebGPU/README.md)；阶段状态见 [进度报告](progress-report.md)、[完整兼容矩阵](compatibility-matrix.md)。旧 WebGL2 基线见 [baseline.md](baseline.md)。这是基本交互演示，不代表计划 S00—S24、MVP 或生产 v1 已通过验收。
+
+## 上游 CesiumJS 说明
+
+以下保留上游项目介绍；其中 npm 发行包和链接指向 Cesium 官方版本，不包含本分支的实验性后端。
 
 [![Build Status](https://github.com/CesiumGS/cesium/actions/workflows/dev.yml/badge.svg)](https://github.com/CesiumGS/cesium/actions/workflows/dev.yml)
 [![npm](https://img.shields.io/npm/v/cesium)](https://www.npmjs.com/package/cesium)

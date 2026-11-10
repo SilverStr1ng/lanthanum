@@ -40,6 +40,8 @@ import VectorProvider from "../Core/VectorProvider.js";
 import ClearCommand from "../Renderer/ClearCommand.js";
 import ComputeEngine from "../Renderer/ComputeEngine.js";
 import Context from "../Renderer/Context.js";
+import WebGPUContext from "../Renderer/WebGPUContext.js";
+import WebGPUScene from "./WebGPUScene.js";
 import ContextLimits from "../Renderer/ContextLimits.js";
 import Pass from "../Renderer/Pass.js";
 import RenderState from "../Renderer/RenderState.js";
@@ -5575,5 +5577,49 @@ Scene.prototype.destroy = function () {
   }
 
   return destroyObject(this);
+};
+/**
+ * Creates an experimental native WebGPU 3D scene, or the existing WebGL2 scene.
+ * Native support is limited to the capabilities documented in Apps/WebGPU.
+ * @param {object} options Scene options, with backend auto, webgpu, or webgl2.
+ * @returns {Promise<Scene|WebGPUScene>} The initialized scene.
+ */
+Scene.createAsync = async function (options) {
+  if (!options?.canvas) {
+    throw new DeveloperError("options.canvas is required.");
+  }
+  const backend = options.backend ?? "auto";
+  if (!["auto", "webgpu", "webgl2"].includes(backend)) {
+    throw new DeveloperError(`Unknown rendering backend: ${backend}`);
+  }
+  if (options.signal?.aborted) {
+    throw new DOMException("Initialization cancelled", "AbortError");
+  }
+  let fallbackReason;
+  if (backend !== "webgl2") {
+    let context;
+    try {
+      context = await WebGPUContext.create(options.canvas, options);
+      return new WebGPUScene(options, context);
+    } catch (error) {
+      context?.destroy();
+      if (
+        backend === "webgpu" ||
+        context ||
+        error.canvasBound ||
+        error.name === "AbortError"
+      ) {
+        throw error;
+      }
+      fallbackReason = error.message;
+    }
+  }
+  const scene = new Scene({
+    ...options,
+    contextOptions: { ...options.contextOptions, requestWebgl1: false },
+  });
+  scene.isWebGPU = false;
+  scene.fallbackReason = fallbackReason;
+  return scene;
 };
 export default Scene;

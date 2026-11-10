@@ -1,63 +1,24 @@
-# 进度报告：S01 第二轮
+# 进度报告：原生 WebGPU 基本交互演示
 
-范围仍为实施计划第9节的S00—S01；当前是WebGL2修复分支，没有WebGPU原生实现。首轮报告归档于 `docs/reports/s00-s01-round1.md`，旧证据未覆写。完整S01尚未验收。
+依据用户继续推进到基本可用并发布到 SilverStr1ng/lanthanum 的要求，以及 ADR0002，现已实现原生 WebGPU 的地球交互链路。旧 S01 第二轮报告原样归档于 `docs/reports/s01-round2.md`；本次没有将 S01 或 S02—S24 正式阶段标为通过。
 
-审查前采集commit：`de51ee9cc761d2751ebe54c267b3068b0bd23bec`，采集开始时工作树干净。上游固定commit仍为 `2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87`。审查后补齐延迟fill释放和数据源显隐像素检查，最终采集另存 `round2-reviewed/`。
+## 已实现
 
-**最终实现commit：`b72b7f99260218d2ce5e00c7c139c1fa69546e6a`。正式60次运行，57通过、动态盒体异步拾取3失败；全部60次资源账本归零。** 两轴审查的1项Standards与2项Spec发现均已修复并复核。完整S01仍未通过。
+- `Scene.createAsync` 选择 auto/webgpu/webgl2，原同步 Scene/Viewer 不变。
+- 原生 device、buffer/texture、WGSL 管线、颜色/深度/对象ID附件、提交与异步读回。
+- 复用 Cesium Camera、Globe、QuadtreePrimitive、EllipsoidTerrainProvider 和 UrlTemplateImageryProvider；WGS84 椭球、单层全球地理影像、LOD 与祖先 UV。
+- 连续绘制、相机旋转/缩放/定位、opaque Geometry 颜色/位置/显隐、遮挡和 GPU 异步拾取。
+- 图层显隐、resize、取消、加载失败事件、设备丢失后停止、多实例和销毁。
+- 中文交互页面使用本地 Natural Earth 影像，`npm run webgpu:start` 启动；`npm run webgpu:test` 执行原生及页面回归。
 
-## 实现与验证
+支持范围及错误处理约定详见 `Apps/WebGPU/README.md`。当前只有椭球地表，不包含真实高程、glTF、3D Tiles、Entity、透明/光照/后处理和二维模式，不是计划中的 MVP 或生产 v1。没有用隐藏 WebGL canvas 补绘。
 
-- 修复 `QuadtreePrimitive.destroy()` 未释放已加载瓦片树的问题；清空渲染/高度回调引用、销毁provider并正确标记对象已销毁。不改变LOD选择和请求调度。
-- 审查后修复provider等待下一帧释放的旧fill VA队列；真实GPU回归证明修复前2 Buffer/1 VA/4428字节残留，修复后归零。
-- 新增真实WebGL2资源回归，渲染并确认地球可拾取后销毁，要求全部GL对象和Buffer字节归零；另测首帧之前销毁，以及没有影像重投影能力的通用provider。
-- 原manifest下先复现T01/T02资源失败，再对比修复后的T01/T01-mercator/T02：图像通过原门槛，资源归零。证据为 `benchmarks/baseline/round2-release-red/` 和 `round2-release-green/`。
-- 新增7个子例，共20个。图层顺序、透明度、移除恢复和±179°日期变更线LOD；动态点Entity位置/颜色/显隐；GeoJSON点线面、CZML盒体和KML绝对高度面均通过实际显示、拾取和显隐开发验证。
-- `T05-entity-box` 保留动态盒体的异步拾取失败：画面有红色盒体，但持续更新时pickAsync返回空。测试没有冻结Visualizer来规避失败。每帧Primitive重建与异步读回间的pick ID生命周期是后续调查重点，当前不宣称已修复。
-- 失败路径也保存断言、诊断和销毁账本，默认回归仍包含失败子例并返回非零。
+## 当前验证
 
-审查前manifest：`12be48cec9f16f1367d8acdbb2f158cc1e543cc9b9de515ec0b8112646973cd3`；审查后最终manifest：`0d476e0b577d9aed36a878f0a7029ac33b9230164e3a60760d8dbed4f863d3d8`，均为168项。契约v2登记了新增及增强的检查，图像/数值门槛没有放宽；不跨manifest强行对比旧图像。
+开发验证 `benchmarks/runs/webgpu-pre-review/result.json`：44项原生集成检查、9项实际页面交互检查通过。包含影像地理控制点像素、祖先UV、±179° LOD、颜色/遮挡/对象ID、几何体移动/显隐/删除、异步加载后销毁、设备丢失、异常/取消、资源归零及禁止WebGL调用的检查。Chrome157.0.8103.40，NVIDIA Blackwell，真实硬件 WebGPU。
 
-## 当前检查
+完整默认 Jasmine 执行16,035/16,102项，16,018通过、17失败、67跳过；不是全绿。原有 WebGL2 动态盒体异步拾取问题仍见 `docs/issues/dynamic-box-async-pick.md`。完整回归日志 `benchmarks/runs/webgpu-full-regression.log`；失败身份和正式证据正在最终核验。
 
-日志位于 `benchmarks/baseline/round2-audit/`：
+根 TypeScript 配置只覆盖 scripts 根文件，不能据此声称所有浏览器源码类型检查通过。工作区 `gulp tsc` 目前存在上游类型声明缺项，重新 buildTs 后仍触发 TypeScript 6.0.2 Debug Failure；此项保留为失败，不阻止已验证的 JavaScript 演示。没有修改上游类型声明来掩盖错误。
 
-| 检查 | 实际结果 |
-| --- | --- |
-| Globe及Surface相关Jasmine | 最终126项通过（含真实GPU释放、延迟fill释放与首帧前销毁） |
-| Quadtree最终专项 | 43项通过（含通用provider销毁） |
-| 最终完整默认Jasmine | 执行16,035/16,102，16,018通过、17失败、67跳过；退出1，full-reviewed.log |
-| 全套失败身份对比 | 与未修改上游的17项完全一致，无新增/消失，见failure-comparison-reviewed.json |
-| WebGL stub专项 | 普通销毁1项通过，2项真实GPU测试明确pending；未把stub当硬件认证 |
-| Node工具测试 | 6/6通过 |
-| 根tsc、新改JS ESLint、Prettier | 通过 |
-
-全套仍保留Billboard像素容差、射线拾取、Polyline等既有失败；早期WebGL validation的中断也未改写成通过。未重复宣称类型检查覆盖所有浏览器JS。
-
-## 第二轮审查前证据（保留）
-
-`benchmarks/baseline/round2-final/summary.json`：20个子例×3次，**57次通过、3次失败，退出码1**。环境为Node24.15.0、Chrome157.0.8103.40、RTX5080/ANGLE D3D11、1920×1080/DPR1。所有60次销毁后GL对象及Buffer字节归零；外部请求、HTTP/console错误均为0。失败是明确的对象ID断言，未计为通过。
-
-57次正常捕获的图像全部达到原门槛，最小SSIM=0.9999999972126116，显著差异像素比例最大为0；三个失败用例仅保存诊断JSON及失败截图，没有伪造比较图像。动态盒体三次均先通过红色像素 `[255,0,0,255]` 和同步pick控制，再在pickAsync处返回空值。它们的移动、改材质与显隐后续断言尚未执行，不能算作通过。
-
-人工检查了新增的日期变更线、图层移除后编号影像、动态点、GeoJSON点线面、CZML盒体、KML多边形画面，均符合各固定fixture。详细检查序列、像素、对象ID和资源账本在每个JSON中。干净git archive导出后重新生成，168项hash完全一致，见 `round2-audit/clean-export.json`。
-
-T08三次仍为16瓦片/1,228,800三角形，readyMs=753/741/745ms；这是1.5秒smoke及非严格冷启动，不是新的性能认证。首轮T08长采样仅适用于原无纹理合成工作集。
-
-独立双轴审查与重放的最终结果见 `docs/reviews/s01-round2.md`。
-
-审查前新增6个通过子例另做 `--compare` 重放，全部通过，证据 `round2-replay/`。
-
-## 最终审阅版证据
-
-`benchmarks/baseline/round2-reviewed/summary.json` 记录最终实现b72b7f9，采集开始时工作树干净；168项manifest为上文0d476e0b，环境与前批一致。20×3再次完成，57通过、3失败，退出1；失败仍全部是T05-entity-box的第一个样本异步拾取，红色像素和同步pick控制均通过。60次销毁的GL对象及Buffer字节全部归零，外部请求和console/HTTP错误均为0。
-
-57次图像重复性SSIM均为1，显著差异比例均为0。GeoJSON/CZML/KML隐藏后的目标RGB全部清黑，恢复后颜色误差≤3/255，且对象ID一致；这些最终子例也另做 `--compare` 重放，3/3通过，见 `round2-reviewed-replay/`。最后一次干净导出重新生成168项hash全部一致，见 `round2-audit/clean-export-reviewed.json`。
-
-最终T08仍为16瓦片、1,228,800三角形，readyMs=752/741/733ms，仅为smoke，不新增性能认证。聚合记录在 `round2-audit/evidence-summary-reviewed.json`。全部旧证据及失败保留原样。
-
-## 未完成与下一步
-
-动态盒体异步拾取问题及原17项上游失败待处理；完整S01仍缺T00布局/实例化、T02接缝/缺瓦片、T03动画/skin/morph/压缩、T04外部/隐式/metadata、T05贴地/裁剪/分类及更多数据源选项。连续LOD轨迹、CPU/解码/上传预算与long-task归因仍需补齐。
-
-生产v1原生WebGPU验收仍为0，G0未整体通过，不按代码量计算完成度。S02准备任务保持首轮报告中的异步启动状态机、feature/limit分级、context创建前后端选择、真实GPU清屏/resize/destroy、错误注入；其正式验收仍依赖S01。
+正式实现提交、三轮证据、两轴审查及远端推送结果在本轮完成后追加。旧manifest与旧证据没有覆写。

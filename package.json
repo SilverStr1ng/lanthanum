@@ -107,6 +107,8 @@
     "yargs": "^18.1.0"
   },
   "scripts": {
+    "webgpu:start": "gulp build && node scripts/webgpuTest/serve.js",
+    "webgpu:test": "gulp build && node scripts/webgpuBaseline/generateFixtures.js && node scripts/webgpuTest/run.js",
     "baseline:generate": "node scripts/webgpuBaseline/generateFixtures.js",
     "baseline:freeze": "node scripts/webgpuBaseline/manifest.js --freeze",
     "baseline:verify": "node scripts/webgpuBaseline/manifest.js --verify",

@@ -11,6 +11,7 @@ const types = {
   ".json": "application/json",
   ".css": "text/css",
   ".png": "image/png",
+  ".jpg": "image/jpeg",
   ".svg": "image/svg+xml",
   ".wasm": "application/wasm",
   ".gltf": "model/gltf+json",
@@ -27,6 +28,8 @@ export async function serve(directory = root) {
       if (
         ![
           "/Specs/Baseline/",
+          "/Specs/WebGPU/",
+          "/Apps/WebGPU/",
           "/Specs/Data/",
           "/Build/CesiumUnminified/",
           "/fixtures/generated/",
