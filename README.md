@@ -1,8 +1,8 @@
 # Lanthanum · Cesium 原生 WebGPU 地球
 
-基于 CesiumJS 1.147，增加实验性的原生 WebGPU 三维入口，保留原 WebGL2 路径。当前交付范围为可交互的 WGS84 椭球、单层地理影像、LOD、简单不透明几何体和异步拾取；完整地形、glTF、3D Tiles、Entity 和渲染效果仍在后续计划中。
+基于 CesiumJS 1.147，增加实验性的原生 WebGPU 三维入口，保留原 WebGL2 路径。当前交付为原生 WebGPU 影像、地形与标准 Primitive 可用子集：多图层地理/Web Mercator 影像、heightmap/quantized-mesh、LOD、Color 外观和异步拾取；glTF、3D Tiles、Entity 和完整渲染效果仍在后续计划中。
 
-使用 Node.js ≥22.17、支持硬件 WebGPU 的桌面 Chrome 或 Edge：
+使用 Node.js 24.15.0 / npm 11.6.1、支持硬件 WebGPU 的桌面 Chrome 或 Edge：
 
 ```sh
 npm ci

@@ -1,0 +1,50 @@
+name: native-contract
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+concurrency:
+  group: native-contract-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  clean-install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      CI: true
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-toolchain
+      - name: Frozen clean install
+        run: npm ci
+      - name: Native ast-grep binary
+        run: npm exec --offline -- ast-grep --version
+      - name: Build engine
+        run: npm run build
+      - name: Generate declarations
+        run: npm run build-ts
+      - name: Root types
+        run: npm exec --offline -- tsc -p tsconfig.json --noEmit
+      - name: Engine types
+        run: npm exec --offline -- tsc -p packages/engine/tsconfig.json --noEmit
+      - name: Lint JavaScript
+        run: npm run eslint
+      - name: CPU and filesystem contracts
+        if: ${{ !cancelled() }}
+        run: npm run webgpu:test-cpu
+      - name: ast-grep tests
+        if: ${{ !cancelled() }}
+        run: npm exec --offline -- ast-grep test
+      - name: ast-grep scan
+        if: ${{ !cancelled() }}
+        run: npm exec --offline -- ast-grep scan --context 3
+      - name: Report hardware boundary
+        if: always()
+        shell: bash
+        run: |
+          echo "Hardware WebGPU: NOT EXECUTED on hosted CI." >> "$GITHUB_STEP_SUMMARY"
+          echo "Windows hardware evidence is archived separately under benchmarks/webgpu/." >> "$GITHUB_STEP_SUMMARY"

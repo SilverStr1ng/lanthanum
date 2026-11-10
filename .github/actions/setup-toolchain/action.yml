@@ -1,0 +1,15 @@
+name: Set up the Lanthanum toolchain
+description: Use the same exact Node and npm versions as the hardware acceptance environment.
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v7
+      with:
+        node-version-file: .nvmrc
+        cache: npm
+    - name: Pin npm
+      shell: bash
+      run: npm install --global npm@11.6.1
+    - name: Verify toolchain
+      shell: bash
+      run: npm run toolchain:check

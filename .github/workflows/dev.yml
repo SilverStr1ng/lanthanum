@@ -13,12 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: install node 22
-        uses: actions/setup-node@v7
-        with:
-          node-version: '22'
+      - uses: ./.github/actions/setup-toolchain
       - name: npm install
-        run: npm install
+        run: npm ci
       - name: lint *.js
         run: npm run eslint
       - name: lint *.md
@@ -45,12 +42,9 @@ jobs:
       BRANCH: ${{ github.ref_name }}
     steps:
       - uses: actions/checkout@v7
-      - name: install node 22
-        uses: actions/setup-node@v7
-        with:
-          node-version: '22'
+      - uses: ./.github/actions/setup-toolchain
       - name: npm install
-        run: npm install
+        run: npm ci
       - name: build
         run: npm run build
       - name: coverage (firefox)
@@ -62,12 +56,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: install node 22
-        uses: actions/setup-node@v7
-        with:
-          node-version: '22'
+      - uses: ./.github/actions/setup-toolchain
       - name: npm install
-        run: npm install
+        run: npm ci
       - name: release build
         run: npm run make-zip
       - name: release tests (chrome)
@@ -78,15 +69,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [22, 24]
+        version: [24.15.0]
     steps:
       - uses: actions/checkout@v7
-      - name: install node ${{ matrix.version }}
-        uses: actions/setup-node@v7
-        with:
-          node-version: ${{ matrix.version }}
+      - uses: ./.github/actions/setup-toolchain
       - name: npm install
-        run: npm install
+        run: npm ci
       - name: release build
         run: npm run build-release
       - name: package cesium module

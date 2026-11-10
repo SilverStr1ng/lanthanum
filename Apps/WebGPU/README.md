@@ -4,7 +4,7 @@
 
 ## 运行
 
-需要 Node.js ≥22.17，以及支持硬件 WebGPU 的桌面 Chrome/Edge，在 localhost 或 HTTPS 下运行：
+需要 Node.js 24.15.0 / npm 11.6.1，以及支持硬件 WebGPU 的桌面 Chrome/Edge，在 localhost 或 HTTPS 下运行：
 
 ```sh
 npm ci
@@ -15,9 +15,15 @@ npm run webgpu:start
 
 Natural Earth 本地影像只有 0—2 级，近看会模糊。合成山地位于新加坡附近，**不是当地真实地貌**；quantized 样本位于东经 30°、北纬 20°，用于验证二进制加载和缺块上采样。均不需要 token。
 
-`npm run webgpu:test` 构建后依次执行基础、流式场景和真实页面交互测试。证据写入新的 `benchmarks/runs/` 子目录，包含检查、硬件信息、源码提交、构建/数据 hash、请求列表和截图。独立 quantized-mesh 数据已提交；可用 `npm run webgpu:terrain-fixtures` 重建，不修改原冻结 WebGL fixture。
+`npm run webgpu:test` 构建后依次执行基础、流式、绘制契约、非平坦地形四组场景，每组附带真实页面交互测试。证据写入新的 `benchmarks/runs/` 子目录，包含检查、硬件信息、源码提交、构建/数据 hash、请求列表和截图。独立 quantized-mesh 数据已提交；可用 `npm run webgpu:terrain-fixtures` 重建，不修改原冻结 WebGL fixture。
 
 ## 使用 API
+
+当前主工具链固定为 Node 24.15.0 / npm 11.6.1，`npm run toolchain:check` 可检查版本；其他版本没有本轮安装承诺。清洁 Windows/Linux 安装与通用检查由 `native-contract` 工作流独立记录，hosted CI不声称执行硬件WebGPU。
+
+N01—N04修复地形代际所有权、Color几何的ST误裁剪、显式near/far被覆盖和闭合透明物体缺背面绘制。相机默认near=0.1、far=500000000；render保留应用设置，要求有限且0<near<far。采用反向depth32float，仍不代表完整S07精度通过。closed透明三角形先背面再正面，两次不写深度、共用ID；相交透明排序仍不保证。
+
+山脊专项 `node scripts/webgpuTest/run.js --suite=terrain` 保存相邻LOD、裙边、缺块、20次返回以及terrainWork/影像层级记录。`terrainWork.cancelled`只计离开视区取消，代际切换另由generation表示。影像LOD仍受地形level约束，上采样标记尚未驱动提前停止；见[后续工单](../../docs/issues/terrain-imagery-lod.md)。验收状态以[进度报告](../../progress-report.md)为准。
 
 ```js
 const C = Cesium;

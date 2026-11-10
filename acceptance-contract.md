@@ -1,5 +1,13 @@
 # 验收契约 v2
 
+## 2026-11-10 N01—N04 增量
+
+原有门槛和frozen manifest不改写。新增契约见[ADR0004](adr/0004-basic-conformance.md)，不使用新山脊结果替换旧平坦heightmap/quantized-mesh用例。绘制契约为18例×颜色/ID/frustum×WebGL2/WebGPU，加3项原生检查，合计111项；地形专项46项；既有基础49、流式59及每入口13项页面检查保持。
+
+最终四套专项必须在同一干净实现SHA连续三轮采集，原始JSON按名称列出检查、build/旧fixture/新conformance fixture hash、浏览器/adapter、截图与错误。累计断言不作为功能覆盖数量。完整Jasmine重跑按17项旧失败身份比较。三轮前的调试红绿记录单独保存，不计入最终通过数。
+
+Node24.15.0/npm11.6.1，Windows与Linux均执行无node_modules的npm ci、ast-grep、build/build-ts、ESLint、根与engine类型检查及CPU测试；额外全工作区检查失败须保留。通用CI无硬件专项必须注明“未执行”。反向深度、30 m CPU山脊样本和对象ID遮挡不是S07 0.5 px或GPU高程0.1 m认证；正式1080p/30 s预热/120 s×3性能留至N08。
+
 冻结日期：2026-11-10。更改门槛、资产、画质或采集方法必须先修改本文件及 manifest，再产生新结果；不得事后放宽门槛。S00/S01 的首轮结果不构成 WebGPU 功能或生产性能认证。
 
 第二轮扩充（采集前登记）：保留既有图像/数值/资源门槛和13个子例，新增6个子例：T01-layers（两个本地纯色图层的顺序、0/0.5/1 alpha及移除的像素断言）；T01-dateline（±179°、20°纬度、2000km高度，双半球瓦片与LOD细化）；T05-entity（两个时间样本的移动、材质更新、隐藏/恢复及拾取）；T05-geojson（点线面可视化）；T05-czml（盒体）；T05-kml（绝对高度多边形）。数据源用例均连接DataSourceDisplay，检查显示/隐藏、实际像素、对象ID和销毁。最终相机参数和断言在已hash的extendedScenarios.js中；动态Entity最终时间为12:00:10Z，其他场景仍为12:00:00Z。新增文件及测试源导致manifest身份变更，第二轮保存新目录，不与旧身份混比；引擎释放修复已在旧manifest下单独对比过T01/T01-mercator/T02。新子例仍不能替代完整测试族。

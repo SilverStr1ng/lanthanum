@@ -16,7 +16,7 @@ struct VertexOutput {
 @vertex fn vertexMain(@location(0) position: vec3<f32>, @location(1) uv: vec2<f32>, @location(2) normal: vec3<f32>) -> VertexOutput {
   var output: VertexOutput;
   let clip = p.transform * vec4<f32>(position, 1.0);
-  output.position = vec4<f32>(clip.xy, (clip.z + clip.w) * 0.5, clip.w);
+  output.position = clip;
   output.uv = uv;
   output.normal = (p.normal * vec4<f32>(normal, 0.0)).xyz;
   output.view = (p.view * vec4<f32>(position, 1.0)).xyz;
@@ -32,7 +32,7 @@ struct FragmentOutput { @location(0) color: vec4<f32>, @location(1) objectId: u3
   }
   var sampled = textureSample(image, imageSampler, vec2<f32>(uv.x, 1.0 - uv.y));
   let faceNormal = normalize(cross(dpdy(input.view), dpdx(input.view)));
-  if (input.uv.x < p.clip.x || input.uv.y < p.clip.y || input.uv.x >= p.clip.z || input.uv.y >= p.clip.w) { discard; }
+  if (p.objectId.y != 0u && (input.uv.x < p.clip.x || input.uv.y < p.clip.y || input.uv.x >= p.clip.z || input.uv.y >= p.clip.w)) { discard; }
   if ((p.effects.z < 0.0 && input.position.x > p.effects.w) || (p.effects.z > 0.0 && input.position.x < p.effects.w)) { discard; }
   if (p.colorToAlpha.w >= 0.0 && distance(sampled.rgb, p.colorToAlpha.rgb) < p.colorToAlpha.w) { sampled.a = 0.0; }
   var rgb = pow(sampled.rgb, vec3<f32>(1.0 / p.adjustments.w));
@@ -62,6 +62,7 @@ struct FragmentOutput { @location(0) color: vec4<f32>, @location(1) objectId: u3
 class WebGPUGeometryRenderer {
   constructor(context) {
     this.context = context;
+    this.projection = new Matrix4();
     const device = context.device;
     this.module = device.createShaderModule({
       label: "native geometry and imagery",
@@ -109,9 +110,8 @@ class WebGPUGeometryRenderer {
       [1, 1],
     );
   }
-  getPipeline(draw) {
-    const topology = draw.topology ?? "triangle-list",
-      cull = draw.cull ?? "back";
+  getPipeline(draw, cull = draw.cull ?? "back") {
+    const topology = draw.topology ?? "triangle-list";
     const blend = draw.blend ?? false,
       depthWrite = draw.depthWrite ?? !blend;
     const key = `${topology}/${cull}/${blend}/${depthWrite}`;
@@ -165,7 +165,7 @@ class WebGPUGeometryRenderer {
           depthStencil: {
             format: "depth32float",
             depthWriteEnabled: depthWrite,
-            depthCompare: "less-equal",
+            depthCompare: "greater-equal",
           },
         }),
       );
@@ -225,16 +225,29 @@ class WebGPUGeometryRenderer {
       flags: [0, 0, 0, 0],
       colorToAlpha: [0, 0, 0, -1],
       objectId: 1,
+      clipEnabled: false,
     };
   }
   draw(pass, mesh, camera) {
     Matrix4.multiply(camera.viewMatrix, mesh.modelMatrix, mesh.view);
-    Matrix4.multiply(camera.frustum.projectionMatrix, mesh.view, mesh.matrix);
+    // Convert in double precision before f32 upload. Do not subtract clip.z
+    // from clip.w in WGSL: those terms can both be millions of metres.
+    const projection = Matrix4.clone(
+      camera.frustum.projectionMatrix,
+      this.projection,
+    );
+    for (let column = 0; column < 4; column++) {
+      const index = column * 4;
+      projection[index + 2] =
+        (projection[index + 3] - projection[index + 2]) * 0.5;
+    }
+    Matrix4.multiply(projection, mesh.view, mesh.matrix);
     Matrix4.inverseTranspose(mesh.view, mesh.normalMatrix);
     Matrix4.toArray(mesh.matrix, mesh.parameters);
     mesh.parameters.set(mesh.color, 16);
     mesh.parameters.set(mesh.uv, 20);
     new Uint32Array(mesh.parameters.buffer)[24] = mesh.objectId;
+    new Uint32Array(mesh.parameters.buffer)[25] = Number(mesh.clipEnabled);
     mesh.parameters.set(mesh.clip, 28);
     mesh.parameters.set(mesh.geographic, 32);
     mesh.parameters.set(mesh.adjustments, 36);
@@ -250,10 +263,14 @@ class WebGPUGeometryRenderer {
       0,
       mesh.parameters,
     );
-    pass.setPipeline(this.getPipeline(mesh));
     pass.setBindGroup(0, mesh.bindGroup);
     pass.setVertexBuffer(0, mesh.vertexBuffer);
     pass.setIndexBuffer(mesh.indexBuffer, "uint32");
+    if (mesh.twoPasses) {
+      pass.setPipeline(this.getPipeline(mesh, "front"));
+      pass.drawIndexed(mesh.count);
+    }
+    pass.setPipeline(this.getPipeline(mesh));
     pass.drawIndexed(mesh.count);
   }
   destroyDraw(draw) {

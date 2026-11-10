@@ -235,7 +235,7 @@ class WebGPUContext {
         view: this.depthTexture.createView(),
         depthLoadOp: "clear",
         depthStoreOp: "store",
-        depthClearValue: 1,
+        depthClearValue: 0,
       },
     });
     draw?.(pass);

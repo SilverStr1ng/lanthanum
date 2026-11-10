@@ -241,6 +241,8 @@ class WebGPUPrimitive {
         Number(appearance.faceForward),
       ];
       mesh.blend = appearance.isTranslucent();
+      mesh.twoPasses =
+        appearance.closed && mesh.blend && mesh.topology === "triangle-list";
       mesh.cull = appearance.closed ? "back" : "none";
       Matrix4.multiply(
         primitive.modelMatrix,

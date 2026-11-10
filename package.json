@@ -44,6 +44,7 @@
     }
   },
   "type": "module",
+  "packageManager": "npm@11.6.1",
   "sideEffects": [
     "./Source/ThirdParty/**/*",
     "./Source/Widgets/**/*.css",
@@ -107,8 +108,10 @@
     "yargs": "^18.1.0"
   },
   "scripts": {
+    "toolchain:check": "node scripts/checkToolchain.js",
+    "webgpu:test-cpu": "node --test scripts/webgpuTest/*.test.js scripts/webgpuBaseline/*.test.js",
     "webgpu:start": "gulp build && node scripts/webgpuTest/serve.js",
-    "webgpu:test": "gulp build && node scripts/webgpuBaseline/generateFixtures.js && node scripts/webgpuTest/run.js && node scripts/webgpuTest/run.js --suite=streaming",
+    "webgpu:test": "gulp build && node scripts/webgpuBaseline/generateFixtures.js && node scripts/webgpuTest/run.js && node scripts/webgpuTest/run.js --suite=streaming && node scripts/webgpuTest/run.js --suite=conformance && node scripts/webgpuTest/run.js --suite=terrain",
     "webgpu:terrain-fixtures": "node scripts/webgpuTest/generateTerrain.js",
     "baseline:generate": "node scripts/webgpuBaseline/generateFixtures.js",
     "baseline:freeze": "node scripts/webgpuBaseline/manifest.js --freeze",
@@ -161,7 +164,8 @@
     "cspell": "npx cspell lint -c .vscode/cspell.json --unique --no-progress"
   },
   "engines": {
-    "node": ">=22.17.0"
+    "node": "24.15.0",
+    "npm": "11.6.1"
   },
   "workspaces": [
     "packages/core",

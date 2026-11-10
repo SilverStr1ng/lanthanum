@@ -466,6 +466,7 @@ class WebGPUImagery {
             const draw = binding.draw,
               r = tile.rectangle;
             draw.blend = true;
+            draw.clipEnabled = true;
             draw.depthWrite = false;
             const west =
               imageRectangle.east < imageRectangle.west &&

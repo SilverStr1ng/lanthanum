@@ -27,6 +27,10 @@ class NativeTileData {
   constructor(provider, tile) {
     this.provider = provider;
     this.tile = tile;
+    this.generation = provider._generation;
+    this.tilingScheme = provider.tilingScheme;
+    this.exaggeration = provider.exaggeration;
+    this.relativeHeight = provider.relativeHeight;
     this.cancelled = false;
     this.started = false;
     this.eligibleForUnloading = true;
@@ -41,6 +45,9 @@ class NativeTileData {
     );
   }
   freeResources() {
+    if (this.cancelled) {
+      return;
+    }
     this.cancelled = true;
     this.request?.cancel();
     this.provider.imagery.releaseTile(this);
@@ -103,6 +110,17 @@ class WebGPUGlobeTileProvider {
     this.imageryLayersUpdatedEvent = new Event();
     this.baseColor = Color.clone(Color.DARKBLUE);
     this._destroyed = false;
+    this._generation = 0;
+    this._work = {
+      requests: 0,
+      upsamples: 0,
+      meshes: 0,
+      requested: 0,
+      upsampled: 0,
+      uploaded: 0,
+      cancelled: 0,
+      peakInFlight: 0,
+    };
     this._selected = [];
     this._terrainRequests = new Set();
     this._uploads = [];
@@ -125,6 +143,22 @@ class WebGPUGlobeTileProvider {
   }
   get ready() {
     return this._pending === 0;
+  }
+  get workStatistics() {
+    return {
+      ...this._work,
+      inFlight: this._terrainRequests.size,
+      queuedUploads: this._uploads.length,
+      generation: this._generation,
+    };
+  }
+  isCurrent(data) {
+    return (
+      !this._destroyed &&
+      !data.cancelled &&
+      data.generation === this._generation &&
+      data.tile.data === data
+    );
   }
   report(error) {
     error.recoverable = true;
@@ -177,6 +211,14 @@ class WebGPUGlobeTileProvider {
       exaggeration !== this.exaggeration ||
       relative !== this.relativeHeight
     ) {
+      this._generation++;
+      for (const data of this._terrainRequests) {
+        data.freeResources();
+      }
+      for (const data of this._uploads) {
+        data.freeResources();
+      }
+      this._uploads.length = 0;
       this.terrainProvider = terrain;
       this.tilingScheme = scheme;
       this.exaggeration = exaggeration;
@@ -190,7 +232,7 @@ class WebGPUGlobeTileProvider {
     RequestScheduler.update();
     for (let i = 0; i < 2 && this._uploads.length; i++) {
       const data = this._uploads.shift();
-      if (!data.cancelled && !this._destroyed) {
+      if (this.isCurrent(data)) {
         this.upload(data);
       }
     }
@@ -209,7 +251,7 @@ class WebGPUGlobeTileProvider {
     return tile.level < this.maximumLevel && !!tile.data?.terrainData;
   }
   computeTileVisibility(tile, frameState) {
-    if (!tile.data || tile.data.cancelled) {
+    if (!tile.data || !this.isCurrent(tile.data)) {
       tile.data = new NativeTileData(this, tile);
     }
     const data = tile.data;
@@ -265,7 +307,7 @@ class WebGPUGlobeTileProvider {
     );
   }
   loadTile(frameState, tile) {
-    if (!tile.data || tile.data.cancelled) {
+    if (!tile.data || !this.isCurrent(tile.data)) {
       tile.data = new NativeTileData(this, tile);
     }
     const data = tile.data;
@@ -316,19 +358,31 @@ class WebGPUGlobeTileProvider {
     data.eligibleForUnloading = false;
     tile.state = QuadtreeTileLoadState.LOADING;
     this._terrainRequests.add(data);
+    data.phase = data.fallback ? "upsamples" : "requests";
+    this._work[data.phase]++;
+    this._work[data.fallback ? "upsampled" : "requested"]++;
+    this._work.peakInFlight = Math.max(
+      this._work.peakInFlight,
+      this._terrainRequests.size,
+    );
     this.load(data, promise)
       .catch((error) => {
-        if (!data.cancelled && !this._destroyed) {
+        if (this.isCurrent(data)) {
           this.fail(data, error);
         }
       })
       .finally(() => {
         this._terrainRequests.delete(data);
         data.eligibleForUnloading = true;
-        this.requestRender();
+        if (!this._destroyed) {
+          this.requestRender();
+        }
       });
   }
   fail(data, error) {
+    if (!this.isCurrent(data)) {
+      return;
+    }
     this.report(error);
     if (data.fallback) {
       data.tile.state = QuadtreeTileLoadState.FAILED;
@@ -339,21 +393,32 @@ class WebGPUGlobeTileProvider {
     data.tile.state = QuadtreeTileLoadState.START;
   }
   async load(data, promise) {
-    const terrain = await promise;
-    if (data.cancelled || this._destroyed) {
+    let terrain;
+    try {
+      terrain = await promise;
+    } finally {
+      this._work[data.phase]--;
+    }
+    if (!this.isCurrent(data)) {
       return;
     }
     const tile = data.tile;
-    const mesh = await terrain.createMesh({
-      tilingScheme: this.tilingScheme,
-      x: tile.x,
-      y: tile.y,
-      level: tile.level,
-      throttle: false,
-      exaggeration: this.exaggeration,
-      exaggerationRelativeHeight: this.relativeHeight,
-    });
-    if (data.cancelled || this._destroyed) {
+    let mesh;
+    this._work.meshes++;
+    try {
+      mesh = await terrain.createMesh({
+        tilingScheme: data.tilingScheme,
+        x: tile.x,
+        y: tile.y,
+        level: tile.level,
+        throttle: false,
+        exaggeration: data.exaggeration,
+        exaggerationRelativeHeight: data.relativeHeight,
+      });
+    } finally {
+      this._work.meshes--;
+    }
+    if (!this.isCurrent(data)) {
       return;
     }
     if (!mesh) {
@@ -378,6 +443,9 @@ class WebGPUGlobeTileProvider {
     this._uploads.push(data);
   }
   upload(data) {
+    if (!this.isCurrent(data)) {
+      return;
+    }
     const { mesh, tile } = data,
       encoding = mesh.encoding,
       count = mesh.vertices.length / encoding.stride;
@@ -412,6 +480,7 @@ class WebGPUGlobeTileProvider {
     data.vertexArray = data.gpuMesh;
     tile.renderable = true;
     tile.state = QuadtreeTileLoadState.DONE;
+    this._work.uploaded++;
   }
   draw(pass, camera) {
     for (const tile of this._selected) {
@@ -436,7 +505,11 @@ class WebGPUGlobeTileProvider {
   }
   finishFrame(frameState) {
     for (const data of this._terrainRequests) {
-      if (data.lastNeeded < frameState.frameNumber - 2) {
+      if (
+        this.isCurrent(data) &&
+        data.lastNeeded < frameState.frameNumber - 2
+      ) {
+        this._work.cancelled++;
         data.freeResources();
         data.tile.renderable = false;
         data.tile.state = QuadtreeTileLoadState.START;
@@ -448,6 +521,13 @@ class WebGPUGlobeTileProvider {
   }
   destroy() {
     this._destroyed = true;
+    this._generation++;
+    for (const data of this._terrainRequests) {
+      data.freeResources();
+    }
+    for (const data of this._uploads) {
+      data.freeResources();
+    }
     this.imagery.destroy();
     this._uploads.length = 0;
     return undefined;

@@ -68,6 +68,8 @@ class WebGPUScene {
       maximumZoomDistance: 100000000,
     };
     this.camera = new Camera(this);
+    this.camera.frustum.near = 0.1;
+    this.camera.frustum.far = 500000000;
     this.primitives = new PrimitiveCollection();
     this._nativePrimitives = new Set();
     const creditContainer =
@@ -248,9 +250,15 @@ class WebGPUScene {
     this.context.resize();
     this.camera.frustum.aspectRatio = this.canvas.width / this.canvas.height;
     this.camera.update(SceneMode.SCENE3D);
-    const altitude = Math.abs(this.camera.positionCartographic.height);
-    this.camera.frustum.near = Math.max(0.1, altitude / 1000);
-    this.camera.frustum.far = Math.max(30000000, altitude * 4);
+    const { near, far } = this.camera.frustum;
+    if (
+      !Number.isFinite(near) ||
+      !Number.isFinite(far) ||
+      near <= 0 ||
+      far <= near
+    ) {
+      throw new Error("Native frustum requires finite 0 < near < far.");
+    }
     this.creditDisplay.beginFrame();
     const frameState = (this.frameState = {
       webgpuScene: this,
@@ -337,6 +345,7 @@ class WebGPUScene {
         ...(provider?._selected.map((tile) => tile.level) ?? []),
       ),
       pendingTiles: provider?._pending ?? 0,
+      terrainWork: provider?.workStatistics,
       imageryTextures: provider?.imagery.textureCount ?? 0,
       imageryBytes: provider?.imagery.bytes ?? 0,
       tileErrors: provider?.errors ?? [],

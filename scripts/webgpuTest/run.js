@@ -1,6 +1,6 @@
 /*global window*/
 import { chromium } from "@playwright/test";
-import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { readFile, readdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
@@ -8,12 +8,13 @@ import { serve } from "../webgpuBaseline/server.js";
 import { png } from "../webgpuBaseline/imageMetrics.js";
 import { verifyManifest } from "../webgpuBaseline/manifest.js";
 import { checkDemo } from "./demo.js";
+import { createOutputDirectory } from "./outputDirectory.js";
 
 const output = path.resolve(
   process.argv.find((v) => v.startsWith("--output="))?.slice(9) ??
     `benchmarks/runs/webgpu-${Date.now()}`,
 );
-await mkdir(output, { recursive: false });
+await createOutputDirectory(output);
 const { server, url } = await serve();
 const browser = await chromium.launch({
   channel: "chrome",
@@ -50,7 +51,7 @@ try {
   const suite =
     process.argv.find((value) => value.startsWith("--suite="))?.slice(8) ??
     "index";
-  if (!["index", "streaming"].includes(suite)) {
+  if (!["index", "streaming", "conformance", "terrain"].includes(suite)) {
     throw new Error("Unknown native test suite");
   }
   await page.goto(`${url}/Specs/WebGPU/${suite}.html`);
@@ -60,6 +61,15 @@ try {
     { timeout: 120000 },
   );
   const result = await page.evaluate(() => window.results);
+  const conformanceFrames = await page.evaluate(
+    () => window.conformanceFrames ?? [],
+  );
+  for (const frame of conformanceFrames) {
+    await writeFile(
+      path.join(output, `${frame.name}.png`),
+      png(frame.width, frame.height, Buffer.from(frame.rgba, "base64")),
+    );
+  }
   const capture = await page.evaluate(() => window.captureBase64);
   result.browser = browser.version();
   result.date = new Date().toISOString();
@@ -74,6 +84,17 @@ try {
     terrainHash.update(await readFile(path.join(terrainDirectory, name)));
   }
   result.streamingTerrainSha256 = terrainHash.digest("hex");
+  const conformanceHash = createHash("sha256");
+  for (const filename of ["conformance.js", "terrain.js", "ridgeFixture.js"]) {
+    conformanceHash.update(filename);
+    conformanceHash.update(
+      (await readFile(`Specs/WebGPU/${filename}`, "utf8")).replaceAll(
+        "\r\n",
+        "\n",
+      ),
+    );
+  }
+  result.conformanceFixtureSha256 = conformanceHash.digest("hex");
   result.buildSha256 = createHash("sha256")
     .update(await readFile("Build/CesiumUnminified/Cesium.js"))
     .digest("hex");

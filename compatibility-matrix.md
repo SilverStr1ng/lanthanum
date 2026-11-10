@@ -1,5 +1,7 @@
 # 固定兼容矩阵 v1（CesiumJS 1.147）
 
+2026-11-10 N01—N04增量：现有可用子集增加代际取消、ST、near/far与闭合透明绘制修复；真实山脊专项与清洁工具链单独验收，状态见progress-report.md。S11为基础模型、S12为模型扩展、S13为Tiles。下表中的“需适配”不表示已通过；上采样与独立影像LOD仍受docs/issues/terrain-imagery-lod.md阻塞。
+
 范围冻结于2026-11-10。新增的原生 WebGPU 基本交互演示及实际支持子集见 [WebGPU 使用说明](Apps/WebGPU/README.md)。**下表为完整阶段目标，WebGPU 正式阶段验收仍为0；不能以演示子集替代整项验收。** “需适配”不是已支持声明；“CPU复用”也不表示整个调用链已支持WebGPU。负责人填写角色而非虚构团队成员。功能编号是固定分母，新增范围须变更ADR。API语义差异单独列出，不用百分比掩盖。
 
 测试族及当前缺口详见 `acceptance-contract.md`。表中测试编号是目标验收位置；已运行证据只覆盖报告中明确列出的子例。平台每个组合独立认证。
@@ -28,26 +30,26 @@
 | G09 | sampleTerrain/sampleTerrainMostDetailed                                               | CPU复用          | S10/S16       | T02/T06     | 地形          | CPU高度查询不等于GPU位置拾取                                         |
 | M01 | glTF2/GLB、metallic-roughness PBR、normal/occlusion/emissive                          | 需适配           | S11           | T03         | 模型          | 基础glTF先完成颜色/深度/释放                                         |
 | M02 | OPAQUE/MASK/BLEND、双面材质                                                           | 需适配           | S11/S17       | T03/T06     | 模型/shader   | MASK须共享颜色/深度/拾取裁剪                                         |
-| M03 | 动画、skin、morph targets                                                             | 需适配           | S11           | T03         | 模型          | 静态姿态不等于动画支持                                               |
-| M04 | EXT_mesh_gpu_instancing                                                               | 需适配           | S11/S12       | T03         | 模型          | 实例变换/法线/ID/释放一起验收                                        |
-| M05 | KHR_draco_mesh_compression                                                            | 需适配           | S11           | T03         | loader        | CPU/WASM解码与GPU资源均需验收                                        |
-| M06 | EXT_meshopt_compression                                                               | 需适配           | S11           | T03         | loader        | 不支持时明确错误                                                     |
-| M07 | KHR_texture_basisu/KTX2                                                               | 需适配           | S04/S11       | T00/T03     | 纹理          | 按device压缩能力选择转码；不得黑纹理成功                             |
-| M08 | KHR_texture_transform                                                                 | 需适配           | S11           | T03         | 材质          | UV方向及变换数值验证                                                 |
+| M03 | 动画、skin、morph targets                                                             | 需适配           | S12           | T03         | 模型          | 静态姿态不等于动画支持                                               |
+| M04 | EXT_mesh_gpu_instancing                                                               | 需适配           | S12           | T03         | 模型          | 实例变换/法线/ID/释放一起验收                                        |
+| M05 | KHR_draco_mesh_compression                                                            | 需适配           | S12           | T03         | loader        | CPU/WASM解码与GPU资源均需验收                                        |
+| M06 | EXT_meshopt_compression                                                               | 需适配           | S12           | T03         | loader        | 不支持时明确错误                                                     |
+| M07 | KHR_texture_basisu/KTX2                                                               | 需适配           | S04/S12       | T00/T03     | 纹理          | 按device压缩能力选择转码；不得黑纹理成功                             |
+| M08 | KHR_texture_transform                                                                 | 需适配           | S12           | T03         | 材质          | UV方向及变换数值验证                                                 |
 | M09 | KHR_materials_unlit                                                                   | 需适配           | S11           | T03         | 材质          | 固定输出颜色空间                                                     |
-| M10 | KHR_mesh_quantization                                                                 | 需适配           | S11           | T03         | loader        | 解码/布局/精度验证                                                   |
+| M10 | KHR_mesh_quantization                                                                 | 需适配           | S12           | T03         | loader        | 解码/布局/精度验证                                                   |
 | M11 | EXT_mesh_features/EXT_structural_metadata                                             | 需适配           | S13/S14       | T04/T06     | 特征属性      | 属性解析、style、拾取共同验收                                        |
 | M12 | KHR_materials_clearcoat/specular/ior/transmission/volume/sheen/iridescence/anisotropy | 延后             | S23           | T03/T09     | 材质          | 生产v1遇到required扩展明确拒绝，optional扩展按glTF合法基础回退并诊断 |
 | M13 | KHR_materials_variants及剩余扩展                                                      | 延后             | S23           | T03/T09     | 模型          | 逐扩展工单，不宣称任意扩展支持                                       |
-| D01 | 3D Tiles1.1直接glTF内容                                                               | 需适配           | S12           | T04/T08     | Tiles         | T08仅WebGL2直接glTF基线                                              |
-| D02 | b3dm                                                                                  | 需适配           | S12/S13       | T04         | Tiles         | 批属性、绘制与释放                                                   |
-| D03 | i3dm                                                                                  | 需适配           | S12/S13       | T04         | Tiles         | 实例与每实例ID                                                       |
-| D04 | pnts                                                                                  | 需适配           | S12/S13       | T04         | 点云          | 点大小、颜色、属性、拾取                                             |
-| D05 | cmpt                                                                                  | 需适配           | S12/S13       | T04         | Tiles         | 内层内容共同释放/拾取                                                |
-| D06 | ADD/REPLACE、外部tileset                                                              | 需适配           | S12           | T04/T08     | 流式数据      | 不能只验证JSON解析                                                   |
-| D07 | implicit tiling/subtree                                                               | 需适配           | S12/S13       | T04         | Tiles         | 可用性、请求、LOD端到端                                              |
+| D01 | 3D Tiles1.1直接glTF内容                                                               | 需适配           | S13           | T04/T08     | Tiles         | T08仅WebGL2直接glTF基线                                              |
+| D02 | b3dm                                                                                  | 需适配           | S13           | T04         | Tiles         | 批属性、绘制与释放                                                   |
+| D03 | i3dm                                                                                  | 需适配           | S13           | T04         | Tiles         | 实例与每实例ID                                                       |
+| D04 | pnts                                                                                  | 需适配           | S13           | T04         | 点云          | 点大小、颜色、属性、拾取                                             |
+| D05 | cmpt                                                                                  | 需适配           | S13           | T04         | Tiles         | 内层内容共同释放/拾取                                                |
+| D06 | ADD/REPLACE、外部tileset                                                              | 需适配           | S13           | T04/T08     | 流式数据      | 不能只验证JSON解析                                                   |
+| D07 | implicit tiling/subtree                                                               | 需适配           | S13           | T04         | Tiles         | 可用性、请求、LOD端到端                                              |
 | D08 | feature/batch table、metadata、Cesium3DTileStyle                                      | 需适配           | S13           | T04/T06     | 属性/style    | 动态显隐、高亮、ID保持                                               |
-| D09 | SSE、调度、缓存、取消、并发上传预算                                                   | CPU复用+适配     | S12/S19       | T04/T08     | 流式数据      | 固定内容/画质后比较性能                                              |
+| D09 | SSE、调度、缓存、取消、并发上传预算                                                   | CPU复用+适配     | S13/S19       | T04/T08     | 流式数据      | 固定内容/画质后比较性能                                              |
 | P01 | Primitive/GeometryInstance/点线面                                                     | 需适配           | S15           | T05         | GIS图元       | 每图元及关键选项列子用例                                             |
 | P02 | Billboard/Label/纹理图集                                                              | 需适配           | S15           | T05         | GIS图元       | 文字字体、alpha边缘、拾取单独验收                                    |
 | P03 | Entity/Visualizer、动态属性、选中/跟踪                                                | 需适配           | S15           | T05         | Entity/Widget | 动态点移动/颜色/显隐已测；动态盒体异步拾取失败，跟踪待补             |
