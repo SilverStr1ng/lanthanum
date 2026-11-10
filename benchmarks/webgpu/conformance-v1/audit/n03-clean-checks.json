@@ -1,0 +1,42 @@
+[
+    {
+        "command":  "run toolchain:check",
+        "exitCode":  0
+    },
+    {
+        "command":  "exec --offline -- ast-grep --version",
+        "exitCode":  0
+    },
+    {
+        "command":  "run build",
+        "exitCode":  0
+    },
+    {
+        "command":  "run build-ts",
+        "exitCode":  0
+    },
+    {
+        "command":  "exec --offline -- tsc -p tsconfig.json --noEmit",
+        "exitCode":  0
+    },
+    {
+        "command":  "exec --offline -- tsc -p packages/engine/tsconfig.json --noEmit",
+        "exitCode":  0
+    },
+    {
+        "command":  "run eslint",
+        "exitCode":  0
+    },
+    {
+        "command":  "run webgpu:test-cpu",
+        "exitCode":  0
+    },
+    {
+        "command":  "exec --offline -- ast-grep test",
+        "exitCode":  0
+    },
+    {
+        "command":  "exec --offline -- ast-grep scan --context 3",
+        "exitCode":  0
+    }
+]

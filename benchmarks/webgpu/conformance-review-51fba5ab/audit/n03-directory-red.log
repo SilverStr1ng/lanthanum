@@ -1,0 +1,14 @@
+node:internal/fs/promises:859
+  return await PromisePrototypeThen(
+         ^
+
+Error: ENOENT: no such file or directory, mkdir 'D:\Nothing\Lanthanum\benchmarks\runs\n01-n04\missing-parent\runs\unique'
+    at async mkdir (node:internal/fs/promises:859:10)
+    at async file:///D:/Nothing/Lanthanum/scripts/webgpuTest/run.pre-n03.js:16:1 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'mkdir',
+  path: 'D:\\Nothing\\Lanthanum\\benchmarks\\runs\\n01-n04\\missing-parent\\runs\\unique'
+}
+
+Node.js v24.15.0

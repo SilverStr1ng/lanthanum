@@ -36,7 +36,7 @@
 | M06 | EXT_meshopt_compression                                                               | 需适配           | S12           | T03         | loader        | 不支持时明确错误                                                     |
 | M07 | KHR_texture_basisu/KTX2                                                               | 需适配           | S04/S12       | T00/T03     | 纹理          | 按device压缩能力选择转码；不得黑纹理成功                             |
 | M08 | KHR_texture_transform                                                                 | 需适配           | S12           | T03         | 材质          | UV方向及变换数值验证                                                 |
-| M09 | KHR_materials_unlit                                                                   | 需适配           | S11           | T03         | 材质          | 固定输出颜色空间                                                     |
+| M09 | KHR_materials_unlit                                                                   | 需适配           | S12           | T03         | 材质          | 固定输出颜色空间                                                     |
 | M10 | KHR_mesh_quantization                                                                 | 需适配           | S12           | T03         | loader        | 解码/布局/精度验证                                                   |
 | M11 | EXT_mesh_features/EXT_structural_metadata                                             | 需适配           | S13/S14       | T04/T06     | 特征属性      | 属性解析、style、拾取共同验收                                        |
 | M12 | KHR_materials_clearcoat/specular/ior/transmission/volume/sheen/iridescence/anisotropy | 延后             | S23           | T03/T09     | 材质          | 生产v1遇到required扩展明确拒绝，optional扩展按glTF合法基础回退并诊断 |

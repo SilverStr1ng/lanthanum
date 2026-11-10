@@ -1,0 +1,28 @@
+✖ cancelled old terrain job cannot reset a successfully uploaded replacement (3.415ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 322.8086
+
+✖ failing tests:
+
+test at scripts\webgpuTest\terrainLifecycle.test.js:21:1
+✖ cancelled old terrain job cannot reset a successfully uploaded replacement (3.415ms)
+  AssertionError [ERR_ASSERTION]: old cancellation must not reset current tile state
+  
+  0 !== 2
+  
+      at TestContext.<anonymous> (file:///D:/Nothing/Lanthanum/scripts/webgpuTest/terrainLifecycle.test.js:34:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

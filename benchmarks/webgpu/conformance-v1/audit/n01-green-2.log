@@ -1,0 +1,19 @@
+✔ cancelled old terrain job cannot reset a successfully uploaded replacement (4.4553ms)
+✔ terrain generations preserve ownership: old-first (0.6716ms)
+✔ terrain generations preserve ownership: new-first (0.4802ms)
+✔ terrain generations preserve ownership: old-reject (0.8322ms)
+✔ terrain generations preserve ownership: worker-late (0.4866ms)
+✔ unabortable request settles after 100 ms without late upload (104.1076ms)
+✔ unabortable request settles after 1000 ms without late upload (1000.4288ms)
+✔ twenty departures and returns keep replacement meshes and physical budgets bounded (2.6797ms)
+✔ unresolved physical jobs throttle replacements at eight slots (0.5133ms)
+✔ provider change invalidates request and upload generations (0.9016ms)
+✔ exaggeration change invalidates request and upload generations (0.3104ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1457.8564

@@ -12,4 +12,4 @@
 
 处理：新增4500 m盒体，1倍可拾取、2倍被山脊遮挡、恢复1倍重新可拾取，使用真实GPU对象ID三项断言。开发态49项地形检查和13项页面检查通过；最终三轮将包含此控制。先前51fba5ab95的三轮保留在benchmarks/webgpu/conformance-review-51fba5ab，不作为补强后的最终结果。
 
-Standards：0项；Spec：1项P2，已补强并通过真实GPU验证，待最终只读复核与归档。
+Standards：0项；Spec：1项P2，已补强并通过真实GPU验证，只读复核确认三项断言有效，已关闭。最终64d333bc8b的三轮均包含该控制，证据见benchmarks/webgpu/conformance-v1。

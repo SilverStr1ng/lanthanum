@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "implementation": "64d333bc8b03f7cafc22367ffd85327eb6208fb3",
+  "buildSha256": "10adf9a0a0624eecafe230174c83d267b050a4c65d70e4015cb07a956814ae60",
+  "fixtureManifestSha256": "0d476e0b577d9aed36a878f0a7029ac33b9230164e3a60760d8dbed4f863d3d8",
+  "conformanceFixtureSha256": "b64bd2ca3c22bce194fc6b962104e1dc6343cb178f6dd02fa2a2bea4b3b4c8a0",
+  "streamingTerrainSha256": "2856274935293856a55173d039eda94812aac1e0b8ba7b34e3394ab382e64d19",
+  "node": "v24.15.0",
+  "browser": "157.0.8103.40",
+  "adapter": {
+    "backend": "webgpu",
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "device": "",
+    "description": "",
+    "features": [
+      "core-features-and-limits"
+    ],
+    "maxTextureDimension2D": 8192,
+    "hardware": true
+  },
+  "environmentContract": "Windows / RTX 5080; device string omitted by browser; vendor=nvidia architecture=blackwell",
+  "results": [
+    {
+      "suite": "index",
+      "round": 1,
+      "checks": 49,
+      "demoChecks": 13,
+      "passed": true,
+      "path": "index-1/result.json"
+    },
+    {
+      "suite": "streaming",
+      "round": 1,
+      "checks": 59,
+      "demoChecks": 13,
+      "passed": true,
+      "path": "streaming-1/result.json"
+    },
+    {
+      "suite": "conformance",
+      "round": 1,
+      "checks": 111,
+      "demoChecks": 13,
+      "passed": true,
+      "path": "conformance-1/result.json"
+    },
+    {
+      "suite": "terrain",
+      "round": 1,
+      "checks": 49,
+      "demoChecks": 13,
+      "passed": true,
+      "path": "terrain-1/result.json"
+    },
+    {
+      "suite": "index",
+      "round": 2,
+      "checks": 49,
+      "demoChecks": 13,
+      "passed": true,
+      "path": "index-2/result.json"
+    },
+    {
+      "suite": "streaming",
+      "round": 2,
+      "checks": 59,
+      "demoChecks": 13,
+      "passed": true,
+      "path": "streaming-2/result.json"
+    },
+    {
+      "suite": "conformance",
+      "round": 2,
+      "checks": 111,
+      "demoChecks": 13,
+      "passed": true,
+      "path": "conformance-2/result.json"
+    },
+    {
+      "suite": "terrain",
+      "round": 2,
+      "checks": 49,
+      "demoChecks": 13,
+      "passed": true,
+      "path": "terrain-2/result.json"
+    },
+    {
+      "suite": "index",
+      "round": 3,
+      "checks": 49,
+      "demoChecks": 13,
+      "passed": true,
+      "path": "index-3/result.json"
+    },
+    {
+      "suite": "streaming",
+      "round": 3,
+      "checks": 59,
+      "demoChecks": 13,
+      "passed": true,
+      "path": "streaming-3/result.json"
+    },
+    {
+      "suite": "conformance",
+      "round": 3,
+      "checks": 111,
+      "demoChecks": 13,
+      "passed": true,
+      "path": "conformance-3/result.json"
+    },
+    {
+      "suite": "terrain",
+      "round": 3,
+      "checks": 49,
+      "demoChecks": 13,
+      "passed": true,
+      "path": "terrain-3/result.json"
+    }
+  ],
+  "cumulativeAssertions": 960,
+  "specializedAssertions": 268,
+  "pageAssertions": 13,
+  "cpuTests": 19,
+  "jasmine": {
+    "success": 16018,
+    "failed": 17,
+    "skipped": 67,
+    "added": [],
+    "removed": [],
+    "note": "Run before implementation commit; identical engine and compiled build content, subsequent change only strengthens terrain browser tests/docs"
+  },
+  "hardwareCI": "NOT EXECUTED; hosted install/build/lint/types/CPU only",
+  "performance": "NOT EXECUTED; N08",
+  "limitations": [
+    "terrain imagery LOD coupling",
+    "upsampledFromParent not maintained",
+    "full S07 precision not certified",
+    "Sandcastle TypeScript6 Debug Failure",
+    "preexisting global Markdown/Prettier failures"
+  ],
+  "cleanInstallCI": {
+    "implementation": "64d333bc8b03f7cafc22367ffd85327eb6208fb3",
+    "run": "https://github.com/SilverStr1ng/lanthanum/actions/runs/42768425465",
+    "ubuntu": {
+      "job": 129670296813,
+      "result": "success"
+    },
+    "windows": {
+      "job": 129670297055,
+      "result": "success"
+    },
+    "checks": [
+      "npm ci",
+      "Node/npm contract",
+      "ast-grep binary",
+      "build",
+      "build-ts",
+      "root types",
+      "engine types",
+      "ESLint",
+      "19 CPU tests",
+      "ast-grep test",
+      "ast-grep scan"
+    ]
+  },
+  "workflowOrderFix": {
+    "commit": "cfe30afe6fd9509b530bbcc9a577dddeb5fbd124",
+    "job": "https://github.com/SilverStr1ng/lanthanum/actions/runs/42768926344/job/129671902339",
+    "javascriptLint": "success",
+    "markdownLint": "failure: preexisting trailing blank in original implementation plan"
+  }
+}

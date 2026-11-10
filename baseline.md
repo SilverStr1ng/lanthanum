@@ -1,20 +1,22 @@
 # Cesium WebGPU 迁移基线
 
+历史记录（2026-11-10首轮/第二轮）：下文重放命令与通过数描述当时WebGL2基线，不是当前WebGPU验收。当前主工具链仍为Node24.15.0/npm11.6.1，使用完整 `npm ci`；本轮清洁安装与硬件结果见progress-report.md及benchmarks/webgpu/conformance-v1。
+
 本仓库执行 `docs/Cesium-WebGPU-Implementation-Plan.md` 第 9 节的任务：S00—S01。当前实现为 Cesium 1.147 **WebGL2**，第二轮包含地球销毁的窄范围修复；没有新增 WebGPU 渲染功能。阶段状态与证据见 `progress-report.md`。
 
 ## 版本与工具链
 
-| 项目 | 固定值 |
-| --- | --- |
-| 上游 | https://github.com/CesiumGS/cesium |
-| 发布 tag | 1.147 |
-| tag 对象 | 5cc6896c063a5a5a70ea8af9b290290bf5369f65 |
-| 完整 commit | 2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87 |
-| 工作分支 | webgpu/s00-s01-baseline |
-| Node | 24.15.0，见 `.nvmrc` |
-| npm | 11.6.1 |
-| 依赖 | 提交 `package-lock.json`，使用 `npm ci`；禁止验收时重新解析浮动版本 |
-| 授权 | 上游及自制测试资产 Apache-2.0，保留 `LICENSE.md`、`ThirdParty.json` 与原有署名 |
+| 项目        | 固定值                                                                         |
+| ----------- | ------------------------------------------------------------------------------ |
+| 上游        | https://github.com/CesiumGS/cesium                                             |
+| 发布 tag    | 1.147                                                                          |
+| tag 对象    | 5cc6896c063a5a5a70ea8af9b290290bf5369f65                                       |
+| 完整 commit | 2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87                                       |
+| 工作分支    | webgpu/s00-s01-baseline                                                        |
+| Node        | 24.15.0，见 `.nvmrc`                                                           |
+| npm         | 11.6.1                                                                         |
+| 依赖        | 提交 `package-lock.json`，使用 `npm ci`；禁止验收时重新解析浮动版本            |
+| 授权        | 上游及自制测试资产 Apache-2.0，保留 `LICENSE.md`、`ThirdParty.json` 与原有署名 |
 
 开始时 `D:/Nothing/Lanthanum` 是空目录，没有 Git 仓库或用户修改。通过 `git ls-remote` 核验 tag 解引用与计划一致，再检出该版本建立分支。首轮未修改引擎；第二轮在 `QuadtreePrimitive.destroy()` 释放瓦片树及引用，新增真实WebGL资源回归。上游 `.gitignore` 原先忽略 lockfile，本分支取消这一忽略以使安装可重现。
 

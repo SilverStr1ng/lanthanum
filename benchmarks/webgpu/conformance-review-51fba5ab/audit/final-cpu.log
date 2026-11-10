@@ -1,0 +1,27 @@
+✔ replay cannot overwrite references or earlier evidence (11.915ms)
+✔ image gates accept exact pixels and reject a completely different scene (1.0639ms)
+✔ channel error thresholds have inclusive boundaries and ignore alpha (0.176ms)
+✔ invalid image dimensions fail closed (0.2987ms)
+✔ percentiles use nearest rank, preserve inputs and do not invent missing samples (0.6842ms)
+✔ buffer ledger respects WebGL2 remainder and byte-view overloads without changing arguments (1.3014ms)
+✔ fresh output parents are created without permitting evidence overwrite (7.916ms)
+✔ cancelled old terrain job cannot reset a successfully uploaded replacement (3.3163ms)
+✔ terrain generations preserve ownership: old-first (0.7899ms)
+✔ terrain generations preserve ownership: new-first (0.5058ms)
+✔ terrain generations preserve ownership: old-reject (0.658ms)
+✔ terrain generations preserve ownership: worker-late (0.4609ms)
+✔ unabortable request settles after 100 ms without late upload (111.7286ms)
+✔ unabortable request settles after 1000 ms without late upload (1013.8943ms)
+✔ twenty departures and returns keep replacement meshes and physical budgets bounded (2.5974ms)
+✔ unresolved physical jobs throttle replacements at eight slots (0.512ms)
+✔ provider change invalidates request and upload generations (1.0535ms)
+✔ exaggeration change invalidates request and upload generations (0.3707ms)
+✔ native optional dependencies remain locked for all declared platforms (8.9693ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1559.6843

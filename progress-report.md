@@ -9,11 +9,17 @@
 - runner创建父目录并拒绝覆盖既有叶目录；Node24.15.0/npm11.6.1契约、跨平台optional包与完整integrity锁文件、Windows/Linux清洁CI。
 - 独立非平坦山脊、相邻LOD、缺块上采样、裙边、遮挡、夸张和快速返回专项。S11基础模型/S12模型扩展/S13 Tiles编号已统一。
 
-## 已验证与待归档
+## 已验收
 
-N01逻辑红绿、N02真实WebGL2/WebGPU红绿、N03 Windows隔离npm ci/构建/类型/lint/ast-grep/19项CPU测试与无runs目录默认入口已执行；N04开发态专项通过。最终实现SHA的三轮硬件结果、Linux CI与完整Jasmine身份比较将在本报告最终归档时填写，当前不先行宣称全部签收。
+最终实现64d333bc8b03f7cafc22367ffd85327eb6208fb3在干净工作树连续三轮运行四套真实硬件专项，每轮基础49、流式59、绘制契约111、非平坦地形49项通过，每个入口另有13项页面检查。总计960次累计断言；不是960个独立功能。12次构建/夹具hash一致，Chrome157.0.8103.40、NVIDIA Blackwell（环境契约RTX5080）、Windows，控制台与WebGPU validation错误均为0。证据与逐项检查名见[验收包](benchmarks/webgpu/conformance-v1/summary.json)。
+
+N01逻辑红绿11项、runner文件系统与跨平台锁文件2项、旧工具6项，共19项CPU测试通过。N02原生三类绘制问题的WebGL2控制组红绿保存。N03 Windows隔离npm ci、构建/类型/lint/ast-grep及没有runs目录的默认入口通过；最终实现的[Windows/Linux清洁CI](https://github.com/SilverStr1ng/lanthanum/actions/runs/42768425465)均成功，包含安装、工具链、ast-grep、build/build-ts、根/engine类型、ESLint与CPU测试，原始日志在验收包audit。完整Jasmine重跑16018通过、17失败、67跳过，失败身份与旧集合完全一致，无新增或消失；此后仅测试/文档改动，运行时代码与构建hash一致。
+
+双轴审查：Standards 0项；Spec发现1项GPU夸张验证缺口，新增4500m盒体可见→遮挡→重现三项ID断言，已通过并只读复核关闭。见[审查记录](docs/reviews/webgpu-conformance.md)。
 
 ## 未执行与限制
+
+全工作区检查仍有旧失败：Sandcastle gallery在TypeScript6中Debug Failure；原实施计划末尾空行触发Markdownlint；全仓Prettier扫描2966个文件提示（本轮改动文件格式另行检查）。未跳过或删除这些检查，日志保留。旧dev工作流在build前lint导致workspace导出缺失的问题另由cfe30afe6f修复，未禁用检查；修复后真实CI的JavaScript lint通过，后续仍因原计划文档空行而失败，未称整个dev为绿色。通用CI没有执行硬件WebGPU。
 
 完整S07精度、N08正式性能、跨GPU/浏览器认证、自动设备恢复、完整Viewer/Entity、glTF/PBR/3D Tiles未执行或未实现。GPU对象ID遮挡和CPU网格高程是两类证据，不能互换。上采样继续细化与影像LOD受terrain level约束仍开放，见[阻塞工单](docs/issues/terrain-imagery-lod.md)。N05只有[最小模型契约建议](adr/0005-model-render-contract-proposal.md)，无模型运行时代码。
 

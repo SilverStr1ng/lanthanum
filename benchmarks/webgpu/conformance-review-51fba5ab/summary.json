@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "implementation": "51fba5ab95cb97d73429f0fce7f40284c49a0ebf",
+  "buildSha256": "10adf9a0a0624eecafe230174c83d267b050a4c65d70e4015cb07a956814ae60",
+  "fixtureManifestSha256": "0d476e0b577d9aed36a878f0a7029ac33b9230164e3a60760d8dbed4f863d3d8",
+  "conformanceFixtureSha256": "5b9e47401b3ace9f28bbba4d6a38db62cddad1764673f7a9cf170e8f87c748f0",
+  "streamingTerrainSha256": "2856274935293856a55173d039eda94812aac1e0b8ba7b34e3394ab382e64d19",
+  "node": "v24.15.0",
+  "browser": "157.0.8103.40",
+  "adapter": {
+    "backend": "webgpu",
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "device": "",
+    "description": "",
+    "features": [
+      "core-features-and-limits"
+    ],
+    "maxTextureDimension2D": 8192,
+    "hardware": true
+  },
+  "environmentContract": "Windows / RTX 5080; device string omitted by browser; vendor=nvidia architecture=blackwell",
+  "results": [
+    {
+      "suite": "index",
+      "round": 1,
+      "passed": true,
+      "checks": 49,
+      "demoChecks": 13,
+      "path": "index-1/result.json"
+    },
+    {
+      "suite": "streaming",
+      "round": 1,
+      "passed": true,
+      "checks": 59,
+      "demoChecks": 13,
+      "path": "streaming-1/result.json"
+    },
+    {
+      "suite": "conformance",
+      "round": 1,
+      "passed": true,
+      "checks": 111,
+      "demoChecks": 13,
+      "path": "conformance-1/result.json"
+    },
+    {
+      "suite": "terrain",
+      "round": 1,
+      "passed": true,
+      "checks": 46,
+      "demoChecks": 13,
+      "path": "terrain-1/result.json"
+    },
+    {
+      "suite": "index",
+      "round": 2,
+      "passed": true,
+      "checks": 49,
+      "demoChecks": 13,
+      "path": "index-2/result.json"
+    },
+    {
+      "suite": "streaming",
+      "round": 2,
+      "passed": true,
+      "checks": 59,
+      "demoChecks": 13,
+      "path": "streaming-2/result.json"
+    },
+    {
+      "suite": "conformance",
+      "round": 2,
+      "passed": true,
+      "checks": 111,
+      "demoChecks": 13,
+      "path": "conformance-2/result.json"
+    },
+    {
+      "suite": "terrain",
+      "round": 2,
+      "passed": true,
+      "checks": 46,
+      "demoChecks": 13,
+      "path": "terrain-2/result.json"
+    },
+    {
+      "suite": "index",
+      "round": 3,
+      "passed": true,
+      "checks": 49,
+      "demoChecks": 13,
+      "path": "index-3/result.json"
+    },
+    {
+      "suite": "streaming",
+      "round": 3,
+      "passed": true,
+      "checks": 59,
+      "demoChecks": 13,
+      "path": "streaming-3/result.json"
+    },
+    {
+      "suite": "conformance",
+      "round": 3,
+      "passed": true,
+      "checks": 111,
+      "demoChecks": 13,
+      "path": "conformance-3/result.json"
+    },
+    {
+      "suite": "terrain",
+      "round": 3,
+      "passed": true,
+      "checks": 46,
+      "demoChecks": 13,
+      "path": "terrain-3/result.json"
+    }
+  ],
+  "cumulativeAssertions": 951,
+  "independentSpecializedAssertions": 265,
+  "pageAssertions": 13,
+  "cpuTests": 19,
+  "jasmine": {
+    "success": 16018,
+    "failed": 17,
+    "skipped": 67,
+    "added": [],
+    "removed": []
+  },
+  "hardwareCI": "NOT EXECUTED; hosted install/build/lint/types/CPU only",
+  "performance": "NOT EXECUTED; N08",
+  "limitations": [
+    "terrain imagery LOD coupling",
+    "upsampledFromParent not maintained",
+    "full S07 precision not certified",
+    "Sandcastle TypeScript6 Debug Failure",
+    "preexisting global Markdown/Prettier failures"
+  ]
+}

@@ -62,4 +62,3 @@ Node24.15.0/npm11.6.1，Windows与Linux均执行无node_modules的npm ci、ast-g
 生产 v1 预算保持计划：p95帧间隔<=33.3ms，CPU更新+编码p95<=10ms，同画质不比WebGL2恶化>10%，引擎主线程任务不得>100ms；T01本地首画<=3s，T08交互工作集<=5s，拾取p95<=100ms，GPU账本建议<=768MiB，稳定后10圈资源增幅<=5%，连续2小时。当前合成T08无纹理；16瓦片全部就绪且选中1,228,800三角形才算工作集就绪，SSE=16，cacheBytes=512MiB，overflow=256MiB。
 
 HTTP缓存由服务端no-store及每轮独立context控制；浏览器进程/驱动shader缓存未清理，不能把当前readyMs称作五轮严格冷启动结果。CPU缓存、在途解码/上传背压预算及long-task归因尚缺，属于S01未完成项。三台机器、两个GPU厂商、两个OS及两个浏览器引擎、HTTPS发行验证留到S20/S21，不能由本次单机Chromium替代。
-

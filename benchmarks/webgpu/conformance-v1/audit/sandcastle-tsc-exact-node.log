@@ -1,0 +1,17 @@
+D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:123693
+      throw e;
+      ^
+
+Error: Debug Failure.
+    at resolveExternalModule (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:49511:37)
+    at resolveExternalModuleNameWorker (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:49471:61)
+    at resolveExternalModuleName (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:49468:12)
+    at getTargetOfImportClause (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:48653:26)
+    at getTargetOfAliasDeclaration (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:49077:16)
+    at resolveAlias (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:49123:22)
+    at checkAliasSymbol (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:86032:20)
+    at checkImportBinding (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:86165:5)
+    at checkImportDeclaration (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:86232:11)
+    at checkSourceElementWorker (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:86748:16)
+
+Node.js v24.15.0

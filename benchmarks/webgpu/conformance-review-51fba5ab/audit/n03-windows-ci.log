@@ -1,0 +1,22 @@
+
+> cesium@1.147.0 prepare
+> gulp prepare && husky && node scripts/isCI.js || playwright install --with-deps
+
+[14:07:32] Using gulpfile D:\Nothing\Lanthanum-validation\n03-windows\gulpfile.js
+[14:07:32] Starting 'prepare'...
+[14:07:32] Finished 'prepare' after 19 ms
+
+added 1096 packages, and audited 1102 packages in 26s
+
+303 packages are looking for funding
+  run `npm fund` for details
+
+22 vulnerabilities (3 low, 15 moderate, 4 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.

@@ -1,0 +1,1338 @@
+{
+  "checks": [
+    {
+      "name": "webgl2 uv-instance-none color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 uv-instance-none ID",
+      "passed": true,
+      "detail": "uv-instance-none"
+    },
+    {
+      "name": "webgl2 uv-instance-none explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 uv-instance-0.5 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 uv-instance-0.5 ID",
+      "passed": true,
+      "detail": "uv-instance-0.5"
+    },
+    {
+      "name": "webgl2 uv-instance-0.5 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 uv-instance--2 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 uv-instance--2 ID",
+      "passed": true,
+      "detail": "uv-instance--2"
+    },
+    {
+      "name": "webgl2 uv-instance--2 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 uv-instance-2 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 uv-instance-2 ID",
+      "passed": true,
+      "detail": "uv-instance-2"
+    },
+    {
+      "name": "webgl2 uv-instance-2 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 uv-material-none color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 uv-material-none ID",
+      "passed": true,
+      "detail": "uv-material-none"
+    },
+    {
+      "name": "webgl2 uv-material-none explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 uv-material-0.5 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 uv-material-0.5 ID",
+      "passed": true,
+      "detail": "uv-material-0.5"
+    },
+    {
+      "name": "webgl2 uv-material-0.5 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 uv-material--2 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 uv-material--2 ID",
+      "passed": true,
+      "detail": "uv-material--2"
+    },
+    {
+      "name": "webgl2 uv-material--2 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 uv-material-2 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 uv-material-2 ID",
+      "passed": true,
+      "detail": "uv-material-2"
+    },
+    {
+      "name": "webgl2 uv-material-2 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 near-0-1 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 near-0-1 ID",
+      "passed": true,
+      "detail": "near-0-1"
+    },
+    {
+      "name": "webgl2 near-0-1 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 near-0-2 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 near-0-2 ID",
+      "passed": true,
+      "detail": "near-0-2"
+    },
+    {
+      "name": "webgl2 near-0-2 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 near-0-10 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 near-0-10 ID",
+      "passed": true,
+      "detail": "near-0-10"
+    },
+    {
+      "name": "webgl2 near-0-10 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 near-5000-1 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 near-5000-1 ID",
+      "passed": true,
+      "detail": "near-5000-1"
+    },
+    {
+      "name": "webgl2 near-5000-1 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 near-5000-2 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 near-5000-2 ID",
+      "passed": true,
+      "detail": "near-5000-2"
+    },
+    {
+      "name": "webgl2 near-5000-2 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 near-5000-10 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 near-5000-10 ID",
+      "passed": true,
+      "detail": "near-5000-10"
+    },
+    {
+      "name": "webgl2 near-5000-10 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 closed-box-outside color",
+      "passed": true,
+      "detail": [
+        192,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 closed-box-outside ID",
+      "passed": true,
+      "detail": "closed-box-outside"
+    },
+    {
+      "name": "webgl2 closed-box-outside explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 closed-box-inside color",
+      "passed": true,
+      "detail": [
+        128,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 closed-box-inside ID",
+      "passed": true,
+      "detail": "closed-box-inside"
+    },
+    {
+      "name": "webgl2 closed-box-inside explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 closed-ellipsoid-outside color",
+      "passed": true,
+      "detail": [
+        192,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 closed-ellipsoid-outside ID",
+      "passed": true,
+      "detail": "closed-ellipsoid-outside"
+    },
+    {
+      "name": "webgl2 closed-ellipsoid-outside explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgl2 closed-ellipsoid-inside color",
+      "passed": true,
+      "detail": [
+        128,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgl2 closed-ellipsoid-inside ID",
+      "passed": true,
+      "detail": "closed-ellipsoid-inside"
+    },
+    {
+      "name": "webgl2 closed-ellipsoid-inside explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu uv-instance-none color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu uv-instance-none ID",
+      "passed": true,
+      "detail": "uv-instance-none"
+    },
+    {
+      "name": "webgpu uv-instance-none explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 1.000000000000045,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu uv-instance-0.5 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu uv-instance-0.5 ID",
+      "passed": true,
+      "detail": "uv-instance-0.5"
+    },
+    {
+      "name": "webgpu uv-instance-0.5 explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 1.000000000000045,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu uv-instance--2 color",
+      "passed": false,
+      "detail": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu uv-instance--2 ID",
+      "passed": false
+    },
+    {
+      "name": "webgpu uv-instance--2 explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 1.000000000000045,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu uv-instance-2 color",
+      "passed": false,
+      "detail": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu uv-instance-2 ID",
+      "passed": false
+    },
+    {
+      "name": "webgpu uv-instance-2 explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 1.000000000000045,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu uv-material-none color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu uv-material-none ID",
+      "passed": true,
+      "detail": "uv-material-none"
+    },
+    {
+      "name": "webgpu uv-material-none explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 1.000000000000045,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu uv-material-0.5 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu uv-material-0.5 ID",
+      "passed": true,
+      "detail": "uv-material-0.5"
+    },
+    {
+      "name": "webgpu uv-material-0.5 explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 1.000000000000045,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu uv-material--2 color",
+      "passed": false,
+      "detail": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu uv-material--2 ID",
+      "passed": false
+    },
+    {
+      "name": "webgpu uv-material--2 explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 1.000000000000045,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu uv-material-2 color",
+      "passed": false,
+      "detail": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu uv-material-2 ID",
+      "passed": false
+    },
+    {
+      "name": "webgpu uv-material-2 explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 1.000000000000045,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu near-0-1 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu near-0-1 ID",
+      "passed": true,
+      "detail": "near-0-1"
+    },
+    {
+      "name": "webgpu near-0-1 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu near-0-2 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu near-0-2 ID",
+      "passed": true,
+      "detail": "near-0-2"
+    },
+    {
+      "name": "webgpu near-0-2 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu near-0-10 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu near-0-10 ID",
+      "passed": true,
+      "detail": "near-0-10"
+    },
+    {
+      "name": "webgpu near-0-10 explicit frustum",
+      "passed": true,
+      "detail": {
+        "near": 0.1,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu near-5000-1 color",
+      "passed": false,
+      "detail": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu near-5000-1 ID",
+      "passed": false
+    },
+    {
+      "name": "webgpu near-5000-1 explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 4.999999999998771,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu near-5000-2 color",
+      "passed": false,
+      "detail": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu near-5000-2 ID",
+      "passed": false
+    },
+    {
+      "name": "webgpu near-5000-2 explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 4.999999999998771,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu near-5000-10 color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu near-5000-10 ID",
+      "passed": true,
+      "detail": "near-5000-10"
+    },
+    {
+      "name": "webgpu near-5000-10 explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 4.999999999998771,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu closed-box-outside color",
+      "passed": false,
+      "detail": [
+        128,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu closed-box-outside ID",
+      "passed": true,
+      "detail": "closed-box-outside"
+    },
+    {
+      "name": "webgpu closed-box-outside explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 1.000000000000045,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu closed-box-inside color",
+      "passed": false,
+      "detail": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu closed-box-inside ID",
+      "passed": false
+    },
+    {
+      "name": "webgpu closed-box-inside explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 1.000000000000045,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu closed-ellipsoid-outside color",
+      "passed": false,
+      "detail": [
+        128,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu closed-ellipsoid-outside ID",
+      "passed": true,
+      "detail": "closed-ellipsoid-outside"
+    },
+    {
+      "name": "webgpu closed-ellipsoid-outside explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 1.000000000000045,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "webgpu closed-ellipsoid-inside color",
+      "passed": false,
+      "detail": [
+        0,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "webgpu closed-ellipsoid-inside ID",
+      "passed": false
+    },
+    {
+      "name": "webgpu closed-ellipsoid-inside explicit frustum",
+      "passed": false,
+      "detail": {
+        "near": 1.000000000000045,
+        "far": 30000000
+      }
+    },
+    {
+      "name": "native conformance never creates a WebGL context",
+      "passed": true,
+      "detail": [
+        "webgpu"
+      ]
+    },
+    {
+      "name": "native conformance has no validation errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "native conformance releases all resources",
+      "passed": true,
+      "detail": {
+        "live": 0,
+        "bytes": 0,
+        "buffer": 0,
+        "texture": 0
+      }
+    }
+  ],
+  "cases": [
+    {
+      "backend": "webgl2",
+      "name": "uv-instance-none",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "uv-instance-none",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "uv-instance-0.5",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "uv-instance-0.5",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "uv-instance--2",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "uv-instance--2",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "uv-instance-2",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "uv-instance-2",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "uv-material-none",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "uv-material-none",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "uv-material-0.5",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "uv-material-0.5",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "uv-material--2",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "uv-material--2",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "uv-material-2",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "uv-material-2",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "near-0-1",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "near-0-1",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "near-0-2",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "near-0-2",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "near-0-10",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "near-0-10",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "near-5000-1",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "near-5000-1",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "near-5000-2",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "near-5000-2",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "near-5000-10",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "near-5000-10",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "closed-box-outside",
+      "pixel": [
+        192,
+        0,
+        0,
+        255
+      ],
+      "id": "closed-box-outside",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "closed-box-inside",
+      "pixel": [
+        128,
+        0,
+        0,
+        255
+      ],
+      "id": "closed-box-inside",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "closed-ellipsoid-outside",
+      "pixel": [
+        192,
+        0,
+        0,
+        255
+      ],
+      "id": "closed-ellipsoid-outside",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgl2",
+      "name": "closed-ellipsoid-inside",
+      "pixel": [
+        128,
+        0,
+        0,
+        255
+      ],
+      "id": "closed-ellipsoid-inside",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "uv-instance-none",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "uv-instance-none",
+      "near": 1.000000000000045,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "uv-instance-0.5",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "uv-instance-0.5",
+      "near": 1.000000000000045,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "uv-instance--2",
+      "pixel": [
+        0,
+        0,
+        0,
+        255
+      ],
+      "near": 1.000000000000045,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "uv-instance-2",
+      "pixel": [
+        0,
+        0,
+        0,
+        255
+      ],
+      "near": 1.000000000000045,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "uv-material-none",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "uv-material-none",
+      "near": 1.000000000000045,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "uv-material-0.5",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "uv-material-0.5",
+      "near": 1.000000000000045,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "uv-material--2",
+      "pixel": [
+        0,
+        0,
+        0,
+        255
+      ],
+      "near": 1.000000000000045,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "uv-material-2",
+      "pixel": [
+        0,
+        0,
+        0,
+        255
+      ],
+      "near": 1.000000000000045,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "near-0-1",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "near-0-1",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "near-0-2",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "near-0-2",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "near-0-10",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "near-0-10",
+      "near": 0.1,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "near-5000-1",
+      "pixel": [
+        0,
+        0,
+        0,
+        255
+      ],
+      "near": 4.999999999998771,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "near-5000-2",
+      "pixel": [
+        0,
+        0,
+        0,
+        255
+      ],
+      "near": 4.999999999998771,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "near-5000-10",
+      "pixel": [
+        255,
+        0,
+        0,
+        255
+      ],
+      "id": "near-5000-10",
+      "near": 4.999999999998771,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "closed-box-outside",
+      "pixel": [
+        128,
+        0,
+        0,
+        255
+      ],
+      "id": "closed-box-outside",
+      "near": 1.000000000000045,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "closed-box-inside",
+      "pixel": [
+        0,
+        0,
+        0,
+        255
+      ],
+      "near": 1.000000000000045,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "closed-ellipsoid-outside",
+      "pixel": [
+        128,
+        0,
+        0,
+        255
+      ],
+      "id": "closed-ellipsoid-outside",
+      "near": 1.000000000000045,
+      "far": 30000000
+    },
+    {
+      "backend": "webgpu",
+      "name": "closed-ellipsoid-inside",
+      "pixel": [
+        0,
+        0,
+        0,
+        255
+      ],
+      "near": 1.000000000000045,
+      "far": 30000000
+    }
+  ],
+  "adapter": {
+    "backend": "webgpu",
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "device": "",
+    "description": "",
+    "features": [
+      "core-features-and-limits"
+    ],
+    "maxTextureDimension2D": 8192,
+    "hardware": true
+  },
+  "passed": false,
+  "done": true,
+  "browser": "157.0.8103.40",
+  "date": "2026-11-10T05:48:04.254Z",
+  "node": "v24.15.0",
+  "fixtureManifestSha256": "0d476e0b577d9aed36a878f0a7029ac33b9230164e3a60760d8dbed4f863d3d8",
+  "streamingTerrainSha256": "2856274935293856a55173d039eda94812aac1e0b8ba7b34e3394ab382e64d19",
+  "buildSha256": "ef30ba238eb029dbd6cf4f3fe7a0dbdce2c55d1ddbd81cbf6373d6f3847c45b4",
+  "commit": "89bc1ef49af6b19cbca37ca815d2db6e1ce0312e",
+  "workingTree": "M packages/engine/Source/Scene/WebGPUGlobeTileProvider.js\n M packages/engine/Source/Scene/WebGPUScene.js\n M scripts/webgpuTest/run.js\n?? Specs/WebGPU/conformance.html\n?? Specs/WebGPU/conformance.js\n?? adr/0004-basic-conformance.md\n?? docs/Lanthanum-WebGPU-Review-2026-11-10.md\n?? scripts/webgpuTest/terrainLifecycle.test.js",
+  "consoleErrors": [],
+  "requests": [
+    "/Specs/WebGPU/conformance.html",
+    "/Build/CesiumUnminified/Cesium.js",
+    "/Specs/WebGPU/conformance.js",
+    "/Build/CesiumUnminified/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+    "/Build/CesiumUnminified/Assets/Images/ion-credit.png"
+  ]
+}
