@@ -1,0 +1,38 @@
+[13:01:26] Using gulpfile D:\Nothing\Lanthanum\gulpfile.js
+[13:01:26] Starting 'build'...
+
+  packages\core\Build\Unminified\index.js      1.6mb
+  packages\core\Build\Unminified\index.js.map  3.3mb
+
+Done in 34ms
+
+  packages\gltf\Build\Unminified\index.js      106.3kb
+  packages\gltf\Build\Unminified\index.js.map  210.9kb
+
+Done in 5ms
+
+  packages\engine\Build\Unminified\index.js       8.9mb
+  packages\engine\Build\Unminified\index.js.map  17.7mb
+
+Done in 165ms
+
+  packages\widgets\Build\Unminified\index.js      534.5kb
+  packages\widgets\Build\Unminified\index.js.map  952.9kb
+
+Done in 15ms
+
+  Build\CesiumUnminified\index.js      11.0mb
+  Build\CesiumUnminified\index.js.map  21.8mb
+
+Done in 233ms
+
+  Build\CesiumUnminified\Cesium.js      15.4mb
+  Build\CesiumUnminified\Cesium.js.map  25.6mb
+
+Done in 264ms
+
+  Build\CesiumUnminified\index.cjs      11.1mb
+  Build\CesiumUnminified\index.cjs.map  21.8mb
+
+Done in 225ms
+[13:01:30] Finished 'build' after 3.72 s

@@ -1,0 +1,107 @@
+{
+  "implementationCommit": "6cce0f41fc57afb20fab375909d580bd7d46a2bf",
+  "date": "2026-11-10T13:02:44.9452371+08:00",
+  "browser": "157.0.8103.40",
+  "adapter": {
+    "backend": "webgpu",
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "device": "",
+    "description": "",
+    "features": [
+      "core-features-and-limits"
+    ],
+    "maxTextureDimension2D": 8192,
+    "hardware": true
+  },
+  "fixtureManifestSha256": "0d476e0b577d9aed36a878f0a7029ac33b9230164e3a60760d8dbed4f863d3d8",
+  "streamingTerrainSha256": "2856274935293856a55173d039eda94812aac1e0b8ba7b34e3394ab382e64d19",
+  "rounds": [
+    {
+      "basic": {
+        "passed": true,
+        "workingTree": "",
+        "consoleErrors": 0,
+        "checks": 49,
+        "demoChecks": 13,
+        "path": "basic-1/result.json",
+        "commit": "6cce0f41fc57afb20fab375909d580bd7d46a2bf",
+        "buildSha256": "bf3fc9639391a5fa139bc33e4922f371811b137168fedf3a39a3f0c308a69ae5"
+      },
+      "streaming": {
+        "passed": true,
+        "workingTree": "",
+        "consoleErrors": 0,
+        "checks": 59,
+        "demoChecks": 13,
+        "path": "streaming-1/result.json",
+        "commit": "6cce0f41fc57afb20fab375909d580bd7d46a2bf",
+        "buildSha256": "bf3fc9639391a5fa139bc33e4922f371811b137168fedf3a39a3f0c308a69ae5"
+      },
+      "round": 1
+    },
+    {
+      "basic": {
+        "passed": true,
+        "workingTree": "",
+        "consoleErrors": 0,
+        "checks": 49,
+        "demoChecks": 13,
+        "path": "basic-2/result.json",
+        "commit": "6cce0f41fc57afb20fab375909d580bd7d46a2bf",
+        "buildSha256": "bf3fc9639391a5fa139bc33e4922f371811b137168fedf3a39a3f0c308a69ae5"
+      },
+      "streaming": {
+        "passed": true,
+        "workingTree": "",
+        "consoleErrors": 0,
+        "checks": 59,
+        "demoChecks": 13,
+        "path": "streaming-2/result.json",
+        "commit": "6cce0f41fc57afb20fab375909d580bd7d46a2bf",
+        "buildSha256": "bf3fc9639391a5fa139bc33e4922f371811b137168fedf3a39a3f0c308a69ae5"
+      },
+      "round": 2
+    },
+    {
+      "basic": {
+        "passed": true,
+        "workingTree": "",
+        "consoleErrors": 0,
+        "checks": 49,
+        "demoChecks": 13,
+        "path": "basic-3/result.json",
+        "commit": "6cce0f41fc57afb20fab375909d580bd7d46a2bf",
+        "buildSha256": "bf3fc9639391a5fa139bc33e4922f371811b137168fedf3a39a3f0c308a69ae5"
+      },
+      "streaming": {
+        "passed": true,
+        "workingTree": "",
+        "consoleErrors": 0,
+        "checks": 59,
+        "demoChecks": 13,
+        "path": "streaming-3/result.json",
+        "commit": "6cce0f41fc57afb20fab375909d580bd7d46a2bf",
+        "buildSha256": "bf3fc9639391a5fa139bc33e4922f371811b137168fedf3a39a3f0c308a69ae5"
+      },
+      "round": 3
+    }
+  ],
+  "totalPassedAssertions": 402,
+  "fullJasmine": {
+    "addedFailures": 0,
+    "failed": 17,
+    "removedFailures": 0,
+    "passed": 16018,
+    "skipped": 67,
+    "timing": "Before native-only review fixes; both native suites rerun after fixes"
+  },
+  "checks": {
+    "eslint": "passed",
+    "rootTypeScript": "passed",
+    "nodeTests": 6,
+    "prettier": "passed",
+    "engineTypeScript": "passed after buildTs"
+  },
+  "scope": "ADR0003 basic imagery, terrain, Primitive; not full plan or production certification"
+}

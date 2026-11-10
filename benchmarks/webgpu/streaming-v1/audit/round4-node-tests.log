@@ -1,0 +1,14 @@
+✔ replay cannot overwrite references or earlier evidence (9.1109ms)
+✔ image gates accept exact pixels and reject a completely different scene (0.7196ms)
+✔ channel error thresholds have inclusive boundaries and ignore alpha (0.1048ms)
+✔ invalid image dimensions fail closed (0.3422ms)
+✔ percentiles use nearest rank, preserve inputs and do not invent missing samples (0.4959ms)
+✔ buffer ledger respects WebGL2 remainder and byte-view overloads without changing arguments (0.9628ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 70.6425

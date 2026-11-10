@@ -19,7 +19,7 @@
 
 完整默认 Jasmine：16,018 通过、17 失败、67 跳过。17 个失败身份与旧基线完全相同，无新增或消失。完整套件在审查前执行；审查修复仅涉及原生分支，随后复跑两个原生套件。根 TypeScript、生成声明后的 engine TypeScript、ESLint/Prettier、6 项 Node 工具测试通过；checkJs 未启用，不因此宣称浏览器 JS 已获得完整静态类型验证。旧全工作区 Sandcastle 的 TypeScript 6 Debug Failure 仍为已记录限制，本轮未重跑该已知失败配置。
 
-双轴审查发现 4 个独立边界缺陷（两个轴有重叠），均有红测复现、修复、绿测及只读复核关闭。详情 `docs/reviews/webgpu-streaming.md`。最终干净提交的三轮结果、截图、构建/fixture hash 和回归日志归档至 `benchmarks/webgpu/streaming-v1/`，以其中 summary 为准。
+双轴审查发现 4 个独立边界缺陷（两个轴有重叠），均有红测复现、修复、绿测及只读复核关闭。详情 `docs/reviews/webgpu-streaming.md`。最终实现提交 `6cce0f41fc57afb20fab375909d580bd7d46a2bf` 在干净工作树连续三轮运行两个专项，每轮各附 13 项页面检查，共 402 项断言通过；六次构建 hash 一致。结果、截图、构建/fixture hash 和回归日志归档至 `benchmarks/webgpu/streaming-v1/`，以其中 summary 为准。
 
 ## 保留的历史证据
 

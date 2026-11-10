@@ -1,0 +1,129 @@
+{
+  "checks": [
+    {
+      "name": "four native imagery layers blend in collection order",
+      "passed": true,
+      "detail": [
+        143,
+        159,
+        191,
+        255
+      ]
+    },
+    {
+      "name": "imagery reorder updates composition",
+      "passed": true,
+      "detail": [
+        48,
+        80,
+        143,
+        255
+      ]
+    },
+    {
+      "name": "imagery removal updates composition",
+      "passed": true,
+      "detail": [
+        32,
+        64,
+        127,
+        255
+      ]
+    },
+    {
+      "name": "imagery show and alpha update live",
+      "passed": true,
+      "detail": [
+        64,
+        127,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "native imagery produces no GPU errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "heightmap terrain renders and picks actual elevation",
+      "passed": true,
+      "detail": 999.9992008590251
+    },
+    {
+      "name": "terrain exaggeration changes geometry and picking",
+      "passed": true,
+      "detail": 1999.999198670656
+    },
+    {
+      "name": "standard asynchronous Primitive draws geometry",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "standard Primitive picks GeometryInstance id",
+      "passed": true,
+      "detail": "standard-box"
+    },
+    {
+      "name": "Primitive instance color updates",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "hidden instance stops drawing and picking",
+      "passed": true
+    },
+    {
+      "name": "Primitive removal destroys its resources",
+      "passed": true
+    },
+    {
+      "name": "allowPicking false does not return the visible object",
+      "passed": true
+    },
+    {
+      "name": "allowPicking false cannot turn background into a hit",
+      "passed": true
+    }
+  ],
+  "adapter": {
+    "backend": "webgpu",
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "device": "",
+    "description": "",
+    "features": [
+      "core-features-and-limits"
+    ],
+    "maxTextureDimension2D": 8192,
+    "hardware": true
+  },
+  "passed": false,
+  "error": "Error: Primitive readiness timeout\n    at waitPrimitive (http://127.0.0.1:14078/Specs/WebGPU/streaming.js:36:13)\n    at async run (http://127.0.0.1:14078/Specs/WebGPU/streaming.js:211:3)",
+  "done": true,
+  "browser": "157.0.8103.40",
+  "date": "2026-11-10T04:54:17.553Z",
+  "node": "v24.15.0",
+  "fixtureManifestSha256": "0d476e0b577d9aed36a878f0a7029ac33b9230164e3a60760d8dbed4f863d3d8",
+  "buildSha256": "4ae2c6943898f628a0f5eabbee5e90628761cef306b972b31752fece094f5dcd",
+  "commit": "ae07b760e9e116fcac7709be5ce93ac81713db9c",
+  "workingTree": "M Apps/WebGPU/app.js\n M Apps/WebGPU/index.html\n M Apps/WebGPU/style.css\n M Specs/WebGPU/basic.js\n M packages/engine/Source/Renderer/WebGPUGeometryRenderer.js\n M packages/engine/Source/Scene/Globe.js\n M packages/engine/Source/Scene/Primitive.js\n M packages/engine/Source/Scene/WebGPUGlobeTileProvider.js\n M packages/engine/Source/Scene/WebGPUScene.js\n M scripts/webgpuTest/demo.js\n M scripts/webgpuTest/run.js\n?? Specs/WebGPU/fixtures/\n?? Specs/WebGPU/streaming.html\n?? Specs/WebGPU/streaming.js\n?? adr/0003-imagery-terrain-primitives.md\n?? packages/engine/Source/Scene/WebGPUImagery.js\n?? packages/engine/Source/Scene/WebGPUPrimitive.js\n?? scripts/webgpuTest/generateTerrain.js",
+  "consoleErrors": [],
+  "requests": [
+    "/Specs/WebGPU/streaming.html",
+    "/Build/CesiumUnminified/Cesium.js",
+    "/Specs/WebGPU/streaming.js",
+    "/Build/CesiumUnminified/Assets/Images/ion-credit.png"
+  ]
+}
