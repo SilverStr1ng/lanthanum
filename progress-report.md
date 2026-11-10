@@ -4,6 +4,8 @@
 
 审查前采集commit：`de51ee9cc761d2751ebe54c267b3068b0bd23bec`，采集开始时工作树干净。上游固定commit仍为 `2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87`。审查后补齐延迟fill释放和数据源显隐像素检查，最终采集另存 `round2-reviewed/`。
 
+**最终实现commit：`b72b7f99260218d2ce5e00c7c139c1fa69546e6a`。正式60次运行，57通过、动态盒体异步拾取3失败；全部60次资源账本归零。** 两轴审查的1项Standards与2项Spec发现均已修复并复核。完整S01仍未通过。
+
 ## 实现与验证
 
 - 修复 `QuadtreePrimitive.destroy()` 未释放已加载瓦片树的问题；清空渲染/高度回调引用、销毁provider并正确标记对象已销毁。不改变LOD选择和请求调度。
@@ -44,7 +46,15 @@ T08三次仍为16瓦片/1,228,800三角形，readyMs=753/741/745ms；这是1.5�
 
 独立双轴审查与重放的最终结果见 `docs/reviews/s01-round2.md`。
 
-审查前新增6个通过子例另做 `--compare` 重放，全部通过，证据 `round2-replay/`。最终增强版正在按新manifest单独采集，结果不覆盖上述记录。
+审查前新增6个通过子例另做 `--compare` 重放，全部通过，证据 `round2-replay/`。
+
+## 最终审阅版证据
+
+`benchmarks/baseline/round2-reviewed/summary.json` 记录最终实现b72b7f9，采集开始时工作树干净；168项manifest为上文0d476e0b，环境与前批一致。20×3再次完成，57通过、3失败，退出1；失败仍全部是T05-entity-box的第一个样本异步拾取，红色像素和同步pick控制均通过。60次销毁的GL对象及Buffer字节全部归零，外部请求和console/HTTP错误均为0。
+
+57次图像重复性SSIM均为1，显著差异比例均为0。GeoJSON/CZML/KML隐藏后的目标RGB全部清黑，恢复后颜色误差≤3/255，且对象ID一致；这些最终子例也另做 `--compare` 重放，3/3通过，见 `round2-reviewed-replay/`。最后一次干净导出重新生成168项hash全部一致，见 `round2-audit/clean-export-reviewed.json`。
+
+最终T08仍为16瓦片、1,228,800三角形，readyMs=752/741/733ms，仅为smoke，不新增性能认证。聚合记录在 `round2-audit/evidence-summary-reviewed.json`。全部旧证据及失败保留原样。
 
 ## 未完成与下一步
 

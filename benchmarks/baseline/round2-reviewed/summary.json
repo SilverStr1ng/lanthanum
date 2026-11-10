@@ -1,0 +1,3005 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-10T02:06:00.545Z",
+  "commit": "b72b7f99260218d2ce5e00c7c139c1fa69546e6a",
+  "workingTree": "",
+  "fixtureManifestSha256": "0d476e0b577d9aed36a878f0a7029ac33b9230164e3a60760d8dbed4f863d3d8",
+  "node": "v24.15.0",
+  "os": {
+    "platform": "win32",
+    "release": "10.0.26300",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core Processor           "
+  },
+  "browserChannel": "chrome",
+  "performanceRun": false,
+  "mode": "WebGL2 baseline; not WebGPU certification",
+  "runs": [
+    {
+      "id": "T00",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 588,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999818,
+          "p95": 4.200000000000273,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.19999999925494194,
+          "p95": 0.30000000074505806,
+          "p99": 0.40000000037252903,
+          "max": 0.40000000037252903
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T00-1.json"
+    },
+    {
+      "id": "T00",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 503,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000068,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.20000000018626451,
+          "p95": 0.30000000074505806,
+          "p99": 0.40000000037252903,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T00-2.json"
+    },
+    {
+      "id": "T00",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 506,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 362,
+          "p50": 4.199999999999932,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 363,
+          "p50": 0.20000000018626451,
+          "p95": 0.30000000074505806,
+          "p99": 0.40000000037252903,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T00-3.json"
+    },
+    {
+      "id": "T01",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 559,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.400000000000091,
+          "max": 4.400000000000091
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.6000000005587935,
+          "max": 0.900000000372529
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T01-1.json"
+    },
+    {
+      "id": "T01",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 539,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 362,
+          "p50": 4.199999999999932,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 363,
+          "p50": 0.20000000018626451,
+          "p95": 0.5,
+          "p99": 0.599999999627471,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T01-2.json"
+    },
+    {
+      "id": "T01",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 543,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999818,
+          "p95": 4.299999999999727,
+          "p99": 4.300000000000182,
+          "max": 4.400000000000091
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.599999999627471,
+          "max": 0.6000000005587935
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T01-3.json"
+    },
+    {
+      "id": "T01-mercator",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 544,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.2000000000000455,
+          "p95": 4.299999999999727,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.599999999627471,
+          "max": 1
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T01-mercator-1.json"
+    },
+    {
+      "id": "T01-mercator",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 540,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.6000000005587935,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T01-mercator-2.json"
+    },
+    {
+      "id": "T01-mercator",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 553,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 360,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 361,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.5,
+          "max": 0.8000000007450581
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T01-mercator-3.json"
+    },
+    {
+      "id": "T01-layers",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 645,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.2000000000000455,
+          "p95": 4.200000000000273,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.6000000005587935,
+          "max": 1.099999999627471
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T01-layers-1.json"
+    },
+    {
+      "id": "T01-layers",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 631,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 360,
+          "p50": 4.199999999999818,
+          "p95": 4.200000000000273,
+          "p99": 4.2999999999999545,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 361,
+          "p50": 0.20000000018626451,
+          "p95": 0.5,
+          "p99": 0.599999999627471,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T01-layers-2.json"
+    },
+    {
+      "id": "T01-layers",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 659,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.599999999627471,
+          "max": 1
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T01-layers-3.json"
+    },
+    {
+      "id": "T01-dateline",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 591,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999932,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.6000000005587935,
+          "max": 0.6000000005587935
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T01-dateline-1.json"
+    },
+    {
+      "id": "T01-dateline",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 589,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999932,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.599999999627471,
+          "max": 0.7999999998137355
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T01-dateline-2.json"
+    },
+    {
+      "id": "T01-dateline",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 586,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.599999999627471,
+          "max": 0.599999999627471
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T01-dateline-3.json"
+    },
+    {
+      "id": "T02",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 554,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 360,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 361,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.6000000005587935,
+          "max": 0.7999999998137355
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T02-1.json"
+    },
+    {
+      "id": "T02",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 557,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 360,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.399999999999864
+        },
+        "renderCpu": {
+          "count": 361,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.6000000005587935,
+          "max": 0.7999999998137355
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T02-2.json"
+    },
+    {
+      "id": "T02",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 575,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.599999999627471,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T02-3.json"
+    },
+    {
+      "id": "T03",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 1469,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999818,
+          "p95": 4.299999999999727,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.5,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T03-1.json"
+    },
+    {
+      "id": "T03",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 486,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 362,
+          "p50": 4.2000000000000455,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 363,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.5,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T03-2.json"
+    },
+    {
+      "id": "T03",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 486,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999818,
+          "p95": 4.200000000000273,
+          "p99": 4.2999999999999545,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.20000000018626451,
+          "p95": 0.39999999944120646,
+          "p99": 0.5,
+          "max": 0.599999999627471
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T03-3.json"
+    },
+    {
+      "id": "T04",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 539,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.5,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 1,
+          "triangles": 120,
+          "geometryBytes": 7440,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 7440
+        }
+      ],
+      "result": "T04-1.json"
+    },
+    {
+      "id": "T04",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 507,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.2000000000000455,
+          "p95": 4.200000000000273,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.20000000018626451,
+          "p95": 0.5,
+          "p99": 0.5,
+          "max": 0.6999999992549419
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 1,
+          "triangles": 120,
+          "geometryBytes": 7440,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 7440
+        }
+      ],
+      "result": "T04-2.json"
+    },
+    {
+      "id": "T04",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 508,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999818,
+          "p95": 4.200000000000273,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.5,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 1,
+          "triangles": 120,
+          "geometryBytes": 7440,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 7440
+        }
+      ],
+      "result": "T04-3.json"
+    },
+    {
+      "id": "T04-i3dm",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 546,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 362,
+          "p50": 4.199999999999932,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 363,
+          "p50": 0.20000000018626451,
+          "p95": 0.5,
+          "p99": 0.6000000005587935,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 1,
+          "triangles": 12,
+          "geometryBytes": 1948,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 1948
+        }
+      ],
+      "result": "T04-i3dm-1.json"
+    },
+    {
+      "id": "T04-i3dm",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 510,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 360,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000068,
+          "max": 4.400000000000091
+        },
+        "renderCpu": {
+          "count": 361,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.599999999627471,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 1,
+          "triangles": 12,
+          "geometryBytes": 1948,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 1948
+        }
+      ],
+      "result": "T04-i3dm-2.json"
+    },
+    {
+      "id": "T04-i3dm",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 509,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000068,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.5,
+          "max": 0.599999999627471
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 1,
+          "triangles": 12,
+          "geometryBytes": 1948,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 1948
+        }
+      ],
+      "result": "T04-i3dm-3.json"
+    },
+    {
+      "id": "T04-pnts",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 530,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999932,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.5,
+          "max": 0.7999999998137355
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 1,
+          "triangles": 0,
+          "geometryBytes": 15000,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 15000
+        }
+      ],
+      "result": "T04-pnts-1.json"
+    },
+    {
+      "id": "T04-pnts",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 502,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999932,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.5,
+          "max": 0.599999999627471
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 1,
+          "triangles": 0,
+          "geometryBytes": 15000,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 15000
+        }
+      ],
+      "result": "T04-pnts-2.json"
+    },
+    {
+      "id": "T04-pnts",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 501,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 362,
+          "p50": 4.199999999999818,
+          "p95": 4.300000000000182,
+          "p99": 4.400000000000091,
+          "max": 4.400000000000091
+        },
+        "renderCpu": {
+          "count": 363,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.5,
+          "max": 0.6000000005587935
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 1,
+          "triangles": 0,
+          "geometryBytes": 15000,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 15000
+        }
+      ],
+      "result": "T04-pnts-3.json"
+    },
+    {
+      "id": "T04-cmpt",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 509,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 360,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.399999999999864
+        },
+        "renderCpu": {
+          "count": 361,
+          "p50": 0.20000000018626451,
+          "p95": 0.5,
+          "p99": 0.599999999627471,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 1,
+          "triangles": 24,
+          "geometryBytes": 3896,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 3896
+        }
+      ],
+      "result": "T04-cmpt-1.json"
+    },
+    {
+      "id": "T04-cmpt",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 516,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.2000000000000455,
+          "p95": 4.299999999999727,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.5,
+          "max": 0.8000000007450581
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 1,
+          "triangles": 24,
+          "geometryBytes": 3896,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 3896
+        }
+      ],
+      "result": "T04-cmpt-2.json"
+    },
+    {
+      "id": "T04-cmpt",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 516,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000068,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.6000000005587935,
+          "max": 0.900000000372529
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 1,
+          "triangles": 24,
+          "geometryBytes": 3896,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 3896
+        }
+      ],
+      "result": "T04-cmpt-3.json"
+    },
+    {
+      "id": "T05",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 772,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 360,
+          "p50": 4.199999999999818,
+          "p95": 4.299999999999727,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 361,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.6000000005587935,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-1.json"
+    },
+    {
+      "id": "T05",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 538,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 360,
+          "p50": 4.199999999999932,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 361,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.6000000005587935,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-2.json"
+    },
+    {
+      "id": "T05",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 539,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 359,
+          "p50": 4.199999999999818,
+          "p95": 4.299999999999727,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 360,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.599999999627471,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-3.json"
+    },
+    {
+      "id": "T05-entity",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 564,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.5,
+          "max": 0.599999999627471
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-entity-1.json"
+    },
+    {
+      "id": "T05-entity",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 551,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999818,
+          "p95": 4.299999999999727,
+          "p99": 4.300000000000068,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.5,
+          "max": 0.599999999627471
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-entity-2.json"
+    },
+    {
+      "id": "T05-entity",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 551,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999818,
+          "p95": 4.200000000000273,
+          "p99": 4.300000000000068,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.5,
+          "max": 0.7999999998137355
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-entity-3.json"
+    },
+    {
+      "id": "T05-entity-box",
+      "iteration": 1,
+      "passed": false,
+      "error": "Error: Error: Entity at first sample: {\"expected\":\"moving-box\"}\n    at Object.record (http://127.0.0.1:2389/Specs/Baseline/baseline.js:78:11)\n    at assertPick (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:161:5)\n    at async dynamicEntity (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:209:3)\n    at async initialize (http://127.0.0.1:2389/Specs/Baseline/baseline.js:243:5)\n    at file:///D:/Nothing/Lanthanum/scripts/webgpuBaseline/run.js:135:17",
+      "errors": [],
+      "external": [],
+      "requests": [
+        "/Specs/Baseline/index.html?scene=T05-entity-box",
+        "/Specs/Baseline/baseline.js",
+        "/Build/CesiumUnminified/Cesium.js",
+        "/Specs/Baseline/instrumentWebGL.js",
+        "/Specs/Baseline/extendedScenarios.js",
+        "/Build/CesiumUnminified/Assets/approximateTerrainHeights.json",
+        "/Build/CesiumUnminified/Assets/Images/ion-credit.png",
+        "/Build/CesiumUnminified/Assets/IAU2006_XYS/IAU2006_XYS_18.json"
+      ],
+      "diagnostic": {
+        "diagnostic": {
+          "frame": 9,
+          "msaa": 1,
+          "pickDepths": [
+            0
+          ]
+        },
+        "id": "T05-entity-box",
+        "ready": false,
+        "failure": "Error: Entity at first sample: {\"expected\":\"moving-box\"}\n    at Object.record (http://127.0.0.1:2389/Specs/Baseline/baseline.js:78:11)\n    at assertPick (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:161:5)\n    at async dynamicEntity (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:209:3)\n    at async initialize (http://127.0.0.1:2389/Specs/Baseline/baseline.js:243:5)",
+        "gpu": {
+          "backend": "webgl2",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "vendor": "Google Inc. (NVIDIA)",
+          "hardwareVerified": true
+        },
+        "width": 1920,
+        "height": 1080,
+        "dpr": 1,
+        "time": "2026-11-09T12:00:00Z",
+        "errors": [],
+        "checks": [
+          {
+            "name": "pixel read has no GL error",
+            "passed": true
+          },
+          {
+            "name": "Entity red material rendered",
+            "passed": true,
+            "detail": {
+              "first": [
+                255,
+                0,
+                0,
+                255
+              ]
+            }
+          },
+          {
+            "name": "dynamic box synchronous pick control",
+            "passed": true
+          },
+          {
+            "name": "Entity at first sample",
+            "passed": false,
+            "detail": {
+              "expected": "moving-box"
+            }
+          }
+        ],
+        "counters": {
+          "renderCpu": [],
+          "raf": []
+        },
+        "resources": {
+          "live": {
+            "Buffer": 9,
+            "Texture": 10,
+            "Framebuffer": 5,
+            "Renderbuffer": 1,
+            "Program": 6,
+            "Shader": 0,
+            "VertexArray": 2,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "created": {
+            "Buffer": 59,
+            "Texture": 17,
+            "Framebuffer": 5,
+            "Renderbuffer": 1,
+            "Program": 6,
+            "Shader": 12,
+            "VertexArray": 9,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "deleted": {
+            "Buffer": 50,
+            "Texture": 7,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 0,
+            "Shader": 12,
+            "VertexArray": 7,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "bufferBytes": 1492,
+          "textureBytes": null,
+          "textureBytesReason": "Not measured; format/mipmap accounting belongs to S04",
+          "frame": {
+            "draws": 4,
+            "triangles": 18,
+            "instances": 4
+          }
+        },
+        "tiles": []
+      },
+      "destroyed": {
+        "destroyed": true,
+        "resources": {
+          "live": {
+            "Buffer": 0,
+            "Texture": 0,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 0,
+            "Shader": 0,
+            "VertexArray": 0,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "created": {
+            "Buffer": 108,
+            "Texture": 24,
+            "Framebuffer": 5,
+            "Renderbuffer": 1,
+            "Program": 6,
+            "Shader": 12,
+            "VertexArray": 16,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "deleted": {
+            "Buffer": 108,
+            "Texture": 24,
+            "Framebuffer": 5,
+            "Renderbuffer": 1,
+            "Program": 6,
+            "Shader": 12,
+            "VertexArray": 16,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "bufferBytes": 0,
+          "textureBytes": null,
+          "textureBytesReason": "Not measured; format/mipmap accounting belongs to S04",
+          "frame": {
+            "draws": 4,
+            "triangles": 18,
+            "instances": 4
+          }
+        },
+        "errors": [],
+        "failure": "Error: Entity at first sample: {\"expected\":\"moving-box\"}\n    at Object.record (http://127.0.0.1:2389/Specs/Baseline/baseline.js:78:11)\n    at assertPick (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:161:5)\n    at async dynamicEntity (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:209:3)\n    at async initialize (http://127.0.0.1:2389/Specs/Baseline/baseline.js:243:5)"
+      }
+    },
+    {
+      "id": "T05-entity-box",
+      "iteration": 2,
+      "passed": false,
+      "error": "Error: Error: Entity at first sample: {\"expected\":\"moving-box\"}\n    at Object.record (http://127.0.0.1:2389/Specs/Baseline/baseline.js:78:11)\n    at assertPick (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:161:5)\n    at async dynamicEntity (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:209:3)\n    at async initialize (http://127.0.0.1:2389/Specs/Baseline/baseline.js:243:5)\n    at file:///D:/Nothing/Lanthanum/scripts/webgpuBaseline/run.js:135:17",
+      "errors": [],
+      "external": [],
+      "requests": [
+        "/Specs/Baseline/index.html?scene=T05-entity-box",
+        "/Specs/Baseline/baseline.js",
+        "/Build/CesiumUnminified/Cesium.js",
+        "/Specs/Baseline/instrumentWebGL.js",
+        "/Specs/Baseline/extendedScenarios.js",
+        "/Build/CesiumUnminified/Assets/approximateTerrainHeights.json",
+        "/Build/CesiumUnminified/Assets/Images/ion-credit.png",
+        "/Build/CesiumUnminified/Assets/IAU2006_XYS/IAU2006_XYS_18.json"
+      ],
+      "diagnostic": {
+        "diagnostic": {
+          "frame": 9,
+          "msaa": 1,
+          "pickDepths": [
+            0
+          ]
+        },
+        "id": "T05-entity-box",
+        "ready": false,
+        "failure": "Error: Entity at first sample: {\"expected\":\"moving-box\"}\n    at Object.record (http://127.0.0.1:2389/Specs/Baseline/baseline.js:78:11)\n    at assertPick (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:161:5)\n    at async dynamicEntity (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:209:3)\n    at async initialize (http://127.0.0.1:2389/Specs/Baseline/baseline.js:243:5)",
+        "gpu": {
+          "backend": "webgl2",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "vendor": "Google Inc. (NVIDIA)",
+          "hardwareVerified": true
+        },
+        "width": 1920,
+        "height": 1080,
+        "dpr": 1,
+        "time": "2026-11-09T12:00:00Z",
+        "errors": [],
+        "checks": [
+          {
+            "name": "pixel read has no GL error",
+            "passed": true
+          },
+          {
+            "name": "Entity red material rendered",
+            "passed": true,
+            "detail": {
+              "first": [
+                255,
+                0,
+                0,
+                255
+              ]
+            }
+          },
+          {
+            "name": "dynamic box synchronous pick control",
+            "passed": true
+          },
+          {
+            "name": "Entity at first sample",
+            "passed": false,
+            "detail": {
+              "expected": "moving-box"
+            }
+          }
+        ],
+        "counters": {
+          "renderCpu": [],
+          "raf": []
+        },
+        "resources": {
+          "live": {
+            "Buffer": 9,
+            "Texture": 10,
+            "Framebuffer": 5,
+            "Renderbuffer": 1,
+            "Program": 6,
+            "Shader": 0,
+            "VertexArray": 2,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "created": {
+            "Buffer": 59,
+            "Texture": 17,
+            "Framebuffer": 5,
+            "Renderbuffer": 1,
+            "Program": 6,
+            "Shader": 12,
+            "VertexArray": 9,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "deleted": {
+            "Buffer": 50,
+            "Texture": 7,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 0,
+            "Shader": 12,
+            "VertexArray": 7,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "bufferBytes": 1492,
+          "textureBytes": null,
+          "textureBytesReason": "Not measured; format/mipmap accounting belongs to S04",
+          "frame": {
+            "draws": 4,
+            "triangles": 18,
+            "instances": 4
+          }
+        },
+        "tiles": []
+      },
+      "destroyed": {
+        "destroyed": true,
+        "resources": {
+          "live": {
+            "Buffer": 0,
+            "Texture": 0,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 0,
+            "Shader": 0,
+            "VertexArray": 0,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "created": {
+            "Buffer": 108,
+            "Texture": 24,
+            "Framebuffer": 5,
+            "Renderbuffer": 1,
+            "Program": 6,
+            "Shader": 12,
+            "VertexArray": 16,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "deleted": {
+            "Buffer": 108,
+            "Texture": 24,
+            "Framebuffer": 5,
+            "Renderbuffer": 1,
+            "Program": 6,
+            "Shader": 12,
+            "VertexArray": 16,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "bufferBytes": 0,
+          "textureBytes": null,
+          "textureBytesReason": "Not measured; format/mipmap accounting belongs to S04",
+          "frame": {
+            "draws": 4,
+            "triangles": 18,
+            "instances": 4
+          }
+        },
+        "errors": [],
+        "failure": "Error: Entity at first sample: {\"expected\":\"moving-box\"}\n    at Object.record (http://127.0.0.1:2389/Specs/Baseline/baseline.js:78:11)\n    at assertPick (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:161:5)\n    at async dynamicEntity (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:209:3)\n    at async initialize (http://127.0.0.1:2389/Specs/Baseline/baseline.js:243:5)"
+      }
+    },
+    {
+      "id": "T05-entity-box",
+      "iteration": 3,
+      "passed": false,
+      "error": "Error: Error: Entity at first sample: {\"expected\":\"moving-box\"}\n    at Object.record (http://127.0.0.1:2389/Specs/Baseline/baseline.js:78:11)\n    at assertPick (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:161:5)\n    at async dynamicEntity (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:209:3)\n    at async initialize (http://127.0.0.1:2389/Specs/Baseline/baseline.js:243:5)\n    at file:///D:/Nothing/Lanthanum/scripts/webgpuBaseline/run.js:135:17",
+      "errors": [],
+      "external": [],
+      "requests": [
+        "/Specs/Baseline/index.html?scene=T05-entity-box",
+        "/Specs/Baseline/baseline.js",
+        "/Build/CesiumUnminified/Cesium.js",
+        "/Specs/Baseline/instrumentWebGL.js",
+        "/Specs/Baseline/extendedScenarios.js",
+        "/Build/CesiumUnminified/Assets/approximateTerrainHeights.json",
+        "/Build/CesiumUnminified/Assets/Images/ion-credit.png",
+        "/Build/CesiumUnminified/Assets/IAU2006_XYS/IAU2006_XYS_18.json"
+      ],
+      "diagnostic": {
+        "diagnostic": {
+          "frame": 9,
+          "msaa": 1,
+          "pickDepths": [
+            0
+          ]
+        },
+        "id": "T05-entity-box",
+        "ready": false,
+        "failure": "Error: Entity at first sample: {\"expected\":\"moving-box\"}\n    at Object.record (http://127.0.0.1:2389/Specs/Baseline/baseline.js:78:11)\n    at assertPick (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:161:5)\n    at async dynamicEntity (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:209:3)\n    at async initialize (http://127.0.0.1:2389/Specs/Baseline/baseline.js:243:5)",
+        "gpu": {
+          "backend": "webgl2",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "vendor": "Google Inc. (NVIDIA)",
+          "hardwareVerified": true
+        },
+        "width": 1920,
+        "height": 1080,
+        "dpr": 1,
+        "time": "2026-11-09T12:00:00Z",
+        "errors": [],
+        "checks": [
+          {
+            "name": "pixel read has no GL error",
+            "passed": true
+          },
+          {
+            "name": "Entity red material rendered",
+            "passed": true,
+            "detail": {
+              "first": [
+                255,
+                0,
+                0,
+                255
+              ]
+            }
+          },
+          {
+            "name": "dynamic box synchronous pick control",
+            "passed": true
+          },
+          {
+            "name": "Entity at first sample",
+            "passed": false,
+            "detail": {
+              "expected": "moving-box"
+            }
+          }
+        ],
+        "counters": {
+          "renderCpu": [],
+          "raf": []
+        },
+        "resources": {
+          "live": {
+            "Buffer": 9,
+            "Texture": 10,
+            "Framebuffer": 5,
+            "Renderbuffer": 1,
+            "Program": 6,
+            "Shader": 0,
+            "VertexArray": 2,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "created": {
+            "Buffer": 59,
+            "Texture": 17,
+            "Framebuffer": 5,
+            "Renderbuffer": 1,
+            "Program": 6,
+            "Shader": 12,
+            "VertexArray": 9,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "deleted": {
+            "Buffer": 50,
+            "Texture": 7,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 0,
+            "Shader": 12,
+            "VertexArray": 7,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "bufferBytes": 1492,
+          "textureBytes": null,
+          "textureBytesReason": "Not measured; format/mipmap accounting belongs to S04",
+          "frame": {
+            "draws": 4,
+            "triangles": 18,
+            "instances": 4
+          }
+        },
+        "tiles": []
+      },
+      "destroyed": {
+        "destroyed": true,
+        "resources": {
+          "live": {
+            "Buffer": 0,
+            "Texture": 0,
+            "Framebuffer": 0,
+            "Renderbuffer": 0,
+            "Program": 0,
+            "Shader": 0,
+            "VertexArray": 0,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "created": {
+            "Buffer": 115,
+            "Texture": 25,
+            "Framebuffer": 5,
+            "Renderbuffer": 1,
+            "Program": 6,
+            "Shader": 12,
+            "VertexArray": 17,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "deleted": {
+            "Buffer": 115,
+            "Texture": 25,
+            "Framebuffer": 5,
+            "Renderbuffer": 1,
+            "Program": 6,
+            "Shader": 12,
+            "VertexArray": 17,
+            "Sampler": 0,
+            "Query": 0,
+            "TransformFeedback": 0
+          },
+          "bufferBytes": 0,
+          "textureBytes": null,
+          "textureBytesReason": "Not measured; format/mipmap accounting belongs to S04",
+          "frame": {
+            "draws": 4,
+            "triangles": 18,
+            "instances": 4
+          }
+        },
+        "errors": [],
+        "failure": "Error: Entity at first sample: {\"expected\":\"moving-box\"}\n    at Object.record (http://127.0.0.1:2389/Specs/Baseline/baseline.js:78:11)\n    at assertPick (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:161:5)\n    at async dynamicEntity (http://127.0.0.1:2389/Specs/Baseline/extendedScenarios.js:209:3)\n    at async initialize (http://127.0.0.1:2389/Specs/Baseline/baseline.js:243:5)"
+      }
+    },
+    {
+      "id": "T05-geojson",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 882,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 362,
+          "p50": 4.199999999999818,
+          "p95": 4.200000000000273,
+          "p99": 4.2999999999999545,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 363,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.599999999627471,
+          "max": 0.6000000005587935
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-geojson-1.json"
+    },
+    {
+      "id": "T05-geojson",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 660,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 359,
+          "p50": 4.2000000000000455,
+          "p95": 4.299999999999727,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 360,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.5,
+          "max": 0.599999999627471
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-geojson-2.json"
+    },
+    {
+      "id": "T05-geojson",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 681,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 360,
+          "p50": 4.2000000000000455,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 361,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.5,
+          "max": 0.599999999627471
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-geojson-3.json"
+    },
+    {
+      "id": "T05-czml",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 611,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 360,
+          "p50": 4.199999999999932,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 361,
+          "p50": 0.20000000018626451,
+          "p95": 0.30000000074505806,
+          "p99": 0.40000000037252903,
+          "max": 0.40000000037252903
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-czml-1.json"
+    },
+    {
+      "id": "T05-czml",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 608,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.20000000018626451,
+          "p95": 0.30000000074505806,
+          "p99": 0.40000000037252903,
+          "max": 0.40000000037252903
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-czml-2.json"
+    },
+    {
+      "id": "T05-czml",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 610,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999932,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.40000000037252903,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-czml-3.json"
+    },
+    {
+      "id": "T05-kml",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 603,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.20000000018626451,
+          "p95": 0.30000000074505806,
+          "p99": 0.40000000037252903,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-kml-1.json"
+    },
+    {
+      "id": "T05-kml",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 614,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 362,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 363,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.40000000037252903,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-kml-2.json"
+    },
+    {
+      "id": "T05-kml",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 614,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999818,
+          "p95": 4.299999999999727,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.20000000018626451,
+          "p95": 0.40000000037252903,
+          "p99": 0.40000000037252903,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T05-kml-3.json"
+    },
+    {
+      "id": "T06",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 485,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.2999999999999545,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.20000000018626451,
+          "p95": 0.30000000074505806,
+          "p99": 0.40000000037252903,
+          "max": 0.599999999627471
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T06-1.json"
+    },
+    {
+      "id": "T06",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 483,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 360,
+          "p50": 4.199999999999932,
+          "p95": 4.299999999999727,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 361,
+          "p50": 0.20000000018626451,
+          "p95": 0.30000000074505806,
+          "p99": 0.40000000037252903,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T06-2.json"
+    },
+    {
+      "id": "T06",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 478,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 361,
+          "p50": 4.199999999999932,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 362,
+          "p50": 0.20000000018626451,
+          "p95": 0.30000000074505806,
+          "p99": 0.40000000037252903,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T06-3.json"
+    },
+    {
+      "id": "T07",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 624,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 359,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 360,
+          "p50": 0.20000000018626451,
+          "p95": 0.30000000074505806,
+          "p99": 0.40000000037252903,
+          "max": 0.40000000037252903
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T07-1.json"
+    },
+    {
+      "id": "T07",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 619,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 362,
+          "p50": 4.2000000000000455,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 363,
+          "p50": 0.20000000018626451,
+          "p95": 0.39999999944120646,
+          "p99": 0.40000000037252903,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T07-2.json"
+    },
+    {
+      "id": "T07",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 612,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 362,
+          "p50": 4.199999999999818,
+          "p95": 4.200000000000273,
+          "p99": 4.2999999999999545,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 363,
+          "p50": 0.20000000018626451,
+          "p95": 0.30000000074505806,
+          "p99": 0.40000000037252903,
+          "max": 0.5
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [],
+      "result": "T07-3.json"
+    },
+    {
+      "id": "T08",
+      "iteration": 1,
+      "passed": true,
+      "readyMs": 752,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 360,
+          "p50": 4.199999999999818,
+          "p95": 4.200000000000273,
+          "p99": 4.300000000000182,
+          "max": 4.400000000000091
+        },
+        "renderCpu": {
+          "count": 361,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.6000000005587935,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 16,
+          "triangles": 1228800,
+          "geometryBytes": 73728000,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 73728000
+        }
+      ],
+      "result": "T08-1.json"
+    },
+    {
+      "id": "T08",
+      "iteration": 2,
+      "passed": true,
+      "readyMs": 741,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 362,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 363,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.6000000005587935,
+          "max": 0.7000000001862645
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 16,
+          "triangles": 1228800,
+          "geometryBytes": 73728000,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 73728000
+        }
+      ],
+      "result": "T08-2.json"
+    },
+    {
+      "id": "T08",
+      "iteration": 3,
+      "passed": true,
+      "readyMs": 733,
+      "image": {
+        "ssim": 1,
+        "significantFraction": 0,
+        "withinThreeFraction": 1
+      },
+      "timing": {
+        "raf": {
+          "count": 363,
+          "p50": 4.199999999999818,
+          "p95": 4.2999999999999545,
+          "p99": 4.300000000000182,
+          "max": 4.300000000000182
+        },
+        "renderCpu": {
+          "count": 364,
+          "p50": 0.2999999998137355,
+          "p95": 0.5,
+          "p99": 0.5,
+          "max": 0.6000000005587935
+        },
+        "gpu": null,
+        "label": "1.5s smoke; not performance acceptance"
+      },
+      "resourcesReleased": true,
+      "gpu": {
+        "backend": "webgl2",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "hardwareVerified": true
+      },
+      "tiles": [
+        {
+          "selected": 16,
+          "triangles": 1228800,
+          "geometryBytes": 73728000,
+          "textureBytes": 0,
+          "totalMemoryUsageInBytes": 73728000
+        }
+      ],
+      "result": "T08-3.json"
+    }
+  ],
+  "passed": false,
+  "buildSha256": "a537eff3f8c7eebdb10075ca78de933d292ec075f9fb10f38b848e2d4a3ebdf7",
+  "lockSha256": "0fd41bcd89ea1a4f76d8198748265dcb54699ab5e6a3493e65d23d92246a1b60",
+  "browserVersion": "157.0.8103.40",
+  "systemInfo": {
+    "gpu": {
+      "devices": [
+        {
+          "vendorId": 4318,
+          "deviceId": 11266,
+          "subSysId": 546708300,
+          "revision": 161,
+          "vendorString": "",
+          "deviceString": "NVIDIA GeForce RTX 5080",
+          "driverVendor": "NVIDIA",
+          "driverVersion": "32.0.16.2101"
+        },
+        {
+          "vendorId": 4098,
+          "deviceId": 5056,
+          "subSysId": 2289504323,
+          "revision": 203,
+          "vendorString": "",
+          "deviceString": "AMD Radeon(TM) Graphics",
+          "driverVendor": "",
+          "driverVersion": "32.0.21042.62"
+        },
+        {
+          "vendorId": 4318,
+          "deviceId": 11266,
+          "subSysId": 546708300,
+          "revision": 161,
+          "vendorString": "",
+          "deviceString": "NVIDIA GeForce RTX 5080",
+          "driverVendor": "",
+          "driverVersion": "32.0.16.2101"
+        },
+        {
+          "vendorId": 5140,
+          "deviceId": 140,
+          "subSysId": 0,
+          "revision": 0,
+          "vendorString": "",
+          "deviceString": "Microsoft Basic Render Driver",
+          "driverVendor": "",
+          "driverVersion": "10.0.26100.9711"
+        }
+      ],
+      "auxAttributes": {
+        "amdSwitchable": false,
+        "bgra8OverlaySupport": "SCALING",
+        "canSupportThreadedTextureMailbox": false,
+        "directComposition": true,
+        "directMLFeatureLevel": "Not supported",
+        "directRenderingVersion": "",
+        "displayType": "ANGLE_D3D11",
+        "dx12FeatureLevel": "Not supported",
+        "glExtensions": "GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_copy_texture_3d GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_size GL_ANGLE_multiview_multisample GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_provoking_vertex GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_robust_client_memory GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_multisample GL_ANGLE_texture_usage GL_ANGLE_translated_shader_source GL_APPLE_clip_distance GL_ARM_rgba8 GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_copy_compressed_texture GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_EXT_EGL_image_external_wrap_modes GL_EXT_base_instance GL_EXT_blend_func_extended GL_EXT_blend_minmax GL_EXT_clip_control GL_EXT_clip_cull_distance GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_depth_clamp GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_occlusion_query_boolean GL_EXT_polygon_offset_clamp GL_EXT_read_format_bgra GL_EXT_render_snorm GL_EXT_robustness GL_EXT_sRGB GL_EXT_shader_texture_lod GL_EXT_texture_border_clamp GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_EXT_texture_rg GL_EXT_texture_storage GL_EXT_texture_type_2_10_10_10_REV GL_EXT_unpack_subimage GL_KHR_debug GL_KHR_parallel_shader_compile GL_KHR_robustness GL_NV_EGL_stream_consumer_external GL_NV_fence GL_NV_framebuffer_blit GL_NV_pack_subimage GL_NV_pixel_buffer_object GL_NV_shader_noperspective_interpolation GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_depth24 GL_OES_depth32 GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_required_internalformat GL_OES_rgb8_rgba8 GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_border_clamp GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_vertex_array_object GL_OVR_multiview GL_OVR_multiview2 ",
+        "glImplementationParts": "(gl=egl-angle,angle=d3d11)",
+        "glRenderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11-32.0.16.2101)",
+        "glResetNotificationStrategy": 33362,
+        "glVendor": "Google Inc. (NVIDIA)",
+        "glVersion": "OpenGL ES 3.0 (ANGLE 2.1.29097 git hash: 751417514a52)",
+        "glWsExtensions": "EGL_EXT_create_context_robustness EGL_ANGLE_d3d_share_handle_client_buffer EGL_ANGLE_d3d_texture_client_buffer EGL_ANGLE_surface_d3d_texture_2d_share_handle EGL_ANGLE_query_surface_pointer EGL_ANGLE_window_fixed_size EGL_ANGLE_keyed_mutex EGL_ANGLE_surface_orientation EGL_ANGLE_direct_composition EGL_NV_post_sub_buffer EGL_KHR_create_context EGL_KHR_image EGL_KHR_image_base EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_get_all_proc_addresses EGL_KHR_stream EGL_KHR_stream_consumer_gltexture EGL_NV_stream_consumer_gltexture_yuv EGL_ANGLE_stream_producer_d3d_texture EGL_ANGLE_create_context_webgl_compatibility EGL_CHROMIUM_create_context_bind_generates_resource EGL_CHROMIUM_sync_control EGL_EXT_pixel_format_float EGL_KHR_surfaceless_context EGL_ANGLE_display_texture_share_group EGL_ANGLE_display_semaphore_share_group EGL_ANGLE_create_context_client_arrays EGL_ANGLE_program_cache_control EGL_ANGLE_robust_resource_initialization EGL_ANGLE_create_context_extensions_enabled EGL_ANDROID_blob_cache EGL_ANDROID_recordable EGL_ANGLE_image_d3d11_texture EGL_ANGLE_create_context_backwards_compatible EGL_KHR_no_config_context EGL_KHR_create_context_no_error EGL_KHR_reusable_sync EGL_ANGLE_memory_usage_report ",
+        "glWsVendor": "Google Inc. (NVIDIA)",
+        "glWsVersion": "1.5 (ANGLE 2.1.29097 git hash: 751417514a52)",
+        "inProcessGpu": false,
+        "initializationTime": 0.150211,
+        "isAsan": false,
+        "isClangCoverage": false,
+        "jpegDecodeAcceleratorSupported": false,
+        "maxMsaaSamples": "8",
+        "nv12OverlaySupport": "SCALING",
+        "optimus": false,
+        "p010OverlaySupport": "SCALING",
+        "passthroughCmdDecoder": true,
+        "pixelShaderVersion": "5.0",
+        "processCrashCount": 0,
+        "rgb10a2OverlaySupport": "SCALING",
+        "sandboxed": false,
+        "skiaBackendType": "GaneshGL",
+        "subpixelFontRendering": true,
+        "supportsD3dSharedImages": false,
+        "supportsDirectML": false,
+        "supportsDx12": false,
+        "supportsOverlays": true,
+        "supportsVulkan": false,
+        "targetCpuBits": 64,
+        "vertexShaderVersion": "5.0",
+        "visibilityCallbackCallCount": 0,
+        "vulkanVersion": "Not supported",
+        "yuy2OverlaySupport": "SCALING"
+      },
+      "featureStatus": {
+        "2d_canvas": "enabled",
+        "direct_rendering_display_compositor": "disabled_off_ok",
+        "gpu_compositing": "enabled",
+        "multiple_raster_threads": "enabled_on",
+        "opengl": "enabled_on",
+        "rasterization": "enabled",
+        "skia_graphite": "disabled_off",
+        "trees_in_viz": "disabled_off",
+        "video_decode": "enabled",
+        "video_encode": "enabled",
+        "webgl": "enabled",
+        "webgpu": "enabled",
+        "webnn": "disabled_off"
+      },
+      "driverBugWorkarounds": [
+        "disable_d3d11_vp9_ksvc_decoding",
+        "enable_webgl_timer_query_extensions",
+        "exit_on_context_lost",
+        "unpack_overlapping_rows_separately_unpack_buffer",
+        "use_g22_topleft_color_space_for_yuv_vp",
+        "disabled_extension_GL_KHR_blend_equation_advanced",
+        "disabled_extension_GL_KHR_blend_equation_advanced_coherent"
+      ],
+      "videoDecoding": [],
+      "videoEncoding": []
+    },
+    "modelName": "",
+    "modelVersion": "",
+    "commandLine": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,HttpsUpgrades,HttpsFirstBalancedModeAutoEnable,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,AvoidCorsURLLoaderRestartOnRedirect,TcpPortRandomizationWin,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,PreconnectToSearch,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface,SkipListAccountsWithoutGaiaCookies --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --enable-unsafe-swiftshader --edge-skip-compat-layer-relaunch --disable-stack-profiler --disable-infobars --disable-sync --do-not-de-elevate --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --use-angle=d3d11 --user-data-dir=\"C:\\Users\\rakuyou\\AppData\\Local\\Temp\\playwright_chromiumdev_profile-uG3ahQ\" --remote-debugging-pipe --no-startup-window --noerrdialogs --flag-switches-begin --flag-switches-end --enable-unsafe-swiftshader"
+  }
+}

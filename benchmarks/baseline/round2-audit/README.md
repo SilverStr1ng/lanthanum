@@ -7,4 +7,4 @@
 - `clean-export.json`：从已提交源导出并重建所有168个资产，无重新freeze。
 - `evidence-summary.json`：从正式60次JSON聚合，保留57通过、3失败；全部60次资源归零。
 
-正式采集运行的是 `de51ee9`。不覆盖首轮日志；历史失败不因后续修复而改写成PASS。
+审查前采集运行的是 `de51ee9`。最终审阅版运行 `b72b7f9`，对应 `*-reviewed` 文件：完整套件16,035执行、17个原失败不变；Globe126项通过；stub普通销毁1项通过、真实GPU2项跳过。最终baseline再次57/60通过、全部资源归零，见 `evidence-summary-reviewed.json`。不覆盖旧日志；历史失败不因后续修复而改写成PASS。

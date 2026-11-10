@@ -1,0 +1,17 @@
+{
+  "commit": "b72b7f99260218d2ce5e00c7c139c1fa69546e6a",
+  "cleanWorkingTree": true,
+  "runs": 60,
+  "passed": 57,
+  "failed": [
+    "T05-entity-box-1",
+    "T05-entity-box-2",
+    "T05-entity-box-3"
+  ],
+  "imageRuns": 57,
+  "minSsim": 1,
+  "maxSignificantFraction": 0,
+  "releasePasses": 60,
+  "externalRequests": 0,
+  "consoleErrors": 0
+}

@@ -19,4 +19,6 @@ Standards代理已复核最终stub处理、VA队列清理和真实TerrainFillMes
 
 Spec代理已复核两项修复，无剩余可行动发现。动态盒体pickAsync失败及其余S01缺口保留，不构成完整阶段验收。
 
+最终实测：实现b72b7f9的完整上游套件16,035项执行，17项失败身份与原版完全一致；最终baseline为57/60通过，3次为已登记动态盒体失败，60次资源归零。增强的三类数据源显隐像素断言各三轮通过，并分别对已存图像重放通过。最终manifest为0d476e0b开头，证据 `round2-reviewed/` 和 `round2-reviewed-replay/`。
+
 本轮初始发现数：Standards 1，Spec 2；两轴最高均为P2，分别处理，不合并排名。最终采集/实现版本以 `progress-report.md` 和证据summary为准。

@@ -75,3 +75,5 @@ npm run baseline:run -- --channel=msedge --output=benchmarks/runs/edge
 干净导出重建也已验证：从提交 `d84d8a3` 用 `git archive` 导出选定源文件，在独立目录用Node24.15.0生成资产，再验证162项hash全部一致；记录见 `benchmarks/baseline/audit/clean-export.json`。`.gitattributes` 固定受哈希文本的LF，避免Windows autocrlf改变验收身份。
 
 第二轮相同方式从 `de51ee9` 导出后生成，168项hash全部一致，记录 `benchmarks/baseline/round2-audit/clean-export.json`。正式60次结果为57通过、动态盒体拾取3失败；所有60次销毁账本归零。新增回归、原套件失败身份对比与图像证据见 `progress-report.md`。
+
+最终审阅版为 `b72b7f9`：增加地形fill延迟释放队列修复与数据源显隐像素断言，再次干净导出验证168项hash一致，见 `round2-audit/clean-export-reviewed.json`。当前manifest对应 `round2-reviewed/`：60次仍为57通过、动态盒体3失败，资源全部归零；3类数据源的独立图像重放通过。请使用上面的最终目录复测，审查前目录仅作历史记录。
