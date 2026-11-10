@@ -1,0 +1,93 @@
+{
+  "tilejson": "2.1.0",
+  "format": "quantized-mesh-1.0",
+  "version": "1.0.0",
+  "scheme": "tms",
+  "tiles": [
+    "{z}/{x}/{y}.terrain"
+  ],
+  "available": [
+    [
+      {
+        "startX": 0,
+        "endX": 0,
+        "startY": 0,
+        "endY": 0
+      },
+      {
+        "startX": 1,
+        "endX": 1,
+        "startY": 0,
+        "endY": 0
+      }
+    ],
+    [
+      {
+        "startX": 2,
+        "endX": 2,
+        "startY": 1,
+        "endY": 1
+      }
+    ],
+    [
+      {
+        "startX": 4,
+        "endX": 4,
+        "startY": 2,
+        "endY": 2
+      }
+    ],
+    [
+      {
+        "startX": 9,
+        "endX": 9,
+        "startY": 4,
+        "endY": 4
+      }
+    ],
+    [
+      {
+        "startX": 18,
+        "endX": 18,
+        "startY": 9,
+        "endY": 9
+      }
+    ],
+    [
+      {
+        "startX": 37,
+        "endX": 37,
+        "startY": 19,
+        "endY": 19
+      }
+    ],
+    [
+      {
+        "startX": 74,
+        "endX": 74,
+        "startY": 39,
+        "endY": 39
+      }
+    ],
+    [
+      {
+        "startX": 149,
+        "endX": 149,
+        "startY": 78,
+        "endY": 78
+      }
+    ],
+    [
+      {
+        "startX": 298,
+        "endX": 298,
+        "startY": 156,
+        "endY": 156
+      }
+    ]
+  ],
+  "extensions": [
+    "octvertexnormals"
+  ],
+  "attribution": "Lanthanum synthetic 1500 m terrain"
+}

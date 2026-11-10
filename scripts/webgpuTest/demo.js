@@ -15,6 +15,8 @@ export async function checkDemo(page, url, output) {
   const ready = () =>
     page.waitForFunction(
       () =>
+        document.getElementById("terrain")?.getAttribute("aria-busy") !==
+          "true" &&
         window.demoScene?.globe?.tilesLoaded &&
         window.demoScene.statistics.selectedTiles > 0 &&
         window.demoScene.statistics.pendingTiles === 0 &&
@@ -25,10 +27,36 @@ export async function checkDemo(page, url, output) {
   await ready();
   await page.screenshot({ path: `${output}/demo.png` });
   const before = await position();
+  const trackedPoint = await page.evaluate(() => {
+    const scene = window.demoScene;
+    const C = window.Cesium;
+    const point = scene.camera.pickEllipsoid(new C.Cartesian2(760, 350));
+    return [point.x, point.y, point.z];
+  });
   await page.mouse.move(760, 350);
   await page.mouse.down();
   await page.mouse.move(850, 400, { steps: 8 });
   await page.mouse.up();
+  const draggedPoint = await page.evaluate((point) => {
+    const scene = window.demoScene,
+      C = window.Cesium;
+    const transform = C.Matrix4.multiply(
+      scene.camera.frustum.projectionMatrix,
+      scene.camera.viewMatrix,
+      new C.Matrix4(),
+    );
+    const clip = C.Matrix4.multiplyByVector(
+      transform,
+      new C.Cartesian4(...point, 1),
+      new C.Cartesian4(),
+    );
+    return { x: (clip.x / clip.w + 1) * 640, y: (1 - clip.y / clip.w) * 400 };
+  }, trackedPoint);
+  check(
+    "left drag moves the surface with the pointer",
+    draggedPoint.x > 760 && draggedPoint.y > 350,
+    draggedPoint,
+  );
   check(
     "pointer drag moves the camera",
     JSON.stringify(before) !== JSON.stringify(await position()),
@@ -85,6 +113,51 @@ export async function checkDemo(page, url, output) {
       window.demoScene.canvas.height === 600,
   );
   check("window resize updates drawing buffer", true);
+  await page.getByLabel("地形", { exact: true }).selectOption("heightmap");
+  await ready();
+  check(
+    "heightmap control loads an elevated surface",
+    await page.evaluate(() => {
+      const scene = window.demoScene,
+        C = window.Cesium;
+      const point = scene.globe.pick(
+        scene.camera.getPickRay(new C.Cartesian2(450, 300)),
+        scene,
+      );
+      return point && C.Cartographic.fromCartesian(point).height > 1000;
+    }),
+  );
+  await page.getByLabel("叠加网格影像").check();
+  await ready();
+  await page.getByLabel("叠加透明度").fill("0.3");
+  await page.getByLabel("高程夸张").fill("2");
+  await ready();
+  check(
+    "overlay and exaggeration controls update the scene",
+    await page.evaluate(
+      () =>
+        window.demoScene.verticalExaggeration === 2 &&
+        window.demoScene.globe.imageryLayers.get(1).alpha === 0.3,
+    ),
+  );
+  await page.screenshot({ path: `${output}/demo-terrain.png` });
+  await page.getByLabel("地形", { exact: true }).selectOption("quantized");
+  await ready();
+  check(
+    "quantized terrain control loads binary tiles",
+    await page.evaluate(() => {
+      const scene = window.demoScene,
+        C = window.Cesium;
+      const point = scene.globe.pick(
+        scene.camera.getPickRay(new C.Cartesian2(450, 300)),
+        scene,
+      );
+      return (
+        point &&
+        Math.abs(C.Cartographic.fromCartesian(point).height - 3000) < 30
+      );
+    }),
+  );
   check(
     "no demo rendering errors",
     await page.evaluate(

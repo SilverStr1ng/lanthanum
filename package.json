@@ -108,7 +108,8 @@
   },
   "scripts": {
     "webgpu:start": "gulp build && node scripts/webgpuTest/serve.js",
-    "webgpu:test": "gulp build && node scripts/webgpuBaseline/generateFixtures.js && node scripts/webgpuTest/run.js",
+    "webgpu:test": "gulp build && node scripts/webgpuBaseline/generateFixtures.js && node scripts/webgpuTest/run.js && node scripts/webgpuTest/run.js --suite=streaming",
+    "webgpu:terrain-fixtures": "node scripts/webgpuTest/generateTerrain.js",
     "baseline:generate": "node scripts/webgpuBaseline/generateFixtures.js",
     "baseline:freeze": "node scripts/webgpuBaseline/manifest.js --freeze",
     "baseline:verify": "node scripts/webgpuBaseline/manifest.js --verify",

@@ -7,6 +7,10 @@ let scene,
   frame,
   stopped = false;
 function fail(error) {
+  if (error.recoverable) {
+    status.textContent = `部分数据暂不可用：${error.message}`;
+    return;
+  }
   stopped = true;
   cancelAnimationFrame(frame);
   const box = document.getElementById("error");
@@ -41,19 +45,139 @@ async function start() {
       tilingScheme: new C.GeographicTilingScheme(),
     }),
   );
-  const marker = scene.addGeometry({
-    geometry: C.BoxGeometry.createGeometry(
-      C.BoxGeometry.fromDimensions({
-        dimensions: new C.Cartesian3(160000, 160000, 160000),
-        vertexFormat: C.VertexFormat.POSITION_ONLY,
+  const marker = scene.primitives.add(
+    new C.Primitive({
+      geometryInstances: new C.GeometryInstance({
+        geometry: C.BoxGeometry.fromDimensions({
+          dimensions: new C.Cartesian3(160000, 160000, 160000),
+          vertexFormat: C.PerInstanceColorAppearance.FLAT_VERTEX_FORMAT,
+        }),
+        modelMatrix: C.Transforms.eastNorthUpToFixedFrame(
+          C.Cartesian3.fromDegrees(103.85, 1.29, 100000),
+        ),
+        attributes: {
+          color: C.ColorGeometryInstanceAttribute.fromColor(
+            C.Color.fromCssColorString("#ff685e"),
+          ),
+        },
+        id: "新加坡示例标记",
       }),
-    ),
-    modelMatrix: C.Transforms.eastNorthUpToFixedFrame(
-      C.Cartesian3.fromDegrees(103.85, 1.29, 100000),
-    ),
-    color: C.Color.fromCssColorString("#ff685e"),
-    id: "新加坡示例标记",
+      appearance: new C.PerInstanceColorAppearance({
+        flat: true,
+        translucent: false,
+        closed: true,
+      }),
+    }),
+  );
+  const gridCanvas = document.createElement("canvas");
+  gridCanvas.width = gridCanvas.height = 256;
+  const gridContext = gridCanvas.getContext("2d");
+  gridContext.strokeStyle = "#7ffff0";
+  gridContext.lineWidth = 2;
+  for (let i = 0; i <= 256; i += 32) {
+    gridContext.beginPath();
+    gridContext.moveTo(i, 0);
+    gridContext.lineTo(i, 256);
+    gridContext.moveTo(0, i);
+    gridContext.lineTo(256, i);
+    gridContext.stroke();
+  }
+  const grid = scene.globe.imageryLayers.addImageryProvider(
+    new C.UrlTemplateImageryProvider({
+      url: gridCanvas.toDataURL(),
+      maximumLevel: 4,
+      tilingScheme: new C.WebMercatorTilingScheme(),
+    }),
+  );
+  grid.show = false;
+  grid.alpha = 0.65;
+  document.getElementById("overlay").onchange = (event) => {
+    grid.show = event.target.checked;
+  };
+  document.getElementById("alpha").oninput = (event) => {
+    grid.alpha = Number(event.target.value);
+  };
+  const scheme = new C.GeographicTilingScheme();
+  const heightmap = new C.CustomHeightmapTerrainProvider({
+    width: 65,
+    height: 65,
+    callback: (x, y, level) => {
+      const rectangle = scheme.tileXYToRectangle(x, y, level),
+        heights = new Float32Array(65 * 65);
+      for (let row = 0; row < 65; row++) {
+        for (let column = 0; column < 65; column++) {
+          const longitude = C.Math.toDegrees(
+              rectangle.west + (rectangle.width * column) / 64,
+            ),
+            latitude = C.Math.toDegrees(
+              rectangle.north - (rectangle.height * row) / 64,
+            );
+          heights[row * 65 + column] =
+            3500 *
+              Math.exp(
+                -((longitude - 103.85) ** 2 + (latitude - 1.29) ** 2) / 0.0015,
+              ) +
+            1700 *
+              Math.exp(
+                -((longitude - 103.89) ** 2 + (latitude - 1.32) ** 2) / 0.0006,
+              );
+        }
+      }
+      return heights;
+    },
   });
+  const terrainSelect = document.getElementById("terrain");
+  let terrainGeneration = 0;
+  terrainSelect.onchange = async () => {
+    const generation = ++terrainGeneration;
+    terrainSelect.setAttribute("aria-busy", "true");
+    try {
+      const provider =
+        terrainSelect.value === "quantized"
+          ? await C.CesiumTerrainProvider.fromUrl(
+              "/Specs/WebGPU/fixtures/terrain/",
+              { requestVertexNormals: true },
+            )
+          : terrainSelect.value === "heightmap"
+            ? heightmap
+            : new C.EllipsoidTerrainProvider();
+      if (stopped || generation !== terrainGeneration) {
+        return;
+      }
+      scene.globe.terrainProvider = provider;
+      scene.globe.enableLighting = terrainSelect.value !== "ellipsoid";
+      if (terrainSelect.value !== "ellipsoid") {
+        marker.show = false;
+        document.getElementById("marker").checked = false;
+        terrainView();
+      }
+      scene.render();
+    } catch (error) {
+      fail(error);
+    } finally {
+      if (generation === terrainGeneration) {
+        terrainSelect.setAttribute("aria-busy", "false");
+      }
+    }
+  };
+  function terrainView() {
+    const quantized = terrainSelect.value === "quantized";
+    scene.camera.lookAt(
+      C.Cartesian3.fromDegrees(
+        quantized ? 30 : 103.85,
+        quantized ? 20 : 1.29,
+        1500,
+      ),
+      new C.HeadingPitchRange(0, -Math.PI / 4, 18000),
+    );
+    scene.camera.lookAtTransform(C.Matrix4.IDENTITY);
+  }
+  document.getElementById("terrain-view").onclick = terrainView;
+  document.getElementById("exaggeration").oninput = (event) => {
+    scene.verticalExaggeration = Number(event.target.value);
+    document.getElementById("exaggeration-value").textContent =
+      `${event.target.value} 倍`;
+  };
   home();
   document.getElementById("reset").onclick = home;
   document.getElementById("singapore").onclick = () =>
@@ -68,11 +192,19 @@ async function start() {
   };
   let drag;
   canvas.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0 || !event.isPrimary || stopped) {
+      return;
+    }
     canvas.setPointerCapture(event.pointerId);
-    drag = { x: event.clientX, y: event.clientY, distance: 0 };
+    drag = {
+      id: event.pointerId,
+      x: event.clientX,
+      y: event.clientY,
+      distance: 0,
+    };
   });
   canvas.addEventListener("pointermove", (event) => {
-    if (!drag || stopped) {
+    if (!drag || drag.id !== event.pointerId || stopped) {
       return;
     }
     const dx = event.clientX - drag.x,
@@ -83,12 +215,15 @@ async function start() {
         Math.max(0.002, scene.camera.positionCartographic.height / 12000000),
       ) * 0.004;
     scene.camera.rotateLeft(dx * speed);
-    scene.camera.rotateUp(dy * speed);
+    scene.camera.rotateUp(-dy * speed);
     drag.x = event.clientX;
     drag.y = event.clientY;
     drag.distance += Math.abs(dx) + Math.abs(dy);
   });
   canvas.addEventListener("pointerup", async (event) => {
+    if (drag?.id !== event.pointerId) {
+      return;
+    }
     const click = drag && drag.distance < 5;
     drag = undefined;
     if (!click || stopped) {
@@ -118,7 +253,7 @@ async function start() {
         return;
       }
       const location = C.Cartographic.fromCartesian(point);
-      selection.textContent = `经度 ${C.Math.toDegrees(location.longitude).toFixed(4)}° · 纬度 ${C.Math.toDegrees(location.latitude).toFixed(4)}°`;
+      selection.textContent = `经度 ${C.Math.toDegrees(location.longitude).toFixed(4)}° · 纬度 ${C.Math.toDegrees(location.latitude).toFixed(4)}° · 高程 ${location.height.toFixed(1)} 米`;
     } catch (error) {
       if (!stopped) {
         fail(error);

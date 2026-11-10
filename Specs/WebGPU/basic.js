@@ -250,9 +250,9 @@ async function run() {
     { bytes: resized.length },
   );
   await rejects(
-    "unsupported imagery alpha is explicit",
+    "invalid imagery alpha is explicit",
     () => {
-      layer.alpha = 0.5;
+      layer.alpha = -0.5;
       scene.render();
     },
     /alpha/,

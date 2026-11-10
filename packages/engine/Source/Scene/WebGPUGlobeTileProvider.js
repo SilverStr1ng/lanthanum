@@ -1,9 +1,11 @@
 import {
+  AttributeCompression,
   BoundingSphere,
   Cartesian2,
   Cartesian3,
   Color,
   Ellipsoid,
+  EllipsoidalOccluder,
   Event,
   Intersect,
   IntersectionTests,
@@ -13,11 +15,13 @@ import {
   Visibility,
 } from "@cesium/core";
 import GeographicTilingScheme from "../Core/GeographicTilingScheme.js";
-import RequestScheduler from "../Core/RequestScheduler.js";
 import EllipsoidTerrainProvider from "../Core/EllipsoidTerrainProvider.js";
-import UrlTemplateImageryProvider from "./UrlTemplateImageryProvider.js";
+import Request from "../Core/Request.js";
+import RequestType from "../Core/RequestType.js";
+import RequestScheduler from "../Core/RequestScheduler.js";
 import QuadtreeTileLoadState from "./QuadtreeTileLoadState.js";
 import TileBoundingRegion from "./TileBoundingRegion.js";
+import WebGPUImagery from "./WebGPUImagery.js";
 
 class NativeTileData {
   constructor(provider, tile) {
@@ -29,6 +33,8 @@ class NativeTileData {
     this.tileBoundingRegion = new TileBoundingRegion({
       rectangle: tile.rectangle,
       ellipsoid: provider.tilingScheme.ellipsoid,
+      minimumHeight: -20000,
+      maximumHeight: 100000,
     });
     this.pickBoundingSphere = BoundingSphere.clone(
       this.tileBoundingRegion.boundingSphere,
@@ -36,13 +42,15 @@ class NativeTileData {
   }
   freeResources() {
     this.cancelled = true;
+    this.request?.cancel();
+    this.provider.imagery.releaseTile(this);
     this.provider.renderer.destroyMesh(this.gpuMesh);
-    this.provider.context.release(this.texture);
-    this.gpuMesh = undefined;
-    this.texture = undefined;
-    this.mesh = undefined;
-    this.renderedMesh = undefined;
-    this.vertexArray = undefined;
+    this.gpuMesh =
+      this.mesh =
+      this.renderedMesh =
+      this.vertexArray =
+      this.terrainData =
+        undefined;
   }
   pick(ray, mode, projection, cullBackFaces, result) {
     if (!this.mesh) {
@@ -52,11 +60,11 @@ class NativeTileData {
     const a = new Cartesian3(),
       b = new Cartesian3(),
       c = new Cartesian3();
-    let closest = Number.POSITIVE_INFINITY;
-    for (let i = 0; i < indices.length; i += 3) {
-      encoding.decodePosition(vertices, indices[i], a);
-      encoding.decodePosition(vertices, indices[i + 1], b);
-      encoding.decodePosition(vertices, indices[i + 2], c);
+    let closest = Infinity;
+    for (let i = 0; i < this.mesh.indexCountWithoutSkirts; i += 3) {
+      encoding.getExaggeratedPosition(vertices, indices[i], a);
+      encoding.getExaggeratedPosition(vertices, indices[i + 1], b);
+      encoding.getExaggeratedPosition(vertices, indices[i + 2], c);
       const distance = IntersectionTests.rayTriangleParametric(
         ray,
         a,
@@ -74,9 +82,16 @@ class NativeTileData {
   }
 }
 
-/** Native resources behind Cesium's existing QuadtreePrimitive selection and eviction. */
+/** Cesium quadtree scheduling with native terrain meshes and independently cached imagery. */
 class WebGPUGlobeTileProvider {
-  constructor(globe, context, renderer, requestRender, maximumLevel = 12) {
+  constructor(
+    globe,
+    context,
+    renderer,
+    requestRender,
+    maximumLevel = 12,
+    options = {},
+  ) {
     this.globe = globe;
     this.context = context;
     this.renderer = renderer;
@@ -87,120 +102,97 @@ class WebGPUGlobeTileProvider {
     this.errorEvent = context.errorEvent;
     this.imageryLayersUpdatedEvent = new Event();
     this.baseColor = Color.clone(Color.DARKBLUE);
-    this._pending = 0;
     this._destroyed = false;
     this._selected = [];
-    this._layersChanged = true;
-    const layers = globe.imageryLayers;
-    this._removeListeners = [
-      layers.layerAdded,
-      layers.layerRemoved,
-      layers.layerMoved,
-      layers.layerShownOrHidden,
-    ].map((event) =>
-      event.addEventListener(() => {
-        this._layersChanged = true;
-        requestRender();
-      }),
+    this._terrainRequests = new Set();
+    this._uploads = [];
+    this.errors = [];
+    this.exaggeration = 1;
+    this.relativeHeight = 0;
+    this.imagery = new WebGPUImagery(
+      context,
+      renderer,
+      (error) => this.report(error),
+      options,
+    );
+    this.occluder = new EllipsoidalOccluder(Ellipsoid.WGS84);
+    this.fallbackProvider = new EllipsoidTerrainProvider();
+  }
+  get _pending() {
+    return (
+      this._terrainRequests.size + this._uploads.length + this.imagery.pending
     );
   }
-  initialize() {
-    RequestScheduler.update();
+  get ready() {
+    return this._pending === 0;
   }
-  update() {
+  report(error) {
+    error.recoverable = true;
+    this.errors.push(error.message);
+    if (this.errors.length > 32) {
+      this.errors.shift();
+    }
+    this.errorEvent.raiseEvent(error);
+  }
+  update(frameState) {
+    this.creditDisplay = frameState.creditDisplay;
     if (
       this.globe.material ||
-      this.globe.enableLighting ||
       this.globe.clippingPlanes ||
       this.globe.clippingPolygons ||
       this.globe.translucency.enabled
     ) {
       throw new Error(
-        "Native globe materials, lighting, clipping and translucency are not supported.",
+        "Native globe custom materials, clipping and translucency are not supported.",
       );
     }
-    const layers = this.globe.imageryLayers;
-    layers._update();
-    const active = [];
-    for (let i = 0; i < layers.length; i++) {
-      if (layers.get(i).show) {
-        active.push(layers.get(i));
-      }
+    const terrain = this.globe.terrainProvider,
+      scheme = terrain.tilingScheme;
+    if (terrain.credit) {
+      this.creditDisplay?.addCreditToNextFrame(terrain.credit);
     }
-    if (active.length > 1) {
-      throw new Error(
-        "The native basic profile supports one visible imagery layer.",
-      );
-    }
-    const layer = active[0];
-    if (!(this.globe.terrainProvider instanceof EllipsoidTerrainProvider)) {
-      throw new Error(
-        "The native basic profile currently supports EllipsoidTerrainProvider only.",
-      );
-    }
-    const terrainScheme = this.globe.terrainProvider.tilingScheme;
     if (
-      !(terrainScheme instanceof GeographicTilingScheme) ||
-      !Ellipsoid.WGS84.equals(terrainScheme.ellipsoid) ||
-      !Rectangle.equals(terrainScheme.rectangle, Rectangle.MAX_VALUE) ||
-      terrainScheme.getNumberOfXTilesAtLevel(0) !== 2 ||
-      terrainScheme.getNumberOfYTilesAtLevel(0) !== 1
+      !(scheme instanceof GeographicTilingScheme) ||
+      !Ellipsoid.WGS84.equals(scheme.ellipsoid) ||
+      !Rectangle.equals(scheme.rectangle, Rectangle.MAX_VALUE) ||
+      scheme.getNumberOfXTilesAtLevel(0) !== 2 ||
+      scheme.getNumberOfYTilesAtLevel(0) !== 1
     ) {
       throw new Error(
         "Native terrain requires WGS84 geographic tiling with full-world 2x1 roots.",
       );
     }
-    if (layer) {
-      const imagery = layer.imageryProvider;
-      const scheme = imagery?.tilingScheme;
-      if (
-        !(imagery instanceof UrlTemplateImageryProvider) ||
-        !(scheme instanceof GeographicTilingScheme) ||
-        !Ellipsoid.WGS84.equals(scheme.ellipsoid) ||
-        scheme.getNumberOfXTilesAtLevel(0) !== 2 ||
-        scheme.getNumberOfYTilesAtLevel(0) !== 1 ||
-        !Rectangle.equals(imagery.rectangle, Rectangle.MAX_VALUE) ||
-        !Rectangle.equals(layer.rectangle, Rectangle.MAX_VALUE) ||
-        (imagery.minimumLevel ?? 0) !== 0 ||
-        imagery.tileDiscardPolicy
-      ) {
-        throw new Error(
-          "Native imagery requires a full-world UrlTemplateImageryProvider, geographic 2x1 roots, minimumLevel 0 and no discard policy.",
-        );
-      }
-      for (const [name, expected] of Object.entries({
-        alpha: 1,
-        brightness: 1,
-        contrast: 1,
-        hue: 0,
-        saturation: 1,
-        gamma: 1,
-        splitDirection: 0,
-      })) {
-        if (layer[name] !== expected) {
-          throw new Error(
-            `Native imagery does not support non-default ${name}.`,
-          );
-        }
-      }
-      if (layer.cutoutRectangle || layer.colorToAlpha) {
-        throw new Error(
-          "Native imagery does not support cutouts or colorToAlpha.",
-        );
-      }
+    const exaggeration = frameState.verticalExaggeration ?? 1,
+      relative = frameState.verticalExaggerationRelativeHeight ?? 0;
+    if (
+      !Number.isFinite(exaggeration) ||
+      exaggeration < 0 ||
+      exaggeration > 100 ||
+      !Number.isFinite(relative)
+    ) {
+      throw new Error("Invalid terrain verticalExaggeration.");
     }
     if (
-      this._layersChanged ||
-      this.terrainProvider !== this.globe.terrainProvider
+      terrain !== this.terrainProvider ||
+      exaggeration !== this.exaggeration ||
+      relative !== this.relativeHeight
     ) {
-      this._layersChanged = false;
-      this.layer = layer;
-      this.terrainProvider = this.globe.terrainProvider;
-      if (this.tilingScheme !== this.terrainProvider.tilingScheme) {
-        this.tilingScheme = this.terrainProvider.tilingScheme;
-      }
+      this.terrainProvider = terrain;
+      this.tilingScheme = scheme;
+      this.exaggeration = exaggeration;
+      this.relativeHeight = relative;
       this.quadtree.invalidateAllTiles();
-      this.imageryLayersUpdatedEvent.raiseEvent();
+    }
+    this.occluder.cameraPosition = frameState.camera.positionWC;
+    this.imagery.update(this.globe.imageryLayers, frameState);
+  }
+  initialize() {
+    RequestScheduler.update();
+    for (let i = 0; i < 2 && this._uploads.length; i++) {
+      const data = this._uploads.shift();
+      if (!data.cancelled && !this._destroyed) {
+        this.upload(data);
+      }
     }
   }
   beginUpdate() {
@@ -208,61 +200,113 @@ class WebGPUGlobeTileProvider {
   }
   endUpdate() {}
   getLevelMaximumGeometricError(level) {
-    return this.terrainProvider.getLevelMaximumGeometricError(level);
+    return (
+      this.terrainProvider.getLevelMaximumGeometricError(level) *
+      Math.max(1, this.exaggeration)
+    );
   }
   canRefine(tile) {
-    if (tile.level >= this.maximumLevel) {
-      return false;
-    }
-    for (const child of tile.children) {
-      if (
-        this.terrainProvider.getTileDataAvailable(
-          child.x,
-          child.y,
-          child.level,
-        ) === false
-      ) {
-        return false;
-      }
-    }
-    return true;
+    return tile.level < this.maximumLevel && !!tile.data?.terrainData;
   }
   computeTileVisibility(tile, frameState) {
     if (!tile.data || tile.data.cancelled) {
       tile.data = new NativeTileData(this, tile);
     }
+    const data = tile.data;
     tile._distance = Math.max(
       1,
-      tile.data.tileBoundingRegion.distanceToCamera(frameState),
+      data.tileBoundingRegion.distanceToCamera(frameState),
     );
-    return frameState.cullingVolume.computeVisibility(
-      tile.data.tileBoundingRegion.boundingVolume,
-    ) === Intersect.OUTSIDE
-      ? Visibility.NONE
-      : Visibility.FULL;
+    if (
+      frameState.cullingVolume.computeVisibility(
+        data.tileBoundingRegion.boundingVolume,
+      ) === Intersect.OUTSIDE
+    ) {
+      return Visibility.NONE;
+    }
+    const point = data.mesh?.occludeePointInScaledSpace;
+    if (
+      point &&
+      Cartesian3.magnitudeSquared(point) > 0 &&
+      this.exaggeration === 1 &&
+      frameState.camera.positionCartographic.height > 0 &&
+      !this.occluder.isScaledSpacePointVisiblePossiblyUnderEllipsoid(
+        point,
+        data.mesh.minimumHeight,
+      )
+    ) {
+      return Visibility.NONE;
+    }
+    return Visibility.FULL;
   }
   showTileThisFrame(tile) {
     if (tile.data?.gpuMesh) {
       this._selected.push(tile);
     }
   }
+  upsample(data) {
+    const tile = data.tile,
+      parent = tile.parent;
+    if (parent?.data?.terrainData) {
+      return parent.data.terrainData.upsample(
+        this.tilingScheme,
+        parent.x,
+        parent.y,
+        parent.level,
+        tile.x,
+        tile.y,
+        tile.level,
+      );
+    }
+    return this.fallbackProvider.requestTileGeometry(
+      tile.x,
+      tile.y,
+      tile.level,
+    );
+  }
   loadTile(frameState, tile) {
     if (!tile.data || tile.data.cancelled) {
       tile.data = new NativeTileData(this, tile);
     }
     const data = tile.data;
-    if (data.started || this._pending >= 8 || this._destroyed) {
+    data.lastNeeded = frameState.frameNumber;
+    if (data.started || this._terrainRequests.size >= 8 || this._destroyed) {
       return;
     }
     let promise;
     try {
-      promise = this.terrainProvider.requestTileGeometry(
+      const available = this.terrainProvider.getTileDataAvailable?.(
         tile.x,
         tile.y,
         tile.level,
       );
+      const parent = tile.parent;
+      const parentUnavailable =
+        parent?.data?.terrainData &&
+        !parent.data.terrainData.isChildAvailable(
+          parent.x,
+          parent.y,
+          tile.x,
+          tile.y,
+        );
+      if (data.fallback || available === false || parentUnavailable) {
+        promise = this.upsample(data);
+        data.fallback = true;
+      } else {
+        data.request = new Request({
+          throttle: true,
+          throttleByServer: true,
+          type: RequestType.TERRAIN,
+        });
+        promise = this.terrainProvider.requestTileGeometry(
+          tile.x,
+          tile.y,
+          tile.level,
+          data.request,
+        );
+      }
     } catch (error) {
-      this.fail(tile, error);
+      this.fail(data, error);
       return;
     }
     if (!promise) {
@@ -271,130 +315,132 @@ class WebGPUGlobeTileProvider {
     data.started = true;
     data.eligibleForUnloading = false;
     tile.state = QuadtreeTileLoadState.LOADING;
-    this._pending++;
+    this._terrainRequests.add(data);
     this.load(data, promise)
       .catch((error) => {
         if (!data.cancelled && !this._destroyed) {
-          this.fail(tile, error);
+          this.fail(data, error);
         }
       })
       .finally(() => {
-        this._pending--;
+        this._terrainRequests.delete(data);
         data.eligibleForUnloading = true;
         this.requestRender();
       });
   }
-  fail(tile, error) {
-    tile.data?.freeResources();
-    tile.state = QuadtreeTileLoadState.FAILED;
-    this.context.errors.push(
-      `Tile ${tile.level}/${tile.x}/${tile.y}: ${error.message}`,
-    );
-    this.errorEvent.raiseEvent(error);
+  fail(data, error) {
+    this.report(error);
+    if (data.fallback) {
+      data.tile.state = QuadtreeTileLoadState.FAILED;
+      return;
+    }
+    data.fallback = true;
+    data.started = false;
+    data.tile.state = QuadtreeTileLoadState.START;
   }
-  async load(data, terrainPromise) {
-    const tile = data.tile;
-    const terrain = await terrainPromise;
+  async load(data, promise) {
+    const terrain = await promise;
     if (data.cancelled || this._destroyed) {
       return;
     }
+    const tile = data.tile;
     const mesh = await terrain.createMesh({
       tilingScheme: this.tilingScheme,
       x: tile.x,
       y: tile.y,
       level: tile.level,
       throttle: false,
+      exaggeration: this.exaggeration,
+      exaggerationRelativeHeight: this.relativeHeight,
     });
-    if (!mesh) {
-      throw new Error("Terrain provider did not produce a mesh.");
-    }
     if (data.cancelled || this._destroyed) {
       return;
     }
+    if (!mesh) {
+      throw new Error(
+        "Terrain provider did not produce a heightmap or quantized mesh.",
+      );
+    }
     data.terrainData = terrain;
     data.mesh = data.renderedMesh = mesh;
+    const low =
+      (mesh.minimumHeight - this.relativeHeight) * this.exaggeration +
+      this.relativeHeight;
+    const high =
+      (mesh.maximumHeight - this.relativeHeight) * this.exaggeration +
+      this.relativeHeight;
     data.tileBoundingRegion = new TileBoundingRegion({
       rectangle: tile.rectangle,
       ellipsoid: this.tilingScheme.ellipsoid,
-      minimumHeight: mesh.minimumHeight,
-      maximumHeight: mesh.maximumHeight,
+      minimumHeight: low,
+      maximumHeight: high,
     });
-    const layer = this.layer;
-    const uv = [0, 0, 1, 1];
-    if (layer) {
-      const provider = layer.imageryProvider;
-      const level = Math.min(tile.level, provider.maximumLevel ?? tile.level);
-      const factor = 2 ** (tile.level - level),
-        x = Math.floor(tile.x / factor),
-        y = Math.floor(tile.y / factor);
-      let request;
-      // Undefined means request throttling, not a successful image.
-      while (!request && !data.cancelled && !this._destroyed) {
-        request = provider.requestImage(x, y, level);
-        if (!request) {
-          await new Promise((resolve) => setTimeout(resolve, 20));
-        }
-      }
-      if (data.cancelled || this._destroyed) {
-        return;
-      }
-      const image = await request;
-      if (data.cancelled || this._destroyed) {
-        image?.close?.();
-        return;
-      }
-      data.texture = this.context.createTexture({
-        label: `imagery ${level}/${x}/${y}`,
-        size: [image.width, image.height],
-        format: "rgba8unorm",
-        usage:
-          GPUTextureUsage.TEXTURE_BINDING |
-          GPUTextureUsage.COPY_DST |
-          GPUTextureUsage.RENDER_ATTACHMENT,
-      });
-      // ImageryProvider.loadImage requests flipY for ImageBitmap. Normalize to
-      // top-left pixels here so the WGSL uses the same UV convention for HTML images.
-      this.context.device.queue.copyExternalImageToTexture(
-        { source: image, flipY: image instanceof ImageBitmap },
-        { texture: data.texture },
-        [image.width, image.height],
-      );
-      image.close?.();
-      uv[0] = (tile.x % factor) / factor;
-      uv[1] = 1 - ((tile.y % factor) + 1) / factor;
-      uv[2] = uv[3] = 1 / factor;
-    }
-    const encoding = mesh.encoding;
-    const count = mesh.vertices.length / encoding.stride;
-    const vertices = new Float32Array(count * 5);
-    const point = new Cartesian3(),
-      textureCoordinates = new Cartesian2();
+    this._uploads.push(data);
+  }
+  upload(data) {
+    const { mesh, tile } = data,
+      encoding = mesh.encoding,
+      count = mesh.vertices.length / encoding.stride;
+    const vertices = new Float32Array(count * 8),
+      point = new Cartesian3(),
+      uv = new Cartesian2(),
+      normal = new Cartesian3(),
+      oct = new Cartesian2();
     for (let i = 0; i < count; i++) {
-      encoding.decodePosition(mesh.vertices, i, point);
+      encoding.getExaggeratedPosition(mesh.vertices, i, point);
+      if (encoding.hasVertexNormals && this.exaggeration === 1) {
+        encoding.getOctEncodedNormal(mesh.vertices, i, oct);
+        AttributeCompression.octDecode(oct.x, oct.y, normal);
+      } else {
+        this.tilingScheme.ellipsoid.geodeticSurfaceNormal(point, normal);
+      }
       Cartesian3.subtract(point, mesh.center, point);
-      encoding.decodeTextureCoordinates(mesh.vertices, i, textureCoordinates);
+      encoding.decodeTextureCoordinates(mesh.vertices, i, uv);
       vertices.set(
-        [point.x, point.y, point.z, textureCoordinates.x, textureCoordinates.y],
-        i * 5,
+        [point.x, point.y, point.z, uv.x, uv.y, normal.x, normal.y, normal.z],
+        i * 8,
       );
+    }
+    if (!encoding.hasVertexNormals || this.exaggeration !== 1) {
+      computeNormals(vertices, mesh.indices, mesh.indexCountWithoutSkirts);
     }
     data.gpuMesh = this.renderer.createMesh(
       vertices,
       mesh.indices,
       Matrix4.fromTranslation(mesh.center),
-      data.texture,
     );
-    data.gpuMesh.uv = uv;
     data.vertexArray = data.gpuMesh;
     tile.renderable = true;
     tile.state = QuadtreeTileLoadState.DONE;
   }
   draw(pass, camera) {
     for (const tile of this._selected) {
-      const mesh = tile.data.gpuMesh;
-      const color = this.layer ? Color.WHITE : this.baseColor;
+      const data = tile.data,
+        mesh = data.gpuMesh,
+        color = this.baseColor;
+      for (const credit of data.terrainData.credits ?? []) {
+        this.creditDisplay?.addCreditToNextFrame(credit);
+      }
       mesh.color = [color.red, color.green, color.blue, 1];
+      mesh.flags[1] = Number(this.globe.enableLighting);
+      mesh.count = this.globe.showSkirts
+        ? data.mesh.indices.length
+        : data.mesh.indexCountWithoutSkirts;
       this.renderer.draw(pass, mesh, camera);
+      for (const draw of this.imagery.prepare(data)) {
+        draw.count = mesh.count;
+        this.renderer.draw(pass, draw, camera);
+      }
+    }
+    this.imagery.finishFrame();
+  }
+  finishFrame(frameState) {
+    for (const data of this._terrainRequests) {
+      if (data.lastNeeded < frameState.frameNumber - 2) {
+        data.freeResources();
+        data.tile.renderable = false;
+        data.tile.state = QuadtreeTileLoadState.START;
+      }
     }
   }
   isDestroyed() {
@@ -402,10 +448,40 @@ class WebGPUGlobeTileProvider {
   }
   destroy() {
     this._destroyed = true;
-    for (const remove of this._removeListeners) {
-      remove();
-    }
+    this.imagery.destroy();
+    this._uploads.length = 0;
     return undefined;
+  }
+}
+function computeNormals(vertices, indices, count) {
+  const normals = new Float64Array((vertices.length / 8) * 3);
+  for (let i = 0; i < count; i += 3) {
+    const a = indices[i] * 8,
+      b = indices[i + 1] * 8,
+      c = indices[i + 2] * 8;
+    const ux = vertices[b] - vertices[a],
+      uy = vertices[b + 1] - vertices[a + 1],
+      uz = vertices[b + 2] - vertices[a + 2];
+    const vx = vertices[c] - vertices[a],
+      vy = vertices[c + 1] - vertices[a + 1],
+      vz = vertices[c + 2] - vertices[a + 2];
+    const x = uy * vz - uz * vy,
+      y = uz * vx - ux * vz,
+      z = ux * vy - uy * vx;
+    for (const index of [indices[i], indices[i + 1], indices[i + 2]]) {
+      normals[index * 3] += x;
+      normals[index * 3 + 1] += y;
+      normals[index * 3 + 2] += z;
+    }
+  }
+  for (let i = 0; i < normals.length / 3; i++) {
+    const x = normals[i * 3],
+      y = normals[i * 3 + 1],
+      z = normals[i * 3 + 2],
+      length = Math.hypot(x, y, z);
+    if (length > 0) {
+      vertices.set([x / length, y / length, z / length], i * 8 + 5);
+    }
   }
 }
 export default WebGPUGlobeTileProvider;

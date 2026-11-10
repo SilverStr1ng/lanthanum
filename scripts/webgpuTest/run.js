@@ -1,6 +1,6 @@
 /*global window*/
 import { chromium } from "@playwright/test";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
@@ -47,7 +47,13 @@ try {
       ? route.continue()
       : route.abort(),
   );
-  await page.goto(`${url}/Specs/WebGPU/index.html`);
+  const suite =
+    process.argv.find((value) => value.startsWith("--suite="))?.slice(8) ??
+    "index";
+  if (!["index", "streaming"].includes(suite)) {
+    throw new Error("Unknown native test suite");
+  }
+  await page.goto(`${url}/Specs/WebGPU/${suite}.html`);
   await page.waitForFunction(
     () => window.results?.done,
     {},
@@ -59,6 +65,15 @@ try {
   result.date = new Date().toISOString();
   result.node = process.version;
   result.fixtureManifestSha256 = (await verifyManifest()).sha256;
+  const terrainHash = createHash("sha256"),
+    terrainDirectory = "Specs/WebGPU/fixtures/terrain";
+  for (const name of (await readdir(terrainDirectory, { recursive: true }))
+    .filter((name) => /\.(terrain|json)$/.test(name))
+    .sort()) {
+    terrainHash.update(name.replaceAll("\\", "/"));
+    terrainHash.update(await readFile(path.join(terrainDirectory, name)));
+  }
+  result.streamingTerrainSha256 = terrainHash.digest("hex");
   result.buildSha256 = createHash("sha256")
     .update(await readFile("Build/CesiumUnminified/Cesium.js"))
     .digest("hex");

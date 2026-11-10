@@ -10,6 +10,9 @@ import {
 import Camera from "./Camera.js";
 import SceneMode from "./SceneMode.js";
 import Globe from "./Globe.js";
+import Primitive from "./Primitive.js";
+import PrimitiveCollection from "./PrimitiveCollection.js";
+import CreditDisplay from "./CreditDisplay.js";
 import QuadtreePrimitive from "./QuadtreePrimitive.js";
 import WebGPUGlobeTileProvider from "./WebGPUGlobeTileProvider.js";
 import WebGPUGeometryRenderer from "../Renderer/WebGPUGeometryRenderer.js";
@@ -54,19 +57,32 @@ class WebGPUScene {
     this._pickObjects = new Map();
     this._frameNumber = 0;
     this.maximumTerrainLevel = maximumLevel;
+    this.verticalExaggeration = options.verticalExaggeration ?? 1;
+    this.verticalExaggerationRelativeHeight =
+      options.verticalExaggerationRelativeHeight ?? 0;
+    this.imagerySplitPosition = 0.5;
+    this._nativeOptions = options;
     this._afterRender = [];
     this.screenSpaceCameraController = {
       minimumZoomDistance: 1,
       maximumZoomDistance: 100000000,
     };
     this.camera = new Camera(this);
-    this.primitives = {
-      add() {
-        throw new Error(
-          "Native basic profile: use scene.addGeometry; general Primitive/Model/Tiles rendering is not supported yet.",
-        );
-      },
-    };
+    this.primitives = new PrimitiveCollection();
+    this._nativePrimitives = new Set();
+    const creditContainer =
+      options.creditContainer ?? document.createElement("div");
+    if (!options.creditContainer) {
+      creditContainer.style.cssText =
+        "position:absolute;bottom:0;right:0;font:11px sans-serif;color:white;z-index:1";
+      this.canvas.parentNode?.appendChild(creditContainer);
+      this._creditContainer = creditContainer;
+    }
+    this.creditDisplay = new CreditDisplay(
+      creditContainer,
+      undefined,
+      options.creditViewport,
+    );
   }
   get drawingBufferWidth() {
     return this.canvas.width;
@@ -130,6 +146,7 @@ class WebGPUScene {
         this._renderer,
         () => this.requestRender(),
         this.maximumTerrainLevel,
+        this._nativeOptions,
       );
       provider.baseColor = baseColor;
       value._surface = new QuadtreePrimitive({ tileProvider: provider });
@@ -177,7 +194,8 @@ class WebGPUScene {
       throw new Error("Invalid triangle positions or indices.");
     }
     const origin = Cartesian3.fromArray(positions);
-    const vertices = new Float32Array((positions.length / 3) * 5);
+    const vertices = new Float32Array((positions.length / 3) * 8);
+    const normals = geometry.attributes.normal?.values;
     for (let i = 0; i < positions.length / 3; i++) {
       vertices.set(
         [
@@ -186,8 +204,11 @@ class WebGPUScene {
           positions[i * 3 + 2] - origin.z,
           uv?.[i * 2] ?? 0,
           uv?.[i * 2 + 1] ?? 0,
+          normals?.[i * 3] ?? 0,
+          normals?.[i * 3 + 1] ?? 0,
+          normals?.[i * 3 + 2] ?? 1,
         ],
-        i * 5,
+        i * 8,
       );
     }
     const mesh = this._renderer.createMesh(
@@ -230,7 +251,11 @@ class WebGPUScene {
     const altitude = Math.abs(this.camera.positionCartographic.height);
     this.camera.frustum.near = Math.max(0.1, altitude / 1000);
     this.camera.frustum.far = Math.max(30000000, altitude * 4);
+    this.creditDisplay.beginFrame();
     const frameState = (this.frameState = {
+      webgpuScene: this,
+      nativeCommands: [],
+      creditDisplay: this.creditDisplay,
       context: this.context,
       camera: this.camera,
       mode: this.mode,
@@ -238,6 +263,10 @@ class WebGPUScene {
       mapProjection: this.mapProjection,
       frameNumber: ++this._frameNumber,
       pixelRatio: 1,
+      verticalExaggeration: this.verticalExaggeration,
+      verticalExaggerationRelativeHeight:
+        this.verticalExaggerationRelativeHeight,
+      imagerySplitPosition: this.imagerySplitPosition,
       fog: { enabled: false },
       passes: { render: true, pick: false },
       afterRender: this._afterRender,
@@ -256,7 +285,15 @@ class WebGPUScene {
       surface.beginFrame(frameState);
       surface.render(frameState);
       surface.endFrame(frameState);
+      surface.tileProvider.finishFrame(frameState);
     }
+    visitPrimitives(this.primitives);
+    this.primitives.update(frameState);
+    frameState.nativeCommands.sort(
+      (a, b) =>
+        Number(a.mesh.blend) - Number(b.mesh.blend) ||
+        (a.mesh.blend ? b.distance - a.distance : a.distance - b.distance),
+    );
     this.context.render(this.backgroundColor, (pass) => {
       if (globe?.show) {
         surface.tileProvider.draw(pass, this.camera);
@@ -279,10 +316,15 @@ class WebGPUScene {
         handle.mesh.color = [color.red, color.green, color.blue, 1];
         this._renderer.draw(pass, handle.mesh, this.camera);
       }
+      for (const record of frameState.nativeCommands) {
+        this._renderer.draw(pass, record.mesh, this.camera);
+      }
     });
     for (const callback of this._afterRender.splice(0)) {
       callback();
     }
+    this.creditDisplay.endFrame();
+    this.creditDisplay.update();
     this.postRender.raiseEvent(this);
   }
   get statistics() {
@@ -295,6 +337,9 @@ class WebGPUScene {
         ...(provider?._selected.map((tile) => tile.level) ?? []),
       ),
       pendingTiles: provider?._pending ?? 0,
+      imageryTextures: provider?.imagery.textureCount ?? 0,
+      imageryBytes: provider?.imagery.bytes ?? 0,
+      tileErrors: provider?.errors ?? [],
       resources: this.resourceStatistics,
       errors: [...this.context.errors],
     };
@@ -330,12 +375,25 @@ class WebGPUScene {
     if (this._destroyed || options.signal?.aborted) {
       throw new DOMException("Pick cancelled", "AbortError");
     }
+    if (id === 0) {
+      return undefined;
+    }
     if (id === 1) {
       return this._globe === globe && globe?.show
         ? { primitive: globe, id: "globe" }
         : undefined;
     }
     const handle = snapshot.get(id);
+    if (handle?.adapter) {
+      const primitive = handle.adapter.primitive;
+      return !handle.adapter.destroyed &&
+        primitive.show &&
+        handle.attributes.show?.[0] !== 0 &&
+        handle.mesh.color[3] > 0 &&
+        visitPrimitives(this.primitives, primitive)
+        ? { primitive, id: handle.id }
+        : undefined;
+    }
     return handle?.show && this._geometries.has(handle)
       ? { primitive: handle, id: handle.id }
       : undefined;
@@ -349,6 +407,15 @@ class WebGPUScene {
     }
     this._destroyed = true;
     this._globe?.destroy();
+    this.primitives.destroy();
+    for (const adapter of this._nativePrimitives) {
+      adapter.destroy();
+      adapter.primitive._webgpu = undefined;
+      adapter.primitive._ready = false;
+    }
+    this._geometryTaskProcessor?.destroy();
+    this.creditDisplay.destroy();
+    this._creditContainer?.remove();
     for (const handle of this._geometries) {
       this._renderer.destroyMesh(handle.mesh);
     }
@@ -357,5 +424,24 @@ class WebGPUScene {
     this._renderer.destroy();
     this.context.destroy();
   }
+}
+function visitPrimitives(collection, target) {
+  if (!collection.show) {
+    return false;
+  }
+  let found = false;
+  for (let i = 0; i < collection.length; i++) {
+    const primitive = collection.get(i);
+    if (primitive instanceof PrimitiveCollection) {
+      found = visitPrimitives(primitive, target) || found;
+    } else if (!(primitive instanceof Primitive)) {
+      throw new Error(
+        "Native scene.primitives supports Primitive and PrimitiveCollection only.",
+      );
+    } else if (primitive === target) {
+      found = true;
+    }
+  }
+  return found;
 }
 export default WebGPUScene;

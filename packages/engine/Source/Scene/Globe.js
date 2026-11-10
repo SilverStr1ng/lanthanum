@@ -427,6 +427,7 @@ Object.defineProperties(Globe.prototype, {
         return true;
       }
       return (
+        this._surface.tileProvider.ready !== false &&
         this._surface._tileLoadQueueHigh.length === 0 &&
         this._surface._tileLoadQueueMedium.length === 0 &&
         this._surface._tileLoadQueueLow.length === 0

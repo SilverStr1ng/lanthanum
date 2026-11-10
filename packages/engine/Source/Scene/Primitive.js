@@ -40,6 +40,7 @@ import PrimitivePipeline from "./PrimitivePipeline.js";
 import PrimitiveState from "./PrimitiveState.js";
 import SceneMode from "./SceneMode.js";
 import ShadowMode from "./ShadowMode.js";
+import WebGPUPrimitive from "./WebGPUPrimitive.js";
 
 /**
  * A primitive represents geometry in the {@link Scene}.  The geometry can be from a single {@link GeometryInstance}
@@ -2081,6 +2082,11 @@ function updateAndQueueCommands(
  * @exception {RuntimeError} Vertex texture fetch support is required to render primitives with per-instance attributes. The maximum number of vertex texture image units must be greater than zero.
  */
 Primitive.prototype.update = function (frameState) {
+  if (frameState.webgpuScene) {
+    this._webgpu ??= new WebGPUPrimitive(this, frameState.webgpuScene);
+    this._webgpu.update(frameState);
+    return;
+  }
   if (
     (!defined(this.geometryInstances) && this._va.length === 0) ||
     (defined(this.geometryInstances) &&
@@ -2369,6 +2375,9 @@ function createPickIdProperty(primitive, properties, index) {
  * attributes.offset = Cesium.OffsetGeometryInstanceAttribute.toValue(Cartesian3.IDENTITY);
  */
 Primitive.prototype.getGeometryInstanceAttributes = function (id) {
+  if (this._webgpu) {
+    return this._webgpu.getAttributes(id);
+  }
   //>>includeStart('debug', pragmas.debug);
   if (!defined(id)) {
     throw new DeveloperError("id is required");
@@ -2458,6 +2467,7 @@ Primitive.prototype.isDestroyed = function () {
  * @see Primitive#isDestroyed
  */
 Primitive.prototype.destroy = function () {
+  this._webgpu?.destroy();
   let length;
   let i;
 

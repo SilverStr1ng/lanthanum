@@ -29,6 +29,35 @@
         ><button id="singapore">前往新加坡</button>
       </div>
       <label><input id="imagery" type="checkbox" checked />显示地表影像</label>
+      <label><input id="overlay" type="checkbox" />叠加网格影像</label>
+      <label
+        >叠加透明度<input
+          id="alpha"
+          type="range"
+          min="0"
+          max="1"
+          step="0.05"
+          value="0.65"
+      /></label>
+      <label
+        >地形<select id="terrain" aria-label="地形">
+          <option value="ellipsoid">椭球</option>
+          <option value="heightmap">Heightmap · 合成山地</option>
+          <option value="quantized">Quantized mesh · 1500 米样本</option>
+        </select></label
+      >
+      <label
+        >高程夸张<input
+          id="exaggeration"
+          aria-label="高程夸张"
+          type="range"
+          min="1"
+          max="5"
+          step="0.5"
+          value="1"
+        /><span id="exaggeration-value">1 倍</span></label
+      >
+      <button id="terrain-view">查看地形</button>
       <label><input id="marker" type="checkbox" checked />显示示例标记</label>
       <label><input id="rotate" type="checkbox" />自动旋转</label>
       <output id="selection" aria-live="polite">点击地球选择位置</output>

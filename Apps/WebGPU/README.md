@@ -1,70 +1,102 @@
-# 原生 WebGPU 基本交互演示
+# 原生 WebGPU：影像、地形与 Primitive
 
-基于 CesiumJS 1.147 的实验性 JavaScript 入口，复用 WGS84 数学、Camera、Globe、QuadtreePrimitive、EllipsoidTerrainProvider、UrlTemplateImageryProvider 和 CPU 网格生成。GPU 资源、WGSL、深度及对象 ID 附件、命令提交和异步读回由原生 WebGPU 执行，不创建 WebGL context 补绘。
+基于 CesiumJS 1.147 的实验性 JavaScript 入口。复用 Cesium Camera、Globe、四叉树调度、provider 和 CPU/Worker 几何构建；GPU 资源、WGSL、颜色/深度/对象 ID 附件、命令提交和读回由原生 WebGPU 执行。没有隐藏 WebGL 补绘。
 
 ## 运行
 
-需要 Node.js ≥22.17 和具有硬件 WebGPU 支持的桌面 Chrome 或 Edge，在 localhost 或 HTTPS 运行。
+需要 Node.js ≥22.17，以及支持硬件 WebGPU 的桌面 Chrome/Edge，在 localhost 或 HTTPS 下运行：
 
 ```sh
 npm ci
 npm run webgpu:start
 ```
 
-打开命令输出的 `/Apps/WebGPU/index.html` 地址。拖动旋转，滚轮缩放，按钮定位；点击地球查看经纬度，点击红色立方体选择对象。Natural Earth 影像随仓库提供，不需要 token；只有0—2级，放大后的清晰度受源影像限制。
+打开输出的 `/Apps/WebGPU/index.html`。左键拖拽时地表沿鼠标方向移动，滚轮缩放，点击地表查看经纬度与网格高程。红色标记使用标准 Primitive，可拾取和显隐。侧栏可选择椭球、合成山地 heightmap、1500 米 quantized-mesh 样本，以及高程夸张、网格影像和透明度。
 
-`npm run webgpu:test` 先构建并生成固定测试影像，再运行真实 Chrome WebGPU 和页面鼠标交互检查。结果、适配器、构建 hash、fixture manifest、请求列表和截图写入新的 `benchmarks/runs/webgpu-*` 目录，禁止覆盖旧输出。
+Natural Earth 本地影像只有 0—2 级，近看会模糊。合成山地位于新加坡附近，**不是当地真实地貌**；quantized 样本位于东经 30°、北纬 20°，用于验证二进制加载和缺块上采样。均不需要 token。
 
-## JavaScript API
+`npm run webgpu:test` 构建后依次执行基础、流式场景和真实页面交互测试。证据写入新的 `benchmarks/runs/` 子目录，包含检查、硬件信息、源码提交、构建/数据 hash、请求列表和截图。独立 quantized-mesh 数据已提交；可用 `npm run webgpu:terrain-fixtures` 重建，不修改原冻结 WebGL fixture。
+
+## 使用 API
 
 ```js
-const scene = await Cesium.Scene.createAsync({
+const C = Cesium;
+const scene = await C.Scene.createAsync({
   canvas,
   backend: "webgpu", // auto | webgpu | webgl2
   maximumTerrainLevel: 12,
+  maximumImageryTextures: 256,
+  maximumImageryBytes: 128 * 1024 * 1024,
 });
-scene.globe = new Cesium.Globe();
+scene.globe = new C.Globe();
 scene.globe.imageryLayers.addImageryProvider(
-  new Cesium.UrlTemplateImageryProvider({
-    url: "/tiles/{z}/{x}/{y}.png",
-    maximumLevel: 2,
-    tilingScheme: new Cesium.GeographicTilingScheme(),
+  new C.UrlTemplateImageryProvider({
+    url: "/imagery/{z}/{x}/{y}.png",
+    maximumLevel: 16,
+    tilingScheme: new C.WebMercatorTilingScheme(),
   }),
 );
-scene.camera.setView({
-  destination: Cesium.Cartesian3.fromDegrees(110, 20, 18000000),
-});
-// 在应用的 requestAnimationFrame 中调用 scene.render()。
-const object = await scene.pickAsync(new Cesium.Cartesian2(x, y));
+scene.globe.terrainProvider = await C.CesiumTerrainProvider.fromUrl(
+  "/terrain/",
+  {
+    requestVertexNormals: true,
+  },
+);
+scene.verticalExaggeration = 1;
+
+const primitive = scene.primitives.add(
+  new C.Primitive({
+    geometryInstances: new C.GeometryInstance({
+      geometry: C.BoxGeometry.fromDimensions({
+        dimensions: new C.Cartesian3(100, 100, 100),
+        vertexFormat: C.PerInstanceColorAppearance.FLAT_VERTEX_FORMAT,
+      }),
+      modelMatrix: C.Transforms.eastNorthUpToFixedFrame(
+        C.Cartesian3.fromDegrees(30, 20, 2000),
+      ),
+      id: "box",
+      attributes: {
+        color: C.ColorGeometryInstanceAttribute.fromColor(C.Color.RED),
+        show: new C.ShowGeometryInstanceAttribute(true),
+      },
+    }),
+    appearance: new C.PerInstanceColorAppearance({
+      flat: true,
+      translucent: false,
+    }),
+  }),
+);
+scene.camera.setView({ destination: C.Cartesian3.fromDegrees(30, 20, 10000) });
+// 在 requestAnimationFrame 中持续调用 scene.render()。
+// primitive.ready 后可通过 getGeometryInstanceAttributes("box") 更新 color/show。
+const picked = await scene.pickAsync(new C.Cartesian2(x, y));
 const point = scene.globe.pick(
-  scene.camera.getPickRay(new Cesium.Cartesian2(x, y)),
+  scene.camera.getPickRay(new C.Cartesian2(x, y)),
   scene,
 );
-// 结束动画循环后释放场景及其拥有的 globe。
+// 结束动画循环后释放场景。
 scene.destroy();
 ```
 
-`auto` 仅在 canvas 绑定前的设备/能力失败时整场景回退到 WebGL2，原因在 `fallbackReason`。强制 `webgpu` 失败会 reject；绑定后失败、取消、设备丢失不会切换后端。`new Scene()`、`new Viewer()` 保留同步 WebGL 路径，本演示没有迁移 Viewer/Widget。
+`auto` 只在绑定 canvas 前的设备/能力失败时整场景回退到 WebGL2，原因在 `fallbackReason`；取消和绑定后的故障不会切换后端。同步 `new Scene()` / `new Viewer()` 仍走原 WebGL 路径。该异步入口尚未迁移 Viewer/Widget，也不提供完整 Scene 类型兼容。
 
-`scene.addGeometry({geometry, modelMatrix, color, id})` 接受含 position 和 indices 的三角形 Geometry，返回句柄。可改 `show`、`color`（alpha=1）、`modelMatrix`；使用 `removeGeometry(handle)` 删除。资源由场景管理，不应直接修改内部 mesh。局部原点和双精度 view×model 在上传前抵消地心大坐标；尚未通过完整高低位/多视锥精度认证。
+## 本轮支持范围
 
-`pickAsync` 接受 canvas CSS 像素坐标，返回 `{primitive,id}` 或 undefined。地球 ID 为 `"globe"`，几何体 ID 为传入值。最多8个在途拾取，支持 AbortSignal；移除/隐藏对象、销毁场景时不会返回失效对象。`Globe.pick` 是当前已渲染三角网格的 CPU 射线交点，低 LOD 网格高度可低于数学椭球，不能代替精密高度查询。
+| 能力      | 可用子集与边界                                                                                                                                                                                                                   |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 影像      | 最多 8 个可见层，增删/排序/show/alpha、亮度/对比度/gamma/hue/saturation、split、colorToAlpha；Geographic/Web Mercator、局部矩形（含跨日期线）、minimum/maximumLevel、祖先替代、延迟 discard policy、署名                         |
+| Provider  | 验证了 UrlTemplate、SingleTile、CustomHeightmap、CesiumTerrainProvider 的 quantized-mesh 二进制路径；其他影像 provider 必须提供相同的 requestImage/tilingScheme 接口，商业服务与其他服务协议尚未逐项认证                         |
+| 地形      | WGS84、全球 Geographic 2×1 根、heightmap/quantized-mesh、真实高程、skirts、CPU 网格拾取、夸张/相对高度、法线基础光照、包围体/地平线剔除、缺块上采样、请求失败后祖先/椭球替代                                                     |
+| Primitive | PrimitiveCollection（含嵌套）、Primitive、GeometryInstance；异步 Worker 或同步构建、ready、颜色/show、modelMatrix、allowPicking、移除/销毁；每实例独立 mesh，尚未 GPU instancing/batching                                        |
+| 几何/外观 | 含 xyz positions 的 TRIANGLES/LINES/POINTS（有/无 indices）；Box、Ellipsoid、Plane、SimplePolyline 等标准 CPU 几何；PerInstanceColorAppearance 与 MaterialAppearance 的 Color 材质。线宽/点大小为 1 像素；带光照的几何需 normals |
+| 透明      | 按实例包围球中心距离从远到近排序、alpha 混合；不是 OIT，交叉/相交透明面不保证正确排序                                                                                                                                            |
+| 拾取      | 异步 GPU 对象 ID，返回原 Primitive 和 instance.id；CSS 像素坐标，最多 8 个在途请求、支持 AbortSignal；地球 ID 为 `globe`；移除/隐藏后不返回失效对象                                                                              |
+| 资源      | 默认最多 8 个地形任务和 8 个影像请求/解码排队项；每帧最多上传 2 个 terrain mesh、4 张纹理；GPU 影像默认 256 张/128 MiB，可配置；地形缓存复用 globe.tileCacheSize；加载中销毁阻止迟到上传                                         |
 
-## 支持边界
+`scene.addGeometry` 保留早期接口，仅接受不透明 indexed triangles；新代码优先使用标准 Primitive。`Globe.pick` 返回当前网格的交点，粗网格可能低于数学椭球/原始样本高程，不能替代精密高程查询。坐标在 CPU 双精度下抵消局部原点；未完成完整 high/low、多视锥深度精度认证。
 
-| 功能     | 本次支持范围                                                                                                   |
-| -------- | -------------------------------------------------------------------------------------------------------------- |
-| 启动     | 异步设备、feature/limit 检查、取消、硬件适配器、WebGL2 回退                                                    |
-| 地球     | WGS84、3D、EllipsoidTerrainProvider、四叉树 LOD/缓存/释放                                                      |
-| 影像     | 一个可见 UrlTemplate 图层；地理投影；全球矩形；根瓦片2×1；minimumLevel=0；无 discard policy；最大级别后祖先 UV |
-| 更新     | 连续 render、图层添加/移除/显隐、地球显隐、几何体移动/换色/显隐                                                |
-| 相机     | setView、rotateLeft/rotateUp、zoomIn/zoomOut；示例提供指针控制                                                 |
-| 绘制     | indexed triangle-list、不透明颜色/纹理、背面剔除、深度遮挡                                                     |
-| 拾取     | GPU r32uint 对象 ID 异步读回、CPU Globe.pick                                                                   |
-| 生命周期 | resize、销毁、加载中销毁、图像失败事件、设备丢失后停止                                                         |
+尚未支持 GroundPrimitive/GroundPolyline、Entity、Billboard/Label、glTF/3D Tiles、任意 GLSL/custom renderState、非 Color 材质、切割/分类、阴影/大气/后处理、二维/Columbus、flyTo/跟踪和 requestRenderMode。不支持的 primitive 类型、外观、拓扑、裁剪和地形布局明确报错；完整 Globe/Scene 的其他效果属性不在本支持声明内。地球基础光照使用固定方向光，不等价于完整时钟/太阳光照系统。
 
-未支持：多影像层合成、alpha/调色、Web Mercator、局部影像矩形、其他 imagery provider、真实高程地形、glTF、3D Tiles、Entity、通用 Primitive、透明、光照/大气/阴影/后处理、自定义 shader、2D/Columbus、Camera.flyTo/跟踪、requestRenderMode。标准 Globe 上未迁移的效果属性不会生效；常见不支持的模式、材质、光照、裁剪、透明、影像布局/调色会明确拒绝。支持声明仅限上表，不承诺完整 Scene/Globe API 兼容。
+可恢复瓦片错误通过 `renderError` 的 `error.recoverable` 和 `statistics.tileErrors` 报告，不停止整个场景；失败块在本次驻留期使用祖先，重新加载/替换 provider 可重试。GPU 预算不足时降级到已驻留祖先，最小预算无法容纳根纹理时显示 baseColor。设备丢失仍须销毁并重新创建场景。
 
-设备丢失后需由应用销毁并显式重新创建场景，目前不自动恢复。`renderError` 报告设备/瓦片失败；同步参数错误由调用抛出。`resourceStatistics` 只统计本后端管理的 buffer/texture 数量和估算字节，不是全部 GPU 对象或物理显存。Shader、pipeline、sampler 随设备销毁回收。没有完成长时间稳定性、跨GPU/跨OS或生产性能认证。
-
-原 WebGL2 的动态盒体异步拾取失败和17项上游 Jasmine 失败继续记录在根进度报告；本演示通过不等于完整 S01 或后续阶段通过。
+`resourceStatistics` 统计后端管理的 buffer/texture 数量与估算字节，不是全部物理显存。十轮回归通过不代表长时间/跨 GPU/跨 OS 认证；本轮交付不宣称原计划完整阶段、MVP 或生产 v1 通过。旧 WebGL 动态盒体拾取和上游 Jasmine 失败继续保留在进度报告。
