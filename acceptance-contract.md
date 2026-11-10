@@ -1,5 +1,15 @@
 # 验收契约 v2
 
+## 2026-11-10 N05/N06-A 增量
+
+沿用旧四套49/59/111/49项及每入口13项页面检查。新增models专项及模型页面检查独立计数，不以三轮重复增长功能覆盖。最终同一干净实现SHA运行五套×三轮，资产manifest、source hash和build hash一致；正式目录在全部成功后归档，不覆盖旧包。
+
+模型512×512/DPR1/MSAA1；颜色内部像素容差RGB≤3，JPEG≤5，OPAQUE alpha=255。四象限、中灰128、factor0.5后92以及vertex tint预期66/92/46在采集前固定。颜色空间、UV/wrap/filter、各accessor/索引/布局、节点/负缩放/多mesh、地理放置与遮挡测试在Specs/WebGPU/models.js及独立模块中声明。
+
+20次每轮实际等待两条WebGPU管线开始后取消，再加载两个共享模型，移除一个并验证另一个仍可拾取；每次回到同一资源/活动任务基线。慢网络/解码/编译、坏图片/网络/编译、跨设备和device loss分别验证。预期注入错误单列expectedErrors；正常scene的validation与控制台错误仍要求0。底层管理资源账本不是物理显存，延迟/编译计数不是GPU时间，N08性能仍未验收。
+
+模型冻结资产独立存于Specs/WebGPU/fixtures/models/manifest.json；runner验证每个文件的SHA-256，另hash模型专项、组合场景及模型页面测试源。原WebGL frozen manifest与N04 conformance hash保持。Windows/Linux清洁CI继续使用native-contract；完整Jasmine仍对17项历史失败逐名比较。完整N06/S11、N07与跨硬件边界保持开放。
+
 ## 2026-11-10 N01—N04 增量
 
 原有门槛和frozen manifest不改写。新增契约见[ADR0004](adr/0004-basic-conformance.md)，不使用新山脊结果替换旧平坦heightmap/quantized-mesh用例。绘制契约为18例×颜色/ID/frustum×WebGL2/WebGPU，加3项原生检查，合计111项；地形专项49项；既有基础49、流式59及每入口13项页面检查保持。

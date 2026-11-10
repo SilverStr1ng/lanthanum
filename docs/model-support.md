@@ -1,6 +1,6 @@
 # N06-A 精确支持与错误矩阵
 
-N05.1冻结，基线a9582d50。N06-A仅静态unlit，不关闭完整S11。工程粗估仍25%—35%，不按断言增长计进度。
+N05.1冻结，基线a9582d50；运行时已实现，最终验收与证据身份见progress-report.md。N06-A仅静态unlit，不关闭完整S11。工程粗估仍25%—35%，不按断言增长计进度。
 
 | 输入 | 本轮支持 | 明确拒绝 |
 | --- | --- | --- |
@@ -17,3 +17,5 @@ N05.1冻结，基线a9582d50。N06-A仅静态unlit，不关闭完整S11。工程
 错误包含资产URL和accessor/node/material/texture定位。不支持输入上传前预检；网络/图片/编译失败释放已取得引用，不以纯色替代伪装成功。
 
 资产由scripts/webgpuTest/generateModels.js生成并独立manifest记录。A01外部盒体/A02等价GLB，A03布局/索引，A04四象限/中灰/重复/sampler/alpha0，A05层级缩放，A06共享，A07错误/迟到，A08地球组合。内部RGB容差≤3（JPEG≤5），不取抗锯齿边缘；中灰128×线性factor0.5预期sRGB92。原fixture与四套断言不改。
+
+补充冻结资产：collision16/collision32 拥有完全相同的索引字节，前者两个退化三角形、后者一个实际三角形，用来验证格式/count身份；multi-mesh 验证同场景两个mesh不同材质；bad-decode.png验证真实图片解码失败。地球组合模型使用独立双峰解析heightmap，公式与地理放置固定于Apps/WebGPU/modelWorld.js并纳入source hash。正式采集前冻结所有资产和测试源，调试红绿记录不作为最终三轮。
