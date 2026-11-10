@@ -1,0 +1,31 @@
+[11:19:34] Using gulpfile D:\Nothing\Lanthanum\gulpfile.js
+[11:19:34] Starting 'tsc'...
+D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:123693
+      throw e;
+      ^
+
+Error: Debug Failure.
+    at resolveExternalModule (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:49511:37)
+    at resolveExternalModuleNameWorker (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:49471:61)
+    at resolveExternalModuleName (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:49468:12)
+    at getTargetOfImportClause (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:48653:26)
+    at getTargetOfAliasDeclaration (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:49077:16)
+    at resolveAlias (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:49123:22)
+    at checkAliasSymbol (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:86032:20)
+    at checkImportBinding (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:86165:5)
+    at checkImportDeclaration (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:86232:11)
+    at checkSourceElementWorker (D:\Nothing\Lanthanum\node_modules\typescript\lib\_tsc.js:86748:16)
+
+Node.js v24.11.0
+[11:19:53] 'tsc' errored after 18 s
+[11:19:53] Error: Command failed: npm exec --package=typescript --offline -- tsc --project packages/sandcastle/gallery/tsconfig.json
+    at genericNodeError (node:internal/errors:985:15)
+    at wrappedFn (node:internal/errors:539:14)
+    at checkExecSyncError (node:child_process:925:11)
+    at execSync (node:child_process:997:15)
+    at tsc (file:///D:/Nothing/Lanthanum/gulpfile.js:313:7)
+    at taskWrapper (D:\Nothing\Lanthanum\node_modules\undertaker\lib\set-task.js:13:15)
+    at bound (node:domain:433:15)
+    at runBound (node:domain:444:12)
+    at asyncRunner (D:\Nothing\Lanthanum\node_modules\async-done\index.js:52:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)

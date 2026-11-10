@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-10T03:36:02.135Z",
+  "profile": "Native WebGPU basic interaction, not S00-S24/MVP/production certification",
+  "rounds": [
+    {
+      "round": 1,
+      "commit": "3e3e677fc902ffc5cfc530067ca924e221e997c6",
+      "workingTree": "",
+      "passed": true,
+      "nativeChecks": 49,
+      "demoChecks": 9,
+      "consoleErrors": [],
+      "buildSha256": "99cdb150cb6e4fac88f5569d069fa49e9e7159cad5b118f2366b830867f5f87d",
+      "frameSha256": "35ca30bc0626c6a76e74499d282e4a48c6623e56aa51bf7c0ef98663856c1401"
+    },
+    {
+      "round": 2,
+      "commit": "3e3e677fc902ffc5cfc530067ca924e221e997c6",
+      "workingTree": "",
+      "passed": true,
+      "nativeChecks": 49,
+      "demoChecks": 9,
+      "consoleErrors": [],
+      "buildSha256": "99cdb150cb6e4fac88f5569d069fa49e9e7159cad5b118f2366b830867f5f87d",
+      "frameSha256": "35ca30bc0626c6a76e74499d282e4a48c6623e56aa51bf7c0ef98663856c1401"
+    },
+    {
+      "round": 3,
+      "commit": "3e3e677fc902ffc5cfc530067ca924e221e997c6",
+      "workingTree": "",
+      "passed": true,
+      "nativeChecks": 49,
+      "demoChecks": 9,
+      "consoleErrors": [],
+      "buildSha256": "99cdb150cb6e4fac88f5569d069fa49e9e7159cad5b118f2366b830867f5f87d",
+      "frameSha256": "35ca30bc0626c6a76e74499d282e4a48c6623e56aa51bf7c0ef98663856c1401"
+    }
+  ],
+  "webgl": {
+    "sourceCommit": "e6f1639ea0f46ded9c64ff891691cc839e95651b",
+    "workingTree": "M README.md\n M compatibility-matrix.md\n M package.json\n M packages/engine/Source/Scene/Scene.js\n M progress-report.md\n M scripts/webgpuBaseline/server.js\n?? Apps/WebGPU/\n?? Specs/WebGPU/\n?? docs/reports/s01-round2.md\n?? packages/engine/Source/Renderer/WebGPUContext.js\n?? packages/engine/Source/Renderer/WebGPUGeometryRenderer.js\n?? packages/engine/Source/Scene/WebGPUGlobeTileProvider.js\n?? packages/engine/Source/Scene/WebGPUScene.js\n?? scripts/webgpuTest/",
+    "fixtureManifestSha256": "0d476e0b577d9aed36a878f0a7029ac33b9230164e3a60760d8dbed4f863d3d8",
+    "runs": 60,
+    "passed": 57,
+    "failed": [
+      {
+        "id": "T05-entity-box",
+        "iteration": 1,
+        "resourcesReleased": true
+      },
+      {
+        "id": "T05-entity-box",
+        "iteration": 2,
+        "resourcesReleased": true
+      },
+      {
+        "id": "T05-entity-box",
+        "iteration": 3,
+        "resourcesReleased": true
+      }
+    ],
+    "resourcesReleased": 60,
+    "minSsim": 0.9999999972126116,
+    "maxSignificantFraction": 0
+  },
+  "jasmine": {
+    "executed": 16035,
+    "total": 16102,
+    "passed": 16018,
+    "failed": 17,
+    "skipped": 67,
+    "addedFailures": [],
+    "removedFailures": []
+  },
+  "typescript": {
+    "root": "pass",
+    "engineAfterBuildTs": "pass",
+    "wholeWorkspace": "fail: TypeScript 6.0.2 Debug Failure in packages/sandcastle/gallery/tsconfig.json"
+  }
+}
