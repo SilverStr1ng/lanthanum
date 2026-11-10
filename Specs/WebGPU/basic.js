@@ -303,6 +303,69 @@ async function run() {
     canvas: makeCanvas(),
     backend: "webgpu",
   });
+  const originalAdapterRequest = navigator.gpu.requestAdapter;
+  const cancelledStartup = new AbortController();
+  navigator.gpu.requestAdapter = async () => {
+    cancelledStartup.abort();
+    return null;
+  };
+  try {
+    await rejects(
+      "cancelled adapter failure never falls back",
+      async () => {
+        const unexpected = await C.Scene.createAsync({
+          canvas: makeCanvas(),
+          backend: "auto",
+          signal: cancelledStartup.signal,
+        });
+        unexpected.destroy();
+      },
+      /AbortError/,
+    );
+  } finally {
+    navigator.gpu.requestAdapter = originalAdapterRequest;
+  }
+  const cancelledDevice = new AbortController();
+  navigator.gpu.requestAdapter = async () => ({
+    info: {},
+    features: new Set(),
+    limits: {},
+    requestDevice: async () => {
+      cancelledDevice.abort();
+      throw new Error("Injected device rejection");
+    },
+  });
+  try {
+    await rejects(
+      "cancelled device rejection never falls back",
+      () =>
+        C.Scene.createAsync({
+          canvas: makeCanvas(),
+          backend: "auto",
+          signal: cancelledDevice.signal,
+        }),
+      /AbortError/,
+    );
+  } finally {
+    navigator.gpu.requestAdapter = originalAdapterRequest;
+  }
+  const originalTerrain = scene.globe.terrainProvider;
+  for (const [name, options] of [
+    ["non-WGS84", { ellipsoid: C.Ellipsoid.UNIT_SPHERE }],
+    [
+      "one root",
+      {
+        tilingScheme: new C.GeographicTilingScheme({
+          numberOfLevelZeroTilesX: 1,
+        }),
+      },
+    ],
+    ["Mercator", { tilingScheme: new C.WebMercatorTilingScheme() }],
+  ]) {
+    scene.globe.terrainProvider = new C.EllipsoidTerrainProvider(options);
+    await rejects(`${name} terrain is rejected`, () => scene.render(), /WGS84/);
+  }
+  scene.globe.terrainProvider = originalTerrain;
   second.backgroundColor = C.Color.LIME;
   second.render();
   check(

@@ -3,6 +3,7 @@ import {
   Cartesian2,
   Cartesian3,
   Color,
+  Ellipsoid,
   Event,
   Intersect,
   IntersectionTests,
@@ -137,12 +138,25 @@ class WebGPUGlobeTileProvider {
         "The native basic profile currently supports EllipsoidTerrainProvider only.",
       );
     }
+    const terrainScheme = this.globe.terrainProvider.tilingScheme;
+    if (
+      !(terrainScheme instanceof GeographicTilingScheme) ||
+      !Ellipsoid.WGS84.equals(terrainScheme.ellipsoid) ||
+      !Rectangle.equals(terrainScheme.rectangle, Rectangle.MAX_VALUE) ||
+      terrainScheme.getNumberOfXTilesAtLevel(0) !== 2 ||
+      terrainScheme.getNumberOfYTilesAtLevel(0) !== 1
+    ) {
+      throw new Error(
+        "Native terrain requires WGS84 geographic tiling with full-world 2x1 roots.",
+      );
+    }
     if (layer) {
       const imagery = layer.imageryProvider;
       const scheme = imagery?.tilingScheme;
       if (
         !(imagery instanceof UrlTemplateImageryProvider) ||
         !(scheme instanceof GeographicTilingScheme) ||
+        !Ellipsoid.WGS84.equals(scheme.ellipsoid) ||
         scheme.getNumberOfXTilesAtLevel(0) !== 2 ||
         scheme.getNumberOfYTilesAtLevel(0) !== 1 ||
         !Rectangle.equals(imagery.rectangle, Rectangle.MAX_VALUE) ||

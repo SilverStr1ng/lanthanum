@@ -5603,6 +5603,9 @@ Scene.createAsync = async function (options) {
       return new WebGPUScene(options, context);
     } catch (error) {
       context?.destroy();
+      if (options.signal?.aborted) {
+        throw new DOMException("Initialization cancelled", "AbortError");
+      }
       if (
         backend === "webgpu" ||
         context ||

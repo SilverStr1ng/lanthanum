@@ -12,6 +12,9 @@ class WebGPUContext {
     const adapter = await navigator.gpu.requestAdapter({
       powerPreference: "high-performance",
     });
+    if (options.signal?.aborted) {
+      throw new DOMException("Initialization cancelled", "AbortError");
+    }
     if (!adapter) {
       throw new Error("No WebGPU adapter is available.");
     }
