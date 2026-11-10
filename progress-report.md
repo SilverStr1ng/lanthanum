@@ -1,28 +1,16 @@
-# 进度报告：N01—N04 基础子集收口
+# 进度报告：N05/N06-A 已验收
 
-依据2026-11-10新任务书，在89bc1ef49af6b19cbca37ca815d2db6e1ce0312e基础上继续。当前仍称为原生WebGPU影像、地形与标准Primitive可用子集；没有宣称原计划完整G1/G2或生产v1通过。
+**N05 已实现并验收，N06-A 静态 unlit 子集已验收。** 在已有影像、非平坦地形和 Primitive 的原生 WebGPU 地球中，多个静态纹理 glTF/GLB 已具备正确定位、朝向、尺寸、双向遮挡、对象拾取和安全的取消/移除/重新加载。
 
-## 已实现
+- 最终实现：9c60b88fe3fcec3ab4b1b49435bec498b1fb4f66；五套专项同一干净提交连续三轮。
+- 原始证据提交：4f653e15d89d337d1262f32e278b033935a855a5；后续文档归档不改变已验收运行时。
+- 旧四套保持49/59/111/49项及每入口13项页面检查，三轮960次；模型147项、原页面13项和独立模型页面10项，三轮510次。总计1470次通过，不作为功能覆盖百分比。
+- CPU 66项通过；完整Jasmine 16018通过、17失败、67跳过，失败身份与历史完全一致，新增为零，原始退出码1保留。
+- Windows/Ubuntu清洁CI与dev四个job全部成功，实际运行身份与日志见完整报告；hosted CI不替代硬件WebGPU。
+- 20次生命周期循环每轮均回到资源/任务基线；真实慢下载、解码、编译、失败重试及device loss已覆盖。
 
-- 地形tile.data/generation所有权检查，取消旧任务不能重置新瓦片；实际未结束的请求/Worker继续占据八槽预算。
-- 普通Color几何不再应用影像ST裁剪；显式near/far生效，CPU双精度反向深度转换；闭合透明三角形按背面/正面两遍绘制。
-- runner创建父目录并拒绝覆盖既有叶目录；Node24.15.0/npm11.6.1契约、跨平台optional包与完整integrity锁文件、Windows/Linux清洁CI。
-- 独立非平坦山脊、相邻LOD、缺块上采样、裙边、遮挡、夸张和快速返回专项。S11基础模型/S12模型扩展/S13 Tiles编号已统一。
+[完整报告与逐步验收](docs/reports/webgpu-models-v1.md) · [原始三轮证据](benchmarks/webgpu/models-v1/summary.json) · [使用说明](Apps/WebGPU/README.md) · [模型演示](Apps/WebGPU/models.html)
 
-## 已验收
+完整N06/S11、PBR、MASK/BLEND、动画/skin/morph、压缩、Tiles、完整S07、N08性能和自动恢复继续开放。生产v1工程粗估仍为 **25%—35%（约三成）**，不按累计断言增长上调。下一步按[N07材质任务](docs/issues/n07-static-materials.md)推进。
 
-最终实现64d333bc8b03f7cafc22367ffd85327eb6208fb3在干净工作树连续三轮运行四套真实硬件专项，每轮基础49、流式59、绘制契约111、非平坦地形49项通过，每个入口另有13项页面检查。总计960次累计断言；不是960个独立功能。12次构建/夹具hash一致，Chrome157.0.8103.40、NVIDIA Blackwell（环境契约RTX5080）、Windows，控制台与WebGPU validation错误均为0。证据与逐项检查名见[验收包](benchmarks/webgpu/conformance-v1/summary.json)。
-
-N01逻辑红绿11项、runner文件系统与跨平台锁文件2项、旧工具6项，共19项CPU测试通过。N02原生三类绘制问题的WebGL2控制组红绿保存。N03 Windows隔离npm ci、构建/类型/lint/ast-grep及没有runs目录的默认入口通过；最终实现的[Windows/Linux清洁CI](https://github.com/SilverStr1ng/lanthanum/actions/runs/42768425465)均成功，包含安装、工具链、ast-grep、build/build-ts、根/engine类型、ESLint与CPU测试，原始日志在验收包audit。完整Jasmine重跑16018通过、17失败、67跳过，失败身份与旧集合完全一致，无新增或消失；此后仅测试/文档改动，运行时代码与构建hash一致。
-
-双轴审查：Standards 0项；Spec发现1项GPU夸张验证缺口，新增4500m盒体可见→遮挡→重现三项ID断言，已通过并只读复核关闭。见[审查记录](docs/reviews/webgpu-conformance.md)。
-
-## 未执行与限制
-
-全工作区检查仍有旧失败：Sandcastle gallery在TypeScript6中Debug Failure；原实施计划末尾空行触发Markdownlint；全仓Prettier扫描2966个文件提示（本轮改动文件格式另行检查）。未跳过或删除这些检查，日志保留。旧dev工作流在build前lint导致workspace导出缺失的问题另由cfe30afe6f修复，未禁用检查；修复后真实CI的JavaScript lint通过，该次Markdown检查发现验收契约与原计划文档两处尾部空行；本轮引入的验收契约空行已在归档提交中修复，原计划空行保留登记，未称整个dev为绿色。通用CI没有执行硬件WebGPU。
-
-完整S07精度、N08正式性能、跨GPU/浏览器认证、自动设备恢复、完整Viewer/Entity、glTF/PBR/3D Tiles未执行或未实现。GPU对象ID遮挡和CPU网格高程是两类证据，不能互换。上采样继续细化与影像LOD受terrain level约束仍开放，见[阻塞工单](docs/issues/terrain-imagery-lod.md)。N05只有[最小模型契约建议](adr/0005-model-render-contract-proposal.md)，无模型运行时代码。
-
-## 历史记录
-
-上一轮实现6cce0f41、发布89bc1ef4及402累计断言的证据仍在benchmarks/webgpu/streaming-v1；旧报告见[2026-11-10先前交付](docs/reports/webgpu-streaming-v1.md)。旧17项Jasmine失败按身份保留。冻结manifest为0d476e0b577d9aed36a878f0a7029ac33b9230164e3a60760d8dbed4f863d3d8，不重新冻结、不覆盖旧资产或证据。
+历史N01—N04报告保留在[先前报告](docs/reports/webgpu-conformance-v1.md)，旧资产、断言和验收包不覆盖。

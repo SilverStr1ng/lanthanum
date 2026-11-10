@@ -1,5 +1,7 @@
 # 固定兼容矩阵 v1（CesiumJS 1.147）
 
+2026-11-10 N05/N06-A增量：模型运行时契约与有限静态unlit glTF/GLB子集已验收，覆盖纹理、TRS/matrix、两种顶点布局、共享生命周期、混合深度和对象拾取；精确子矩阵见[model-support](docs/model-support.md)，证据见[progress-report](progress-report.md)。完整M01—M13、N06/S11与生产阶段状态不因该子集自动关闭，生产v1工程粗估仍25%—35%。
+
 2026-11-10 N01—N04增量：现有可用子集增加代际取消、ST、near/far与闭合透明绘制修复；真实山脊专项与清洁工具链单独验收，状态见progress-report.md。S11为基础模型、S12为模型扩展、S13为Tiles。下表中的“需适配”不表示已通过；上采样与独立影像LOD仍受docs/issues/terrain-imagery-lod.md阻塞。
 
 范围冻结于2026-11-10。新增的原生 WebGPU 基本交互演示及实际支持子集见 [WebGPU 使用说明](Apps/WebGPU/README.md)。**下表为完整阶段目标，WebGPU 正式阶段验收仍为0；不能以演示子集替代整项验收。** “需适配”不是已支持声明；“CPU复用”也不表示整个调用链已支持WebGPU。负责人填写角色而非虚构团队成员。功能编号是固定分母，新增范围须变更ADR。API语义差异单独列出，不用百分比掩盖。

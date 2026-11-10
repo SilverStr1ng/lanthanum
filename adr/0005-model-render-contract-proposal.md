@@ -1,6 +1,6 @@
 # ADR0005：N05 模型运行时契约
 
-状态：运行时已实现，最终验收状态以 progress-report.md 与独立模型证据包为准。N05.1 起点a9582d50f5d319936f7586ac66b081ff3b968e1d，工作树干净。原N01—N04边界与证据不变。格式见docs/model-support.md；依据新任务书第9节。
+状态：N05运行时已实现并验收，N06-A静态unlit子集已验收；实现9c60b88fe3，证据见progress-report.md与benchmarks/webgpu/models-v1。N05.1起点a9582d50f5d319936f7586ac66b081ff3b968e1d，工作树干净。原N01—N04边界与证据不变。格式见docs/model-support.md；依据新任务书第9节。
 
 ```js
 const model = await Cesium.WebGPUModel.fromGltfAsync({url, scene, modelMatrix, id, signal});
