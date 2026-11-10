@@ -1,0 +1,27 @@
+✖ identical index bytes interpreted as u16 and u32 never share draw metadata (6.9412ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 248.9144
+
+✖ failing tests:
+
+test at scripts\webgpuTest\modelLoader.test.js:50:1
+✖ identical index bytes interpreted as u16 and u32 never share draw metadata (6.9412ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to:
+  
+  '90812430a0d248a14602a02dc8782e20b1cba0f2cebf45041158a8acb095a847:ad5dc1478de06a4c2728ea528bd9361a4b945e92a414bf4d180cedaaeaa5f4cc:5'
+      at TestContext.<anonymous> (file:///D:/Nothing/Lanthanum/scripts/webgpuTest/modelLoader.test.js:53:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '90812430a0d248a14602a02dc8782e20b1cba0f2cebf45041158a8acb095a847:ad5dc1478de06a4c2728ea528bd9361a4b945e92a414bf4d180cedaaeaa5f4cc:5',
+    expected: '90812430a0d248a14602a02dc8782e20b1cba0f2cebf45041158a8acb095a847:ad5dc1478de06a4c2728ea528bd9361a4b945e92a414bf4d180cedaaeaa5f4cc:5',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }

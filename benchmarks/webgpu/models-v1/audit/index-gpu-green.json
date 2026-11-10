@@ -1,0 +1,6731 @@
+{
+  "checks": [
+    {
+      "name": "model becomes drawable without render loop and is not auto-added",
+      "passed": true,
+      "detail": {
+        "frames": 0,
+        "selectedTiles": 0,
+        "maximumSelectedLevel": -1,
+        "pendingTiles": 0,
+        "modelWork": {
+          "generation": 1,
+          "instances": 1,
+          "ready": 1,
+          "network": {
+            "started": 3,
+            "completed": 3,
+            "failed": 0,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 1,
+            "completed": 1,
+            "failed": 0,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 1,
+            "references": 1
+          },
+          "decoding": {
+            "started": 1,
+            "completed": 1,
+            "failed": 0,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 1,
+            "completed": 1,
+            "failed": 0,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 1,
+            "references": 1
+          },
+          "textures": {
+            "started": 1,
+            "completed": 1,
+            "failed": 0,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 1,
+            "references": 1
+          },
+          "samplers": {
+            "started": 1,
+            "completed": 1,
+            "failed": 0,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 1,
+            "references": 1
+          },
+          "pipelines": {
+            "started": 2,
+            "completed": 2,
+            "failed": 0,
+            "hits": 0,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 2,
+            "references": 2
+          }
+        },
+        "imageryTextures": 0,
+        "imageryBytes": 0,
+        "tileErrors": [],
+        "resources": {
+          "live": 8,
+          "bytes": 3146176,
+          "buffer": 3,
+          "texture": 5
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "PNG upper-left direction and color",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "PNG upper-right direction and color",
+      "passed": true,
+      "detail": [
+        0,
+        255,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "PNG lower-left direction and color",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "PNG lower-right direction and color",
+      "passed": true,
+      "detail": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "model picks its own object and application ID",
+      "passed": true,
+      "detail": "plane"
+    },
+    {
+      "name": "u8 layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "u8 model ID",
+      "passed": true,
+      "detail": "u8"
+    },
+    {
+      "name": "u32 layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "u32 model ID",
+      "passed": true,
+      "detail": "u32"
+    },
+    {
+      "name": "nonindexed layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "nonindexed model ID",
+      "passed": true,
+      "detail": "nonindexed"
+    },
+    {
+      "name": "interleaved layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "interleaved model ID",
+      "passed": true,
+      "detail": "interleaved"
+    },
+    {
+      "name": "normalized8 layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "normalized8 model ID",
+      "passed": true,
+      "detail": "normalized8"
+    },
+    {
+      "name": "normalized16 layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "normalized16 model ID",
+      "passed": true,
+      "detail": "normalized16"
+    },
+    {
+      "name": "color-float layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "color-float model ID",
+      "passed": true,
+      "detail": "color-float"
+    },
+    {
+      "name": "color3 layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "color3 model ID",
+      "passed": true,
+      "detail": "color3"
+    },
+    {
+      "name": "vertex-tint layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        66,
+        92,
+        46,
+        255
+      ]
+    },
+    {
+      "name": "vertex-tint model ID",
+      "passed": true,
+      "detail": "vertex-tint"
+    },
+    {
+      "name": "no-texture layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        188,
+        137,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "no-texture model ID",
+      "passed": true,
+      "detail": "no-texture"
+    },
+    {
+      "name": "gray layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        128,
+        128,
+        128,
+        255
+      ]
+    },
+    {
+      "name": "gray model ID",
+      "passed": true,
+      "detail": "gray"
+    },
+    {
+      "name": "gray-factor layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        92,
+        92,
+        92,
+        255
+      ]
+    },
+    {
+      "name": "gray-factor model ID",
+      "passed": true,
+      "detail": "gray-factor"
+    },
+    {
+      "name": "alpha-zero layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "alpha-zero model ID",
+      "passed": true,
+      "detail": "alpha-zero"
+    },
+    {
+      "name": "optional-fallback layout color and OPAQUE alpha",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "optional-fallback model ID",
+      "passed": true,
+      "detail": "optional-fallback"
+    },
+    {
+      "name": "u16 collision control has no visible triangles",
+      "passed": true
+    },
+    {
+      "name": "same index bytes with u32 format preserve its triangle and object ID",
+      "passed": true
+    },
+    {
+      "name": "two meshes retain distinct material factors and placement",
+      "passed": true,
+      "detail": {
+        "left": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "right": [
+          188,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "repeat UV sample 200",
+      "passed": true,
+      "detail": {
+        "uv": [
+          -0.7516771056351534,
+          -0.7516600783974174
+        ],
+        "actual": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "expected": [
+          255,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "repeat UV sample 232",
+      "passed": true,
+      "detail": {
+        "uv": [
+          -0.029989445636315226,
+          -0.029972517932503884
+        ],
+        "actual": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "expected": [
+          255,
+          255,
+          255
+        ]
+      }
+    },
+    {
+      "name": "repeat UV sample 312",
+      "passed": true,
+      "detail": {
+        "uv": [
+          1.7742303797669803,
+          1.774247300152124
+        ],
+        "actual": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "expected": [
+          255,
+          255,
+          255
+        ]
+      }
+    },
+    {
+      "name": "mirror UV sample 200",
+      "passed": true,
+      "detail": {
+        "uv": [
+          -0.7516771056351534,
+          -0.7516600783974174
+        ],
+        "actual": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "expected": [
+          255,
+          255,
+          255
+        ]
+      }
+    },
+    {
+      "name": "mirror UV sample 232",
+      "passed": true,
+      "detail": {
+        "uv": [
+          -0.029989445636315226,
+          -0.029972517932503884
+        ],
+        "actual": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "expected": [
+          255,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "mirror UV sample 312",
+      "passed": true,
+      "detail": {
+        "uv": [
+          1.7742303797669803,
+          1.774247300152124
+        ],
+        "actual": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "expected": [
+          255,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "clamp UV sample 200",
+      "passed": true,
+      "detail": {
+        "uv": [
+          -0.7516771056351534,
+          -0.7516600783974174
+        ],
+        "actual": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "expected": [
+          255,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "clamp UV sample 232",
+      "passed": true,
+      "detail": {
+        "uv": [
+          -0.029989445636315226,
+          -0.029972517932503884
+        ],
+        "actual": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "expected": [
+          255,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "clamp UV sample 312",
+      "passed": true,
+      "detail": {
+        "uv": [
+          1.7742303797669803,
+          1.774247300152124
+        ],
+        "actual": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "expected": [
+          255,
+          255,
+          255
+        ]
+      }
+    },
+    {
+      "name": "linear sampler interpolates in linear color space",
+      "passed": true,
+      "detail": {
+        "actual": [
+          188,
+          191,
+          191,
+          255
+        ],
+        "expected": [
+          188,
+          191,
+          191
+        ],
+        "uv": [
+          0.5028190932168971,
+          0.5028233312000323
+        ]
+      }
+    },
+    {
+      "name": "JPEG texture matches decoded interior source pixel",
+      "passed": true,
+      "detail": {
+        "actual": [
+          153,
+          88,
+          56,
+          255
+        ],
+        "expected": [
+          153,
+          88,
+          56,
+          255
+        ]
+      }
+    },
+    {
+      "name": "external box is drawable and pickable",
+      "passed": true
+    },
+    {
+      "name": "GLB embedded geometry and PNG match external glTF",
+      "passed": true
+    },
+    {
+      "name": "same frame retains independent transform factor and ID",
+      "passed": true
+    },
+    {
+      "name": "factor and same-type textures reuse compatible pipelines",
+      "passed": true,
+      "detail": {
+        "started": 14,
+        "completed": 14,
+        "failed": 0,
+        "hits": 42,
+        "peakActive": 2,
+        "active": 0,
+        "queued": 0,
+        "entries": 2,
+        "references": 6
+      }
+    },
+    {
+      "name": "different assets with identical geometry and image share GPU handles",
+      "passed": true,
+      "detail": {
+        "generation": 1,
+        "instances": 3,
+        "ready": 3,
+        "network": {
+          "started": 78,
+          "completed": 78,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 27,
+          "completed": 27,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 3,
+          "references": 3
+        },
+        "decoding": {
+          "started": 7,
+          "completed": 7,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 17,
+          "completed": 17,
+          "failed": 0,
+          "hits": 11,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 1,
+          "references": 3
+        },
+        "textures": {
+          "started": 8,
+          "completed": 8,
+          "failed": 0,
+          "hits": 20,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 2,
+          "references": 3
+        },
+        "samplers": {
+          "started": 5,
+          "completed": 5,
+          "failed": 0,
+          "hits": 23,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 1,
+          "references": 3
+        },
+        "pipelines": {
+          "started": 14,
+          "completed": 14,
+          "failed": 0,
+          "hits": 42,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 2,
+          "references": 6
+        }
+      }
+    },
+    {
+      "name": "removing shared A leaves B drawable",
+      "passed": true
+    },
+    {
+      "name": "multi-node TRS matrix and reflected node occupy known reference points",
+      "passed": true
+    },
+    {
+      "name": "nonuniform node bounds conservatively enclose known extents",
+      "passed": true,
+      "detail": {
+        "localCenter": {
+          "x": -0.2071067811889279,
+          "y": 9.947598300641403e-14,
+          "z": -1.8189894035458565e-12
+        },
+        "radius": 1848.528137423995
+      }
+    },
+    {
+      "name": "node quaternion rotates the texture orientation",
+      "passed": true,
+      "detail": [
+        0,
+        255,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "explicit glTF scene selects translated node",
+      "passed": true
+    },
+    {
+      "name": "negative and nonuniform modelMatrix retains front-face rendering",
+      "passed": true,
+      "detail": [
+        0,
+        255,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "hide then reshow invalidates an earlier async model pick",
+      "passed": true
+    },
+    {
+      "name": "removing model invalidates an earlier async pick",
+      "passed": true
+    },
+    {
+      "name": "destroyed instance cannot be re-added",
+      "passed": true
+    },
+    {
+      "name": "single-sided geometry culls its back face",
+      "passed": true
+    },
+    {
+      "name": "doubleSided retains back face color and ID",
+      "passed": true
+    },
+    {
+      "name": "unsupported required rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-required.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-required.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-required.gltf: unsupported required extension VENDOR_required",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported optional rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-optional.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-optional.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-optional.gltf: unsupported extension payload VENDOR_payload",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported animation rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-animation.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-animation.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-animation.gltf: animation/skin is not supported",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported skin rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-skin.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-skin.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-skin.gltf: animation/skin is not supported",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported morph rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-morph.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-morph.gltf: mesh 0 primitive 0: only static TRIANGLES without morph targets is supported",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported pbr rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-pbr.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-pbr.gltf: material 0: only explicit KHR_materials_unlit is supported; PBR requires N07",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported mask rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-mask.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-mask.gltf: material 0: only OPAQUE is supported",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported blend rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-blend.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-blend.gltf: material 0: only OPAQUE is supported",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported mip rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-mip.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-mip.gltf: material 0: mip or invalid sampler filter is not supported",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported sparse rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-sparse.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-sparse.gltf: accessor 0 POSITION: missing accessor or unsupported sparse accessor",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported stride rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-stride.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-stride.gltf: accessor 0 POSITION: invalid byteStride",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported bounds rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-bounds.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-bounds.gltf: accessor 0 POSITION: accessor exceeds bufferView",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported image rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-image.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-image.gltf: image 0: invalid PNG/JPEG image or MIME",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported decode rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-decode.gltf: The source image could not be decoded.",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported cycle rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-cycle.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-cycle.gltf: node 0: invalid node, cycle or multiple parents",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported normalized rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-normalized.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-normalized.gltf: accessor 0 POSITION: invalid normalized input",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported uv rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-uv.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-uv.gltf: material 0: only TEXCOORD_0 is supported",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported topology rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-topology.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-topology.gltf: mesh 0 primitive 0: only static TRIANGLES without morph targets is supported",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "unsupported singular rejects and releases resources",
+      "passed": true,
+      "detail": {
+        "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-singular.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/bad-singular.gltf: node 0: non-affine or singular transform",
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        }
+      }
+    },
+    {
+      "name": "shared download A cancellation settles independently",
+      "passed": true
+    },
+    {
+      "name": "shared download remains physically active for B",
+      "passed": true
+    },
+    {
+      "name": "shared download is deduplicated and B draws after A cancellation",
+      "passed": true
+    },
+    {
+      "name": "last download waiter cancels while physical network work stays bounded",
+      "passed": true
+    },
+    {
+      "name": "late network result cannot restore cancelled model",
+      "passed": true
+    },
+    {
+      "name": "slow decode cancellation rejects without waiting for physical decode",
+      "passed": true
+    },
+    {
+      "name": "cancelled unabortable decode retains its physical slot",
+      "passed": true
+    },
+    {
+      "name": "late image closes once and cannot recreate deleted model resources",
+      "passed": true,
+      "detail": {
+        "frames": 62,
+        "selectedTiles": 0,
+        "maximumSelectedLevel": -1,
+        "pendingTiles": 0,
+        "modelWork": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 136,
+            "completed": 136,
+            "failed": 0,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 54,
+            "completed": 35,
+            "failed": 19,
+            "hits": 1,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 12,
+            "completed": 11,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 22,
+            "completed": 22,
+            "failed": 0,
+            "hits": 15,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 13,
+            "completed": 11,
+            "failed": 2,
+            "hits": 24,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 8,
+            "completed": 8,
+            "failed": 0,
+            "hits": 27,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 20,
+            "completed": 20,
+            "failed": 0,
+            "hits": 50,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        },
+        "imageryTextures": 0,
+        "imageryBytes": 0,
+        "tileErrors": [],
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "shared pipeline cancellation rejects only A",
+      "passed": true
+    },
+    {
+      "name": "two variants compile once within the physical budget",
+      "passed": true
+    },
+    {
+      "name": "pending pipeline dedup preserves B color and ID",
+      "passed": true
+    },
+    {
+      "name": "shader failure identifies asset variant and compiler diagnostic",
+      "passed": true
+    },
+    {
+      "name": "failed compile cleans shared resources and can retry",
+      "passed": true
+    },
+    {
+      "name": "retry after shader failure renders",
+      "passed": true
+    },
+    {
+      "name": "missing external buffer rejects with URL and HTTP status",
+      "passed": true
+    },
+    {
+      "name": "load cancel reload share remove cycle 1",
+      "passed": true,
+      "detail": {
+        "cycle": 1,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 153,
+            "completed": 152,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 60,
+            "completed": 40,
+            "failed": 20,
+            "hits": 3,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 17,
+            "completed": 16,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 27,
+            "completed": 27,
+            "failed": 0,
+            "hits": 17,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 18,
+            "completed": 16,
+            "failed": 2,
+            "hits": 26,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 13,
+            "completed": 13,
+            "failed": 0,
+            "hits": 29,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 30,
+            "completed": 28,
+            "failed": 2,
+            "hits": 54,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 2",
+      "passed": true,
+      "detail": {
+        "cycle": 2,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 159,
+            "completed": 158,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 62,
+            "completed": 42,
+            "failed": 20,
+            "hits": 4,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 19,
+            "completed": 18,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 29,
+            "completed": 29,
+            "failed": 0,
+            "hits": 18,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 20,
+            "completed": 18,
+            "failed": 2,
+            "hits": 27,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 15,
+            "completed": 15,
+            "failed": 0,
+            "hits": 30,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 34,
+            "completed": 32,
+            "failed": 2,
+            "hits": 56,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 3",
+      "passed": true,
+      "detail": {
+        "cycle": 3,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 165,
+            "completed": 164,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 64,
+            "completed": 44,
+            "failed": 20,
+            "hits": 5,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 21,
+            "completed": 20,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 31,
+            "completed": 31,
+            "failed": 0,
+            "hits": 19,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 22,
+            "completed": 20,
+            "failed": 2,
+            "hits": 28,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 17,
+            "completed": 17,
+            "failed": 0,
+            "hits": 31,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 38,
+            "completed": 36,
+            "failed": 2,
+            "hits": 58,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 4",
+      "passed": true,
+      "detail": {
+        "cycle": 4,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 171,
+            "completed": 170,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 66,
+            "completed": 46,
+            "failed": 20,
+            "hits": 6,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 23,
+            "completed": 22,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 33,
+            "completed": 33,
+            "failed": 0,
+            "hits": 20,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 24,
+            "completed": 22,
+            "failed": 2,
+            "hits": 29,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 19,
+            "completed": 19,
+            "failed": 0,
+            "hits": 32,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 42,
+            "completed": 40,
+            "failed": 2,
+            "hits": 60,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 5",
+      "passed": true,
+      "detail": {
+        "cycle": 5,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 177,
+            "completed": 176,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 68,
+            "completed": 48,
+            "failed": 20,
+            "hits": 7,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 25,
+            "completed": 24,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 35,
+            "completed": 35,
+            "failed": 0,
+            "hits": 21,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 26,
+            "completed": 24,
+            "failed": 2,
+            "hits": 30,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 21,
+            "completed": 21,
+            "failed": 0,
+            "hits": 33,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 46,
+            "completed": 44,
+            "failed": 2,
+            "hits": 62,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 6",
+      "passed": true,
+      "detail": {
+        "cycle": 6,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 183,
+            "completed": 182,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 70,
+            "completed": 50,
+            "failed": 20,
+            "hits": 8,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 27,
+            "completed": 26,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 37,
+            "completed": 37,
+            "failed": 0,
+            "hits": 22,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 28,
+            "completed": 26,
+            "failed": 2,
+            "hits": 31,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 23,
+            "completed": 23,
+            "failed": 0,
+            "hits": 34,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 50,
+            "completed": 48,
+            "failed": 2,
+            "hits": 64,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 7",
+      "passed": true,
+      "detail": {
+        "cycle": 7,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 189,
+            "completed": 188,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 72,
+            "completed": 52,
+            "failed": 20,
+            "hits": 9,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 29,
+            "completed": 28,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 39,
+            "completed": 39,
+            "failed": 0,
+            "hits": 23,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 30,
+            "completed": 28,
+            "failed": 2,
+            "hits": 32,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 25,
+            "completed": 25,
+            "failed": 0,
+            "hits": 35,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 54,
+            "completed": 52,
+            "failed": 2,
+            "hits": 66,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 8",
+      "passed": true,
+      "detail": {
+        "cycle": 8,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 195,
+            "completed": 194,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 74,
+            "completed": 54,
+            "failed": 20,
+            "hits": 10,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 31,
+            "completed": 30,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 41,
+            "completed": 41,
+            "failed": 0,
+            "hits": 24,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 32,
+            "completed": 30,
+            "failed": 2,
+            "hits": 33,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 27,
+            "completed": 27,
+            "failed": 0,
+            "hits": 36,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 58,
+            "completed": 56,
+            "failed": 2,
+            "hits": 68,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 9",
+      "passed": true,
+      "detail": {
+        "cycle": 9,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 201,
+            "completed": 200,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 76,
+            "completed": 56,
+            "failed": 20,
+            "hits": 11,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 33,
+            "completed": 32,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 43,
+            "completed": 43,
+            "failed": 0,
+            "hits": 25,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 34,
+            "completed": 32,
+            "failed": 2,
+            "hits": 34,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 29,
+            "completed": 29,
+            "failed": 0,
+            "hits": 37,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 62,
+            "completed": 60,
+            "failed": 2,
+            "hits": 70,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 10",
+      "passed": true,
+      "detail": {
+        "cycle": 10,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 207,
+            "completed": 206,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 78,
+            "completed": 58,
+            "failed": 20,
+            "hits": 12,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 35,
+            "completed": 34,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 45,
+            "completed": 45,
+            "failed": 0,
+            "hits": 26,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 36,
+            "completed": 34,
+            "failed": 2,
+            "hits": 35,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 31,
+            "completed": 31,
+            "failed": 0,
+            "hits": 38,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 66,
+            "completed": 64,
+            "failed": 2,
+            "hits": 72,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 11",
+      "passed": true,
+      "detail": {
+        "cycle": 11,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 213,
+            "completed": 212,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 80,
+            "completed": 60,
+            "failed": 20,
+            "hits": 13,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 37,
+            "completed": 36,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 47,
+            "completed": 47,
+            "failed": 0,
+            "hits": 27,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 38,
+            "completed": 36,
+            "failed": 2,
+            "hits": 36,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 33,
+            "completed": 33,
+            "failed": 0,
+            "hits": 39,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 70,
+            "completed": 68,
+            "failed": 2,
+            "hits": 74,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 12",
+      "passed": true,
+      "detail": {
+        "cycle": 12,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 219,
+            "completed": 218,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 82,
+            "completed": 62,
+            "failed": 20,
+            "hits": 14,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 39,
+            "completed": 38,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 49,
+            "completed": 49,
+            "failed": 0,
+            "hits": 28,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 40,
+            "completed": 38,
+            "failed": 2,
+            "hits": 37,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 35,
+            "completed": 35,
+            "failed": 0,
+            "hits": 40,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 74,
+            "completed": 72,
+            "failed": 2,
+            "hits": 76,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 13",
+      "passed": true,
+      "detail": {
+        "cycle": 13,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 225,
+            "completed": 224,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 84,
+            "completed": 64,
+            "failed": 20,
+            "hits": 15,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 41,
+            "completed": 40,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 51,
+            "completed": 51,
+            "failed": 0,
+            "hits": 29,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 42,
+            "completed": 40,
+            "failed": 2,
+            "hits": 38,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 37,
+            "completed": 37,
+            "failed": 0,
+            "hits": 41,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 78,
+            "completed": 76,
+            "failed": 2,
+            "hits": 78,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 14",
+      "passed": true,
+      "detail": {
+        "cycle": 14,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 231,
+            "completed": 230,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 86,
+            "completed": 66,
+            "failed": 20,
+            "hits": 16,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 43,
+            "completed": 42,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 53,
+            "completed": 53,
+            "failed": 0,
+            "hits": 30,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 44,
+            "completed": 42,
+            "failed": 2,
+            "hits": 39,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 39,
+            "completed": 39,
+            "failed": 0,
+            "hits": 42,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 82,
+            "completed": 80,
+            "failed": 2,
+            "hits": 80,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 15",
+      "passed": true,
+      "detail": {
+        "cycle": 15,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 237,
+            "completed": 236,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 88,
+            "completed": 68,
+            "failed": 20,
+            "hits": 17,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 45,
+            "completed": 44,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 55,
+            "completed": 55,
+            "failed": 0,
+            "hits": 31,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 46,
+            "completed": 44,
+            "failed": 2,
+            "hits": 40,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 41,
+            "completed": 41,
+            "failed": 0,
+            "hits": 43,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 86,
+            "completed": 84,
+            "failed": 2,
+            "hits": 82,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 16",
+      "passed": true,
+      "detail": {
+        "cycle": 16,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 243,
+            "completed": 242,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 90,
+            "completed": 70,
+            "failed": 20,
+            "hits": 18,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 47,
+            "completed": 46,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 57,
+            "completed": 57,
+            "failed": 0,
+            "hits": 32,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 48,
+            "completed": 46,
+            "failed": 2,
+            "hits": 41,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 43,
+            "completed": 43,
+            "failed": 0,
+            "hits": 44,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 90,
+            "completed": 88,
+            "failed": 2,
+            "hits": 84,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 17",
+      "passed": true,
+      "detail": {
+        "cycle": 17,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 249,
+            "completed": 248,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 92,
+            "completed": 72,
+            "failed": 20,
+            "hits": 19,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 49,
+            "completed": 48,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 59,
+            "completed": 59,
+            "failed": 0,
+            "hits": 33,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 50,
+            "completed": 48,
+            "failed": 2,
+            "hits": 42,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 45,
+            "completed": 45,
+            "failed": 0,
+            "hits": 45,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 94,
+            "completed": 92,
+            "failed": 2,
+            "hits": 86,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 18",
+      "passed": true,
+      "detail": {
+        "cycle": 18,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 255,
+            "completed": 254,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 94,
+            "completed": 74,
+            "failed": 20,
+            "hits": 20,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 51,
+            "completed": 50,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 61,
+            "completed": 61,
+            "failed": 0,
+            "hits": 34,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 52,
+            "completed": 50,
+            "failed": 2,
+            "hits": 43,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 47,
+            "completed": 47,
+            "failed": 0,
+            "hits": 46,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 98,
+            "completed": 96,
+            "failed": 2,
+            "hits": 88,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 19",
+      "passed": true,
+      "detail": {
+        "cycle": 19,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 261,
+            "completed": 260,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 96,
+            "completed": 76,
+            "failed": 20,
+            "hits": 21,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 53,
+            "completed": 52,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 63,
+            "completed": 63,
+            "failed": 0,
+            "hits": 35,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 54,
+            "completed": 52,
+            "failed": 2,
+            "hits": 44,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 49,
+            "completed": 49,
+            "failed": 0,
+            "hits": 47,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 102,
+            "completed": 100,
+            "failed": 2,
+            "hits": 90,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "load cancel reload share remove cycle 20",
+      "passed": true,
+      "detail": {
+        "cycle": 20,
+        "cancelled": true,
+        "occupied": true,
+        "staleInvalid": true,
+        "survivor": true,
+        "resources": {
+          "live": 4,
+          "bytes": 3145732,
+          "buffer": 0,
+          "texture": 4
+        },
+        "work": {
+          "generation": 1,
+          "instances": 0,
+          "ready": 0,
+          "network": {
+            "started": 267,
+            "completed": 266,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 98,
+            "completed": 78,
+            "failed": 20,
+            "hits": 22,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "decoding": {
+            "started": 55,
+            "completed": 54,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 65,
+            "completed": 65,
+            "failed": 0,
+            "hits": 36,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "textures": {
+            "started": 56,
+            "completed": 54,
+            "failed": 2,
+            "hits": 45,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "samplers": {
+            "started": 51,
+            "completed": 51,
+            "failed": 0,
+            "hits": 48,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "pipelines": {
+            "started": 106,
+            "completed": 104,
+            "failed": 2,
+            "hits": 92,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "cross-scene membership rejects and devices have distinct GPU buffers",
+      "passed": true
+    },
+    {
+      "name": "scene destroy releases drawable model never added to its collection",
+      "passed": true
+    },
+    {
+      "name": "double destroy is idempotent and last shared references reach baseline",
+      "passed": true
+    },
+    {
+      "name": "destroy during compilation rejects loader and keeps physical task accounting",
+      "passed": true
+    },
+    {
+      "name": "late pipelines after scene generation change cannot resurrect resources",
+      "passed": true
+    },
+    {
+      "name": "device loss during compilation rejects loader and keeps physical task accounting",
+      "passed": true
+    },
+    {
+      "name": "late pipelines after device loss cannot resurrect resources",
+      "passed": true
+    },
+    {
+      "name": "geographic model over nonflat terrain occludes the underlying Primitive",
+      "passed": true
+    },
+    {
+      "name": "combined scene contains real imagery and elevated terrain",
+      "passed": true,
+      "detail": {
+        "colors": 1405,
+        "statistics": {
+          "frames": 177,
+          "selectedTiles": 36,
+          "maximumSelectedLevel": 12,
+          "pendingTiles": 0,
+          "terrainWork": {
+            "requests": 0,
+            "upsamples": 0,
+            "meshes": 0,
+            "requested": 122,
+            "upsampled": 0,
+            "uploaded": 122,
+            "cancelled": 0,
+            "peakInFlight": 8,
+            "inFlight": 0,
+            "queuedUploads": 0,
+            "generation": 1
+          },
+          "modelWork": {
+            "generation": 1,
+            "instances": 4,
+            "ready": 4,
+            "network": {
+              "started": 277,
+              "completed": 276,
+              "failed": 1,
+              "hits": 0,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 0,
+              "references": 0
+            },
+            "cpu": {
+              "started": 102,
+              "completed": 82,
+              "failed": 20,
+              "hits": 23,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 3,
+              "references": 4
+            },
+            "decoding": {
+              "started": 58,
+              "completed": 57,
+              "failed": 1,
+              "hits": 0,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 0,
+              "references": 0
+            },
+            "geometry": {
+              "started": 68,
+              "completed": 68,
+              "failed": 0,
+              "hits": 38,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 2,
+              "references": 4
+            },
+            "textures": {
+              "started": 59,
+              "completed": 57,
+              "failed": 2,
+              "hits": 47,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 2,
+              "references": 4
+            },
+            "samplers": {
+              "started": 53,
+              "completed": 53,
+              "failed": 0,
+              "hits": 51,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 1,
+              "references": 4
+            },
+            "pipelines": {
+              "started": 110,
+              "completed": 108,
+              "failed": 2,
+              "hits": 98,
+              "peakActive": 2,
+              "active": 0,
+              "queued": 0,
+              "entries": 2,
+              "references": 8
+            }
+          },
+          "imageryTextures": 4,
+          "imageryBytes": 1048576,
+          "tileErrors": [],
+          "resources": {
+            "live": 450,
+            "bytes": 12463592,
+            "buffer": 440,
+            "texture": 10
+          },
+          "errors": []
+        },
+        "height": 3243.9559190490536
+      }
+    },
+    {
+      "name": "terrain occludes a model below the ridge",
+      "passed": true
+    },
+    {
+      "name": "buried model is drawable when occluding terrain is hidden",
+      "passed": true
+    },
+    {
+      "name": "hiding foreground model reveals the original Primitive",
+      "passed": true
+    },
+    {
+      "name": "foreground Primitive occludes model using the same ID and depth attachments",
+      "passed": true
+    },
+    {
+      "name": "modelMatrix update moves model beneath terrain without changing other models",
+      "passed": true
+    },
+    {
+      "name": "restored modelMatrix restores model object ID",
+      "passed": true
+    },
+    {
+      "name": "near view preserves user frustum and visible globe",
+      "passed": true,
+      "detail": {
+        "nonblack": 261361,
+        "statistics": {
+          "frames": 237,
+          "selectedTiles": 70,
+          "maximumSelectedLevel": 12,
+          "pendingTiles": 0,
+          "terrainWork": {
+            "requests": 0,
+            "upsamples": 0,
+            "meshes": 0,
+            "requested": 225,
+            "upsampled": 0,
+            "uploaded": 225,
+            "cancelled": 0,
+            "peakInFlight": 8,
+            "inFlight": 0,
+            "queuedUploads": 0,
+            "generation": 1
+          },
+          "modelWork": {
+            "generation": 1,
+            "instances": 4,
+            "ready": 4,
+            "network": {
+              "started": 277,
+              "completed": 276,
+              "failed": 1,
+              "hits": 0,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 0,
+              "references": 0
+            },
+            "cpu": {
+              "started": 102,
+              "completed": 82,
+              "failed": 20,
+              "hits": 23,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 3,
+              "references": 4
+            },
+            "decoding": {
+              "started": 58,
+              "completed": 57,
+              "failed": 1,
+              "hits": 0,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 0,
+              "references": 0
+            },
+            "geometry": {
+              "started": 68,
+              "completed": 68,
+              "failed": 0,
+              "hits": 38,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 2,
+              "references": 4
+            },
+            "textures": {
+              "started": 59,
+              "completed": 57,
+              "failed": 2,
+              "hits": 47,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 2,
+              "references": 4
+            },
+            "samplers": {
+              "started": 53,
+              "completed": 53,
+              "failed": 0,
+              "hits": 51,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 1,
+              "references": 4
+            },
+            "pipelines": {
+              "started": 110,
+              "completed": 108,
+              "failed": 2,
+              "hits": 98,
+              "peakActive": 2,
+              "active": 0,
+              "queued": 0,
+              "entries": 2,
+              "references": 8
+            }
+          },
+          "imageryTextures": 4,
+          "imageryBytes": 1048576,
+          "tileErrors": [],
+          "resources": {
+            "live": 715,
+            "bytes": 17175992,
+            "buffer": 705,
+            "texture": 10
+          },
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "near view picks geographic model",
+      "passed": true,
+      "detail": {
+        "x": 255.99999999999997,
+        "y": 231.478163947544
+      }
+    },
+    {
+      "name": "high view preserves user frustum and visible globe",
+      "passed": true,
+      "detail": {
+        "nonblack": 261949,
+        "statistics": {
+          "frames": 291,
+          "selectedTiles": 91,
+          "maximumSelectedLevel": 11,
+          "pendingTiles": 0,
+          "terrainWork": {
+            "requests": 0,
+            "upsamples": 0,
+            "meshes": 0,
+            "requested": 324,
+            "upsampled": 0,
+            "uploaded": 324,
+            "cancelled": 0,
+            "peakInFlight": 8,
+            "inFlight": 0,
+            "queuedUploads": 0,
+            "generation": 1
+          },
+          "modelWork": {
+            "generation": 1,
+            "instances": 4,
+            "ready": 4,
+            "network": {
+              "started": 277,
+              "completed": 276,
+              "failed": 1,
+              "hits": 0,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 0,
+              "references": 0
+            },
+            "cpu": {
+              "started": 102,
+              "completed": 82,
+              "failed": 20,
+              "hits": 23,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 3,
+              "references": 4
+            },
+            "decoding": {
+              "started": 58,
+              "completed": 57,
+              "failed": 1,
+              "hits": 0,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 0,
+              "references": 0
+            },
+            "geometry": {
+              "started": 68,
+              "completed": 68,
+              "failed": 0,
+              "hits": 38,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 2,
+              "references": 4
+            },
+            "textures": {
+              "started": 59,
+              "completed": 57,
+              "failed": 2,
+              "hits": 47,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 2,
+              "references": 4
+            },
+            "samplers": {
+              "started": 53,
+              "completed": 53,
+              "failed": 0,
+              "hits": 51,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 1,
+              "references": 4
+            },
+            "pipelines": {
+              "started": 110,
+              "completed": 108,
+              "failed": 2,
+              "hits": 98,
+              "peakActive": 2,
+              "active": 0,
+              "queued": 0,
+              "entries": 2,
+              "references": 8
+            }
+          },
+          "imageryTextures": 5,
+          "imageryBytes": 1310720,
+          "tileErrors": [],
+          "resources": {
+            "live": 733,
+            "bytes": 17377800,
+            "buffer": 722,
+            "texture": 11
+          },
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "high view picks geographic model",
+      "passed": true,
+      "detail": {
+        "x": 255.99999999999997,
+        "y": 250.65668585991062
+      }
+    },
+    {
+      "name": "orbit view preserves user frustum and visible globe",
+      "passed": true,
+      "detail": {
+        "nonblack": 45254,
+        "statistics": {
+          "frames": 305,
+          "selectedTiles": 20,
+          "maximumSelectedLevel": 2,
+          "pendingTiles": 0,
+          "terrainWork": {
+            "requests": 0,
+            "upsamples": 0,
+            "meshes": 0,
+            "requested": 341,
+            "upsampled": 0,
+            "uploaded": 341,
+            "cancelled": 0,
+            "peakInFlight": 8,
+            "inFlight": 0,
+            "queuedUploads": 0,
+            "generation": 1
+          },
+          "modelWork": {
+            "generation": 1,
+            "instances": 4,
+            "ready": 4,
+            "network": {
+              "started": 277,
+              "completed": 276,
+              "failed": 1,
+              "hits": 0,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 0,
+              "references": 0
+            },
+            "cpu": {
+              "started": 102,
+              "completed": 82,
+              "failed": 20,
+              "hits": 23,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 3,
+              "references": 4
+            },
+            "decoding": {
+              "started": 58,
+              "completed": 57,
+              "failed": 1,
+              "hits": 0,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 0,
+              "references": 0
+            },
+            "geometry": {
+              "started": 68,
+              "completed": 68,
+              "failed": 0,
+              "hits": 38,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 2,
+              "references": 4
+            },
+            "textures": {
+              "started": 59,
+              "completed": 57,
+              "failed": 2,
+              "hits": 47,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 2,
+              "references": 4
+            },
+            "samplers": {
+              "started": 53,
+              "completed": 53,
+              "failed": 0,
+              "hits": 51,
+              "peakActive": 1,
+              "active": 0,
+              "queued": 0,
+              "entries": 1,
+              "references": 4
+            },
+            "pipelines": {
+              "started": 110,
+              "completed": 108,
+              "failed": 2,
+              "hits": 98,
+              "peakActive": 2,
+              "active": 0,
+              "queued": 0,
+              "entries": 2,
+              "references": 8
+            }
+          },
+          "imageryTextures": 28,
+          "imageryBytes": 7340032,
+          "tileErrors": [],
+          "resources": {
+            "live": 177,
+            "bytes": 12843032,
+            "buffer": 143,
+            "texture": 34
+          },
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "same asset reload creates a new object and never reuses a stale ID",
+      "passed": true
+    },
+    {
+      "name": "models do not create hidden WebGL contexts",
+      "passed": true,
+      "detail": [
+        "webgpu",
+        "2d",
+        "2d",
+        "webgpu",
+        "webgpu",
+        "webgpu"
+      ]
+    },
+    {
+      "name": "model GPU validation stays clean",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "model scene releases all buffers and textures",
+      "passed": true,
+      "detail": {
+        "live": 0,
+        "bytes": 0,
+        "buffer": 0,
+        "texture": 0
+      }
+    }
+  ],
+  "stages": [
+    {
+      "name": "formats and materials",
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 129,
+          "completed": 129,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 51,
+          "completed": 33,
+          "failed": 18,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 10,
+          "completed": 9,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 20,
+          "completed": 20,
+          "failed": 0,
+          "hits": 15,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 11,
+          "completed": 10,
+          "failed": 1,
+          "hits": 24,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 7,
+          "completed": 7,
+          "failed": 0,
+          "hits": 27,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 18,
+          "completed": 18,
+          "failed": 0,
+          "hits": 50,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "name": "lifecycle",
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 270,
+          "completed": 269,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 99,
+          "completed": 79,
+          "failed": 20,
+          "hits": 22,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 56,
+          "completed": 55,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 66,
+          "completed": 66,
+          "failed": 0,
+          "hits": 36,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 57,
+          "completed": 55,
+          "failed": 2,
+          "hits": 45,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 52,
+          "completed": 52,
+          "failed": 0,
+          "hits": 48,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 108,
+          "completed": 106,
+          "failed": 2,
+          "hits": 92,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "name": "destroy during compile",
+      "work": {
+        "generation": 2,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 3,
+          "completed": 3,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 1,
+          "completed": 1,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 1,
+          "completed": 1,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 1,
+          "completed": 1,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 1,
+          "completed": 1,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 1,
+          "completed": 1,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 2,
+          "completed": 2,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "name": "device loss during compile",
+      "work": {
+        "generation": 2,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 3,
+          "completed": 3,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 1,
+          "completed": 1,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 1,
+          "completed": 1,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 1,
+          "completed": 1,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 1,
+          "completed": 1,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 1,
+          "completed": 1,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 2,
+          "completed": 2,
+          "failed": 0,
+          "hits": 0,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "name": "combined globe",
+      "statistics": {
+        "frames": 367,
+        "selectedTiles": 36,
+        "maximumSelectedLevel": 12,
+        "pendingTiles": 0,
+        "terrainWork": {
+          "requests": 0,
+          "upsamples": 0,
+          "meshes": 0,
+          "requested": 451,
+          "upsampled": 0,
+          "uploaded": 451,
+          "cancelled": 0,
+          "peakInFlight": 8,
+          "inFlight": 0,
+          "queuedUploads": 0,
+          "generation": 1
+        },
+        "modelWork": {
+          "generation": 1,
+          "instances": 4,
+          "ready": 4,
+          "network": {
+            "started": 277,
+            "completed": 276,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "cpu": {
+            "started": 102,
+            "completed": 82,
+            "failed": 20,
+            "hits": 24,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 3,
+            "references": 4
+          },
+          "decoding": {
+            "started": 58,
+            "completed": 57,
+            "failed": 1,
+            "hits": 0,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 0,
+            "references": 0
+          },
+          "geometry": {
+            "started": 68,
+            "completed": 68,
+            "failed": 0,
+            "hits": 39,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 2,
+            "references": 4
+          },
+          "textures": {
+            "started": 59,
+            "completed": 57,
+            "failed": 2,
+            "hits": 48,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 2,
+            "references": 4
+          },
+          "samplers": {
+            "started": 53,
+            "completed": 53,
+            "failed": 0,
+            "hits": 52,
+            "peakActive": 1,
+            "active": 0,
+            "queued": 0,
+            "entries": 1,
+            "references": 4
+          },
+          "pipelines": {
+            "started": 110,
+            "completed": 108,
+            "failed": 2,
+            "hits": 100,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 2,
+            "references": 8
+          }
+        },
+        "imageryTextures": 28,
+        "imageryBytes": 7340032,
+        "tileErrors": [],
+        "resources": {
+          "live": 517,
+          "bytes": 19165784,
+          "buffer": 483,
+          "texture": 34
+        },
+        "errors": []
+      },
+      "resources": {
+        "live": 517,
+        "bytes": 19165784,
+        "buffer": 483,
+        "texture": 34
+      },
+      "loading": [
+        {
+          "cpuReadyMilliseconds": 5.300000000745058,
+          "drawableMilliseconds": 5.399999998509884,
+          "pipelineCache": {
+            "started": 110,
+            "completed": 108,
+            "failed": 2,
+            "hits": 94,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 2,
+            "references": 4
+          }
+        },
+        {
+          "cpuReadyMilliseconds": 0,
+          "drawableMilliseconds": 0,
+          "pipelineCache": {
+            "started": 110,
+            "completed": 108,
+            "failed": 2,
+            "hits": 96,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 2,
+            "references": 6
+          }
+        },
+        {
+          "cpuReadyMilliseconds": 5.400000002235174,
+          "drawableMilliseconds": 6,
+          "pipelineCache": {
+            "started": 110,
+            "completed": 108,
+            "failed": 2,
+            "hits": 98,
+            "peakActive": 2,
+            "active": 0,
+            "queued": 0,
+            "entries": 2,
+            "references": 8
+          }
+        }
+      ]
+    }
+  ],
+  "expectedErrors": [
+    {
+      "stage": "invalid WGSL",
+      "error": "http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/plane.gltf: http://127.0.0.1:5002/Specs/WebGPU/fixtures/models/plane.gltf: shader unlit; variant {\"shader\":\"unlit-srgb-v1\",\"vertexEntry\":\"vertexMain\",\"fragmentEntry\":\"fragmentMain\",\"variant\":\"white\",\"bindings\":\"uniform96-texture2d-float-sampler-v1\",\"vertices\":[{\"arrayStride\":20,\"stepMode\":\"vertex\",\"attributes\":[{\"shaderLocation\":0,\"format\":\"float32x3\",\"offset\":0},{\"shaderLocation\":1,\"format\":\"float32x2\",\"offset\":12}]}],\"topology\":\"triangle-list\",\"frontFace\":\"ccw\",\"cullMode\":\"back\",\"targets\":[\"bgra8unorm\",\"r32uint\"],\"depthFormat\":\"depth32float\",\"depthCompare\":\"greater-equal\",\"depthWrite\":true,\"blend\":null,\"sampleCount\":1}: 1:1 unexpected token",
+      "validation": "Error while parsing WGSL: :1:1 error: unexpected token\ninvalid WGSL injection\n^^^^^^^\n\n\n - While calling [Device \"Lanthanum scene device\"].CreateShaderModule([ShaderModuleDescriptor \"\"unlit white\"\"]).\n"
+    },
+    {
+      "stage": "device loss injection",
+      "errors": [
+        "Device lost: destroyed: Device was destroyed."
+      ]
+    }
+  ],
+  "adapter": {
+    "backend": "webgpu",
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "device": "",
+    "description": "",
+    "features": [
+      "core-features-and-limits"
+    ],
+    "maxTextureDimension2D": 8192,
+    "hardware": true
+  },
+  "cycles": [
+    {
+      "cycle": 1,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 153,
+          "completed": 152,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 60,
+          "completed": 40,
+          "failed": 20,
+          "hits": 3,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 17,
+          "completed": 16,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 27,
+          "completed": 27,
+          "failed": 0,
+          "hits": 17,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 18,
+          "completed": 16,
+          "failed": 2,
+          "hits": 26,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 13,
+          "completed": 13,
+          "failed": 0,
+          "hits": 29,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 30,
+          "completed": 28,
+          "failed": 2,
+          "hits": 54,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 2,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 159,
+          "completed": 158,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 62,
+          "completed": 42,
+          "failed": 20,
+          "hits": 4,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 19,
+          "completed": 18,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 29,
+          "completed": 29,
+          "failed": 0,
+          "hits": 18,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 20,
+          "completed": 18,
+          "failed": 2,
+          "hits": 27,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 15,
+          "completed": 15,
+          "failed": 0,
+          "hits": 30,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 34,
+          "completed": 32,
+          "failed": 2,
+          "hits": 56,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 3,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 165,
+          "completed": 164,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 64,
+          "completed": 44,
+          "failed": 20,
+          "hits": 5,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 21,
+          "completed": 20,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 31,
+          "completed": 31,
+          "failed": 0,
+          "hits": 19,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 22,
+          "completed": 20,
+          "failed": 2,
+          "hits": 28,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 17,
+          "completed": 17,
+          "failed": 0,
+          "hits": 31,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 38,
+          "completed": 36,
+          "failed": 2,
+          "hits": 58,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 4,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 171,
+          "completed": 170,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 66,
+          "completed": 46,
+          "failed": 20,
+          "hits": 6,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 23,
+          "completed": 22,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 33,
+          "completed": 33,
+          "failed": 0,
+          "hits": 20,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 24,
+          "completed": 22,
+          "failed": 2,
+          "hits": 29,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 19,
+          "completed": 19,
+          "failed": 0,
+          "hits": 32,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 42,
+          "completed": 40,
+          "failed": 2,
+          "hits": 60,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 5,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 177,
+          "completed": 176,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 68,
+          "completed": 48,
+          "failed": 20,
+          "hits": 7,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 25,
+          "completed": 24,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 35,
+          "completed": 35,
+          "failed": 0,
+          "hits": 21,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 26,
+          "completed": 24,
+          "failed": 2,
+          "hits": 30,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 21,
+          "completed": 21,
+          "failed": 0,
+          "hits": 33,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 46,
+          "completed": 44,
+          "failed": 2,
+          "hits": 62,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 6,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 183,
+          "completed": 182,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 70,
+          "completed": 50,
+          "failed": 20,
+          "hits": 8,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 27,
+          "completed": 26,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 37,
+          "completed": 37,
+          "failed": 0,
+          "hits": 22,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 28,
+          "completed": 26,
+          "failed": 2,
+          "hits": 31,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 23,
+          "completed": 23,
+          "failed": 0,
+          "hits": 34,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 50,
+          "completed": 48,
+          "failed": 2,
+          "hits": 64,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 7,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 189,
+          "completed": 188,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 72,
+          "completed": 52,
+          "failed": 20,
+          "hits": 9,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 29,
+          "completed": 28,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 39,
+          "completed": 39,
+          "failed": 0,
+          "hits": 23,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 30,
+          "completed": 28,
+          "failed": 2,
+          "hits": 32,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 25,
+          "completed": 25,
+          "failed": 0,
+          "hits": 35,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 54,
+          "completed": 52,
+          "failed": 2,
+          "hits": 66,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 8,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 195,
+          "completed": 194,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 74,
+          "completed": 54,
+          "failed": 20,
+          "hits": 10,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 31,
+          "completed": 30,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 41,
+          "completed": 41,
+          "failed": 0,
+          "hits": 24,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 32,
+          "completed": 30,
+          "failed": 2,
+          "hits": 33,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 27,
+          "completed": 27,
+          "failed": 0,
+          "hits": 36,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 58,
+          "completed": 56,
+          "failed": 2,
+          "hits": 68,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 9,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 201,
+          "completed": 200,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 76,
+          "completed": 56,
+          "failed": 20,
+          "hits": 11,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 33,
+          "completed": 32,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 43,
+          "completed": 43,
+          "failed": 0,
+          "hits": 25,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 34,
+          "completed": 32,
+          "failed": 2,
+          "hits": 34,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 29,
+          "completed": 29,
+          "failed": 0,
+          "hits": 37,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 62,
+          "completed": 60,
+          "failed": 2,
+          "hits": 70,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 10,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 207,
+          "completed": 206,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 78,
+          "completed": 58,
+          "failed": 20,
+          "hits": 12,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 35,
+          "completed": 34,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 45,
+          "completed": 45,
+          "failed": 0,
+          "hits": 26,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 36,
+          "completed": 34,
+          "failed": 2,
+          "hits": 35,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 31,
+          "completed": 31,
+          "failed": 0,
+          "hits": 38,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 66,
+          "completed": 64,
+          "failed": 2,
+          "hits": 72,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 11,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 213,
+          "completed": 212,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 80,
+          "completed": 60,
+          "failed": 20,
+          "hits": 13,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 37,
+          "completed": 36,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 47,
+          "completed": 47,
+          "failed": 0,
+          "hits": 27,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 38,
+          "completed": 36,
+          "failed": 2,
+          "hits": 36,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 33,
+          "completed": 33,
+          "failed": 0,
+          "hits": 39,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 70,
+          "completed": 68,
+          "failed": 2,
+          "hits": 74,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 12,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 219,
+          "completed": 218,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 82,
+          "completed": 62,
+          "failed": 20,
+          "hits": 14,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 39,
+          "completed": 38,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 49,
+          "completed": 49,
+          "failed": 0,
+          "hits": 28,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 40,
+          "completed": 38,
+          "failed": 2,
+          "hits": 37,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 35,
+          "completed": 35,
+          "failed": 0,
+          "hits": 40,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 74,
+          "completed": 72,
+          "failed": 2,
+          "hits": 76,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 13,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 225,
+          "completed": 224,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 84,
+          "completed": 64,
+          "failed": 20,
+          "hits": 15,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 41,
+          "completed": 40,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 51,
+          "completed": 51,
+          "failed": 0,
+          "hits": 29,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 42,
+          "completed": 40,
+          "failed": 2,
+          "hits": 38,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 37,
+          "completed": 37,
+          "failed": 0,
+          "hits": 41,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 78,
+          "completed": 76,
+          "failed": 2,
+          "hits": 78,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 14,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 231,
+          "completed": 230,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 86,
+          "completed": 66,
+          "failed": 20,
+          "hits": 16,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 43,
+          "completed": 42,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 53,
+          "completed": 53,
+          "failed": 0,
+          "hits": 30,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 44,
+          "completed": 42,
+          "failed": 2,
+          "hits": 39,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 39,
+          "completed": 39,
+          "failed": 0,
+          "hits": 42,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 82,
+          "completed": 80,
+          "failed": 2,
+          "hits": 80,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 15,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 237,
+          "completed": 236,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 88,
+          "completed": 68,
+          "failed": 20,
+          "hits": 17,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 45,
+          "completed": 44,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 55,
+          "completed": 55,
+          "failed": 0,
+          "hits": 31,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 46,
+          "completed": 44,
+          "failed": 2,
+          "hits": 40,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 41,
+          "completed": 41,
+          "failed": 0,
+          "hits": 43,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 86,
+          "completed": 84,
+          "failed": 2,
+          "hits": 82,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 16,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 243,
+          "completed": 242,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 90,
+          "completed": 70,
+          "failed": 20,
+          "hits": 18,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 47,
+          "completed": 46,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 57,
+          "completed": 57,
+          "failed": 0,
+          "hits": 32,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 48,
+          "completed": 46,
+          "failed": 2,
+          "hits": 41,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 43,
+          "completed": 43,
+          "failed": 0,
+          "hits": 44,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 90,
+          "completed": 88,
+          "failed": 2,
+          "hits": 84,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 17,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 249,
+          "completed": 248,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 92,
+          "completed": 72,
+          "failed": 20,
+          "hits": 19,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 49,
+          "completed": 48,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 59,
+          "completed": 59,
+          "failed": 0,
+          "hits": 33,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 50,
+          "completed": 48,
+          "failed": 2,
+          "hits": 42,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 45,
+          "completed": 45,
+          "failed": 0,
+          "hits": 45,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 94,
+          "completed": 92,
+          "failed": 2,
+          "hits": 86,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 18,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 255,
+          "completed": 254,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 94,
+          "completed": 74,
+          "failed": 20,
+          "hits": 20,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 51,
+          "completed": 50,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 61,
+          "completed": 61,
+          "failed": 0,
+          "hits": 34,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 52,
+          "completed": 50,
+          "failed": 2,
+          "hits": 43,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 47,
+          "completed": 47,
+          "failed": 0,
+          "hits": 46,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 98,
+          "completed": 96,
+          "failed": 2,
+          "hits": 88,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 19,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 261,
+          "completed": 260,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 96,
+          "completed": 76,
+          "failed": 20,
+          "hits": 21,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 53,
+          "completed": 52,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 63,
+          "completed": 63,
+          "failed": 0,
+          "hits": 35,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 54,
+          "completed": 52,
+          "failed": 2,
+          "hits": 44,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 49,
+          "completed": 49,
+          "failed": 0,
+          "hits": 47,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 102,
+          "completed": 100,
+          "failed": 2,
+          "hits": 90,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    },
+    {
+      "cycle": 20,
+      "cancelled": true,
+      "occupied": true,
+      "staleInvalid": true,
+      "survivor": true,
+      "resources": {
+        "live": 4,
+        "bytes": 3145732,
+        "buffer": 0,
+        "texture": 4
+      },
+      "work": {
+        "generation": 1,
+        "instances": 0,
+        "ready": 0,
+        "network": {
+          "started": 267,
+          "completed": 266,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "cpu": {
+          "started": 98,
+          "completed": 78,
+          "failed": 20,
+          "hits": 22,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "decoding": {
+          "started": 55,
+          "completed": 54,
+          "failed": 1,
+          "hits": 0,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "geometry": {
+          "started": 65,
+          "completed": 65,
+          "failed": 0,
+          "hits": 36,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "textures": {
+          "started": 56,
+          "completed": 54,
+          "failed": 2,
+          "hits": 45,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "samplers": {
+          "started": 51,
+          "completed": 51,
+          "failed": 0,
+          "hits": 48,
+          "peakActive": 1,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        },
+        "pipelines": {
+          "started": 106,
+          "completed": 104,
+          "failed": 2,
+          "hits": 92,
+          "peakActive": 2,
+          "active": 0,
+          "queued": 0,
+          "entries": 0,
+          "references": 0
+        }
+      }
+    }
+  ],
+  "passed": true,
+  "done": true,
+  "browser": "157.0.8103.40",
+  "date": "2026-11-10T07:50:21.915Z",
+  "node": "v24.11.0",
+  "fixtureManifestSha256": "0d476e0b577d9aed36a878f0a7029ac33b9230164e3a60760d8dbed4f863d3d8",
+  "streamingTerrainSha256": "2856274935293856a55173d039eda94812aac1e0b8ba7b34e3394ab382e64d19",
+  "conformanceFixtureSha256": "b64bd2ca3c22bce194fc6b962104e1dc6343cb178f6dd02fa2a2bea4b3b4c8a0",
+  "modelFixtures": {
+    "manifestSha256": "0068e53cf6827f72327ffa515506876a5e1550f87e171915e23dfdcf5cf7718f",
+    "sourceSha256": "768f9e69a3b95ab85fff550915b36dbc2ea2792df36f1ce5cc0392e02af1a04e",
+    "assetCount": 72
+  },
+  "buildSha256": "e83148195799474c6c3f1322fc1261f9f7004c6764f8fd8b78601260ff34d1a7",
+  "commit": "3734d92fb21858e8e27fd1ca0b3bc94ec24f39d1",
+  "workingTree": "M Specs/WebGPU/fixtures/models/manifest.json\n M Specs/WebGPU/models.js\n M packages/engine/Source/Renderer/WebGPUModelRenderer.js\n M packages/engine/Source/Renderer/WebGPUTransforms.js\n M packages/engine/Source/Scene/WebGPUModelCollection.js\n M packages/engine/Source/Scene/WebGPUModelLoader.js\n M scripts/webgpuTest/generateModels.js\n M scripts/webgpuTest/modelLoader.test.js\n?? Specs/WebGPU/fixtures/models/collision16.bin\n?? Specs/WebGPU/fixtures/models/collision16.gltf\n?? Specs/WebGPU/fixtures/models/collision32.bin\n?? Specs/WebGPU/fixtures/models/collision32.gltf\n?? Specs/WebGPU/fixtures/models/multi-mesh.gltf",
+  "demoChecks": [
+    {
+      "name": "left drag moves the surface with the pointer",
+      "passed": true,
+      "detail": {
+        "x": 867.7961204688347,
+        "y": 415.41584962690143
+      }
+    },
+    {
+      "name": "pointer drag moves the camera",
+      "passed": true
+    },
+    {
+      "name": "wheel zooms toward the globe",
+      "passed": true
+    },
+    {
+      "name": "click reports geographic coordinates",
+      "passed": true
+    },
+    {
+      "name": "click selects a native geometry object",
+      "passed": true
+    },
+    {
+      "name": "layer toggle changes the rendered surface",
+      "passed": true
+    },
+    {
+      "name": "automatic rotation advances frames",
+      "passed": true
+    },
+    {
+      "name": "window resize updates drawing buffer",
+      "passed": true
+    },
+    {
+      "name": "heightmap control loads an elevated surface",
+      "passed": true
+    },
+    {
+      "name": "overlay and exaggeration controls update the scene",
+      "passed": true
+    },
+    {
+      "name": "quantized terrain control loads binary tiles",
+      "passed": true
+    },
+    {
+      "name": "no demo rendering errors",
+      "passed": true
+    },
+    {
+      "name": "page exit releases GPU buffers and textures",
+      "passed": true,
+      "detail": {
+        "live": 0,
+        "bytes": 0,
+        "buffer": 0,
+        "texture": 0
+      }
+    }
+  ],
+  "modelDemoChecks": [
+    {
+      "name": "model demo loads four models with imagery and terrain",
+      "passed": true
+    },
+    {
+      "name": "click returns visible GLB model object",
+      "passed": true
+    },
+    {
+      "name": "foreground Primitive occludes model in interactive demo",
+      "passed": true
+    },
+    {
+      "name": "hiding models reveals underlying Primitive",
+      "passed": true
+    },
+    {
+      "name": "remove control removes all models without destroying globe",
+      "passed": true
+    },
+    {
+      "name": "reload creates new valid model objects",
+      "passed": true
+    },
+    {
+      "name": "cancel control settles in-flight model load",
+      "passed": true
+    },
+    {
+      "name": "reload after cancellation succeeds",
+      "passed": true
+    },
+    {
+      "name": "interactive model demo has no validation errors",
+      "passed": true
+    },
+    {
+      "name": "model demo page exit releases GPU resources",
+      "passed": true,
+      "detail": {
+        "live": 0,
+        "bytes": 0,
+        "buffer": 0,
+        "texture": 0
+      }
+    }
+  ],
+  "consoleErrors": [],
+  "requests": [
+    "/Specs/WebGPU/models.html",
+    "/Build/CesiumUnminified/Cesium.js",
+    "/Specs/WebGPU/models.js",
+    "/Specs/WebGPU/modelLifecycle.js",
+    "/Specs/WebGPU/modelGlobe.js",
+    "/Apps/WebGPU/modelWorld.js",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Build/CesiumUnminified/Assets/Images/ion-credit.png",
+    "/Specs/WebGPU/fixtures/models/u8.gltf",
+    "/Specs/WebGPU/fixtures/models/u8.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/u32.gltf",
+    "/Specs/WebGPU/fixtures/models/u32.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/nonindexed.gltf",
+    "/Specs/WebGPU/fixtures/models/nonindexed.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/interleaved.gltf",
+    "/Specs/WebGPU/fixtures/models/interleaved.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/normalized8.gltf",
+    "/Specs/WebGPU/fixtures/models/normalized8.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/normalized16.gltf",
+    "/Specs/WebGPU/fixtures/models/normalized16.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/color-float.gltf",
+    "/Specs/WebGPU/fixtures/models/color-float.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/color3.gltf",
+    "/Specs/WebGPU/fixtures/models/color3.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/vertex-tint.gltf",
+    "/Specs/WebGPU/fixtures/models/vertex-tint.bin",
+    "/Specs/WebGPU/fixtures/models/gray.png",
+    "/Specs/WebGPU/fixtures/models/no-texture.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/gray.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/gray.png",
+    "/Specs/WebGPU/fixtures/models/gray-factor.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/gray.png",
+    "/Specs/WebGPU/fixtures/models/alpha-zero.gltf",
+    "/Specs/WebGPU/fixtures/models/alpha-zero.bin",
+    "/Specs/WebGPU/fixtures/models/transparent.png",
+    "/Specs/WebGPU/fixtures/models/optional-fallback.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/collision16.gltf",
+    "/Specs/WebGPU/fixtures/models/collision16.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/collision32.gltf",
+    "/Specs/WebGPU/fixtures/models/collision32.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/multi-mesh.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/repeat.gltf",
+    "/Specs/WebGPU/fixtures/models/repeat.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/mirror.gltf",
+    "/Specs/WebGPU/fixtures/models/mirror.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/clamp.gltf",
+    "/Specs/WebGPU/fixtures/models/clamp.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/linear.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/jpeg.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bricks.jpg",
+    "/Specs/WebGPU/fixtures/models/bricks.jpg",
+    "/Specs/WebGPU/fixtures/models/box.gltf",
+    "/Specs/WebGPU/fixtures/models/box.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/box.glb",
+    "/Specs/WebGPU/fixtures/models/gray.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/gray.png",
+    "/Specs/WebGPU/fixtures/models/gray-factor.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/gray.png",
+    "/Specs/WebGPU/fixtures/models/multi.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/rotation.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/selected-scene.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/double-sided.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/bad-required.gltf",
+    "/Specs/WebGPU/fixtures/models/bad-optional.gltf",
+    "/Specs/WebGPU/fixtures/models/bad-animation.gltf",
+    "/Specs/WebGPU/fixtures/models/bad-skin.gltf",
+    "/Specs/WebGPU/fixtures/models/bad-morph.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-pbr.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-mask.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-blend.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-mip.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-sparse.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-stride.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-bounds.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-image.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad.png",
+    "/Specs/WebGPU/fixtures/models/bad-decode.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-decode.png",
+    "/Specs/WebGPU/fixtures/models/bad-cycle.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-normalized.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-uv.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-topology.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bad-singular.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/missing-buffer.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/plane.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/box.glb",
+    "/Specs/WebGPU/fixtures/models/box.gltf",
+    "/Specs/WebGPU/fixtures/models/box.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/jpeg.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bricks.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/0/1/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/0/0/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/2/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/1/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/5/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/1/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/0/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/3/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/3/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/2/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/5/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/5/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/5/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/7/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/3/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/2/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/3/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/2/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/3/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/3/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/2/1.jpg",
+    "/Apps/WebGPU/index.html",
+    "/Apps/WebGPU/style.css",
+    "/Build/CesiumUnminified/Cesium.js",
+    "/Apps/WebGPU/app.js",
+    "/Build/CesiumUnminified/Assets/Images/ion-credit.png",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/0/1/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/0/0/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/3/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/2/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/3/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/2/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/5/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/5/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/7/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/7/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/1/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/0/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/0/1/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/3/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/3/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/0/0/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/2/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/7/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/7/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/5/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/5/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/1/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/0/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/3/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/2/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/3/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/2/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/1/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/0/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/1/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/0/2.jpg",
+    "/Specs/WebGPU/fixtures/terrain/layer.json",
+    "/Specs/WebGPU/fixtures/terrain/0/1/0.terrain",
+    "/Specs/WebGPU/fixtures/terrain/0/0/0.terrain",
+    "/Specs/WebGPU/fixtures/terrain/1/2/1.terrain",
+    "/Specs/WebGPU/fixtures/terrain/2/4/2.terrain",
+    "/Specs/WebGPU/fixtures/terrain/3/9/4.terrain",
+    "/Specs/WebGPU/fixtures/terrain/4/18/9.terrain",
+    "/Specs/WebGPU/fixtures/terrain/5/37/19.terrain",
+    "/Specs/WebGPU/fixtures/terrain/6/74/39.terrain",
+    "/Specs/WebGPU/fixtures/terrain/7/149/78.terrain",
+    "/Specs/WebGPU/fixtures/terrain/8/298/156.terrain",
+    "/Apps/WebGPU/models.html",
+    "/Apps/WebGPU/style.css",
+    "/Apps/WebGPU/model-style.css",
+    "/Build/CesiumUnminified/Cesium.js",
+    "/Apps/WebGPU/modelApp.js",
+    "/Apps/WebGPU/modelWorld.js",
+    "/Specs/WebGPU/fixtures/models/box.glb",
+    "/Build/CesiumUnminified/Assets/Images/ion-credit.png",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/0/1/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/0/0/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/2/1.jpg",
+    "/Specs/WebGPU/fixtures/models/box.gltf",
+    "/Specs/WebGPU/fixtures/models/box.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/2.jpg",
+    "/Specs/WebGPU/fixtures/models/jpeg.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bricks.jpg",
+    "/Specs/WebGPU/fixtures/models/box.glb",
+    "/Specs/WebGPU/fixtures/models/box.gltf",
+    "/Specs/WebGPU/fixtures/models/box.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/jpeg.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bricks.jpg",
+    "/Specs/WebGPU/fixtures/models/box.glb",
+    "/Specs/WebGPU/fixtures/models/box.glb",
+    "/Specs/WebGPU/fixtures/models/box.gltf",
+    "/Specs/WebGPU/fixtures/models/box.bin",
+    "/Specs/WebGPU/fixtures/models/quadrants.png",
+    "/Specs/WebGPU/fixtures/models/jpeg.gltf",
+    "/Specs/WebGPU/fixtures/models/plane.bin",
+    "/Specs/WebGPU/fixtures/models/bricks.jpg"
+  ]
+}

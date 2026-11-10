@@ -1,0 +1,544 @@
+{
+  "checks": [
+    {
+      "name": "native WebGPU selected",
+      "passed": true
+    },
+    {
+      "name": "native red clear",
+      "passed": true
+    },
+    {
+      "name": "southwest imagery control point is red",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "northwest imagery is not mirrored red",
+      "passed": true,
+      "detail": [
+        40,
+        80,
+        120,
+        255
+      ]
+    },
+    {
+      "name": "globe mesh ray intersection",
+      "passed": true,
+      "detail": {
+        "cartographic": {
+          "longitude": -1.3089969367704426,
+          "latitude": 0.4308672542149727,
+          "height": -56002.13418385377
+        },
+        "residual": 2.3283064365386963e-10
+      }
+    },
+    {
+      "name": "native GPU globe ID",
+      "passed": true
+    },
+    {
+      "name": "background has no object",
+      "passed": true
+    },
+    {
+      "name": "opaque geometry color and depth",
+      "passed": true,
+      "detail": [
+        255,
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "name": "native geometry ID",
+      "passed": true
+    },
+    {
+      "name": "geometry color updates",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "geometry transform updates",
+      "passed": true
+    },
+    {
+      "name": "hidden geometry and globe occlusion",
+      "passed": true
+    },
+    {
+      "name": "removed object is not returned by pending pick",
+      "passed": true
+    },
+    {
+      "name": "continuous frames do not accumulate resources",
+      "passed": true
+    },
+    {
+      "name": "LOD and antimeridian 179",
+      "passed": true,
+      "detail": {
+        "frames": 77,
+        "selectedTiles": 2,
+        "maximumSelectedLevel": 5,
+        "pendingTiles": 0,
+        "terrainWork": {
+          "requests": 0,
+          "upsamples": 0,
+          "meshes": 0,
+          "requested": 22,
+          "upsampled": 0,
+          "uploaded": 22,
+          "cancelled": 0,
+          "peakInFlight": 8,
+          "inFlight": 0,
+          "queuedUploads": 0,
+          "generation": 0
+        },
+        "imageryTextures": 6,
+        "imageryBytes": 1572864,
+        "tileErrors": [],
+        "resources": {
+          "live": 88,
+          "bytes": 8180852,
+          "buffer": 78,
+          "texture": 10
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "LOD and antimeridian -179",
+      "passed": true,
+      "detail": {
+        "frames": 80,
+        "selectedTiles": 2,
+        "maximumSelectedLevel": 5,
+        "pendingTiles": 0,
+        "terrainWork": {
+          "requests": 0,
+          "upsamples": 0,
+          "meshes": 0,
+          "requested": 22,
+          "upsampled": 0,
+          "uploaded": 22,
+          "cancelled": 0,
+          "peakInFlight": 8,
+          "inFlight": 0,
+          "queuedUploads": 0,
+          "generation": 0
+        },
+        "imageryTextures": 6,
+        "imageryBytes": 1572864,
+        "tileErrors": [],
+        "resources": {
+          "live": 88,
+          "bytes": 8180852,
+          "buffer": 78,
+          "texture": 10
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "ancestor imagery UV orientation",
+      "passed": true,
+      "detail": {
+        "value": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "level": 8
+      }
+    },
+    {
+      "name": "imagery visibility changes",
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        139,
+        255
+      ]
+    },
+    {
+      "name": "imagery restored",
+      "passed": true
+    },
+    {
+      "name": "Cesium camera orbit and zoom",
+      "passed": true
+    },
+    {
+      "name": "resize including unaligned readback rows",
+      "passed": true,
+      "detail": {
+        "bytes": 920476
+      }
+    },
+    {
+      "name": "invalid imagery alpha is explicit",
+      "passed": true,
+      "detail": "Error: Invalid native imagery alpha."
+    },
+    {
+      "name": "2D is explicitly rejected",
+      "passed": true,
+      "detail": "Error: The native basic profile supports 3D only."
+    },
+    {
+      "name": "request render mode is explicitly rejected",
+      "passed": true,
+      "detail": "Error: Native requestRenderMode is not supported."
+    },
+    {
+      "name": "invalid pick is rejected",
+      "passed": true,
+      "detail": "Error: Pick position must be finite."
+    },
+    {
+      "name": "pick cancellation",
+      "passed": true,
+      "detail": "AbortError: Pick cancelled"
+    },
+    {
+      "name": "initialization cancellation",
+      "passed": true,
+      "detail": "AbortError: Initialization cancelled"
+    },
+    {
+      "name": "forced missing feature does not fallback",
+      "passed": true,
+      "detail": "Error: Missing WebGPU feature: missing-feature"
+    },
+    {
+      "name": "cancelled adapter failure never falls back",
+      "passed": true,
+      "detail": "AbortError: Initialization cancelled"
+    },
+    {
+      "name": "cancelled device rejection never falls back",
+      "passed": true,
+      "detail": "AbortError: Initialization cancelled"
+    },
+    {
+      "name": "non-WGS84 terrain is rejected",
+      "passed": true,
+      "detail": "Error: Native terrain requires WGS84 geographic tiling with full-world 2x1 roots."
+    },
+    {
+      "name": "one root terrain is rejected",
+      "passed": true,
+      "detail": "Error: Native terrain requires WGS84 geographic tiling with full-world 2x1 roots."
+    },
+    {
+      "name": "Mercator terrain is rejected",
+      "passed": true,
+      "detail": "Error: Native terrain requires WGS84 geographic tiling with full-world 2x1 roots."
+    },
+    {
+      "name": "multiple scenes are independent",
+      "passed": true
+    },
+    {
+      "name": "globe ownership is exclusive",
+      "passed": true,
+      "detail": "Error: Globe must be a live, unowned WGS84 globe."
+    },
+    {
+      "name": "device loss stops rendering explicitly",
+      "passed": true,
+      "detail": "Error: WebGPU context is destroyed or lost."
+    },
+    {
+      "name": "lost device resources released",
+      "passed": true
+    },
+    {
+      "name": "async imagery really started",
+      "passed": true
+    },
+    {
+      "name": "late imagery cannot resurrect destroyed scene",
+      "passed": true
+    },
+    {
+      "name": "imagery failure reaches scene error event",
+      "passed": true
+    },
+    {
+      "name": "failed imagery releases resources",
+      "passed": true
+    },
+    {
+      "name": "invalid canvas dimensions reject initialization",
+      "passed": true,
+      "detail": "Error: Canvas dimensions exceed the WebGPU profile."
+    },
+    {
+      "name": "invalid terrain level rejects initialization",
+      "passed": true,
+      "detail": "Error: maximumTerrainLevel must be an integer between 0 and 20."
+    },
+    {
+      "name": "native rendering never requests WebGL",
+      "passed": true,
+      "detail": [
+        "webgpu",
+        "2d",
+        "webgpu",
+        "webgpu",
+        "webgpu",
+        "webgpu",
+        "webgpu",
+        "webgl2"
+      ]
+    },
+    {
+      "name": "auto fallback before canvas binding",
+      "passed": true
+    },
+    {
+      "name": "no GPU validation errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "pending pick rejects on destroy",
+      "passed": true
+    },
+    {
+      "name": "scene destroyed",
+      "passed": true
+    },
+    {
+      "name": "GPU resources released",
+      "passed": true,
+      "detail": {
+        "live": 0,
+        "bytes": 0,
+        "buffer": 0,
+        "texture": 0
+      }
+    }
+  ],
+  "adapter": {
+    "backend": "webgpu",
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "device": "",
+    "description": "",
+    "features": [
+      "core-features-and-limits"
+    ],
+    "maxTextureDimension2D": 8192,
+    "hardware": true
+  },
+  "captureSize": [
+    641,
+    359
+  ],
+  "scene": {
+    "frames": 111,
+    "selectedTiles": 2,
+    "maximumSelectedLevel": 0,
+    "pendingTiles": 0,
+    "terrainWork": {
+      "requests": 0,
+      "upsamples": 0,
+      "meshes": 0,
+      "requested": 39,
+      "upsampled": 0,
+      "uploaded": 39,
+      "cancelled": 0,
+      "peakInFlight": 8,
+      "inFlight": 0,
+      "queuedUploads": 0,
+      "generation": 0
+    },
+    "imageryTextures": 8,
+    "imageryBytes": 2097152,
+    "tileErrors": [],
+    "resources": {
+      "live": 140,
+      "bytes": 5541504,
+      "buffer": 128,
+      "texture": 12
+    },
+    "errors": []
+  },
+  "passed": true,
+  "done": true,
+  "browser": "157.0.8103.40",
+  "date": "2026-11-10T08:03:15.387Z",
+  "node": "v24.11.0",
+  "fixtureManifestSha256": "0d476e0b577d9aed36a878f0a7029ac33b9230164e3a60760d8dbed4f863d3d8",
+  "streamingTerrainSha256": "2856274935293856a55173d039eda94812aac1e0b8ba7b34e3394ab382e64d19",
+  "conformanceFixtureSha256": "b64bd2ca3c22bce194fc6b962104e1dc6343cb178f6dd02fa2a2bea4b3b4c8a0",
+  "modelFixtures": {
+    "manifestSha256": "0bbfface6e21c0b8b5b12f36144f52af0f068ac7b5f132973a8a012121093b3f",
+    "sourceSha256": "a3ee344b2c20932af2a94a801fd43511c920e3c9e65e321829c51ead7dd149a5",
+    "assetCount": 74
+  },
+  "buildSha256": "c097bc8ccf5a7f9674f963343fd2d97c0cd262fc8c308caf2d391b82c50ae568",
+  "commit": "9c60b88fe3fcec3ab4b1b49435bec498b1fb4f66",
+  "workingTree": "",
+  "demoChecks": [
+    {
+      "name": "left drag moves the surface with the pointer",
+      "passed": true,
+      "detail": {
+        "x": 867.7961204688347,
+        "y": 415.41584962690143
+      }
+    },
+    {
+      "name": "pointer drag moves the camera",
+      "passed": true
+    },
+    {
+      "name": "wheel zooms toward the globe",
+      "passed": true
+    },
+    {
+      "name": "click reports geographic coordinates",
+      "passed": true
+    },
+    {
+      "name": "click selects a native geometry object",
+      "passed": true
+    },
+    {
+      "name": "layer toggle changes the rendered surface",
+      "passed": true
+    },
+    {
+      "name": "automatic rotation advances frames",
+      "passed": true
+    },
+    {
+      "name": "window resize updates drawing buffer",
+      "passed": true
+    },
+    {
+      "name": "heightmap control loads an elevated surface",
+      "passed": true
+    },
+    {
+      "name": "overlay and exaggeration controls update the scene",
+      "passed": true
+    },
+    {
+      "name": "quantized terrain control loads binary tiles",
+      "passed": true
+    },
+    {
+      "name": "no demo rendering errors",
+      "passed": true
+    },
+    {
+      "name": "page exit releases GPU buffers and textures",
+      "passed": true,
+      "detail": {
+        "live": 0,
+        "bytes": 0,
+        "buffer": 0,
+        "texture": 0
+      }
+    }
+  ],
+  "consoleErrors": [],
+  "requests": [
+    "/Specs/WebGPU/index.html",
+    "/Build/CesiumUnminified/Cesium.js",
+    "/Specs/WebGPU/basic.js",
+    "/Build/CesiumUnminified/Assets/Images/ion-credit.png",
+    "/fixtures/generated/geographic-0-0-0.png",
+    "/fixtures/generated/geographic-0-1-0.png",
+    "/fixtures/generated/geographic-1-3-0.png",
+    "/fixtures/generated/geographic-1-0-0.png",
+    "/fixtures/generated/geographic-2-7-1.png",
+    "/fixtures/generated/geographic-2-0-1.png",
+    "/fixtures/generated/geographic-0-0-0.png",
+    "/fixtures/generated/geographic-2-0-1.png",
+    "/fixtures/generated/geographic-1-0-0.png",
+    "/fixtures/generated/geographic-1-0-1.png",
+    "/fixtures/generated/geographic-1-3-1.png",
+    "/fixtures/generated/geographic-2-7-1.png",
+    "/fixtures/generated/geographic-1-3-0.png",
+    "/fixtures/generated/geographic-0-1-0.png",
+    "/Apps/WebGPU/index.html",
+    "/Apps/WebGPU/style.css",
+    "/Build/CesiumUnminified/Cesium.js",
+    "/Apps/WebGPU/app.js",
+    "/Build/CesiumUnminified/Assets/Images/ion-credit.png",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/0/1/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/0/0/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/3/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/2/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/3/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/2/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/5/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/5/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/7/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/7/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/1/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/0/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/0/1/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/3/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/3/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/0/0/0.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/2/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/7/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/7/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/6/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/5/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/5/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/4/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/1/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/1/0/1.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/3/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/2/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/3/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/2/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/1/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/1/3.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/0/2.jpg",
+    "/Build/CesiumUnminified/Assets/Textures/NaturalEarthII/2/0/3.jpg",
+    "/Specs/WebGPU/fixtures/terrain/layer.json",
+    "/Specs/WebGPU/fixtures/terrain/0/1/0.terrain",
+    "/Specs/WebGPU/fixtures/terrain/0/0/0.terrain",
+    "/Specs/WebGPU/fixtures/terrain/1/2/1.terrain",
+    "/Specs/WebGPU/fixtures/terrain/2/4/2.terrain",
+    "/Specs/WebGPU/fixtures/terrain/3/9/4.terrain",
+    "/Specs/WebGPU/fixtures/terrain/4/18/9.terrain",
+    "/Specs/WebGPU/fixtures/terrain/5/37/19.terrain",
+    "/Specs/WebGPU/fixtures/terrain/6/74/39.terrain",
+    "/Specs/WebGPU/fixtures/terrain/7/149/78.terrain",
+    "/Specs/WebGPU/fixtures/terrain/8/298/156.terrain"
+  ]
+}

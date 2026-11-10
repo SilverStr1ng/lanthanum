@@ -1,0 +1,378 @@
+﻿2026-11-10T08:05:11.4303193Z Current runner version: '2.338.2'
+2026-11-10T08:05:11.4336548Z ##[group]Runner Image Provisioner
+2026-11-10T08:05:11.4338420Z Hosted Compute Agent
+2026-11-10T08:05:11.4339542Z Version: 20261028.624
+2026-11-10T08:05:11.4340881Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-10T08:05:11.4342299Z Build Date: 2026-10-28T21:51:42Z
+2026-11-10T08:05:11.4343545Z Worker ID: {efbd75db-26a6-490d-b2ef-dfcff7882b3e}
+2026-11-10T08:05:11.4345028Z Region: southcentralus
+2026-11-10T08:05:11.4346085Z Cloud: Azure
+2026-11-10T08:05:11.4347982Z ##[endgroup]
+2026-11-10T08:05:11.4350600Z ##[group]Operating System
+2026-11-10T08:05:11.4351720Z Ubuntu
+2026-11-10T08:05:11.4352833Z 26.04.1
+2026-11-10T08:05:11.4353723Z LTS
+2026-11-10T08:05:11.4354667Z ##[endgroup]
+2026-11-10T08:05:11.4355724Z ##[group]Runner Image
+2026-11-10T08:05:11.4356819Z Image: ubuntu-26.04
+2026-11-10T08:05:11.4358217Z Version: 20261101.186.1
+2026-11-10T08:05:11.4360545Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-10T08:05:11.4363583Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+2026-11-10T08:05:11.4365325Z ##[endgroup]
+2026-11-10T08:05:11.4367802Z ##[group]GITHUB_TOKEN Permissions
+2026-11-10T08:05:11.4371060Z Contents: read
+2026-11-10T08:05:11.4372228Z Metadata: read
+2026-11-10T08:05:11.4373210Z Packages: read
+2026-11-10T08:05:11.4374308Z ##[endgroup]
+2026-11-10T08:05:11.4377487Z Secret source: Actions
+2026-11-10T08:05:11.4379243Z Cache mode: write
+2026-11-10T08:05:11.4380881Z Prepare workflow directory
+2026-11-10T08:05:11.4762769Z Prepare all required actions
+2026-11-10T08:05:11.4814647Z Getting action download info
+2026-11-10T08:05:11.6912663Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-10T08:05:11.9083033Z Complete job name: node-smoke-test (24.15.0)
+2026-11-10T08:05:12.0112242Z ##[group]Run actions/checkout@v7
+2026-11-10T08:05:12.0113141Z with:
+2026-11-10T08:05:12.0113636Z   repository: SilverStr1ng/lanthanum
+2026-11-10T08:05:12.0117734Z   token: ***
+2026-11-10T08:05:12.0118181Z   ssh-strict: true
+2026-11-10T08:05:12.0118632Z   ssh-user: git
+2026-11-10T08:05:12.0119091Z   persist-credentials: true
+2026-11-10T08:05:12.0119588Z   clean: true
+2026-11-10T08:05:12.0120042Z   sparse-checkout-cone-mode: true
+2026-11-10T08:05:12.0120566Z   fetch-depth: 1
+2026-11-10T08:05:12.0121006Z   fetch-tags: false
+2026-11-10T08:05:12.0121468Z   show-progress: true
+2026-11-10T08:05:12.0121940Z   lfs: false
+2026-11-10T08:05:12.0122363Z   submodules: false
+2026-11-10T08:05:12.0122816Z   set-safe-directory: true
+2026-11-10T08:05:12.0123328Z   allow-unsafe-pr-checkout: false
+2026-11-10T08:05:12.0124100Z ##[endgroup]
+2026-11-10T08:05:12.3494708Z Syncing repository: SilverStr1ng/lanthanum
+2026-11-10T08:05:12.3498520Z ##[group]Getting Git version info
+2026-11-10T08:05:12.3500198Z Working directory is '/home/runner/work/lanthanum/lanthanum'
+2026-11-10T08:05:12.3502538Z [command]/usr/bin/git version
+2026-11-10T08:05:12.3503786Z git version 2.56.0
+2026-11-10T08:05:12.3515383Z ##[endgroup]
+2026-11-10T08:05:12.3527918Z Temporarily overriding HOME='/home/runner/work/_temp/4433d066-bda7-4ec1-b906-356966eeea5b' before making global git config changes
+2026-11-10T08:05:12.3530730Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-10T08:05:12.3533882Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/lanthanum/lanthanum
+2026-11-10T08:05:12.3611118Z Deleting the contents of '/home/runner/work/lanthanum/lanthanum'
+2026-11-10T08:05:12.3614532Z ##[group]Determining repository object format
+2026-11-10T08:05:12.3616094Z ##[endgroup]
+2026-11-10T08:05:12.3617246Z ##[group]Initializing the repository
+2026-11-10T08:05:12.3620492Z [command]/usr/bin/git init /home/runner/work/lanthanum/lanthanum
+2026-11-10T08:05:12.3751725Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-10T08:05:12.3753010Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-10T08:05:12.3754361Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-10T08:05:12.3755184Z hint: call:
+2026-11-10T08:05:12.3755623Z hint:
+2026-11-10T08:05:12.3756184Z hint: 	git config --global init.defaultBranch <name>
+2026-11-10T08:05:12.3756844Z hint:
+2026-11-10T08:05:12.3757828Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-10T08:05:12.3758859Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-10T08:05:12.3759663Z hint:
+2026-11-10T08:05:12.3760117Z hint: 	git branch -m <name>
+2026-11-10T08:05:12.3760639Z hint:
+2026-11-10T08:05:12.3761324Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-10T08:05:12.3770092Z Initialized empty Git repository in /home/runner/work/lanthanum/lanthanum/.git/
+2026-11-10T08:05:12.3781367Z [command]/usr/bin/git remote add origin https://github.com/SilverStr1ng/lanthanum
+2026-11-10T08:05:12.3836506Z ##[endgroup]
+2026-11-10T08:05:12.3837870Z ##[group]Disabling automatic garbage collection
+2026-11-10T08:05:12.3840586Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-10T08:05:12.3875369Z ##[endgroup]
+2026-11-10T08:05:12.3876706Z ##[group]Setting up auth
+2026-11-10T08:05:12.3877949Z Removing SSH command configuration
+2026-11-10T08:05:12.3881111Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-10T08:05:12.3916571Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-10T08:05:12.4418837Z Removing HTTP extra header
+2026-11-10T08:05:12.4424341Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-10T08:05:12.4459259Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-10T08:05:12.4742201Z Removing includeIf entries pointing to credentials config files
+2026-11-10T08:05:12.4749927Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-10T08:05:12.4802313Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-10T08:05:12.5101286Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-5af19ea0-eca4-4ac9-9467-f4675230ee4c.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-10T08:05:12.5146204Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/lanthanum/lanthanum/.git.path /home/runner/work/_temp/git-credentials-5af19ea0-eca4-4ac9-9467-f4675230ee4c.config
+2026-11-10T08:05:12.5186602Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/lanthanum/lanthanum/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-5af19ea0-eca4-4ac9-9467-f4675230ee4c.config
+2026-11-10T08:05:12.5221672Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-5af19ea0-eca4-4ac9-9467-f4675230ee4c.config
+2026-11-10T08:05:12.5254385Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-5af19ea0-eca4-4ac9-9467-f4675230ee4c.config
+2026-11-10T08:05:12.5284108Z ##[endgroup]
+2026-11-10T08:05:12.5284935Z ##[group]Fetching the repository
+2026-11-10T08:05:12.5291161Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9c60b88fe3fcec3ab4b1b49435bec498b1fb4f66:refs/remotes/origin/main
+2026-11-10T08:05:15.2977693Z From https://github.com/SilverStr1ng/lanthanum
+2026-11-10T08:05:15.2979911Z  * [new ref]         9c60b88fe3fcec3ab4b1b49435bec498b1fb4f66 -> origin/main
+2026-11-10T08:05:15.2990242Z [command]/usr/bin/git branch --list --remote origin/main
+2026-11-10T08:05:15.3018071Z   origin/main
+2026-11-10T08:05:15.3027405Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-11-10T08:05:15.3051608Z 9c60b88fe3fcec3ab4b1b49435bec498b1fb4f66
+2026-11-10T08:05:15.3056682Z ##[endgroup]
+2026-11-10T08:05:15.3058649Z ##[group]Determining the checkout info
+2026-11-10T08:05:15.3060890Z ##[endgroup]
+2026-11-10T08:05:15.3062354Z [command]/usr/bin/git sparse-checkout disable
+2026-11-10T08:05:15.3115822Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-10T08:05:15.3147870Z ##[group]Checking out the ref
+2026-11-10T08:05:15.3150261Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-11-10T08:05:16.3121290Z Switched to a new branch 'main'
+2026-11-10T08:05:16.3147996Z branch 'main' set up to track 'origin/main'.
+2026-11-10T08:05:16.3170773Z ##[endgroup]
+2026-11-10T08:05:16.3238168Z [command]/usr/bin/git log -1 --format=%H
+2026-11-10T08:05:16.3279891Z 9c60b88fe3fcec3ab4b1b49435bec498b1fb4f66
+2026-11-10T08:05:16.3660680Z Prepare all required actions
+2026-11-10T08:05:16.3661283Z Getting action download info
+2026-11-10T08:05:16.4498421Z Download action repository 'actions/setup-node@v7' (SHA:949feb2413d6458794dcd2491c4babbbce0c15c1)
+2026-11-10T08:05:16.5319582Z ##[group]Run ./.github/actions/setup-toolchain
+2026-11-10T08:05:16.5319910Z ##[endgroup]
+2026-11-10T08:05:16.5380299Z ##[start-action display=Run actions/setup-node@v7;id=__self.__actions_setup-node]
+2026-11-10T08:05:16.5573207Z ##[group]Run actions/setup-node@v7
+2026-11-10T08:05:16.5573523Z with:
+2026-11-10T08:05:16.5573760Z   node-version-file: .nvmrc
+2026-11-10T08:05:16.5574012Z   cache: npm
+2026-11-10T08:05:16.5574211Z   check-latest: false
+2026-11-10T08:05:16.5576740Z   token: ***
+2026-11-10T08:05:16.5577175Z   package-manager-cache: true
+2026-11-10T08:05:16.5577435Z ##[endgroup]
+2026-11-10T08:05:16.6873453Z Node version file is not JSON file
+2026-11-10T08:05:16.6879411Z Node version file is not TOML file
+2026-11-10T08:05:16.6880191Z Resolved .nvmrc as 24.15.0
+2026-11-10T08:05:16.6898889Z Attempting to download 24.15.0...
+2026-11-10T08:05:17.5900901Z Acquiring 24.15.0 - x64 from https://github.com/actions/node-versions/releases/download/24.15.0-24511264946/node-24.15.0-linux-x64.tar.gz
+2026-11-10T08:05:18.1456625Z Extracting ...
+2026-11-10T08:05:18.1600749Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/6a225194-49f0-4018-ba7b-9560ce218696 -f /home/runner/work/_temp/22c76de5-6d74-4263-b53d-c66c1289da70
+2026-11-10T08:05:18.8956258Z Adding to the cache ...
+2026-11-10T08:05:20.5383517Z ##[group]Environment details
+2026-11-10T08:05:20.7871360Z node: v24.15.0
+2026-11-10T08:05:20.7871759Z npm: 11.12.1
+2026-11-10T08:05:20.7872080Z yarn: 1.22.22
+2026-11-10T08:05:20.7872537Z ##[endgroup]
+2026-11-10T08:05:20.7891041Z [command]/opt/hostedtoolcache/node/24.15.0/x64/bin/npm config get cache
+2026-11-10T08:05:20.8843785Z /home/runner/.npm
+2026-11-10T08:05:21.0448076Z Cache hit for: node-cache-Linux-x64-npm-dbd3429ee9448f241eeb6dad4f2c5226f5deda73020415bbe871e510323bb09f
+2026-11-10T08:05:22.2016557Z Received 125829120 of 390658093 (32.2%), 119.8 MBs/sec
+2026-11-10T08:05:23.2049098Z Received 348127232 of 390658093 (89.1%), 165.5 MBs/sec
+2026-11-10T08:05:23.3683012Z Received 390658093 of 390658093 (100.0%), 171.6 MBs/sec
+2026-11-10T08:05:23.3683800Z Cache Size: ~373 MB (390658093 B)
+2026-11-10T08:05:23.3747464Z [command]/usr/bin/tar -xf /home/runner/work/_temp/c6e168b9-7199-47b0-9ce6-5658ed5343de/cache.tzst -P -C /home/runner/work/lanthanum/lanthanum --use-compress-program unzstd
+2026-11-10T08:05:24.1382806Z Cache restored successfully
+2026-11-10T08:05:24.1548198Z Cache restored from key: node-cache-Linux-x64-npm-dbd3429ee9448f241eeb6dad4f2c5226f5deda73020415bbe871e510323bb09f
+2026-11-10T08:05:24.1807325Z ##[end-action id=__self.__actions_setup-node;outcome=success;conclusion=success;duration_ms=7642]
+2026-11-10T08:05:24.1810688Z ##[start-action display=Pin npm;id=__self.__run]
+2026-11-10T08:05:24.1847416Z ##[group]Run npm install --global npm@11.6.1
+2026-11-10T08:05:24.1847813Z [36;1mnpm install --global npm@11.6.1[0m
+2026-11-10T08:05:24.1906061Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-10T08:05:24.1906453Z ##[endgroup]
+2026-11-10T08:05:26.1754140Z 
+2026-11-10T08:05:26.1761029Z removed 3 packages, and changed 88 packages in 2s
+2026-11-10T08:05:26.1761359Z 
+2026-11-10T08:05:26.1761554Z 28 packages are looking for funding
+2026-11-10T08:05:26.1761903Z   run `npm fund` for details
+2026-11-10T08:05:26.2284787Z ##[end-action id=__self.__run;outcome=success;conclusion=success;duration_ms=2047]
+2026-11-10T08:05:26.2287585Z ##[start-action display=Verify toolchain;id=__self.__run_2]
+2026-11-10T08:05:26.2306230Z ##[group]Run npm run toolchain:check
+2026-11-10T08:05:26.2306563Z [36;1mnpm run toolchain:check[0m
+2026-11-10T08:05:26.2355996Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-10T08:05:26.2356342Z ##[endgroup]
+2026-11-10T08:05:26.3456315Z 
+2026-11-10T08:05:26.3457603Z > cesium@1.147.0 toolchain:check
+2026-11-10T08:05:26.3458082Z > node scripts/checkToolchain.js
+2026-11-10T08:05:26.3458297Z 
+2026-11-10T08:05:26.3739472Z {"node":"24.15.0","npm":"11.6.1","platform":"linux","arch":"x64"}
+2026-11-10T08:05:26.3875772Z ##[end-action id=__self.__run_2;outcome=success;conclusion=success;duration_ms=158]
+2026-11-10T08:05:26.3913442Z ##[group]Run npm ci
+2026-11-10T08:05:26.3913721Z [36;1mnpm ci[0m
+2026-11-10T08:05:26.3963077Z shell: /usr/bin/bash -e {0}
+2026-11-10T08:05:26.3963344Z ##[endgroup]
+2026-11-10T08:05:46.4698314Z 
+2026-11-10T08:05:46.4698927Z > cesium@1.147.0 prepare
+2026-11-10T08:05:46.4699909Z > gulp prepare && husky && node scripts/isCI.js || playwright install --with-deps
+2026-11-10T08:05:46.4700431Z 
+2026-11-10T08:05:47.1076745Z [08:05:47] Using gulpfile ~/work/lanthanum/lanthanum/gulpfile.js
+2026-11-10T08:05:47.1084120Z [08:05:47] Starting 'prepare'...
+2026-11-10T08:05:47.1424952Z [08:05:47] Finished 'prepare' after 34 ms
+2026-11-10T08:05:47.2423186Z 
+2026-11-10T08:05:47.2424288Z added 1096 packages, and audited 1102 packages in 21s
+2026-11-10T08:05:47.2424809Z 
+2026-11-10T08:05:47.2425132Z 303 packages are looking for funding
+2026-11-10T08:05:47.2425726Z   run `npm fund` for details
+2026-11-10T08:05:47.4307369Z 
+2026-11-10T08:05:47.4308576Z 22 vulnerabilities (3 low, 15 moderate, 4 high)
+2026-11-10T08:05:47.4309172Z 
+2026-11-10T08:05:47.4309617Z To address issues that do not require attention, run:
+2026-11-10T08:05:47.4310254Z   npm audit fix
+2026-11-10T08:05:47.4310476Z 
+2026-11-10T08:05:47.4310884Z To address all issues (including breaking changes), run:
+2026-11-10T08:05:47.4311525Z   npm audit fix --force
+2026-11-10T08:05:47.4311808Z 
+2026-11-10T08:05:47.4312054Z Run `npm audit` for details.
+2026-11-10T08:05:47.5920514Z ##[group]Run npm run build-release
+2026-11-10T08:05:47.5920851Z [36;1mnpm run build-release[0m
+2026-11-10T08:05:47.5969791Z shell: /usr/bin/bash -e {0}
+2026-11-10T08:05:47.5970063Z ##[endgroup]
+2026-11-10T08:05:47.6980397Z 
+2026-11-10T08:05:47.6981139Z > cesium@1.147.0 build-release
+2026-11-10T08:05:47.6981740Z > gulp buildRelease
+2026-11-10T08:05:47.6981996Z 
+2026-11-10T08:05:48.1952496Z [08:05:48] Using gulpfile ~/work/lanthanum/lanthanum/gulpfile.js
+2026-11-10T08:05:48.1959906Z [08:05:48] Starting 'buildRelease'...
+2026-11-10T08:05:48.1971466Z [08:05:48] Starting 'buildCore'...
+2026-11-10T08:05:48.3320106Z 
+2026-11-10T08:05:48.3321680Z   [37mpackages/core/Build/Unminified/[0m[1mindex.js[0m      [33m1.6mb ⚠️[0m
+2026-11-10T08:05:48.3323289Z   [37mpackages/core/Build/Unminified/[0m[1mindex.js.map[0m  [36m3.1mb[0m
+2026-11-10T08:05:48.3324141Z 
+2026-11-10T08:05:48.3324670Z ⚡ [32mDone in 114ms[0m
+2026-11-10T08:05:48.6339899Z [08:05:48] Finished 'buildCore' after 436 ms
+2026-11-10T08:05:48.6341318Z [08:05:48] Starting 'buildGltf'...
+2026-11-10T08:05:48.6480866Z 
+2026-11-10T08:05:48.6481989Z   [37mpackages/gltf/Build/Unminified/[0m[1mindex.js[0m      [36m106.3kb[0m
+2026-11-10T08:05:48.6482734Z   [37mpackages/gltf/Build/Unminified/[0m[1mindex.js.map[0m  [36m202.5kb[0m
+2026-11-10T08:05:48.6483365Z 
+2026-11-10T08:05:48.6483541Z ⚡ [32mDone in 10ms[0m
+2026-11-10T08:05:48.8167180Z [08:05:48] Finished 'buildGltf' after 182 ms
+2026-11-10T08:05:48.8177859Z [08:05:48] Starting 'buildEngine'...
+2026-11-10T08:05:50.0720547Z 
+2026-11-10T08:05:50.0722051Z   [37mpackages/engine/Build/Unminified/[0m[1mindex.js[0m       [33m9.0mb ⚠️[0m
+2026-11-10T08:05:50.0723285Z   [37mpackages/engine/Build/Unminified/[0m[1mindex.js.map[0m  [36m17.2mb[0m
+2026-11-10T08:05:50.0723858Z 
+2026-11-10T08:05:50.0724149Z ⚡ [32mDone in 531ms[0m
+2026-11-10T08:05:51.9606372Z [08:05:51] Finished 'buildEngine' after 3.14 s
+2026-11-10T08:05:51.9616283Z [08:05:51] Starting 'buildWidgets'...
+2026-11-10T08:05:51.9980546Z 
+2026-11-10T08:05:51.9981683Z   [37mpackages/widgets/Build/Unminified/[0m[1mindex.js[0m      [36m534.5kb[0m
+2026-11-10T08:05:51.9982441Z   [37mpackages/widgets/Build/Unminified/[0m[1mindex.js.map[0m  [36m920.9kb[0m
+2026-11-10T08:05:51.9982799Z 
+2026-11-10T08:05:51.9982969Z ⚡ [32mDone in 33ms[0m
+2026-11-10T08:05:53.1340934Z [08:05:53] Finished 'buildWidgets' after 1.17 s
+2026-11-10T08:05:53.1347797Z [08:05:53] Starting 'buildCesiumForNode'...
+2026-11-10T08:05:53.8117489Z 
+2026-11-10T08:05:53.8138519Z   [37mBuild/CesiumUnminified/[0m[1mindex.js[0m  [33m11.0mb ⚠️[0m
+2026-11-10T08:05:53.8167345Z 
+2026-11-10T08:05:53.8168396Z ⚡ [32mDone in 468ms[0m
+2026-11-10T08:05:54.5413551Z 
+2026-11-10T08:05:54.5414866Z   [37mBuild/CesiumUnminified/[0m[1mCesium.js[0m  [33m15.4mb ⚠️[0m
+2026-11-10T08:05:54.5415527Z 
+2026-11-10T08:05:55.0268848Z ⚡ [32mDone in 571ms[0m
+2026-11-10T08:05:55.0269206Z 
+2026-11-10T08:05:55.0278341Z   [37mBuild/CesiumUnminified/[0m[1mindex.cjs[0m  [33m11.1mb ⚠️[0m
+2026-11-10T08:05:55.0280286Z 
+2026-11-10T08:05:55.0280895Z ⚡ [32mDone in 481ms[0m
+2026-11-10T08:05:56.7341871Z [08:05:56] Finished 'buildCesiumForNode' after 3.6 s
+2026-11-10T08:05:56.7342989Z [08:05:56] Starting 'buildMinifiedCesiumForNode'...
+2026-11-10T08:05:57.7924470Z 
+2026-11-10T08:05:57.7925564Z   [37mBuild/Cesium/[0m[1mindex.js[0m  [33m4.7mb ⚠️[0m
+2026-11-10T08:05:57.7926125Z 
+2026-11-10T08:05:57.7926596Z ⚡ [32mDone in 861ms[0m
+2026-11-10T08:05:58.8913988Z 
+2026-11-10T08:05:58.8915031Z   [37mBuild/Cesium/[0m[1mCesium.js[0m  [33m5.9mb ⚠️[0m
+2026-11-10T08:05:58.8915480Z 
+2026-11-10T08:05:58.8915765Z ⚡ [32mDone in 904ms[0m
+2026-11-10T08:05:59.7291905Z 
+2026-11-10T08:05:59.7292993Z   [37mBuild/Cesium/[0m[1mindex.cjs[0m  [33m4.7mb ⚠️[0m
+2026-11-10T08:05:59.7293444Z 
+2026-11-10T08:05:59.7293709Z ⚡ [32mDone in 836ms[0m
+2026-11-10T08:06:01.3838258Z [08:06:01] Finished 'buildMinifiedCesiumForNode' after 4.65 s
+2026-11-10T08:06:01.3841439Z [08:06:01] Finished 'buildRelease' after 13 s
+2026-11-10T08:06:01.4480604Z ##[group]Run npm pack &> /dev/null
+2026-11-10T08:06:01.4480942Z [36;1mnpm pack &> /dev/null[0m
+2026-11-10T08:06:01.4528522Z shell: /usr/bin/bash -e {0}
+2026-11-10T08:06:01.4528806Z ##[endgroup]
+2026-11-10T08:06:11.8879668Z ##[group]Run npm pack --workspaces &> /dev/null
+2026-11-10T08:06:11.8880455Z [36;1mnpm pack --workspaces &> /dev/null[0m
+2026-11-10T08:06:11.8930201Z shell: /usr/bin/bash -e {0}
+2026-11-10T08:06:11.8930463Z ##[endgroup]
+2026-11-10T08:06:17.6388294Z Prepare all required actions
+2026-11-10T08:06:17.6415267Z ##[group]Run ./.github/actions/verify-package
+2026-11-10T08:06:17.6415581Z ##[endgroup]
+2026-11-10T08:06:17.6419291Z ##[start-action display=Run $GITHUB_ACTION_PATH/script.sh;id=__self_2.__run]
+2026-11-10T08:06:17.6438271Z ##[group]Run $GITHUB_ACTION_PATH/script.sh
+2026-11-10T08:06:17.6438789Z [36;1m$GITHUB_ACTION_PATH/script.sh[0m
+2026-11-10T08:06:17.6488068Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-10T08:06:17.6488583Z ##[endgroup]
+2026-11-10T08:06:17.6567599Z 
+2026-11-10T08:06:17.6568009Z node -e "const Cesium = require('./');"
+2026-11-10T08:06:17.9582410Z NODE_ENV=development node Specs/test.cjs
+2026-11-10T08:06:19.4316222Z NODE_ENV=production node Specs/test.cjs
+2026-11-10T08:06:20.6555865Z node Specs/test.mjs
+2026-11-10T08:06:22.3921309Z 
+2026-11-10T08:06:22.3922088Z for filename in packages/**/Specs/test.mjs; do
+2026-11-10T08:06:22.3923545Z     node $filename
+2026-11-10T08:06:22.3925716Z done
+2026-11-10T08:06:25.2685285Z 
+2026-11-10T08:06:25.2685770Z mkdir ../test
+2026-11-10T08:06:25.2715705Z cp cesium*.tgz ../test
+2026-11-10T08:06:25.3029203Z cp Specs/test.*js ../test
+2026-11-10T08:06:25.3047923Z cd ../test
+2026-11-10T08:06:25.3048146Z 
+2026-11-10T08:06:25.3048365Z npm install cesium-core*.tgz
+2026-11-10T08:06:25.8864922Z 
+2026-11-10T08:06:25.8865517Z added 4 packages in 527ms
+2026-11-10T08:06:25.8961143Z npm install cesium-gltf*.tgz
+2026-11-10T08:06:26.3493173Z 
+2026-11-10T08:06:26.3493859Z added 1 package, and audited 6 packages in 399ms
+2026-11-10T08:06:26.3502345Z 
+2026-11-10T08:06:26.3502892Z found 0 vulnerabilities
+2026-11-10T08:06:26.3574908Z npm install cesium-engine*.tgz
+2026-11-10T08:06:30.0275977Z 
+2026-11-10T08:06:30.0276771Z added 24 packages, and audited 30 packages in 4s
+2026-11-10T08:06:30.0277543Z 
+2026-11-10T08:06:30.0277863Z 1 package is looking for funding
+2026-11-10T08:06:30.0279345Z   run `npm fund` for details
+2026-11-10T08:06:30.0288630Z 
+2026-11-10T08:06:30.0288872Z found 0 vulnerabilities
+2026-11-10T08:06:30.0520088Z npm install cesium-widgets*.tgz
+2026-11-10T08:06:30.6693521Z 
+2026-11-10T08:06:30.6694252Z added 2 packages, and audited 32 packages in 564ms
+2026-11-10T08:06:30.6694710Z 
+2026-11-10T08:06:30.6694971Z 1 package is looking for funding
+2026-11-10T08:06:30.6695890Z   run `npm fund` for details
+2026-11-10T08:06:30.6704704Z 
+2026-11-10T08:06:30.6704903Z found 0 vulnerabilities
+2026-11-10T08:06:30.6781098Z npm install cesium-1.*.tgz
+2026-11-10T08:06:37.3397579Z 
+2026-11-10T08:06:37.3398300Z added 1 package, and audited 33 packages in 7s
+2026-11-10T08:06:37.3398678Z 
+2026-11-10T08:06:37.3399012Z 1 package is looking for funding
+2026-11-10T08:06:37.3399829Z   run `npm fund` for details
+2026-11-10T08:06:37.3408997Z 
+2026-11-10T08:06:37.3409273Z found 0 vulnerabilities
+2026-11-10T08:06:37.3735169Z NODE_ENV=development node test.cjs
+2026-11-10T08:06:38.4880069Z NODE_ENV=production node test.cjs
+2026-11-10T08:06:39.7552381Z node test.mjs
+2026-11-10T08:06:41.5991468Z ##[end-action id=__self_2.__run;outcome=success;conclusion=success;duration_ms=23957]
+2026-11-10T08:06:41.6069271Z Post job cleanup.
+2026-11-10T08:06:41.6072561Z ##[start-action display=Run actions/setup-node@v7;id=__35bd6396-e35b-43f9-b3ef-ecf522b313c6.__actions_setup-node]
+2026-11-10T08:06:41.6116396Z Post job cleanup.
+2026-11-10T08:06:41.7258751Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-dbd3429ee9448f241eeb6dad4f2c5226f5deda73020415bbe871e510323bb09f, not saving cache.
+2026-11-10T08:06:41.7328134Z ##[end-action id=__35bd6396-e35b-43f9-b3ef-ecf522b313c6.__actions_setup-node;outcome=success;conclusion=success;duration_ms=125]
+2026-11-10T08:06:41.7398227Z Post job cleanup.
+2026-11-10T08:06:41.8265027Z [command]/usr/bin/git version
+2026-11-10T08:06:41.8306410Z git version 2.56.0
+2026-11-10T08:06:41.8343257Z Temporarily overriding HOME='/home/runner/work/_temp/5669496d-bf34-485a-b084-f43dfc47e633' before making global git config changes
+2026-11-10T08:06:41.8344737Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-10T08:06:41.8348585Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/lanthanum/lanthanum
+2026-11-10T08:06:41.8382470Z Removing SSH command configuration
+2026-11-10T08:06:41.8389036Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-10T08:06:41.8425223Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-10T08:06:41.8722879Z Removing HTTP extra header
+2026-11-10T08:06:41.8729536Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-10T08:06:41.8772631Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-10T08:06:41.9056573Z Removing includeIf entries pointing to credentials config files
+2026-11-10T08:06:41.9064934Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-10T08:06:41.9093940Z includeif.gitdir:/home/runner/work/lanthanum/lanthanum/.git.path
+2026-11-10T08:06:41.9095552Z includeif.gitdir:/home/runner/work/lanthanum/lanthanum/.git/worktrees/*.path
+2026-11-10T08:06:41.9110424Z includeif.gitdir:/github/workspace/.git.path
+2026-11-10T08:06:41.9111404Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-10T08:06:41.9113771Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/lanthanum/lanthanum/.git.path
+2026-11-10T08:06:41.9138208Z /home/runner/work/_temp/git-credentials-5af19ea0-eca4-4ac9-9467-f4675230ee4c.config
+2026-11-10T08:06:41.9150669Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/lanthanum/lanthanum/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-5af19ea0\-eca4\-4ac9\-9467\-f4675230ee4c\.config
+2026-11-10T08:06:41.9194059Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/lanthanum/lanthanum/.git/worktrees/*.path
+2026-11-10T08:06:41.9223978Z /home/runner/work/_temp/git-credentials-5af19ea0-eca4-4ac9-9467-f4675230ee4c.config
+2026-11-10T08:06:41.9234101Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/lanthanum/lanthanum/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-5af19ea0\-eca4\-4ac9\-9467\-f4675230ee4c\.config
+2026-11-10T08:06:41.9272961Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-10T08:06:41.9300404Z /github/runner_temp/git-credentials-5af19ea0-eca4-4ac9-9467-f4675230ee4c.config
+2026-11-10T08:06:41.9310633Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-5af19ea0\-eca4\-4ac9\-9467\-f4675230ee4c\.config
+2026-11-10T08:06:41.9349535Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-10T08:06:41.9377605Z /github/runner_temp/git-credentials-5af19ea0-eca4-4ac9-9467-f4675230ee4c.config
+2026-11-10T08:06:41.9386583Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-5af19ea0\-eca4\-4ac9\-9467\-f4675230ee4c\.config
+2026-11-10T08:06:41.9426341Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-10T08:06:41.9728889Z Removing credentials config '/home/runner/work/_temp/git-credentials-5af19ea0-eca4-4ac9-9467-f4675230ee4c.config'
+2026-11-10T08:06:41.9908536Z Cleaning up orphan processes
+

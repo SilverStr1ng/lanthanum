@@ -1,0 +1,526 @@
+
+> cesium@1.147.0 test
+> gulp test --browsers ChromeHeadless --failTaskOnError --suppressPassed
+
+[15:59:00] Using gulpfile D:\Nothing\Lanthanum\gulpfile.js
+[15:59:00] Starting 'test'...
+Building specs...
+
+  Build\CesiumUnminified\index.js      11.0mb
+  Build\CesiumUnminified\index.js.map  21.9mb
+
+Done in 233ms
+
+  Build\CesiumUnminified\Cesium.js      15.4mb
+  Build\CesiumUnminified\Cesium.js.map  25.7mb
+
+Done in 258ms
+
+  Build\CesiumUnminified\index.cjs      11.1mb
+  Build\CesiumUnminified\index.cjs.map  21.9mb
+
+Done in 229ms
+(node:27436) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+  Renderer/CubeMap
+    [31m× [39m[31msub copies images to a cube map[39m
+	Expected context to render 0,64,64,255, but rendered: 0,63,63,255
+	    at <Jasmine>
+	    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+	    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1105:7 <- Build/Specs/SpecList.js:130387:7)
+	    at <Jasmine>
+
+	Expected context to render 0,0,64,255, but rendered: 0,0,63,255
+	    at <Jasmine>
+	    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+	    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1105:7 <- Build/Specs/SpecList.js:130387:7)
+	    at <Jasmine>
+
+	Expected context to render 0,64,0,255, but rendered: 0,63,0,255
+	    at <Jasmine>
+	    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+	    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1105:7 <- Build/Specs/SpecList.js:130387:7)
+	    at <Jasmine>
+
+	Expected context to render 64,0,0,255, but rendered: 63,0,0,255
+	    at <Jasmine>
+	    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+	    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1105:7 <- Build/Specs/SpecList.js:130387:7)
+	    at <Jasmine>
+
+	Expected context to render 64,0,64,255, but rendered: 63,0,63,255
+	    at <Jasmine>
+	    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+	    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1105:7 <- Build/Specs/SpecList.js:130387:7)
+	    at <Jasmine>
+
+	Expected context to render 0,32,0,255, but rendered: 0,31,0,255
+	    at <Jasmine>
+	    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+	    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1105:7 <- Build/Specs/SpecList.js:130387:7)
+	    at <Jasmine>
+
+    [31m× [39m[31msub copies array buffers to a cube map[39m
+	Expected context to render 0,0,64,255, but rendered: 0,0,63,255
+	    at <Jasmine>
+	    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+	    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1156:7 <- Build/Specs/SpecList.js:130447:7)
+	    at <Jasmine>
+
+	Expected context to render 0,64,0,255, but rendered: 0,63,0,255
+	    at <Jasmine>
+	    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+	    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1156:7 <- Build/Specs/SpecList.js:130447:7)
+	    at <Jasmine>
+
+	Expected context to render 0,0,64,255, but rendered: 0,0,63,255
+	    at <Jasmine>
+	    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+	    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1156:7 <- Build/Specs/SpecList.js:130447:7)
+	    at <Jasmine>
+
+	Expected context to render 0,64,0,255, but rendered: 0,63,0,255
+	    at <Jasmine>
+	    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+	    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1156:7 <- Build/Specs/SpecList.js:130447:7)
+	    at <Jasmine>
+
+	Expected context to render 0,0,64,255, but rendered: 0,0,63,255
+	    at <Jasmine>
+	    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+	    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1156:7 <- Build/Specs/SpecList.js:130447:7)
+	    at <Jasmine>
+
+	Expected context to render 0,32,0,255, but rendered: 0,31,0,255
+	    at <Jasmine>
+	    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+	    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1156:7 <- Build/Specs/SpecList.js:130447:7)
+	    at <Jasmine>
+
+
+  Scene/BillboardCollection
+    with WebGL context
+      [31m× [39m[31mcan create a billboard using a subregion of an image[39m
+	Expected 247 to be greater than 250.
+	    at <Jasmine>
+	    at packages/engine/Specs/Scene/BillboardCollectionSpec.js:1073:27 <- Build/Specs/SpecList.js:161507:27
+	    at compare (Specs/createRendererMatchers.js:310:13 <- Build/Specs/karma-main.js:558:13)
+	    at <Jasmine>
+
+      [31m× [39m[31mrenders using billboard setImageSubRegion function[39m
+	Expected 249 to be greater than 250.
+	    at <Jasmine>
+	    at packages/engine/Specs/Scene/BillboardCollectionSpec.js:1305:27 <- Build/Specs/SpecList.js:161676:27
+	    at compare (Specs/createRendererMatchers.js:310:13 <- Build/Specs/karma-main.js:558:13)
+	    at <Jasmine>
+
+	Expected 247 to be greater than 250.
+	    at <Jasmine>
+	    at packages/engine/Specs/Scene/BillboardCollectionSpec.js:1321:27 <- Build/Specs/SpecList.js:161688:27
+	    at compare (Specs/createRendererMatchers.js:310:13 <- Build/Specs/karma-main.js:558:13)
+	    at <Jasmine>
+
+
+  Scene/Pick
+    with WebGL 1
+      drillPickFromRay
+        [31m× [39m[31mcan drill pick batched Primitives with show attribute[39m
+	Expected 0 to equal 2.
+	    at <Jasmine>
+	    at packages/engine/Specs/Scene/PickingSpec.js:874:36 <- Build/Specs/SpecList.js:292509:36
+	    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+	    at <Jasmine>
+
+	TypeError: Cannot read properties of undefined (reading 'object')
+	    at packages/engine/Specs/Scene/PickingSpec.js:875:31 <- Build/Specs/SpecList.js:292510:31
+	    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:873:25 <- Build/Specs/SpecList.js:292508:26)
+	    at <Jasmine>
+
+        [31m× [39m[31mcan drill pick without ID[39m
+	Expected 0 to equal 1.
+	    at <Jasmine>
+	    at packages/engine/Specs/Scene/PickingSpec.js:912:36 <- Build/Specs/SpecList.js:292542:36
+	    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+	    at <Jasmine>
+
+	TypeError: Cannot read properties of undefined (reading 'object')
+	    at packages/engine/Specs/Scene/PickingSpec.js:913:31 <- Build/Specs/SpecList.js:292543:31
+	    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:911:25 <- Build/Specs/SpecList.js:292541:26)
+	    at <Jasmine>
+
+        [31m× [39m[31mcan drill pick batched Primitives without show attribute[39m
+	Expected 0 to equal 1.
+	    at <Jasmine>
+	    at packages/engine/Specs/Scene/PickingSpec.js:956:36 <- Build/Specs/SpecList.js:292579:36
+	    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+	    at <Jasmine>
+
+	TypeError: Cannot read properties of undefined (reading 'object')
+	    at packages/engine/Specs/Scene/PickingSpec.js:957:31 <- Build/Specs/SpecList.js:292580:31
+	    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:955:25 <- Build/Specs/SpecList.js:292578:26)
+	    at <Jasmine>
+
+      drillPickFromRayMostDetailed
+        [31m× [39m[31mcan drill pick batched Primitives with show attribute[39m
+	Expected 0 to equal 2.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1825:34 <- Build/Specs/SpecList.js:293320:34)
+
+	TypeError: Cannot read properties of undefined (reading 'object')
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1826:29 <- Build/Specs/SpecList.js:293321:29)
+
+        [31m× [39m[31mcan drill pick without ID[39m
+	Expected 0 to equal 1.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1866:34 <- Build/Specs/SpecList.js:293356:34)
+
+	TypeError: Cannot read properties of undefined (reading 'object')
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1867:29 <- Build/Specs/SpecList.js:293357:29)
+
+        [31m× [39m[31mcan drill pick batched Primitives without show attribute[39m
+	Expected 0 to equal 1.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1913:34 <- Build/Specs/SpecList.js:293396:34)
+
+	TypeError: Cannot read properties of undefined (reading 'object')
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1914:29 <- Build/Specs/SpecList.js:293397:29)
+
+    with WebGL 2
+      drillPickFromRay
+        [31m× [39m[31mcan drill pick batched Primitives with show attribute[39m
+	Expected 0 to equal 2.
+	    at <Jasmine>
+	    at packages/engine/Specs/Scene/PickingSpec.js:874:36 <- Build/Specs/SpecList.js:292509:36
+	    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+	    at <Jasmine>
+
+	TypeError: Cannot read properties of undefined (reading 'object')
+	    at packages/engine/Specs/Scene/PickingSpec.js:875:31 <- Build/Specs/SpecList.js:292510:31
+	    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:873:25 <- Build/Specs/SpecList.js:292508:26)
+	    at <Jasmine>
+
+        [31m× [39m[31mcan drill pick without ID[39m
+	Expected 0 to equal 1.
+	    at <Jasmine>
+	    at packages/engine/Specs/Scene/PickingSpec.js:912:36 <- Build/Specs/SpecList.js:292542:36
+	    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+	    at <Jasmine>
+
+	TypeError: Cannot read properties of undefined (reading 'object')
+	    at packages/engine/Specs/Scene/PickingSpec.js:913:31 <- Build/Specs/SpecList.js:292543:31
+	    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:911:25 <- Build/Specs/SpecList.js:292541:26)
+	    at <Jasmine>
+
+        [31m× [39m[31mcan drill pick batched Primitives without show attribute[39m
+	Expected 0 to equal 1.
+	    at <Jasmine>
+	    at packages/engine/Specs/Scene/PickingSpec.js:956:36 <- Build/Specs/SpecList.js:292579:36
+	    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+	    at <Jasmine>
+
+	TypeError: Cannot read properties of undefined (reading 'object')
+	    at packages/engine/Specs/Scene/PickingSpec.js:957:31 <- Build/Specs/SpecList.js:292580:31
+	    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:955:25 <- Build/Specs/SpecList.js:292578:26)
+	    at <Jasmine>
+
+      drillPickFromRayMostDetailed
+        [31m× [39m[31mcan drill pick batched Primitives with show attribute[39m
+	Expected 0 to equal 2.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1825:34 <- Build/Specs/SpecList.js:293320:34)
+
+	TypeError: Cannot read properties of undefined (reading 'object')
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1826:29 <- Build/Specs/SpecList.js:293321:29)
+
+        [31m× [39m[31mcan drill pick without ID[39m
+	Expected 0 to equal 1.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1866:34 <- Build/Specs/SpecList.js:293356:34)
+
+	TypeError: Cannot read properties of undefined (reading 'object')
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1867:29 <- Build/Specs/SpecList.js:293357:29)
+
+        [31m× [39m[31mcan drill pick batched Primitives without show attribute[39m
+	Expected 0 to equal 1.
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1913:34 <- Build/Specs/SpecList.js:293396:34)
+
+	TypeError: Cannot read properties of undefined (reading 'object')
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1914:29 <- Build/Specs/SpecList.js:293397:29)
+
+
+  Scene/PolylineCollection
+    [31m× [39m[31mrenders with model matrix[39m
+	Expected not to render [0,0,0,255], but actually rendered [0,0,0,255].
+	    at <Jasmine>
+	    at UserContext.<anonymous> (packages/engine/Specs/Scene/PolylineCollectionSpec.js:1617:21 <- Build/Specs/SpecList.js:296549:22)
+	    at <Jasmine>
+
+4.344 secs: Core/TerrainPicker picks the correct point even when the mesh includes normals
+2.852 secs: Scene/IonImageryProvider works with cached type "TMS"
+2.108 secs: Core/createWorldBathymetryAsync resolves to CesiumTerrainProvider instance with default parameters
+2.01 secs: Scene/Scene flyTo camera after morph to CV
+1.94 secs: Core/TerrainPicker picks the correct point after vertical exaggeration is applied
+1.575 secs: Scene/SpecularEnvironmentCubeMap raises error event when environment map fails to load.
+1.574 secs: Scene/IonImageryProvider propagates called to underlying imagery provider resolves when ready
+1.56 secs: Core/Resource fetchImage with ImageBitmap rejects the promise when the image errors
+1.516 secs: Scene/Scene flyTo camera after morph to 2D
+1.443 secs: Core/GoogleEarthEnterpriseMetadata populateSubtree
+
+Chrome Headless 157.0.0.0 (Windows 10): Executed 16035 of 16102[31m (17 FAILED)[39m (skipped 67) (2 mins 13.649 secs / 2 mins 6.059 secs)
+[31mTOTAL: 17 FAILED, 16018 SUCCESS[39m
+
+
+[31m1) sub copies images to a cube map
+[39m[31m     Renderer/CubeMap
+[39m[90m     Expected context to render 0,64,64,255, but rendered: 0,63,63,255
+    at <Jasmine>
+    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1105:7 <- Build/Specs/SpecList.js:130387:7)
+    at <Jasmine>
+[39m[90m     Expected context to render 0,0,64,255, but rendered: 0,0,63,255
+    at <Jasmine>
+    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1105:7 <- Build/Specs/SpecList.js:130387:7)
+    at <Jasmine>
+[39m[90m     Expected context to render 0,64,0,255, but rendered: 0,63,0,255
+    at <Jasmine>
+    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1105:7 <- Build/Specs/SpecList.js:130387:7)
+    at <Jasmine>
+[39m[90m     Expected context to render 64,0,0,255, but rendered: 63,0,0,255
+    at <Jasmine>
+    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1105:7 <- Build/Specs/SpecList.js:130387:7)
+    at <Jasmine>
+[39m[90m     Expected context to render 64,0,64,255, but rendered: 63,0,63,255
+    at <Jasmine>
+    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1105:7 <- Build/Specs/SpecList.js:130387:7)
+    at <Jasmine>
+[39m[90m     Expected context to render 0,32,0,255, but rendered: 0,31,0,255
+    at <Jasmine>
+    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1105:7 <- Build/Specs/SpecList.js:130387:7)
+    at <Jasmine>
+[39m
+[31m2) sub copies array buffers to a cube map
+[39m[31m     Renderer/CubeMap
+[39m[90m     Expected context to render 0,0,64,255, but rendered: 0,0,63,255
+    at <Jasmine>
+    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1156:7 <- Build/Specs/SpecList.js:130447:7)
+    at <Jasmine>
+[39m[90m     Expected context to render 0,64,0,255, but rendered: 0,63,0,255
+    at <Jasmine>
+    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1156:7 <- Build/Specs/SpecList.js:130447:7)
+    at <Jasmine>
+[39m[90m     Expected context to render 0,0,64,255, but rendered: 0,0,63,255
+    at <Jasmine>
+    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1156:7 <- Build/Specs/SpecList.js:130447:7)
+    at <Jasmine>
+[39m[90m     Expected context to render 0,64,0,255, but rendered: 0,63,0,255
+    at <Jasmine>
+    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1156:7 <- Build/Specs/SpecList.js:130447:7)
+    at <Jasmine>
+[39m[90m     Expected context to render 0,0,64,255, but rendered: 0,0,63,255
+    at <Jasmine>
+    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1156:7 <- Build/Specs/SpecList.js:130447:7)
+    at <Jasmine>
+[39m[90m     Expected context to render 0,32,0,255, but rendered: 0,31,0,255
+    at <Jasmine>
+    at expectCubeMapFaces (packages/engine/Specs/Renderer/CubeMapSpec.js:80:12 <- Build/Specs/SpecList.js:129386:12)
+    at UserContext.<anonymous> (packages/engine/Specs/Renderer/CubeMapSpec.js:1156:7 <- Build/Specs/SpecList.js:130447:7)
+    at <Jasmine>
+[39m
+[31m3) can create a billboard using a subregion of an image
+[39m[31m     Scene/BillboardCollection with WebGL context
+[39m[90m     Expected 247 to be greater than 250.
+    at <Jasmine>
+    at packages/engine/Specs/Scene/BillboardCollectionSpec.js:1073:27 <- Build/Specs/SpecList.js:161507:27
+    at compare (Specs/createRendererMatchers.js:310:13 <- Build/Specs/karma-main.js:558:13)
+    at <Jasmine>
+[39m
+[31m4) renders using billboard setImageSubRegion function
+[39m[31m     Scene/BillboardCollection with WebGL context
+[39m[90m     Expected 249 to be greater than 250.
+    at <Jasmine>
+    at packages/engine/Specs/Scene/BillboardCollectionSpec.js:1305:27 <- Build/Specs/SpecList.js:161676:27
+    at compare (Specs/createRendererMatchers.js:310:13 <- Build/Specs/karma-main.js:558:13)
+    at <Jasmine>
+[39m[90m     Expected 247 to be greater than 250.
+    at <Jasmine>
+    at packages/engine/Specs/Scene/BillboardCollectionSpec.js:1321:27 <- Build/Specs/SpecList.js:161688:27
+    at compare (Specs/createRendererMatchers.js:310:13 <- Build/Specs/karma-main.js:558:13)
+    at <Jasmine>
+[39m
+[31m5) can drill pick batched Primitives with show attribute
+[39m[31m     Scene/Pick with WebGL 1 drillPickFromRay
+[39m[90m     Expected 0 to equal 2.
+    at <Jasmine>
+    at packages/engine/Specs/Scene/PickingSpec.js:874:36 <- Build/Specs/SpecList.js:292509:36
+    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+    at <Jasmine>
+[39m[90m     TypeError: Cannot read properties of undefined (reading 'object')
+    at packages/engine/Specs/Scene/PickingSpec.js:875:31 <- Build/Specs/SpecList.js:292510:31
+    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:873:25 <- Build/Specs/SpecList.js:292508:26)
+    at <Jasmine>
+[39m
+[31m6) can drill pick without ID
+[39m[31m     Scene/Pick with WebGL 1 drillPickFromRay
+[39m[90m     Expected 0 to equal 1.
+    at <Jasmine>
+    at packages/engine/Specs/Scene/PickingSpec.js:912:36 <- Build/Specs/SpecList.js:292542:36
+    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+    at <Jasmine>
+[39m[90m     TypeError: Cannot read properties of undefined (reading 'object')
+    at packages/engine/Specs/Scene/PickingSpec.js:913:31 <- Build/Specs/SpecList.js:292543:31
+    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:911:25 <- Build/Specs/SpecList.js:292541:26)
+    at <Jasmine>
+[39m
+[31m7) can drill pick batched Primitives without show attribute
+[39m[31m     Scene/Pick with WebGL 1 drillPickFromRay
+[39m[90m     Expected 0 to equal 1.
+    at <Jasmine>
+    at packages/engine/Specs/Scene/PickingSpec.js:956:36 <- Build/Specs/SpecList.js:292579:36
+    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+    at <Jasmine>
+[39m[90m     TypeError: Cannot read properties of undefined (reading 'object')
+    at packages/engine/Specs/Scene/PickingSpec.js:957:31 <- Build/Specs/SpecList.js:292580:31
+    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:955:25 <- Build/Specs/SpecList.js:292578:26)
+    at <Jasmine>
+[39m
+[31m8) can drill pick batched Primitives with show attribute
+[39m[31m     Scene/Pick with WebGL 1 drillPickFromRayMostDetailed
+[39m[90m     Expected 0 to equal 2.
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1825:34 <- Build/Specs/SpecList.js:293320:34)
+[39m[90m     TypeError: Cannot read properties of undefined (reading 'object')
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1826:29 <- Build/Specs/SpecList.js:293321:29)
+[39m
+[31m9) can drill pick without ID
+[39m[31m     Scene/Pick with WebGL 1 drillPickFromRayMostDetailed
+[39m[90m     Expected 0 to equal 1.
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1866:34 <- Build/Specs/SpecList.js:293356:34)
+[39m[90m     TypeError: Cannot read properties of undefined (reading 'object')
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1867:29 <- Build/Specs/SpecList.js:293357:29)
+[39m
+[31m10) can drill pick batched Primitives without show attribute
+[39m[31m     Scene/Pick with WebGL 1 drillPickFromRayMostDetailed
+[39m[90m     Expected 0 to equal 1.
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1913:34 <- Build/Specs/SpecList.js:293396:34)
+[39m[90m     TypeError: Cannot read properties of undefined (reading 'object')
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1914:29 <- Build/Specs/SpecList.js:293397:29)
+[39m
+[31m11) can drill pick batched Primitives with show attribute
+[39m[31m     Scene/Pick with WebGL 2 drillPickFromRay
+[39m[90m     Expected 0 to equal 2.
+    at <Jasmine>
+    at packages/engine/Specs/Scene/PickingSpec.js:874:36 <- Build/Specs/SpecList.js:292509:36
+    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+    at <Jasmine>
+[39m[90m     TypeError: Cannot read properties of undefined (reading 'object')
+    at packages/engine/Specs/Scene/PickingSpec.js:875:31 <- Build/Specs/SpecList.js:292510:31
+    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:873:25 <- Build/Specs/SpecList.js:292508:26)
+    at <Jasmine>
+[39m
+[31m12) can drill pick without ID
+[39m[31m     Scene/Pick with WebGL 2 drillPickFromRay
+[39m[90m     Expected 0 to equal 1.
+    at <Jasmine>
+    at packages/engine/Specs/Scene/PickingSpec.js:912:36 <- Build/Specs/SpecList.js:292542:36
+    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+    at <Jasmine>
+[39m[90m     TypeError: Cannot read properties of undefined (reading 'object')
+    at packages/engine/Specs/Scene/PickingSpec.js:913:31 <- Build/Specs/SpecList.js:292543:31
+    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:911:25 <- Build/Specs/SpecList.js:292541:26)
+    at <Jasmine>
+[39m
+[31m13) can drill pick batched Primitives without show attribute
+[39m[31m     Scene/Pick with WebGL 2 drillPickFromRay
+[39m[90m     Expected 0 to equal 1.
+    at <Jasmine>
+    at packages/engine/Specs/Scene/PickingSpec.js:956:36 <- Build/Specs/SpecList.js:292579:36
+    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+    at <Jasmine>
+[39m[90m     TypeError: Cannot read properties of undefined (reading 'object')
+    at packages/engine/Specs/Scene/PickingSpec.js:957:31 <- Build/Specs/SpecList.js:292580:31
+    at compare (Specs/createRendererMatchers.js:427:13 <- Build/Specs/karma-main.js:668:13)
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:955:25 <- Build/Specs/SpecList.js:292578:26)
+    at <Jasmine>
+[39m
+[31m14) can drill pick batched Primitives with show attribute
+[39m[31m     Scene/Pick with WebGL 2 drillPickFromRayMostDetailed
+[39m[90m     Expected 0 to equal 2.
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1825:34 <- Build/Specs/SpecList.js:293320:34)
+[39m[90m     TypeError: Cannot read properties of undefined (reading 'object')
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1826:29 <- Build/Specs/SpecList.js:293321:29)
+[39m
+[31m15) can drill pick without ID
+[39m[31m     Scene/Pick with WebGL 2 drillPickFromRayMostDetailed
+[39m[90m     Expected 0 to equal 1.
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1866:34 <- Build/Specs/SpecList.js:293356:34)
+[39m[90m     TypeError: Cannot read properties of undefined (reading 'object')
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1867:29 <- Build/Specs/SpecList.js:293357:29)
+[39m
+[31m16) can drill pick batched Primitives without show attribute
+[39m[31m     Scene/Pick with WebGL 2 drillPickFromRayMostDetailed
+[39m[90m     Expected 0 to equal 1.
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1913:34 <- Build/Specs/SpecList.js:293396:34)
+[39m[90m     TypeError: Cannot read properties of undefined (reading 'object')
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PickingSpec.js:1914:29 <- Build/Specs/SpecList.js:293397:29)
+[39m
+[31m17) renders with model matrix
+[39m[31m     Scene/PolylineCollection
+[39m[90m     Expected not to render [0,0,0,255], but actually rendered [0,0,0,255].
+    at <Jasmine>
+    at UserContext.<anonymous> (packages/engine/Specs/Scene/PolylineCollectionSpec.js:1617:21 <- Build/Specs/SpecList.js:296549:22)
+    at <Jasmine>
+[39m
+
+TOTAL: 17 FAILED, 16018 SUCCESS
+[16:01:17] 'test' errored after 2.29 min
+[16:01:17] Error: 1
+    at formatError (D:\Nothing\Lanthanum\node_modules\gulp-cli\lib\versioned\^5.0.0\format-error.js:21:10)
+    at Gulp.<anonymous> (D:\Nothing\Lanthanum\node_modules\gulp-cli\lib\versioned\^5.0.0\log\events.js:33:54)
+    at Gulp.emit (node:events:520:35)
+    at Gulp.emit (node:domain:489:12)
+    at Object.error (D:\Nothing\Lanthanum\node_modules\undertaker\lib\helpers\createExtensions.js:61:10)
+    at handler (D:\Nothing\Lanthanum\node_modules\now-and-later\lib\map.js:68:20)
+    at f (D:\Nothing\Lanthanum\node_modules\once\once.js:25:25)
+    at f (D:\Nothing\Lanthanum\node_modules\once\once.js:25:25)
+    at tryCatch (D:\Nothing\Lanthanum\node_modules\async-done\index.js:21:15)
+    at done (D:\Nothing\Lanthanum\node_modules\async-done\index.js:37:12)

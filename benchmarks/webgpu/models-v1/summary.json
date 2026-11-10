@@ -1,0 +1,353 @@
+{
+  "scope": "N05 runtime + N06-A static unlit OPAQUE models; not full N06/S11/PBR/Tiles",
+  "implementationCommit": "9c60b88fe3fcec3ab4b1b49435bec498b1fb4f66",
+  "buildSha256": "c097bc8ccf5a7f9674f963343fd2d97c0cd262fc8c308caf2d391b82c50ae568",
+  "fixtureManifestSha256": "0d476e0b577d9aed36a878f0a7029ac33b9230164e3a60760d8dbed4f863d3d8",
+  "conformanceFixtureSha256": "b64bd2ca3c22bce194fc6b962104e1dc6343cb178f6dd02fa2a2bea4b3b4c8a0",
+  "streamingTerrainSha256": "2856274935293856a55173d039eda94812aac1e0b8ba7b34e3394ab382e64d19",
+  "modelFixtures": {
+    "manifestSha256": "0bbfface6e21c0b8b5b12f36144f52af0f068ac7b5f132973a8a012121093b3f",
+    "sourceSha256": "a3ee344b2c20932af2a94a801fd43511c920e3c9e65e321829c51ead7dd149a5",
+    "assetCount": 74
+  },
+  "browser": "157.0.8103.40",
+  "adapter": {
+    "backend": "webgpu",
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "device": "",
+    "description": "",
+    "features": [
+      "core-features-and-limits"
+    ],
+    "maxTextureDimension2D": 8192,
+    "hardware": true
+  },
+  "platform": "Windows; hardware identity/driver bounded by acceptance-contract.md",
+  "runs": [
+    {
+      "suite": "index",
+      "round": 1,
+      "path": "index-1/result.json",
+      "passed": true,
+      "checks": 49,
+      "demoChecks": 13,
+      "modelDemoChecks": 0,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "streaming",
+      "round": 1,
+      "path": "streaming-1/result.json",
+      "passed": true,
+      "checks": 59,
+      "demoChecks": 13,
+      "modelDemoChecks": 0,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "conformance",
+      "round": 1,
+      "path": "conformance-1/result.json",
+      "passed": true,
+      "checks": 111,
+      "demoChecks": 13,
+      "modelDemoChecks": 0,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "terrain",
+      "round": 1,
+      "path": "terrain-1/result.json",
+      "passed": true,
+      "checks": 49,
+      "demoChecks": 13,
+      "modelDemoChecks": 0,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "models",
+      "round": 1,
+      "path": "models-1/result.json",
+      "passed": true,
+      "checks": 147,
+      "demoChecks": 13,
+      "modelDemoChecks": 10,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "index",
+      "round": 2,
+      "path": "index-2/result.json",
+      "passed": true,
+      "checks": 49,
+      "demoChecks": 13,
+      "modelDemoChecks": 0,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "streaming",
+      "round": 2,
+      "path": "streaming-2/result.json",
+      "passed": true,
+      "checks": 59,
+      "demoChecks": 13,
+      "modelDemoChecks": 0,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "conformance",
+      "round": 2,
+      "path": "conformance-2/result.json",
+      "passed": true,
+      "checks": 111,
+      "demoChecks": 13,
+      "modelDemoChecks": 0,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "terrain",
+      "round": 2,
+      "path": "terrain-2/result.json",
+      "passed": true,
+      "checks": 49,
+      "demoChecks": 13,
+      "modelDemoChecks": 0,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "models",
+      "round": 2,
+      "path": "models-2/result.json",
+      "passed": true,
+      "checks": 147,
+      "demoChecks": 13,
+      "modelDemoChecks": 10,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "index",
+      "round": 3,
+      "path": "index-3/result.json",
+      "passed": true,
+      "checks": 49,
+      "demoChecks": 13,
+      "modelDemoChecks": 0,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "streaming",
+      "round": 3,
+      "path": "streaming-3/result.json",
+      "passed": true,
+      "checks": 59,
+      "demoChecks": 13,
+      "modelDemoChecks": 0,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "conformance",
+      "round": 3,
+      "path": "conformance-3/result.json",
+      "passed": true,
+      "checks": 111,
+      "demoChecks": 13,
+      "modelDemoChecks": 0,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "terrain",
+      "round": 3,
+      "path": "terrain-3/result.json",
+      "passed": true,
+      "checks": 49,
+      "demoChecks": 13,
+      "modelDemoChecks": 0,
+      "workingTree": "",
+      "consoleErrors": 0
+    },
+    {
+      "suite": "models",
+      "round": 3,
+      "path": "models-3/result.json",
+      "passed": true,
+      "checks": 147,
+      "demoChecks": 13,
+      "modelDemoChecks": 10,
+      "workingTree": "",
+      "consoleErrors": 0
+    }
+  ],
+  "oldN04": {
+    "perRun": {
+      "index": 49,
+      "streaming": 59,
+      "conformance": 111,
+      "terrain": 49
+    },
+    "demoChecksPerRun": 13,
+    "rounds": 3,
+    "totalAssertionPasses": 960
+  },
+  "models": {
+    "perRun": 147,
+    "oldDemoChecksPerRun": 13,
+    "modelDemoChecksPerRun": 10,
+    "rounds": 3,
+    "totalAssertionPasses": 510,
+    "lifecycleCyclesPerRound": 20
+  },
+  "totalAssertionPasses": 1470,
+  "cpu": {
+    "passed": 66,
+    "failed": 0,
+    "oldTests": 19,
+    "newModelTests": 47
+  },
+  "jasmine": {
+    "baseline": "benchmarks/webgpu/conformance-v1/audit/failure-comparison.json",
+    "current": "full-jasmine.log",
+    "currentFailures": [
+      "Renderer/CubeMap :: sub copies images to a cube map",
+      "Renderer/CubeMap :: sub copies array buffers to a cube map",
+      "Scene/BillboardCollection with WebGL context :: can create a billboard using a subregion of an image",
+      "Scene/BillboardCollection with WebGL context :: renders using billboard setImageSubRegion function",
+      "Scene/Pick with WebGL 1 drillPickFromRay :: can drill pick batched Primitives with show attribute",
+      "Scene/Pick with WebGL 1 drillPickFromRay :: can drill pick without ID",
+      "Scene/Pick with WebGL 1 drillPickFromRay :: can drill pick batched Primitives without show attribute",
+      "Scene/Pick with WebGL 1 drillPickFromRayMostDetailed :: can drill pick batched Primitives with show attribute",
+      "Scene/Pick with WebGL 1 drillPickFromRayMostDetailed :: can drill pick without ID",
+      "Scene/Pick with WebGL 1 drillPickFromRayMostDetailed :: can drill pick batched Primitives without show attribute",
+      "Scene/Pick with WebGL 2 drillPickFromRay :: can drill pick batched Primitives with show attribute",
+      "Scene/Pick with WebGL 2 drillPickFromRay :: can drill pick without ID",
+      "Scene/Pick with WebGL 2 drillPickFromRay :: can drill pick batched Primitives without show attribute",
+      "Scene/Pick with WebGL 2 drillPickFromRayMostDetailed :: can drill pick batched Primitives with show attribute",
+      "Scene/Pick with WebGL 2 drillPickFromRayMostDetailed :: can drill pick without ID",
+      "Scene/Pick with WebGL 2 drillPickFromRayMostDetailed :: can drill pick batched Primitives without show attribute",
+      "Scene/PolylineCollection :: renders with model matrix"
+    ],
+    "baselineFailures": [
+      "Renderer/CubeMap :: sub copies images to a cube map",
+      "Renderer/CubeMap :: sub copies array buffers to a cube map",
+      "Scene/BillboardCollection with WebGL context :: can create a billboard using a subregion of an image",
+      "Scene/BillboardCollection with WebGL context :: renders using billboard setImageSubRegion function",
+      "Scene/Pick with WebGL 1 drillPickFromRay :: can drill pick batched Primitives with show attribute",
+      "Scene/Pick with WebGL 1 drillPickFromRay :: can drill pick without ID",
+      "Scene/Pick with WebGL 1 drillPickFromRay :: can drill pick batched Primitives without show attribute",
+      "Scene/Pick with WebGL 1 drillPickFromRayMostDetailed :: can drill pick batched Primitives with show attribute",
+      "Scene/Pick with WebGL 1 drillPickFromRayMostDetailed :: can drill pick without ID",
+      "Scene/Pick with WebGL 1 drillPickFromRayMostDetailed :: can drill pick batched Primitives without show attribute",
+      "Scene/Pick with WebGL 2 drillPickFromRay :: can drill pick batched Primitives with show attribute",
+      "Scene/Pick with WebGL 2 drillPickFromRay :: can drill pick without ID",
+      "Scene/Pick with WebGL 2 drillPickFromRay :: can drill pick batched Primitives without show attribute",
+      "Scene/Pick with WebGL 2 drillPickFromRayMostDetailed :: can drill pick batched Primitives with show attribute",
+      "Scene/Pick with WebGL 2 drillPickFromRayMostDetailed :: can drill pick without ID",
+      "Scene/Pick with WebGL 2 drillPickFromRayMostDetailed :: can drill pick batched Primitives without show attribute",
+      "Scene/PolylineCollection :: renders with model matrix"
+    ],
+    "added": [],
+    "removed": [],
+    "passed": 16018,
+    "failed": 17,
+    "skipped": 67,
+    "exitCode": 1
+  },
+  "performance": {
+    "status": "N08 not accepted",
+    "gpuTimestamp": null,
+    "loading": "per-instance CPU/drawable timing and pipeline counts in models-N/result.json; not strict cold startup"
+  },
+  "boundaries": [
+    "Single Windows NVIDIA adapter and Chrome only",
+    "Hosted Windows/Linux CI is CPU/build tooling, not hardware WebGPU",
+    "Full N06/S11, PBR, MASK/BLEND, animation/skin/morph, compression, Tiles, full S07, N08 and automatic recovery remain open"
+  ],
+  "ci": [
+    {
+      "run": 42779879168,
+      "url": "https://github.com/SilverStr1ng/lanthanum/actions/runs/42779879168",
+      "commit": "9c60b88fe3fcec3ab4b1b49435bec498b1fb4f66",
+      "jobs": [
+        {
+          "id": 129707078242,
+          "name": "clean-install (windows-latest)",
+          "status": "completed",
+          "conclusion": "success",
+          "skipped": []
+        },
+        {
+          "id": 129707078401,
+          "name": "clean-install (ubuntu-latest)",
+          "status": "completed",
+          "conclusion": "success",
+          "skipped": []
+        }
+      ]
+    },
+    {
+      "run": 42779879125,
+      "url": "https://github.com/SilverStr1ng/lanthanum/actions/runs/42779879125",
+      "commit": "9c60b88fe3fcec3ab4b1b49435bec498b1fb4f66",
+      "jobs": [
+        {
+          "id": 129707077419,
+          "name": "lint",
+          "status": "completed",
+          "conclusion": "success",
+          "skipped": []
+        },
+        {
+          "id": 129707077440,
+          "name": "release-tests",
+          "status": "completed",
+          "conclusion": "success",
+          "skipped": []
+        },
+        {
+          "id": 129707077729,
+          "name": "node-smoke-test (24.15.0)",
+          "status": "completed",
+          "conclusion": "success",
+          "skipped": []
+        },
+        {
+          "id": 129707077742,
+          "name": "coverage",
+          "status": "completed",
+          "conclusion": "success",
+          "skipped": [
+            "upload coverage artifacts"
+          ]
+        }
+      ]
+    }
+  ],
+  "localChecks": {
+    "buildTypes": 0,
+    "rootTypes": 0,
+    "engineTypes": 0,
+    "eslint": 0,
+    "markdownlint": 0,
+    "astGrep": 0,
+    "changedPrettier": 0,
+    "fullPrettier": {
+      "exitCode": 1,
+      "filesReported": 2964,
+      "log": "audit/full-prettier.log",
+      "note": "Local Windows result; hosted Linux dev format step passed. Do not conflate environments."
+    }
+  }
+}

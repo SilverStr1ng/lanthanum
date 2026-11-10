@@ -1,0 +1,4 @@
+
+> cesium@1.147.0 markdownlint
+> markdownlint "**/*.md"
+

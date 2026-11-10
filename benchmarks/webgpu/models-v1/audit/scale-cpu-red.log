@@ -1,0 +1,44 @@
+✖ CPU model small-scale has validated geometry and encoded image without GPU (6.5628ms)
+✖ CPU model small-compensated has validated geometry and encoded image without GPU (1.6139ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 257.0036
+
+✖ failing tests:
+
+test at scripts\webgpuTest\modelLoader.test.js:33:3
+✖ CPU model small-scale has validated geometry and encoded image without GPU (6.5628ms)
+  Error: file:///D:/Nothing/Lanthanum/Specs/WebGPU/fixtures/models/small-scale.gltf: node 0: non-affine or singular transform
+      at loadWebGPUModel (file:///D:/Nothing/Lanthanum/packages/engine/Source/Scene/WebGPUModelLoader.js:520:11)
+      at async TestContext.<anonymous> (file:///D:/Nothing/Lanthanum/scripts/webgpuTest/modelLoader.test.js:34:20)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    [cause]: Error: node 0: non-affine or singular transform
+        at requireValue (file:///D:/Nothing/Lanthanum/packages/engine/Source/Scene/WebGPUModelLoader.js:14:11)
+        at visit (file:///D:/Nothing/Lanthanum/packages/engine/Source/Scene/WebGPUModelLoader.js:459:7)
+        at loadWebGPUModel (file:///D:/Nothing/Lanthanum/packages/engine/Source/Scene/WebGPUModelLoader.js:480:7)
+        at async TestContext.<anonymous> (file:///D:/Nothing/Lanthanum/scripts/webgpuTest/modelLoader.test.js:34:20)
+        at async Test.run (node:internal/test_runner/test:1113:7)
+        at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)
+  }
+
+test at scripts\webgpuTest\modelLoader.test.js:33:3
+✖ CPU model small-compensated has validated geometry and encoded image without GPU (1.6139ms)
+  Error: file:///D:/Nothing/Lanthanum/Specs/WebGPU/fixtures/models/small-compensated.gltf: node 0: non-affine or singular transform
+      at loadWebGPUModel (file:///D:/Nothing/Lanthanum/packages/engine/Source/Scene/WebGPUModelLoader.js:520:11)
+      at async TestContext.<anonymous> (file:///D:/Nothing/Lanthanum/scripts/webgpuTest/modelLoader.test.js:34:20)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: node 0: non-affine or singular transform
+        at requireValue (file:///D:/Nothing/Lanthanum/packages/engine/Source/Scene/WebGPUModelLoader.js:14:11)
+        at visit (file:///D:/Nothing/Lanthanum/packages/engine/Source/Scene/WebGPUModelLoader.js:459:7)
+        at loadWebGPUModel (file:///D:/Nothing/Lanthanum/packages/engine/Source/Scene/WebGPUModelLoader.js:480:7)
+        at async TestContext.<anonymous> (file:///D:/Nothing/Lanthanum/scripts/webgpuTest/modelLoader.test.js:34:20)
+        at async Test.run (node:internal/test_runner/test:1113:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:788:7)
+  }

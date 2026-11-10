@@ -1,0 +1,4 @@
+
+> cesium@1.147.0 eslint
+> eslint "./**/*.*js" "./**/*.*ts*" "./**/*.html" --cache --quiet
+
