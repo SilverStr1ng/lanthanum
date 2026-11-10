@@ -273,12 +273,14 @@ async function dataSource(h, kind) {
     source.entities.values.length === targets.length,
     { count: source.entities.values.length },
   );
+  const visiblePixels = new Map();
   for (const [id, lon, lat, altitude] of targets) {
     const entity = source.entities.getById(id);
     record(`${kind} ${id} loaded`, !!entity);
     const point = screenPoint(h, C.Cartesian3.fromDegrees(lon, lat, altitude));
     await assertPick(h, `${kind} ${id} rendered and pickable`, point, entity);
     const pixel = readPixel(h, point);
+    visiblePixels.set(id, pixel);
     record(
       `${kind} ${id} visible pixels`,
       pixel.slice(0, 3).some((value) => value > 100),
@@ -287,22 +289,34 @@ async function dataSource(h, kind) {
   }
   source.show = false;
   await settle();
-  for (const [, lon, lat, altitude] of targets) {
-    await assertPick(
-      h,
-      `${kind} source hidden`,
-      screenPoint(h, C.Cartesian3.fromDegrees(lon, lat, altitude)),
-      undefined,
+  for (const [id, lon, lat, altitude] of targets) {
+    const point = screenPoint(h, C.Cartesian3.fromDegrees(lon, lat, altitude));
+    await assertPick(h, `${kind} source hidden`, point, undefined);
+    const pixel = readPixel(h, point);
+    record(
+      `${kind} ${id} hidden pixels cleared`,
+      pixel.slice(0, 3).every((value) => value === 0),
+      { pixel },
     );
   }
   source.show = true;
   await settle();
   for (const [id, lon, lat, altitude] of targets) {
+    const point = screenPoint(h, C.Cartesian3.fromDegrees(lon, lat, altitude));
     await assertPick(
       h,
       `${kind} source shown`,
-      screenPoint(h, C.Cartesian3.fromDegrees(lon, lat, altitude)),
+      point,
       source.entities.getById(id),
+    );
+    const pixel = readPixel(h, point);
+    const expected = visiblePixels.get(id);
+    record(
+      `${kind} ${id} restored pixels`,
+      expected
+        .slice(0, 3)
+        .every((value, channel) => Math.abs(pixel[channel] - value) <= 3),
+      { pixel, expected },
     );
   }
 }

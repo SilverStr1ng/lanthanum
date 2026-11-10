@@ -11,8 +11,8 @@
     },
     {
       "path": "Specs/Baseline/extendedScenarios.js",
-      "sha256": "4e1b3076226095edc2b0f7fc55e56fd42283f2915060caf782cd576fbc8480f7",
-      "bytes": 9705,
+      "sha256": "426a5c09ec101928abe2ca47705079eeed8108ad6c64d003cf5d156aea344cf1",
+      "bytes": 10249,
       "license": "Apache-2.0",
       "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
     },

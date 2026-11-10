@@ -1,0 +1,9 @@
+{
+  "sourceCommit": "de51ee9cc761d2751ebe54c267b3068b0bd23bec",
+  "method": "git archive selected tracked files; regenerate in Build/BaselineRound2Clean; verify manifest",
+  "node": "v24.15.0",
+  "generateExitCode": 0,
+  "verifyExitCode": 0,
+  "verifiedAssets": 168,
+  "manifestSha256": "12be48cec9f16f1367d8acdbb2f158cc1e543cc9b9de515ec0b8112646973cd3"
+}

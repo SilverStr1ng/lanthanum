@@ -6,6 +6,8 @@
 
 正式采集前追加第7个新子例T05-entity-box，总计20个：保留开发运行发现的动态盒体pickAsync失败，断言不会放宽或排除出默认入口。T05-entity明确使用PointGraphics（60px，SampledPositionProperty）；T05-entity-box使用BoxGraphics（60×60×80m），并有同步pick及红色像素控制。盒体动态Visualizer每帧销毁并重建Primitive，异步读回期间pick ID可能已被释放；保留实际失败，待独立处理拾取生命周期。失败路径也采集断言、诊断和销毁账本。
 
+审阅后重采集登记：GeoJSON/CZML/KML显隐新增逐目标颜色检查，隐藏后RGB必须为0，恢复后与初始值各通道误差≤3/255；原有拾取断言保留。该测试源变更再次更新manifest，使用新目录 `round2-reviewed/`，此前 `round2-final/` 和 `round2-replay/` 原样保留。引擎另修复地形fill VA延迟释放队列在下一帧前销毁时的残留，专用真实WebGL2测试覆盖此时序。WebGL stub只能测普通销毁，真实GPU账本测试明确pending，不冒充硬件通过。
+
 ## 主验收环境
 
 - Windows 11 Pro 10.0.26300，x64。

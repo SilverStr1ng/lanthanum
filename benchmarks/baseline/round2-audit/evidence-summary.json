@@ -1,0 +1,115 @@
+{
+  "commit": "de51ee9cc761d2751ebe54c267b3068b0bd23bec",
+  "cleanWorkingTree": true,
+  "runs": 60,
+  "passed": 57,
+  "failed": [
+    "T05-entity-box-1",
+    "T05-entity-box-2",
+    "T05-entity-box-3"
+  ],
+  "imageRuns": 57,
+  "minSsim": 0.9999999972126116,
+  "maxSignificantFraction": 0,
+  "releasePasses": 60,
+  "externalRequests": 0,
+  "consoleErrors": 0,
+  "boxControls": [
+    {
+      "iteration": 1,
+      "checks": [
+        {
+          "name": "pixel read has no GL error",
+          "passed": true
+        },
+        {
+          "name": "Entity red material rendered",
+          "passed": true,
+          "detail": {
+            "first": [
+              255,
+              0,
+              0,
+              255
+            ]
+          }
+        },
+        {
+          "name": "dynamic box synchronous pick control",
+          "passed": true
+        },
+        {
+          "name": "Entity at first sample",
+          "passed": false,
+          "detail": {
+            "expected": "moving-box"
+          }
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "checks": [
+        {
+          "name": "pixel read has no GL error",
+          "passed": true
+        },
+        {
+          "name": "Entity red material rendered",
+          "passed": true,
+          "detail": {
+            "first": [
+              255,
+              0,
+              0,
+              255
+            ]
+          }
+        },
+        {
+          "name": "dynamic box synchronous pick control",
+          "passed": true
+        },
+        {
+          "name": "Entity at first sample",
+          "passed": false,
+          "detail": {
+            "expected": "moving-box"
+          }
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "checks": [
+        {
+          "name": "pixel read has no GL error",
+          "passed": true
+        },
+        {
+          "name": "Entity red material rendered",
+          "passed": true,
+          "detail": {
+            "first": [
+              255,
+              0,
+              0,
+              255
+            ]
+          }
+        },
+        {
+          "name": "dynamic box synchronous pick control",
+          "passed": true
+        },
+        {
+          "name": "Entity at first sample",
+          "passed": false,
+          "detail": {
+            "expected": "moving-box"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -455,12 +455,7 @@ class GlobeSurfaceTileProvider {
     // Add credits for terrain and imagery providers.
     updateCredits(this, frameState);
 
-    const vertexArraysToDestroy = this._vertexArraysToDestroy;
-    const length = vertexArraysToDestroy.length;
-    for (let j = 0; j < length; ++j) {
-      GlobeSurfaceTile._freeVertexArray(vertexArraysToDestroy[j]);
-    }
-    vertexArraysToDestroy.length = 0;
+    freeVertexArrays(this._vertexArraysToDestroy);
   }
 
   /**
@@ -1212,6 +1207,7 @@ class GlobeSurfaceTileProvider {
    * @see GlobeSurfaceTileProvider#isDestroyed
    */
   destroy() {
+    freeVertexArrays(this._vertexArraysToDestroy);
     this._tileProvider = this._tileProvider && this._tileProvider.destroy();
     this._clippingPlanes =
       this._clippingPlanes && this._clippingPlanes.destroy();
@@ -1381,6 +1377,13 @@ class GlobeSurfaceTileProvider {
       this._onLayerRemoved(layer, index);
     }
   }
+}
+
+function freeVertexArrays(vertexArrays) {
+  for (let i = 0; i < vertexArrays.length; ++i) {
+    GlobeSurfaceTile._freeVertexArray(vertexArrays[i]);
+  }
+  vertexArrays.length = 0;
 }
 
 const scratchLevelZeroRectangle = new Rectangle();

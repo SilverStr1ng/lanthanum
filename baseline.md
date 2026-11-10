@@ -42,7 +42,7 @@ npm run baseline:serve
 # 独立输出目录，重复三次；失败时仍写 JSON/PNG 并返回非零
 npm run baseline:run -- --output=benchmarks/runs/recheck
 # 与保存的像素基线比较
-npm run baseline:run -- --compare=benchmarks/baseline/round2-final --output=benchmarks/runs/compare
+npm run baseline:run -- --compare=benchmarks/baseline/round2-reviewed --output=benchmarks/runs/compare
 # 固定城市轨迹，30 秒预热、120 秒采样、三轮
 npm run baseline:run -- --scenes=T08 --performance --output=benchmarks/runs/performance
 # Edge 是同一 Chromium 引擎的补充，不算第二浏览器引擎
@@ -73,3 +73,5 @@ npm run baseline:run -- --channel=msedge --output=benchmarks/runs/edge
 基线 PNG 保存原始 framebuffer，不含页面上的 DOM 署名层；交互页面保留 Cesium 默认署名。本地网络限制阻止所有非本地 URL；JSON 记录所有请求及失败。
 
 干净导出重建也已验证：从提交 `d84d8a3` 用 `git archive` 导出选定源文件，在独立目录用Node24.15.0生成资产，再验证162项hash全部一致；记录见 `benchmarks/baseline/audit/clean-export.json`。`.gitattributes` 固定受哈希文本的LF，避免Windows autocrlf改变验收身份。
+
+第二轮相同方式从 `de51ee9` 导出后生成，168项hash全部一致，记录 `benchmarks/baseline/round2-audit/clean-export.json`。正式60次结果为57通过、动态盒体拾取3失败；所有60次销毁账本归零。新增回归、原套件失败身份对比与图像证据见 `progress-report.md`。

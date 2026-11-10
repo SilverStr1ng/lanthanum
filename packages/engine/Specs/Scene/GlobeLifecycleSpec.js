@@ -1,5 +1,5 @@
 import { Cartesian2, Cartesian3, defined } from "@cesium/core";
-import { Globe } from "../../index.js";
+import { Globe, TerrainFillMesh } from "../../index.js";
 import createCanvas from "../../../../Specs/createCanvas.js";
 import createScene from "../../../../Specs/createScene.js";
 import pollToPromise from "../../../../Specs/pollToPromise.js";
@@ -25,7 +25,10 @@ describe(
       expect(surface.isDestroyed()).toBe(true);
     });
 
-    it("releases terrain GPU objects when a rendered globe is destroyed", function () {
+    function expectGlobeResourcesReleased(beforeDestroy) {
+      if (window.webglStub) {
+        pending("The GPU resource ledger requires a real WebGL2 context.");
+      }
       const canvas = createCanvas(64, 64);
       const gl = canvas.getContext("webgl2", { antialias: false });
       const ledger = instrumentWebGL(gl);
@@ -43,6 +46,9 @@ describe(
         return scene.globe.tilesLoaded && defined(scene.globe.pick(ray, scene));
       }).then(function () {
         expect(ledger.snapshot().live.Buffer).toBeGreaterThan(0);
+        if (defined(beforeDestroy)) {
+          beforeDestroy(scene.globe._surface.tileProvider);
+        }
         scene.destroyForSpecs();
         scene = undefined;
         const resources = ledger.snapshot();
@@ -50,6 +56,24 @@ describe(
           expect(count).withContext(kind).toBe(0);
         }
         expect(resources.bufferBytes).toBe(0);
+      });
+    }
+
+    it("releases terrain GPU objects when a rendered globe is destroyed", function () {
+      return expectGlobeResourcesReleased();
+    });
+
+    it("releases retired fill meshes before the next frame", function () {
+      return expectGlobeResourcesReleased(function (provider) {
+        const tile = scene.globe._surface._tilesToRender[0];
+        const fill = (tile.data.fill = new TerrainFillMesh(tile));
+        fill.update(provider, scene.frameState);
+        const vertexArray = fill.vertexArray;
+        // Match replacement by real terrain: retire the fill and drop its reference.
+        tile.data.fill = fill.destroy(provider._vertexArraysToDestroy);
+        expect(provider._vertexArraysToDestroy).toContain(vertexArray);
+        expect(vertexArray.isDestroyed()).toBe(false);
+        // Destroy immediately, without a further provider.initialize() drain.
       });
     });
   },
