@@ -172,9 +172,25 @@ function globe(scheme = "geographic") {
       credit: "Procedural Apache-2.0 baseline fixture",
     }),
   );
+  scene.globe.imageryLayers
+    .get(0)
+    .imageryProvider.errorEvent.addEventListener((error) =>
+      errors.push(`Imagery: ${error.message}`),
+    );
   scene.camera.setView({
     destination: C.Cartesian3.fromDegrees(-75, 25, 18000000),
   });
+}
+
+function imageryReady() {
+  const selected = scene.globe._surface._tilesToRender;
+  return (
+    scene.globe.tilesLoaded &&
+    selected.length > 0 &&
+    selected.every((tile) =>
+      tile.data.imagery.some((item) => item.readyImagery?.state === 4),
+    )
+  );
 }
 
 async function tiles(url, city = false) {
@@ -261,15 +277,7 @@ async function initialize() {
     }
   } else if (id === "T01" || id === "T01-mercator") {
     globe(id === "T01" ? "geographic" : "mercator");
-    await until(
-      () =>
-        scene.globe.tilesLoaded &&
-        scene.globe._surface._tilesToRender.length > 0 &&
-        scene.globe._surface._tilesToRender.every((tile) =>
-          tile.data.imagery.some((item) => item.readyImagery?.state === 4),
-        ),
-      "imagery tiles",
-    );
+    await until(imageryReady, "imagery tiles");
     record(
       "imagery tiles selected",
       scene.globe._surface._tilesToRender.length > 0,
@@ -280,12 +288,15 @@ async function initialize() {
       "/Specs/Data/CesiumTerrainTileJson/QuantizedMesh/",
     );
     scene.terrainProvider = terrain;
+    terrain.errorEvent.addEventListener((error) =>
+      errors.push(`Terrain: ${error.message}`),
+    );
     scene.camera.setView({
       destination: C.Cartesian3.fromDegrees(10, 20, 20000000),
     });
     await until(
       () =>
-        scene.globe.tilesLoaded &&
+        imageryReady() &&
         scene.globe._surface._tilesToRender.some(
           (tile) =>
             tile.data?.terrainData instanceof C.QuantizedMeshTerrainData,
@@ -485,6 +496,13 @@ async function initialize() {
     record("20 scene lifecycle cycles", results.every(Boolean));
   } else if (id === "T08") {
     const city = await tiles("/fixtures/generated/city.json", true);
+    await until(
+      () =>
+        city.tilesLoaded &&
+        city.statistics.selected === 16 &&
+        city.statistics.numberOfTrianglesSelected === 1228800,
+      "complete 16-tile city workset",
+    );
     record(
       "city triangles loaded",
       city.statistics.numberOfTrianglesSelected === 1228800,

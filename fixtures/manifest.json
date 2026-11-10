@@ -4,8 +4,8 @@
   "assets": [
     {
       "path": "Specs/Baseline/baseline.js",
-      "sha256": "191db0b40a469e50c27e0e0777fd78537d60339c623b8177a65b3b7df7b03a65",
-      "bytes": 17767,
+      "sha256": "fe218c8ee13998529dd41478521e27dc644ad0ca4610cacb6e8b75b08a78068c",
+      "bytes": 18243,
       "license": "Apache-2.0",
       "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
     },
