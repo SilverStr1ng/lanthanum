@@ -1,5 +1,8 @@
 # CesiumJS
 
+本分支用于 Cesium WebGPU 迁移的 S00—S01 基线工作，目前渲染后端仍是 WebGL2。
+安装、回归命令与阶段状态见 [baseline.md](baseline.md)、[兼容矩阵](compatibility-matrix.md) 和 [进度报告](progress-report.md)。
+
 [![Build Status](https://github.com/CesiumGS/cesium/actions/workflows/dev.yml/badge.svg)](https://github.com/CesiumGS/cesium/actions/workflows/dev.yml)
 [![npm](https://img.shields.io/npm/v/cesium)](https://www.npmjs.com/package/cesium)
 [![Docs](https://img.shields.io/badge/docs-online-orange.svg)](https://cesium.com/learn/)

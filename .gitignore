@@ -32,8 +32,11 @@ Thumbs.db
 /node_modules
 npm-debug.log
 npm-debug.log.*
-package-lock.json
+# The migration baseline locks the dependency graph for clean-install replay.
 yarn.lock
+
+/fixtures/generated/
+/benchmarks/runs/
 
 # WebStorm user-specific
 .idea/workspace.xml

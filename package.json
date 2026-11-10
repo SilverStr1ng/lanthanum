@@ -107,6 +107,12 @@
     "yargs": "^18.1.0"
   },
   "scripts": {
+    "baseline:generate": "node scripts/webgpuBaseline/generateFixtures.js",
+    "baseline:freeze": "node scripts/webgpuBaseline/manifest.js --freeze",
+    "baseline:verify": "node scripts/webgpuBaseline/manifest.js --verify",
+    "baseline:test": "node --test scripts/webgpuBaseline/*.test.js",
+    "baseline:serve": "node scripts/webgpuBaseline/server.js",
+    "baseline:run": "node scripts/webgpuBaseline/run.js",
     "prepare": "gulp prepare && husky && node scripts/isCI.js || playwright install --with-deps",
     "start": "node server.js",
     "start-public": "node server.js --public",

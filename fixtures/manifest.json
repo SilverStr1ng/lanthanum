@@ -1,0 +1,1249 @@
+{
+  "schemaVersion": 1,
+  "baseline": "2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87",
+  "assets": [
+    {
+      "path": "Specs/Baseline/baseline.js",
+      "sha256": "66a792794b1036adf8b25d5b58fa20ba44e1e038f691c286be3e608fc0570759",
+      "bytes": 16524,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "Specs/Baseline/index.html",
+      "sha256": "63caefd5f3b860874eaf2929f941330e6feb0e290a201c1a83c32734314fd1bf",
+      "bytes": 704,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "Specs/Baseline/instrumentWebGL.js",
+      "sha256": "08889f0c83e0e594f4937576ead825224f41f2386e1acbaebea376675e137596",
+      "bytes": 2991,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/Cesium3DTiles/Batched/BatchedWithBatchTable/batchedWithBatchTable.b3dm",
+      "sha256": "3fae7966b2e601a783157166cfc85e207b8236e2e864edd36387419c0895f39e",
+      "bytes": 10304,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/Cesium3DTiles/Batched/BatchedWithBatchTable/tileset.json",
+      "sha256": "dabb302d5f996049787538dc85041da993f1767c0c7d290b979b73032ada5809",
+      "bytes": 750,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/Cesium3DTiles/Composite/CompositeOfInstanced/box.glb",
+      "sha256": "1ef2c9d730f6cc6a066a6354058490d224a1961b98d9075004cb041a39d822f4",
+      "bytes": 3284,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/Cesium3DTiles/Composite/CompositeOfInstanced/compositeOfInstanced.cmpt",
+      "sha256": "b05bd76bf366d2e6442f0dac75190b3f3c50ba17f9f0a673f01e8c448162f561",
+      "bytes": 1024,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/Cesium3DTiles/Composite/CompositeOfInstanced/tileset.json",
+      "sha256": "acdbe21e5b497fbd72bbfc5fd083f7c12b13adb127c7259cae0f9c8354ad8afd",
+      "bytes": 460,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/Cesium3DTiles/Instanced/InstancedWithBatchTable/instancedWithBatchTable.i3dm",
+      "sha256": "f0a3cb4db8474e5f8c6d5cb9623eb6eeeee378e0eedbfe68736f69c09a5318e1",
+      "bytes": 3784,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/Cesium3DTiles/Instanced/InstancedWithBatchTable/tileset.json",
+      "sha256": "a5a920e61c88b30449f1bf70a8dab75821bb912c8da0273c27febb3cd08a6d63",
+      "bytes": 463,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/Cesium3DTiles/PointCloud/PointCloudRGB/pointCloudRGB.pnts",
+      "sha256": "fc677bea7672fd7280bb1ed02eb682803c3783a5c874009c8a897232c9e9a2c4",
+      "bytes": 15184,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/Cesium3DTiles/PointCloud/PointCloudRGB/tileset.json",
+      "sha256": "361855ab33c8bcd9ac0deafad2c69c35708e52139f26937f22f9cc7cdc7d6d5b",
+      "bytes": 338,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/CesiumTerrainTileJson/QuantizedMesh/layer.json",
+      "sha256": "351d225db8a0a5386098d4f6275708ca75544c557ed62c194dd5fac033109dc9",
+      "bytes": 542,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/CesiumTerrainTileJson/QuantizedMesh/tile.terrain",
+      "sha256": "8dc69d9e132d059ad77080c51daf844e255295c35a3c2654d243349b81a565b2",
+      "bytes": 3914,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "Specs/Data/test.geojson",
+      "sha256": "7261ebdff6db45a4938a3b66248c325eb59d2ae60427c72b15d65d3718b2e679",
+      "bytes": 1419,
+      "license": "Apache-2.0",
+      "provenance": "CesiumGS/cesium@2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/box.glb",
+      "sha256": "4a49882ad2d9a9751f9f300850a0de2a042f0ce43886e035c9e766d90449bff3",
+      "bytes": 1560,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-0.glb",
+      "sha256": "839d3131c68b0b8f915c0c5a8c3fe2c59cf2bfe904f43f4c9a84c91e734d8a61",
+      "bytes": 4608892,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-1.glb",
+      "sha256": "21cf355dc78c17ba0cca6b30d25d33974ba474a3dc6cc64d7686477cf976ddd5",
+      "bytes": 4608888,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-10.glb",
+      "sha256": "f3695b41632051f10a75cf0fe2f5bf1d2d73b24e96a735a12ab3c93967e221ca",
+      "bytes": 4608880,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-11.glb",
+      "sha256": "caa3f9630b749a534a192ad011b15130d0fa1ee560bf993268bb940248ff6ad2",
+      "bytes": 4608884,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-12.glb",
+      "sha256": "f42aec95612aa4caeaf536132cb2500cf02c08fd456f4f1aac2d2b9427b416de",
+      "bytes": 4608888,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-13.glb",
+      "sha256": "2246ed7fe752608472db96c1d1b3b57c1a93ae61ea7e6dcbb5358c62942fdfe2",
+      "bytes": 4608884,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-14.glb",
+      "sha256": "1c48f8800d12a60693bd6885256876222b437616872a40c15526b21ae6ed13b6",
+      "bytes": 4608884,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-15.glb",
+      "sha256": "893eac830eaaeb3261f4c9f273d83a565fa05bf3812dd2a850ef2a4ed70680af",
+      "bytes": 4608888,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-2.glb",
+      "sha256": "9151729673a073a509a07f45fbda7b88c765b2473676c3ed43d54118e8d9349b",
+      "bytes": 4608884,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-3.glb",
+      "sha256": "443dd260aa7c4564a93fa0a31a51ec16c75aa42a017c7afaf5f146a7aa07dd02",
+      "bytes": 4608888,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-4.glb",
+      "sha256": "eac2611961bc89384af714d3fab9ff157b36f2ba2fc21df2ea6391e60ea4dea2",
+      "bytes": 4608888,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-5.glb",
+      "sha256": "4cccbb81b347a0d08c4df12d02d758a2234a66a0e5f24dc7c871cfdb04604468",
+      "bytes": 4608884,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-6.glb",
+      "sha256": "12e11bb72b40f21103bda969dc4a18b91b37d9e625687ff968fc65750e8fa04c",
+      "bytes": 4608884,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-7.glb",
+      "sha256": "09b5cc37f1fae26c023ab184a5e0bc6aee34d77c0d919644ab476c3a1abff2c3",
+      "bytes": 4608884,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-8.glb",
+      "sha256": "75286484f9b7fad88bd0e2d04d3f302897c1e1d4008fef1151dc2cd07558e68f",
+      "bytes": 4608884,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city-9.glb",
+      "sha256": "e95fe1240ecd79c072d08c1076eadc6d6aaf23b9f69ce697889f9dc56374285a",
+      "bytes": 4608884,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/city.json",
+      "sha256": "d73e91612cb4ff42adb8be83bf011af51be7c13bc1053d01d1f1d8832d8ff16c",
+      "bytes": 6243,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/four-colors.png",
+      "sha256": "97e0abf9bf56fcd5a69cc4a3ac7fd7a9c757f3d337ac6b4f0ca64689bcb4ec82",
+      "bytes": 79,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-0-0-0.png",
+      "sha256": "85c574fe6e1bcddd362867a03151772b721dc75f7a011f4cefd66c9e5b7fff9d",
+      "bytes": 1803,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-0-0-0.svg",
+      "sha256": "9ad8b3c969c1748ff6c64212bd823a19d294f37727d3150c94b2dab82ce88bc9",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-0-1-0.png",
+      "sha256": "a9a45083570d0b37c551f74086d92d973bc3b3cddd85bed29418348ec29cc7c0",
+      "bytes": 1822,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-0-1-0.svg",
+      "sha256": "7e029a7b10e7827376eb9e2532c615f6f2e4db595bda9b8106d129cc070fa91c",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-0-0.png",
+      "sha256": "5bf64ae3b6d18a7a0bab4fbcf0c688ca72029c3c3d4845f8a66d75bd428d1aed",
+      "bytes": 1827,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-0-0.svg",
+      "sha256": "78ae56bf0ff7aea3f72d99aa5035e31465b6939130dfe5578f081c1df574c414",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-0-1.png",
+      "sha256": "b53e042dda01176f3ba529b2c222a98f906785d917a8901c8c60157252900837",
+      "bytes": 1830,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-0-1.svg",
+      "sha256": "96f489e6223e4e7990340bcc1478d676636de93f8384f1991be1a98d2ee64d05",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-1-0.png",
+      "sha256": "52dabdd8b94268504efa74e3a45e4de58eb0a4017fbd78520c791e500f764b37",
+      "bytes": 1813,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-1-0.svg",
+      "sha256": "8318a6ed5da9defd03265b91d8aab89420c75475ad9e546cc5a86a3b2024acc3",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-1-1.png",
+      "sha256": "c30c336494645438141bbb1c8b061dbae8f0ddc7bc54ba8ea35ae183dc8a1e79",
+      "bytes": 1819,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-1-1.svg",
+      "sha256": "bcfaa1fb854c61069d47488d152d7e80a19ecf03efb63a5665c0aeeb525d7750",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-2-0.png",
+      "sha256": "1b995c5dd35bda919c7a7757523f91877b87eab4f7d915971bdc38f6fa665185",
+      "bytes": 1841,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-2-0.svg",
+      "sha256": "cd1242e78bb9bb4a8d52bb282b6e65d171c7c8b2fc84fe282aa47980a8ba51f7",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-2-1.png",
+      "sha256": "7ddec080b0f4d8088ad1dcc123dd0a4222736f6cfa3a545953b8c2fe448c9c3a",
+      "bytes": 1851,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-2-1.svg",
+      "sha256": "f81941a2550932521cd9980cea84b2cf98e28268290b433cda18551b4509bbd1",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-3-0.png",
+      "sha256": "71bc5166d2cca913b6eae8cdbdbdfec3c3f8d94cde60da14bb0d8cac64297751",
+      "bytes": 1833,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-3-0.svg",
+      "sha256": "b980028bdd004258a8d3b83d0ee55adfd6cd4535afb2220af7af43b7e2e92d10",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-3-1.png",
+      "sha256": "57d391644c20725bebb3dbc021c8fb8ab084a983f9eb73657d2f4de8a70a9d74",
+      "bytes": 1841,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-1-3-1.svg",
+      "sha256": "bb82678ddc6cffc71b7049d089480135e88f00c9997a794bb1de548072bc2539",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-0-0.png",
+      "sha256": "f7373978dd0d2597cc00e1ac938a5d26c46e3d51d8468b68b705e6ad80257500",
+      "bytes": 1814,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-0-0.svg",
+      "sha256": "a485e6d29a2b2cb87c897926d9208e3e0ee64bf1b443b7982f4bffeffa03872c",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-0-1.png",
+      "sha256": "192491285d93b5cd1eb5c88577234b76164933f0da07fe3f59c678d8b7824d33",
+      "bytes": 1859,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-0-1.svg",
+      "sha256": "42e57df003f19df46afec17ad22ff98f1d26139426a0f31a87cb52d44174b3c0",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-0-2.png",
+      "sha256": "cefa40f87bfc6ef12a3b81bef7a6392c73a64af05cad4c85a80a9b184d9ccc49",
+      "bytes": 1819,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-0-2.svg",
+      "sha256": "9db5554ae7c9c4644e252a6542a243d9c0f8d5fc937e9e6c952afc5305e33c5b",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-0-3.png",
+      "sha256": "04c952b8b0324ea92a5df06cee2dbedb19206f2c68a54a18373f6a30b8a87e18",
+      "bytes": 1818,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-0-3.svg",
+      "sha256": "c8b61bb1f22dc81c19f9223049e41ac0cb1e1af36a5639fe21b646a497a5b82f",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-1-0.png",
+      "sha256": "a5586ac0ac54463c27b2b48360d79e0c8fd58dad1e5d85717c0d6fe3567f2af7",
+      "bytes": 1842,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-1-0.svg",
+      "sha256": "abfe4477a78b1f295de5f0297a8ef9f70e9c30cf88e07423e85348e410cdbf18",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-1-1.png",
+      "sha256": "ee0482759c0a9662cf27d4044faa0f834ee6165d129db85b8fca3cdd7d082785",
+      "bytes": 1827,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-1-1.svg",
+      "sha256": "1546b398da133ebb2765786dcd2634b91633fffeb7414884f9e6b6c2f401d4aa",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-1-2.png",
+      "sha256": "3b99f4a26452c0cd1d7d8aa291851030d9a60a3d49090478e7b5eb383e17c666",
+      "bytes": 1842,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-1-2.svg",
+      "sha256": "0d8945dedd776d3f3ef64d77fb7c5b459c69493fc89863ad77cd5a4b7611830b",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-1-3.png",
+      "sha256": "c13e4f28b4ac2fc4b4d893fb6cc769c1d182321b1b02da81b4a0f651357909a7",
+      "bytes": 1846,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-1-3.svg",
+      "sha256": "796668887a83aeeadb8719b625f9d8c2324229b1cad4800882b9ce8d9f3af36b",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-2-0.png",
+      "sha256": "2df038ab4da037586e5081fd4182dac498cf0c14ff282b73f865d813d5dcc958",
+      "bytes": 1819,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-2-0.svg",
+      "sha256": "0c5cff9014f3533961868485f4630d1393f7b95a34e27da13ba4a0611c89e96e",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-2-1.png",
+      "sha256": "ee2c4a8055cc1d35d5acec7448fbe21cc3c13f0b119484da2d0497dfa5bf824a",
+      "bytes": 1891,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-2-1.svg",
+      "sha256": "7925dc5ce1b2f177bed594f08db61024575eec83f757cdb66e5e547a23054fc4",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-2-2.png",
+      "sha256": "b0b47ad6fb3a311cf10751df82bba92b7c22830bb9570d5952ec1366b7aef99b",
+      "bytes": 1812,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-2-2.svg",
+      "sha256": "f9cd5ccdb99d2ab557d10662719cf2875c9c320ed08d67a44df6d788e65cf054",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-2-3.png",
+      "sha256": "3d841cf8819ae66af0cca2700b4ff1c252953272cee753fca2962349a9089645",
+      "bytes": 1823,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-2-3.svg",
+      "sha256": "c445ebb8a13e87e8297b6c327d2f01b96eb1685bd90cd278606828e90aa11657",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-3-0.png",
+      "sha256": "133a3c9f29be9d0f1e26385b6829d3498226cac8e5eb2b994d42ae89a3794ee2",
+      "bytes": 1818,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-3-0.svg",
+      "sha256": "ba4538e70b9ae9df3287ae2b1d699f01a26418acfdf0b97dc5710ce366bfada6",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-3-1.png",
+      "sha256": "90e940ae59f405de198a32c68e933a853a49406a20fe3ea9afad821eed11949a",
+      "bytes": 1884,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-3-1.svg",
+      "sha256": "799f12c2d871212d6eb58631fb1572c3f28b38f6708ddbe9c6bd06ccef37033d",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-3-2.png",
+      "sha256": "f714ebc440319e250e0763eddb94eb17df35b6dfc0ce673453c4411ed01f96ff",
+      "bytes": 1808,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-3-2.svg",
+      "sha256": "f20c4bdf782792f57596235f29215fbc0b7aadbc46ab6602710bf493c7528874",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-3-3.png",
+      "sha256": "bcde6c8185d75647208d444afe1e8081a51e51b81663b5e4f997cd362784ef56",
+      "bytes": 1810,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-3-3.svg",
+      "sha256": "a8214446f6c35eb00f3697602ed3ef8f1006a2a655c903245117a2aafd3e5d18",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-4-0.png",
+      "sha256": "3903c026e8470cd0f0ed86ddd314e4c0a6d2775dc63c89a74435768cc3ba9104",
+      "bytes": 1843,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-4-0.svg",
+      "sha256": "743dbe88c5372634d297fb2379ad0f5e2e2554a49d6d7bf2cd53510f770d57c8",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-4-1.png",
+      "sha256": "6853ecdf63e24732175f9cdab1aec5d08c68ac8e23c6c110bf45d5bb4e981b04",
+      "bytes": 1881,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-4-1.svg",
+      "sha256": "421c02646f1806d72101e62df09bd8c301f5a14f30cf5e9d296063fa0775d215",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-4-2.png",
+      "sha256": "0dd3fbfe2175af485e3ab4fda959489751d93911bc9681046f7acc0a16d59429",
+      "bytes": 1838,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-4-2.svg",
+      "sha256": "be01c2cd364b3e432b468c720024b05bf753e2c90d1738929c958e8eec6349a9",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-4-3.png",
+      "sha256": "032bf48334250261522ee463252c980bd91fb66b2f29ec80b0aba15aecb4d7d1",
+      "bytes": 1839,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-4-3.svg",
+      "sha256": "01c2d5f220b7f0220a0f480942d96b2c57baa654115a74dfd7ab4a103b158ddf",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-5-0.png",
+      "sha256": "60468fc914f9295642143281faf0085142236b5356e3ce39811879642d795dd2",
+      "bytes": 1825,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-5-0.svg",
+      "sha256": "8a1b723ade16fe920a1a666d3a5f7df14e8e487e6a0ecfcac6e300f87faef645",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-5-1.png",
+      "sha256": "05f0c64e77356e701f9f4cb0c59c0a3569e87ebfb39ce10c6c9ca8ec042ddc8c",
+      "bytes": 1891,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-5-1.svg",
+      "sha256": "0b82812c749f70e1350e00140ff6e360e32fe7e2962f83bd70431360e358dc88",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-5-2.png",
+      "sha256": "720ab72eaf60680ad65ec8cc5403bb66bc8926f5d43ec5e7fbe8735648a8ddd0",
+      "bytes": 1810,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-5-2.svg",
+      "sha256": "c65bf941c6518156ec5775bb1481c58f4b2338a49b9113646e4c5efc814b318d",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-5-3.png",
+      "sha256": "678aaf26900eead9f6a275d7f328a707f644cee1178a44bbbff7aa9dce74f86f",
+      "bytes": 1812,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-5-3.svg",
+      "sha256": "8ce437ca6b4f845757745bdbdc4bf48fc5fd85c08f78d2dc8ddc441bed653308",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-6-0.png",
+      "sha256": "b814c9082cb134ee97c251cb8549b76255faa4d05cdbfcb14a96c449cf5bb619",
+      "bytes": 1831,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-6-0.svg",
+      "sha256": "374663cf2d4c7752dcde7613e1469a9a625a9823310617c5eb68ca4eacbf8c63",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-6-1.png",
+      "sha256": "e37ab656ec276f9971d960a82c1d50e0f13991a1a7a927e69fa8cb9c95eb8bd4",
+      "bytes": 1896,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-6-1.svg",
+      "sha256": "d0a3e313578f30e5a746ac5b73057ed068d2117c64281aa68c498fcfd1be71d1",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-6-2.png",
+      "sha256": "85543a68bae030e3b851f9e5d266f1e29db786c0e110fbb2c22124dc188a7261",
+      "bytes": 1817,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-6-2.svg",
+      "sha256": "bdd9feecdf0b8b31bea9f4358f7deda9fd55c54e29b26dada6282cc60c972fcc",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-6-3.png",
+      "sha256": "3e4af133ffaa44c8e07d2aeb348f076596be86434b74bc0027c741567838c82f",
+      "bytes": 1816,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-6-3.svg",
+      "sha256": "b88fd61ee9ca0a16dfd911f490ae5bd6823de71589bc4fde1282b8185e0c53df",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-7-0.png",
+      "sha256": "ee6e0e9b96a829801c713323abe3ce0656d93fd14d46f62da33db4117c848f0e",
+      "bytes": 1835,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-7-0.svg",
+      "sha256": "1fa5f09a95ada444a8b0ccdd376f2580cb24a34f921b279de9eeb320008eaac2",
+      "bytes": 438,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-7-1.png",
+      "sha256": "54369e8424f5ca1f496d4f114bf667fc06f6d44e08f33b0849b62f6170c57294",
+      "bytes": 1877,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-7-1.svg",
+      "sha256": "ffd11384f1a4137960760a04542a5438864006843d4b3a00395662d71dd66b12",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-7-2.png",
+      "sha256": "113ae104b31b654e223b80fc07de15ab2bc47cb95bef3e16d638a154084f8f4a",
+      "bytes": 1841,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-7-2.svg",
+      "sha256": "35ec69ca32618d3ffa739d54014bd6ab7c610d390538f28802051db474acfd19",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-7-3.png",
+      "sha256": "9955ec53561a875e2cd5485b4b0a515ebf5ef0befc869aa60d233fb3d4c2bf71",
+      "bytes": 1844,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/geographic-2-7-3.svg",
+      "sha256": "219b703fe3305f5db49bae2aa4272a39ae25e48dc03b29ee34d974c7f2c8758c",
+      "bytes": 437,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-0-0-0.png",
+      "sha256": "6e8c98229b15d815f86cdd4be2265b7e33f080640d1972d05137f2c014986243",
+      "bytes": 1803,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-0-0-0.svg",
+      "sha256": "ca0b1169a48d4f3fe0a9bf3720ad94ec6d0ed4868c200ea296e4c4fd9b6bd413",
+      "bytes": 434,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-1-0-0.png",
+      "sha256": "0479c7f0ba0487091c5b96725250bc6b9f9f33744b1a576007bfee95af1a4d26",
+      "bytes": 1827,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-1-0-0.svg",
+      "sha256": "1e3c1212df9088f167568f2b728da9db183d8e0c6148a6e3947139acb6ca2df1",
+      "bytes": 435,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-1-0-1.png",
+      "sha256": "b5a659457b2cf420961d44b1be4596d244da6e833775e782a112165b6c6c471e",
+      "bytes": 1830,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-1-0-1.svg",
+      "sha256": "8459a9f54148265e02cb70a50f3fff4a5474a19ff86b980daaa29b5ba97ee6dd",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-1-1-0.png",
+      "sha256": "35ef78c619aac92fe7d4a8e644301633d4cd8868914f2feb07e48cf9145590d2",
+      "bytes": 1813,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-1-1-0.svg",
+      "sha256": "6569a8a1acbc2edd26c07736507e0321004e552796974186ecf8e8ca2ef341f6",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-1-1-1.png",
+      "sha256": "4a78cb5d431fe4159564897b6ab23948272461edc68adfd3fa2e9957328acb3f",
+      "bytes": 1819,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-1-1-1.svg",
+      "sha256": "ba811fcab1bf81b7a00f865437b730fa5133d1b0c8fc060040930bc461356804",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-0-0.png",
+      "sha256": "8bcc8534e3238005c157c5c4595ca503108c082a489bf529cd87c472400806c4",
+      "bytes": 1814,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-0-0.svg",
+      "sha256": "ccea7432301624d4f4e72dfb0afd2ce760396fce552bdfd16b69a6dae4e6578e",
+      "bytes": 435,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-0-1.png",
+      "sha256": "3d5e72228fdf718371a03a728210fbfc4cffb4aa99b5bc857d3ad5dddd8a44c4",
+      "bytes": 1859,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-0-1.svg",
+      "sha256": "b6dfab5bd4cfda16fd201661ccf7212fd8c384b798fb1d80e743cc35af861f85",
+      "bytes": 435,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-0-2.png",
+      "sha256": "1af6cf911c6519422bfb1b951643955835fe0e48fe83cee6f569a583493ade74",
+      "bytes": 1819,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-0-2.svg",
+      "sha256": "296a88ff4e1873d0d31a935d4205adc704ce67846e18c9326bfbe44aefd55f07",
+      "bytes": 435,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-0-3.png",
+      "sha256": "d1f005342052675c30edf7c25f05376c472fe05929fe0183a2a9efb73ebc1eb1",
+      "bytes": 1818,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-0-3.svg",
+      "sha256": "695804dc3f6b42a6fdf49e6acd40565fc6d07f5bf40f5d8533ef1f1f1b76a2bd",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-1-0.png",
+      "sha256": "4b20bd46bdae829aa06014e0a9d5e061192b4b79198be4d94c8797ed14401317",
+      "bytes": 1842,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-1-0.svg",
+      "sha256": "1e9fcc286a467af247d51aa4da58dfcd5172a08ed82475780fa3991b2f59d5fc",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-1-1.png",
+      "sha256": "445f94c228b654c3a354d45787b442ac98f87cf4bc5a6f587346f193c14ecd37",
+      "bytes": 1827,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-1-1.svg",
+      "sha256": "a14c4bf704957b8afe23fde76c51e10aadf0305e476242c63da78f637d993cb8",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-1-2.png",
+      "sha256": "e40ef76a36214cb68335d567ff2a08cd2c4ca20c1b784ac2929d57c68295f02e",
+      "bytes": 1842,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-1-2.svg",
+      "sha256": "9adc1b1aaf2381a65d0c0221fe10a0a66355dbfe9b06ecef4d6809b66c125e89",
+      "bytes": 435,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-1-3.png",
+      "sha256": "5aaf05b056738a5d7935b310b09f9102397baf7bfb853a43827cd0ce7c44989c",
+      "bytes": 1846,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-1-3.svg",
+      "sha256": "f4d9537183d92e09b7138e37522dc799ff45ce3eba432451ff3c2131e9c9e04d",
+      "bytes": 435,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-2-0.png",
+      "sha256": "f796dc96e4d3a12578e1472bfe7101ebcdfbb0b30377a13f30420ada4c7bab54",
+      "bytes": 1819,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-2-0.svg",
+      "sha256": "b2d1357c1e0bd82fd21ab94fe6545ba2148d7ec700aec4b86f0c08886e766f6b",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-2-1.png",
+      "sha256": "4405039f62626d33322966091a2dd4d6875e546a02ca9fd04b8160cdee8d8dbb",
+      "bytes": 1891,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-2-1.svg",
+      "sha256": "afdcaa92f2e7a7d618dab7e25de6838017d10c2af1652ecb63029510796c5d9b",
+      "bytes": 435,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-2-2.png",
+      "sha256": "3590c756ed420f889a0d9c04dacffcbc03e033de16e99543f0053f4223b33f46",
+      "bytes": 1812,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-2-2.svg",
+      "sha256": "eddf6032ab50c76ac4404ef57a56073eb0c9d8443090cb8e03cff4b9ab566c89",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-2-3.png",
+      "sha256": "ae47b7447e43484488b3ab934e15a595e1e2e71f69c9c167112fa43ca5085ec4",
+      "bytes": 1823,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-2-3.svg",
+      "sha256": "14f8377c15f2e1284a7e4c052ae3c693ad64299ce0beff65305172cb3a55de63",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-3-0.png",
+      "sha256": "935189e44bff9c5840bf94a021be1f8bbca056cce6f27a0712f2ebc90f7a77cb",
+      "bytes": 1818,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-3-0.svg",
+      "sha256": "95e416ce8f644c55fbd1dbbb0c86dd0f1331939a08e1dd60a90846adf5227d8f",
+      "bytes": 434,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-3-1.png",
+      "sha256": "ad07872cfcbb146b17151811fab8c13893ee01b629e2fd72009aaf5ee309bd77",
+      "bytes": 1884,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-3-1.svg",
+      "sha256": "88a117145f63a93e83a9fbbab2e1b09f57316b839d5b2c5c9d47fe8267a49e43",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-3-2.png",
+      "sha256": "2786964ed667c21d20dbdefa3de5f987075f84ec8d240ec69691942fd1083dc6",
+      "bytes": 1808,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-3-2.svg",
+      "sha256": "8b29f9e922f6f42ee62a41510eb54fd649cfde9bab29119d0aefe482352c7923",
+      "bytes": 436,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-3-3.png",
+      "sha256": "8076b5cedbc4149215a710f6e6256834c5514ba383ebdce54afb9dee608f9bc7",
+      "bytes": 1810,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "fixtures/generated/mercator-2-3-3.svg",
+      "sha256": "60fdca20299ff512e3abe280b3abcf3ce70a7a7f97a625080e9331e48310476e",
+      "bytes": 435,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    },
+    {
+      "path": "scripts/webgpuBaseline/generateFixtures.js",
+      "sha256": "9711c5811cff1d8a9a51554a29d052ef2f8f2f11415b25fd72e8d6186b812ad5",
+      "bytes": 8146,
+      "license": "Apache-2.0",
+      "provenance": "Lanthanum procedural fixture or harness; LICENSE.md"
+    }
+  ],
+  "settings": {
+    "width": 1920,
+    "height": 1080,
+    "dpr": 1,
+    "time": "2026-11-09T12:00:00Z",
+    "antialias": false,
+    "hdr": false,
+    "shadows": false,
+    "oit": false,
+    "sse": 16,
+    "globeSse": 8,
+    "externalNetwork": "blocked",
+    "trajectory": "T08: heading 2*pi*t/30, pitch -1.3, range 6000m; origin -75deg,40deg,0m",
+    "expectedCityTriangles": 1228800,
+    "expectedCityTiles": 16
+  },
+  "scenes": [
+    {
+      "id": "T00",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T01",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T01-mercator",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T02",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T03",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T04",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T04-i3dm",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T04-pnts",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T04-cmpt",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T05",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T06",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T07",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    },
+    {
+      "id": "T08",
+      "status": "baseline-subcase",
+      "implementation": "Specs/Baseline/baseline.js",
+      "expected": "No JS/GL errors; nonempty pixels; named numerical assertions; repeat image thresholds",
+      "coverage": "See compatibility-matrix.md; this subcase does not imply full family coverage"
+    }
+  ],
+  "deferred": [
+    {
+      "id": "T09",
+      "status": "deferred-S22",
+      "reason": "2D, Columbus View and morph excluded from production v1"
+    }
+  ]
+}
