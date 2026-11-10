@@ -262,6 +262,33 @@ async function run() {
   );
   scene.globe.show = true;
   scene.primitives.remove(box);
+  const exaggerationBox = scene.primitives.add(
+    new C.Primitive({
+      asynchronous: false,
+      geometryInstances: new C.GeometryInstance({
+        geometry: C.BoxGeometry.fromDimensions({
+          dimensions: new C.Cartesian3(1000, 1000, 500),
+          vertexFormat: C.VertexFormat.POSITION_ONLY,
+        }),
+        modelMatrix: C.Transforms.eastNorthUpToFixedFrame(
+          C.Cartesian3.fromDegrees(ridge.longitude, ridge.latitude, 4500),
+        ),
+        id: "exaggeration-control",
+        attributes: {
+          color: C.ColorGeometryInstanceAttribute.fromColor(C.Color.RED),
+        },
+      }),
+      appearance: new C.PerInstanceColorAppearance({
+        flat: true,
+        translucent: false,
+      }),
+    }),
+  );
+  check(
+    "4500 m control is visible above original ridge",
+    (await scene.pickAsync(new C.Cartesian2(480, 270)))?.id ===
+      "exaggeration-control",
+  );
   scene.verticalExaggeration = 2;
   await settle(scene);
   const point = project(scene, ridge.longitude, ridge.latitude, 6600),
@@ -272,9 +299,19 @@ async function run() {
     Math.abs(exaggerated - 6600) < 30,
     exaggerated,
   );
+  check(
+    "exaggerated ridge occludes 4500 m control on GPU",
+    (await scene.pickAsync(new C.Cartesian2(480, 270)))?.id === "globe",
+  );
   await capture(scene, "ridge-exaggerated");
   scene.verticalExaggeration = 1;
   await settle(scene);
+  check(
+    "restoring exaggeration reveals 4500 m control on GPU",
+    (await scene.pickAsync(new C.Cartesian2(480, 270)))?.id ===
+      "exaggeration-control",
+  );
+  scene.primitives.remove(exaggerationBox);
   // Observer only: do not stop geometry refinement and silently reduce imagery detail.
   check(
     "LOD observer records bounded upsampling and imagery terrain cap",

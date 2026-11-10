@@ -21,3 +21,5 @@
 - 真实浏览器受控root任务等待新代上传后延迟100 ms/1000 ms释放；旧代不得再上传。独立Node测试覆盖同一tile乱序、拒绝、Worker迟到、八槽背压。
 - `terrainWork.cancelled`只统计因离开视区而取消的任务；代际失效不计入它。requests/upsamples/meshes是当前阶段数量，requested/upsampled/uploaded是累计数量；inFlight包含逻辑取消但尚未实际完成的工作。
 - 本轮仅观察上采样标记与影像LOD耦合，后续工单 `docs/issues/terrain-imagery-lod.md` 阻塞高分辨率业务工作集签收。
+
+审查补强（最终采集前）：4500 m控制盒体在1倍山脊上方可拾取、2倍山脊下方被GPU遮挡、恢复1倍重新可拾取，三个ID断言直接验证GPU夸张更新；不更改原夹具和既有容差。

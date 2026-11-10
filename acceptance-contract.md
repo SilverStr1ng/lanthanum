@@ -2,7 +2,7 @@
 
 ## 2026-11-10 N01—N04 增量
 
-原有门槛和frozen manifest不改写。新增契约见[ADR0004](adr/0004-basic-conformance.md)，不使用新山脊结果替换旧平坦heightmap/quantized-mesh用例。绘制契约为18例×颜色/ID/frustum×WebGL2/WebGPU，加3项原生检查，合计111项；地形专项46项；既有基础49、流式59及每入口13项页面检查保持。
+原有门槛和frozen manifest不改写。新增契约见[ADR0004](adr/0004-basic-conformance.md)，不使用新山脊结果替换旧平坦heightmap/quantized-mesh用例。绘制契约为18例×颜色/ID/frustum×WebGL2/WebGPU，加3项原生检查，合计111项；地形专项49项；既有基础49、流式59及每入口13项页面检查保持。
 
 最终四套专项必须在同一干净实现SHA连续三轮采集，原始JSON按名称列出检查、build/旧fixture/新conformance fixture hash、浏览器/adapter、截图与错误。累计断言不作为功能覆盖数量。完整Jasmine重跑按17项旧失败身份比较。三轮前的调试红绿记录单独保存，不计入最终通过数。
 
@@ -30,18 +30,18 @@ Node24.15.0/npm11.6.1，Windows与Linux均执行无node_modules的npm ci、ast-g
 
 `fixtures/manifest.json` 记录每个资产字节数、SHA-256、来源及许可证。生成资产完全本地；测试拦截非 localhost 请求。固定时间 2026-11-09T12:00:00Z，固定相机参数见浏览器测试源（同样进入 hash）。关闭光照随机变化、阴影、HDR、FXAA、OIT；**MSAA=1**，canvas antialias=false。默认三维模式。
 
-| 族 | 本轮可运行子例 | 尚待补齐的专项基线 |
-| --- | --- | --- |
-| T00 | 非对称盒体、颜色读回、三个对象 ID；真实 Cesium Primitive；T05另有四象限纹理读回 | 解析三角形边界、单独实例化网格、布局矩阵 |
-| T01 | WGS84 椭球、地理/Web Mercator 本地编号 PNG；可见瓦片纹理必须 READY；新增图层顺序/alpha/移除像素断言及±179° LOD细化 | 连续飞行轨迹及多投影组合的专项差异图 |
-| T02 | 上游 quantized-mesh 本地 decode/render | 真实相邻 LOD、缺瓦片、海岸/山地剖面；当前上游 tile 是重复映射的测试瓦片，不是全球真实地形 |
-| T03 | 自制 glTF 2.0 PBR 盒体，加载/绘制/释放 | alpha MASK/BLEND、skin、morph、动画、压缩、扩展逐项图像 |
-| T04 | 上游 b3dm/i3dm/pnts/cmpt；T08 直接 glTF content | ADD/REPLACE 转换、外部/隐式切片、metadata/style 专项用例 |
-| T05 | Primitive、点、线、固定OpenSans字体Label、Billboard；新增动态点Entity及GeoJSON点线面、CZML盒体、KML绝对高度多边形的像素/拾取/显隐 | 动态盒体异步拾取失败；更多数据源选项、CZML动态时钟、KMZ/NetworkLink及贴地/裁剪/分类 |
-| T06 | 遮挡对象 pickAsync、pickPosition 对解析盒顶面的误差 <=0.1m | 透明/地形重叠、多请求取消和异步位置拾取（未来 API） |
-| T07 | 主场景与临时场景并存、20 次创建/resize/销毁、逐次资源计数 | WebGPU/WebGL 混用、device lost/error 注入、长时泄漏 |
-| T08 | 16 个固定本地 glTF 瓦片，102,400 盒体，1,228,800 三角形，3.2km×3.2km 合成建筑网格 | 真实业务城市影像/地形/材质工作集与流式 LOD，不能将纯几何合成负载推广为所有城市业务 |
-| T09 | 登记延期 S22 | 2D/Columbus/morph |
+| 族  | 本轮可运行子例                                                                                                                    | 尚待补齐的专项基线                                                                        |
+| --- | --------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| T00 | 非对称盒体、颜色读回、三个对象 ID；真实 Cesium Primitive；T05另有四象限纹理读回                                                   | 解析三角形边界、单独实例化网格、布局矩阵                                                  |
+| T01 | WGS84 椭球、地理/Web Mercator 本地编号 PNG；可见瓦片纹理必须 READY；新增图层顺序/alpha/移除像素断言及±179° LOD细化                | 连续飞行轨迹及多投影组合的专项差异图                                                      |
+| T02 | 上游 quantized-mesh 本地 decode/render                                                                                            | 真实相邻 LOD、缺瓦片、海岸/山地剖面；当前上游 tile 是重复映射的测试瓦片，不是全球真实地形 |
+| T03 | 自制 glTF 2.0 PBR 盒体，加载/绘制/释放                                                                                            | alpha MASK/BLEND、skin、morph、动画、压缩、扩展逐项图像                                   |
+| T04 | 上游 b3dm/i3dm/pnts/cmpt；T08 直接 glTF content                                                                                   | ADD/REPLACE 转换、外部/隐式切片、metadata/style 专项用例                                  |
+| T05 | Primitive、点、线、固定OpenSans字体Label、Billboard；新增动态点Entity及GeoJSON点线面、CZML盒体、KML绝对高度多边形的像素/拾取/显隐 | 动态盒体异步拾取失败；更多数据源选项、CZML动态时钟、KMZ/NetworkLink及贴地/裁剪/分类       |
+| T06 | 遮挡对象 pickAsync、pickPosition 对解析盒顶面的误差 <=0.1m                                                                        | 透明/地形重叠、多请求取消和异步位置拾取（未来 API）                                       |
+| T07 | 主场景与临时场景并存、20 次创建/resize/销毁、逐次资源计数                                                                         | WebGPU/WebGL 混用、device lost/error 注入、长时泄漏                                       |
+| T08 | 16 个固定本地 glTF 瓦片，102,400 盒体，1,228,800 三角形，3.2km×3.2km 合成建筑网格                                                 | 真实业务城市影像/地形/材质工作集与流式 LOD，不能将纯几何合成负载推广为所有城市业务        |
+| T09 | 登记延期 S22                                                                                                                      | 2D/Columbus/morph                                                                         |
 
 以上缺口是可见的 S01 后续子任务，**完整 S01 未验收**。本轮完成的是可复现基础环境及各测试族的增量子例，不用场景数量代替完整矩阵覆盖。
 
@@ -62,3 +62,4 @@ Node24.15.0/npm11.6.1，Windows与Linux均执行无node_modules的npm ci、ast-g
 生产 v1 预算保持计划：p95帧间隔<=33.3ms，CPU更新+编码p95<=10ms，同画质不比WebGL2恶化>10%，引擎主线程任务不得>100ms；T01本地首画<=3s，T08交互工作集<=5s，拾取p95<=100ms，GPU账本建议<=768MiB，稳定后10圈资源增幅<=5%，连续2小时。当前合成T08无纹理；16瓦片全部就绪且选中1,228,800三角形才算工作集就绪，SSE=16，cacheBytes=512MiB，overflow=256MiB。
 
 HTTP缓存由服务端no-store及每轮独立context控制；浏览器进程/驱动shader缓存未清理，不能把当前readyMs称作五轮严格冷启动结果。CPU缓存、在途解码/上传背压预算及long-task归因尚缺，属于S01未完成项。三台机器、两个GPU厂商、两个OS及两个浏览器引擎、HTTPS发行验证留到S20/S21，不能由本次单机Chromium替代。
+
