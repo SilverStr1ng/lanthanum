@@ -355,6 +355,7 @@ class WebGPUPrimitive {
       });
     }
     const record = {
+      kind: "primitive",
       adapter: this,
       mesh,
       attributes,

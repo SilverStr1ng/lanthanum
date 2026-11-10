@@ -1,4 +1,5 @@
 import { Matrix4 } from "@cesium/core";
+import { reverseProjection } from "./WebGPUTransforms.js";
 
 const shader = `
 struct Parameters {
@@ -232,15 +233,7 @@ class WebGPUGeometryRenderer {
     Matrix4.multiply(camera.viewMatrix, mesh.modelMatrix, mesh.view);
     // Convert in double precision before f32 upload. Do not subtract clip.z
     // from clip.w in WGSL: those terms can both be millions of metres.
-    const projection = Matrix4.clone(
-      camera.frustum.projectionMatrix,
-      this.projection,
-    );
-    for (let column = 0; column < 4; column++) {
-      const index = column * 4;
-      projection[index + 2] =
-        (projection[index + 3] - projection[index + 2]) * 0.5;
-    }
+    const projection = reverseProjection(camera, this.projection);
     Matrix4.multiply(projection, mesh.view, mesh.matrix);
     Matrix4.inverseTranspose(mesh.view, mesh.normalMatrix);
     Matrix4.toArray(mesh.matrix, mesh.parameters);

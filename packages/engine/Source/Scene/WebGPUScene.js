@@ -16,6 +16,8 @@ import CreditDisplay from "./CreditDisplay.js";
 import QuadtreePrimitive from "./QuadtreePrimitive.js";
 import WebGPUGlobeTileProvider from "./WebGPUGlobeTileProvider.js";
 import WebGPUGeometryRenderer from "../Renderer/WebGPUGeometryRenderer.js";
+import WebGPUModelCollection from "./WebGPUModelCollection.js";
+import WebGPUModelResources from "./WebGPUModelResources.js";
 
 const ownedGlobes = new WeakSet();
 
@@ -71,6 +73,7 @@ class WebGPUScene {
     this.camera.frustum.near = 0.1;
     this.camera.frustum.far = 500000000;
     this.primitives = new PrimitiveCollection();
+    this.models = new WebGPUModelCollection(this);
     this._nativePrimitives = new Set();
     const creditContainer =
       options.creditContainer ?? document.createElement("div");
@@ -157,6 +160,10 @@ class WebGPUScene {
   }
   // Native basic scenes render continuously; retained for Camera/provider compatibility.
   requestRender() {}
+  _getModelResources() {
+    this.context.assertReady();
+    return (this._modelResources ??= new WebGPUModelResources(this));
+  }
   addGeometry({
     geometry,
     modelMatrix = Matrix4.IDENTITY,
@@ -221,6 +228,7 @@ class WebGPUScene {
     mesh.objectId = this._nextObjectId++;
     mesh.color = [color.red, color.green, color.blue, color.alpha];
     const handle = {
+      kind: "geometry",
       id,
       show: true,
       modelMatrix: Matrix4.clone(modelMatrix),
@@ -303,6 +311,7 @@ class WebGPUScene {
         (a.mesh.blend ? b.distance - a.distance : a.distance - b.distance),
     );
     this.context.render(this.backgroundColor, (pass) => {
+      let modelsDrawn = false;
       if (globe?.show) {
         surface.tileProvider.draw(pass, this.camera);
       }
@@ -325,7 +334,15 @@ class WebGPUScene {
         this._renderer.draw(pass, handle.mesh, this.camera);
       }
       for (const record of frameState.nativeCommands) {
+        // Opaque models share the attachment before any translucent Primitive.
+        if (!modelsDrawn && record.mesh.blend) {
+          this.models.draw(pass, this.camera);
+          modelsDrawn = true;
+        }
         this._renderer.draw(pass, record.mesh, this.camera);
+      }
+      if (!modelsDrawn) {
+        this.models.draw(pass, this.camera);
       }
     });
     for (const callback of this._afterRender.splice(0)) {
@@ -346,6 +363,7 @@ class WebGPUScene {
       ),
       pendingTiles: provider?._pending ?? 0,
       terrainWork: provider?.workStatistics,
+      modelWork: this._modelResources?.statistics,
       imageryTextures: provider?.imagery.textureCount ?? 0,
       imageryBytes: provider?.imagery.bytes ?? 0,
       tileErrors: provider?.errors ?? [],
@@ -376,7 +394,14 @@ class WebGPUScene {
     }
     this.render();
     const globe = this._globe;
-    const snapshot = new Map(this._pickObjects);
+    const snapshot = new Map(
+      [...this._pickObjects].map(([key, value]) => [
+        key,
+        value.kind === "model"
+          ? { ...value, epoch: value.model._visibilityEpoch }
+          : value,
+      ]),
+    );
     const id = await this.context.readPickAsync(
       Math.floor((position.x * this.canvas.width) / width),
       Math.floor((position.y * this.canvas.height) / height),
@@ -393,7 +418,16 @@ class WebGPUScene {
         : undefined;
     }
     const handle = snapshot.get(id);
-    if (handle?.adapter) {
+    if (handle?.kind === "model") {
+      const model = handle.model;
+      return model.ready &&
+        model.show &&
+        model._visibilityEpoch === handle.epoch &&
+        this.models.contains(model)
+        ? { primitive: model, id: model.id }
+        : undefined;
+    }
+    if (handle?.kind === "primitive") {
       const primitive = handle.adapter.primitive;
       return !handle.adapter.destroyed &&
         primitive.show &&
@@ -415,6 +449,7 @@ class WebGPUScene {
       return;
     }
     this._destroyed = true;
+    this._modelResources?.destroy();
     this._globe?.destroy();
     this.primitives.destroy();
     for (const adapter of this._nativePrimitives) {
