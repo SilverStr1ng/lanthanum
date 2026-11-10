@@ -24,6 +24,8 @@ jobs:
       - uses: ./.github/actions/setup-toolchain
       - name: npm install
         run: npm ci
+      - name: Build workspace exports before lint
+        run: npm run build
       - name: lint *.js
         run: npm run eslint
       - name: lint *.md
@@ -32,7 +34,6 @@ jobs:
         run: npm run prettier-check
       - name: build types
         run: |
-          npm run build
           npm run build-sandcastle
           npm run build-ts
       - name: lint types
