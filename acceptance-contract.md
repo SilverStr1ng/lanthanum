@@ -5,6 +5,7 @@
 ## 主验收环境
 
 - Windows 11 Pro 10.0.26300，x64。
+- CPU：AMD Ryzen 7 9800X3D，8核。
 - NVIDIA GeForce RTX 5080，驱动 32.0.16.2101；另有 AMD Radeon 集显 32.0.21042.62，未认证。
 - Chrome 157.0.8103.40；Edge 157.0.4341.42 可供补测，二者同属 Chromium。
 - Windows 电源方案“平衡”（381b4222-f694-41f0-9685-ff5bb260df2e）。采集期间禁止另跑 GPU 压测。
@@ -17,12 +18,12 @@
 
 | 族 | 本轮可运行子例 | 尚待补齐的专项基线 |
 | --- | --- | --- |
-| T00 | 非对称盒体、颜色读回、三个对象 ID；真实 Cesium Primitive | 解析三角形边界、单独实例化网格、四象限纹理方向/布局矩阵 |
+| T00 | 非对称盒体、颜色读回、三个对象 ID；真实 Cesium Primitive；T05另有四象限纹理读回 | 解析三角形边界、单独实例化网格、布局矩阵 |
 | T01 | WGS84 椭球、地理/Web Mercator 本地编号 PNG；可见瓦片纹理必须 READY | 多层叠加、日期变更线和 LOD 连续轨迹的专项差异图 |
 | T02 | 上游 quantized-mesh 本地 decode/render | 真实相邻 LOD、缺瓦片、海岸/山地剖面；当前上游 tile 是重复映射的测试瓦片，不是全球真实地形 |
 | T03 | 自制 glTF 2.0 PBR 盒体，加载/绘制/释放 | alpha MASK/BLEND、skin、morph、动画、压缩、扩展逐项图像 |
 | T04 | 上游 b3dm/i3dm/pnts/cmpt；T08 直接 glTF content | ADD/REPLACE 转换、外部/隐式切片、metadata/style 专项用例 |
-| T05 | Primitive、点、线、Label、Billboard；GeoJSON 解析断言 | 动态 Entity、GeoJSON 可视化、CZML/KML、贴地/裁剪/分类 |
+| T05 | Primitive、点、线、固定OpenSans字体Label、Billboard就绪/ID/四色读回；GeoJSON解析断言 | 动态 Entity、GeoJSON 可视化、CZML/KML、贴地/裁剪/分类 |
 | T06 | 遮挡对象 pickAsync、pickPosition 对解析盒顶面的误差 <=0.1m | 透明/地形重叠、多请求取消和异步位置拾取（未来 API） |
 | T07 | 主场景与临时场景并存、20 次创建/resize/销毁、逐次资源计数 | WebGPU/WebGL 混用、device lost/error 注入、长时泄漏 |
 | T08 | 16 个固定本地 glTF 瓦片，102,400 盒体，1,228,800 三角形，3.2km×3.2km 合成建筑网格 | 真实业务城市影像/地形/材质工作集与流式 LOD，不能将纯几何合成负载推广为所有城市业务 |

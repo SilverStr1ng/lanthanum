@@ -1,0 +1,40 @@
+
+> cesium@1.145.0 build
+> gulp build
+
+[08:49:19] Using gulpfile D:\Nothing\Lanthanum-fork-audit\gulpfile.js
+[08:49:19] Starting 'build'...
+Converting GLSL shaders to JavaScript modules...
+Converting WGSL shaders to JavaScript modules...
+Compiling TypeScript...
+
+  packages\engine\Build\Unminified\index.js      22.2mb
+  packages\engine\Build\Unminified\index.js.map  40.2mb
+
+Done in 435ms
+
+  packages\engine\Build\Unminified\index-wgsl.js      206.0kb
+  packages\engine\Build\Unminified\index-wgsl.js.map  384.6kb
+
+Done in 10ms
+X [ERROR] Could not resolve "node:fs"
+
+    node_modules/draco3d/draco_decoder_nodejs.js:74:117:
+      74 │ ...ref);Y="";if(oa)sa=require("node:fs"),Y=__dirname+"/",da=functi...
+         ╵                               ~~~~~~~~~
+
+  The package "node:fs" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+
+[08:49:46] 'build' errored after 27 s
+[08:49:46] Error: Build failed with 1 error:
+node_modules/draco3d/draco_decoder_nodejs.js:74:117: ERROR: Could not resolve "node:fs"
+    at failureErrorWithLog (D:\Nothing\Lanthanum-fork-audit\node_modules\esbuild\lib\main.js:1752:15)
+    at D:\Nothing\Lanthanum-fork-audit\node_modules\esbuild\lib\main.js:1211:25
+    at D:\Nothing\Lanthanum-fork-audit\node_modules\esbuild\lib\main.js:1163:52
+    at buildResponseToResult (D:\Nothing\Lanthanum-fork-audit\node_modules\esbuild\lib\main.js:1209:7)
+    at D:\Nothing\Lanthanum-fork-audit\node_modules\esbuild\lib\main.js:1236:16
+    at responseCallbacks.<computed> (D:\Nothing\Lanthanum-fork-audit\node_modules\esbuild\lib\main.js:886:9)
+    at handleIncomingPacket (D:\Nothing\Lanthanum-fork-audit\node_modules\esbuild\lib\main.js:941:12)
+    at Socket.readFromStdout (D:\Nothing\Lanthanum-fork-audit\node_modules\esbuild\lib\main.js:864:7)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:552:15)

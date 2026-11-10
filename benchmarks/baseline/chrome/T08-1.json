@@ -1,0 +1,29 @@
+{
+  "id": "T08",
+  "iteration": 1,
+  "passed": false,
+  "error": "Error: Error: city triangles loaded: {\"triangles\":921600}\n    at record (http://127.0.0.1:11086/Specs/Baseline/baseline.js:75:11)\n    at initialize (http://127.0.0.1:11086/Specs/Baseline/baseline.js:488:5)\n    at file:///D:/Nothing/Lanthanum/scripts/webgpuBaseline/run.js:135:17",
+  "errors": [],
+  "external": [],
+  "requests": [
+    "/Specs/Baseline/index.html?scene=T08",
+    "/Specs/Baseline/baseline.js",
+    "/Build/CesiumUnminified/Cesium.js",
+    "/Specs/Baseline/instrumentWebGL.js",
+    "/fixtures/generated/city.json",
+    "/Build/CesiumUnminified/Assets/Images/ion-credit.png",
+    "/Build/CesiumUnminified/Assets/IAU2006_XYS/IAU2006_XYS_18.json",
+    "/fixtures/generated/city-6.glb",
+    "/fixtures/generated/city-5.glb",
+    "/fixtures/generated/city-10.glb",
+    "/fixtures/generated/city-9.glb",
+    "/fixtures/generated/city-14.glb",
+    "/fixtures/generated/city-13.glb",
+    "/fixtures/generated/city-1.glb",
+    "/fixtures/generated/city-2.glb",
+    "/fixtures/generated/city-8.glb",
+    "/fixtures/generated/city-11.glb",
+    "/fixtures/generated/city-7.glb",
+    "/fixtures/generated/city-4.glb"
+  ]
+}

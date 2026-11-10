@@ -1,0 +1,4 @@
+T00-1: PASS, ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11), ready 584 ms
+T05-1: PASS, ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11), ready 814 ms
+T08-1: PASS, ANGLE (NVIDIA, NVIDIA GeForce RTX 5080 (0x00002C02) Direct3D11 vs_5_0 ps_5_0, D3D11), ready 1705 ms
+Evidence: D:\Nothing\Lanthanum\benchmarks\baseline\replay

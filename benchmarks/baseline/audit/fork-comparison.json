@@ -1,0 +1,81 @@
+{
+  "baseline": "2aaf1daa6b9be58fb087fdc9f05f2f4d7ee37a87",
+  "candidate": "b2e774dd7b8783ba7b7b02712d88ad0c9a6c1dbd",
+  "candidateVersion": "1.145.0",
+  "candidatePackages": [
+    "engine",
+    "sandcastle",
+    "wasm",
+    "wasm-naga",
+    "widgets"
+  ],
+  "files": [
+    {
+      "file": "packages/engine/Source/Renderer/Context.js",
+      "baseline": {
+        "bytes": 54956,
+        "sha256": "3148f36357e0ece66c79a701016aeb52b81c39017086f8fc5e6925edc5f54fd0"
+      },
+      "candidate": {
+        "bytes": 54211,
+        "sha256": "08a65296e484c7f6240387efc1651193a6679d986f0f08c5c63cd0d8796fa44a"
+      }
+    },
+    {
+      "file": "packages/engine/Source/Scene/Scene.js",
+      "baseline": {
+        "bytes": 180599,
+        "sha256": "8f9a465262916aced48bce6bf96f8332ad4e341cf7ad00bc9368c889a790f917"
+      },
+      "candidate": {
+        "bytes": 260636,
+        "sha256": "03cd7cca6b09b3f9409343abdf5937993fcd208ffbdd0ca7b9ef6eb06bd8548e"
+      }
+    },
+    {
+      "file": "packages/engine/Source/Renderer/ShaderSource.js",
+      "baseline": {
+        "bytes": 16634,
+        "sha256": "de2e58662fe4f06f44d2c93e4f1fea484bb8349b421eec47f4ae56b4c945434b"
+      },
+      "candidate": {
+        "bytes": 16740,
+        "sha256": "990b4f9808decd5a3db0dc9dc63074d548605dab5ec86e7f5e1b3f17d2036abf"
+      }
+    },
+    {
+      "file": "packages/engine/Source/Scene/GlobeSurfaceTile.js",
+      "baseline": {
+        "bytes": 35507,
+        "sha256": "318225ab5a3f491aec62685c1690486485010da5ff1e0e4b6bff43649c22f04c"
+      },
+      "candidate": {
+        "bytes": 45807,
+        "sha256": "1873e882e47bcdc894efb2840e1e93ac82d8c3b1af224b6e33226f0c1eec6d9b"
+      }
+    },
+    {
+      "file": "packages/engine/Source/Renderer/ContextFactory.ts",
+      "baseline": null,
+      "candidate": {
+        "bytes": 13427,
+        "sha256": "7df3387624ae0691a08c45d223dd93f94dec870004c9a5467144f24b76562705"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm install --ignore-scripts --no-audit --no-fund",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 1
+    }
+  ],
+  "sample": {
+    "path": "Apps/WebGPUTest/primitive-box-webgpu.html",
+    "status": "not-run-build-failed"
+  },
+  "decision": "Do not adopt wholesale; no source copied"
+}

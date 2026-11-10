@@ -1,0 +1,9 @@
+{
+  "sourceCommit": "d84d8a3",
+  "method": "git archive HEAD selected tracked fixture/harness files to Build/BaselineCleanCheck; regenerate with Node24.15.0; verify",
+  "node": "24.15.0",
+  "generateExitCode": 0,
+  "verifyExitCode": 0,
+  "verifiedAssets": 162,
+  "manifestSha256": "542eb7fa3533241d778b9018ee1354ab652905f5a0e989324acf61123dae002e"
+}
